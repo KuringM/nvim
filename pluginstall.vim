@@ -4,6 +4,8 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'yianwillis/vimcdoc'
+
 " Plug 'LoricAndre/fzterm.nvim'
 
 " Testing my own plugin
