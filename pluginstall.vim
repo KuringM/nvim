@@ -4,8 +4,12 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'yianwillis/vimcdoc'
+Plug 'yianwillis/vimcdoc' " vim chinese doc
+Plug 'sbdchd/neoformat' " auto format
 
+
+
+""""""""""""""""""""""""""""""""""""""""
 " Plug 'LoricAndre/fzterm.nvim'
 
 " Testing my own plugin
