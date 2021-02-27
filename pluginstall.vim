@@ -4,25 +4,21 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'yianwillis/vimcdoc' " vim chinese doc
-Plug 'sbdchd/neoformat' " auto format
-
-
-
 """"""""""""""""""""""""""""""""""""""""
-" Plug 'LoricAndre/fzterm.nvim'
 
-" Testing my own plugin
+" theniceboy's plugin
 " Plug 'theniceboy/vim-calc'
 
 " Treesitter
 "Plug 'nvim-treesitter/nvim-treesitter',{'commit':'3c07232'}
 "Plug 'nvim-treesitter/playground'
 
+" chinese doc
+Plug 'yianwillis/vimcdoc' " vim chinese doc
+
 " Pretty Dress
-Plug 'bpietravalle/vim-bolt'
-Plug 'theniceboy/nvim-deus'
-"Plug 'arzg/vim-colors-xcode'
+Plug 'bpietravalle/vim-bolt' " vim syntax highlighting
+Plug 'theniceboy/nvim-deus' 
 
 " Status line
 Plug 'theniceboy/eleline.vim'
@@ -69,6 +65,7 @@ Plug 'cohama/agit.vim'
 " Autoformat
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
+Plug 'sbdchd/neoformat' " auto format
 
 " Tex
 " Plug 'lervag/vimtex'
