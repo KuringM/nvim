@@ -10,9 +10,11 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'theniceboy/vim-calc'
 
 " Treesitter
-"Plug 'nvim-treesitter/nvim-treesitter',{'commit':'3c07232'}
-"Plug 'nvim-treesitter/playground'
-
+Plug 'nvim-treesitter/nvim-treesitter',{'do':'TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/playground'
+Plug 'romgrk/nvim-treesitter-context'
 " chinese doc
 Plug 'yianwillis/vimcdoc' " vim chinese doc
 

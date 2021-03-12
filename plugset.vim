@@ -791,16 +791,15 @@ let g:typescript_ignore_browserwords = 1
 " ===
 " === nvim-treesitter
 " ===
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-"  ensure_installed = {"typescript", "dart", "java", "lua"},     -- one of "all", "language", or a list of languages
-"  highlight = {
-"    enable = true,              -- false will disable the whole extension
-"    disable = { "c", "rust" },  -- list of language that will be disabled
-"  },
-"}
-"EOF
-
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
 
 " ===================== End of Plugin Settings =====================
 

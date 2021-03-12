@@ -9,9 +9,10 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "let g:oceanic_next_terminal_italic = 1
 "let g:one_allow_italics = 1
 
+"vim.g:colors_name = 'deus'
+"colorscheme deus
 "color dracula
 "color one
-"color deus
 "color gruvbox
 "let ayucolor="light"
 "color ayu
