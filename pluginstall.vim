@@ -6,38 +6,110 @@ call plug#begin('~/.config/nvim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""
 
-" theniceboy's plugin
-" Plug 'theniceboy/vim-calc'
-
-" Treesitter
-Plug 'nvim-treesitter/nvim-treesitter',{'do':'TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'nvim-treesitter/playground'
-Plug 'romgrk/nvim-treesitter-context'
-" chinese doc
-Plug 'yianwillis/vimcdoc' " vim chinese doc
+"""    _
+"""   / \   _ __  _ __   ___  __ _ _ __ __ _ _ __   ___ ___
+"""  / _ \ | '_ \| '_ \ / _ \/ _` | '__/ _` | '_ \ / __/ _ \
+""" / ___ \| |_) | |_) |  __/ (_| | | | (_| | | | | (_|  __/
+"""/_/   \_\ .__/| .__/ \___|\__,_|_|  \__,_|_| |_|\___\___|
+"""        |_|   |_|
 
 " Pretty Dress
-Plug 'bpietravalle/vim-bolt' " vim syntax highlighting
-Plug 'theniceboy/nvim-deus' 
+Plug 'theniceboy/nvim-deus'                                    " vim theme
+Plug 'bpietravalle/vim-bolt'                                   " vim syntax highlighting
 
 " Status line
-Plug 'theniceboy/eleline.vim'
-Plug 'ojroques/vim-scrollstatus'
+Plug 'theniceboy/eleline.vim'                                  " elegant statusline for vim
+Plug 'ojroques/vim-scrollstatus'                               " A scrollstatus for vim statuslin
 
+" Other visual enhancement
+Plug 'luochen1990/rainbow' "Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
+
+Plug 'mg979/vim-xtabline'  "Tabline customization with buffer filtering
+Plug 'ryanoasis/vim-devicons' " Adds file type icons to Vim plugins
+Plug 'wincent/terminus' "Enhanced terminal integration for Vim
 " General Highlighter
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'RRethy/vim-illuminate'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }      " asynchronously display the colours in file
+Plug 'RRethy/vim-illuminate'                                   " automatically highlighting other uses of the current word under the cursor
+
+" Other visual enhancement
+Plug 'luochen1990/rainbow' "Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
+
+Plug 'mg979/vim-xtabline' "Tabline customization with buffer filtering
+Plug 'ryanoasis/vim-devicons'
+Plug 'wincent/terminus'
+
+""" _   _           __       _   _____           _
+"""| | | |___  ___ / _|_   _| | |_   _|__   ___ | |___
+"""| | | / __|/ _ \ |_| | | | |   | |/ _ \ / _ \| / __|
+"""| |_| \__ \  __/  _| |_| | |   | | (_) | (_) | \__ \
+""" \___/|___/\___|_|  \__,_|_|   |_|\___/ \___/|_|___/
+
+" chinese doc
+Plug 'yianwillis/vimcdoc'                                      " vim chinese doc
 
 " File navigation
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'kevinhwang91/rnvimr'
-Plug 'airblade/vim-rooter'
-Plug 'pechorin/any-jump.vim'
+Plug 'junegunn/fzf.vim'                                        " fuzzy finder
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }              " An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.
+Plug 'kevinhwang91/rnvimr'                                     " use Ranger in a floating window
+Plug 'airblade/vim-rooter'                                     " Rooter changes the working directory to the project root when you open a file or directory
+Plug 'pechorin/any-jump.vim'                                   " Jump to any definition and references eye IDE madness without overhead rocket
+
+" Mini Vim-APP
+"Plug 'jceb/vim-orgmode'
+Plug 'mhinz/vim-startify'                                      " The fancy start screen for Vim.
+Plug 'skywind3000/asynctasks.vim'                              " Modern Task System for Project Building, Testing and Deploying !!
+Plug 'skywind3000/asyncrun.vim'                                " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to the Quickfix Window !!
+
+" Vim Applications
+Plug 'itchyny/calendar.vim'                                    " A calendar application for Vim
+
+" Other useful utilities
+Plug 'lambdalisue/suda.vim' " An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows. do stuff like :sudowrite
+" Plug 'makerj/vim-pdf'
+"Plug 'xolox/vim-session'
+"Plug 'xolox/vim-misc' " vim-session dep
+
+" Dependencies
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'kana/vim-textobj-user'
+" Plug 'roxma/nvim-yarp'
+
+" For general writing
+"Plug 'junegunn/goyo.vim'
+"Plug 'reedes/vim-wordy'
+"Plug 'ron89/thesaurus_query.vim'
+
+" Bookmarks
+" Plug 'MattesGroeger/vim-bookmarks'
+
+" Find & Replace
+Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
+
+" Documentation
+"Plug 'KabbAmine/zeavim.vim' " <LEADER>z to find doc
+
+
+""" ____                                                _
+"""|  _ \ _ __ ___   __ _ _ __ __ _ _ __ ___  _ __ ___ (_)_ __   __ _
+"""| |_) | '__/ _ \ / _` | '__/ _` | '_ ` _ \| '_ ` _ \| | '_ \ / _` |
+"""|  __/| | | (_) | (_| | | | (_| | | | | | | | | | | | | | | | (_| |
+"""|_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|_| |_| |_|_|_| |_|\__, |
+"""                 |___/                                       |___/
+
+
+" theniceboy's plugin
+" Plug 'theniceboy/vim-calc'
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'commit':'0b67258', 'do':'TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/playground'
+Plug 'romgrk/nvim-treesitter-context'
+
+
 
 " Taglist
 Plug 'liuchengxu/vista.vim'
@@ -143,45 +215,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'chrisbra/NrrwRgn'
 Plug 'AndrewRadev/splitjoin.vim'
 
-" For general writing
-" Plug 'junegunn/goyo.vim'
-"Plug 'reedes/vim-wordy'
-"Plug 'ron89/thesaurus_query.vim'
-
-" Bookmarks
-" Plug 'MattesGroeger/vim-bookmarks'
-
-" Find & Replace
-Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
-
-" Documentation
-"Plug 'KabbAmine/zeavim.vim' " <LEADER>z to find doc
-
-" Mini Vim-APP
-"Plug 'jceb/vim-orgmode'
-"Plug 'mhinz/vim-startify'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
-
-" Vim Applications
-Plug 'itchyny/calendar.vim'
-
-" Other visual enhancement
-Plug 'luochen1990/rainbow'
-Plug 'mg979/vim-xtabline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'wincent/terminus'
-
-" Other useful utilities
-Plug 'lambdalisue/suda.vim' " do stuff like :sudowrite
-" Plug 'makerj/vim-pdf'
-"Plug 'xolox/vim-session'
-"Plug 'xolox/vim-misc' " vim-session dep
-
-" Dependencies
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'kana/vim-textobj-user'
-" Plug 'roxma/nvim-yarp'
 
 
 call plug#end()

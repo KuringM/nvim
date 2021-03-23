@@ -82,7 +82,3 @@ func! CompileRunGcc()
 		:term go run .
 	endif
 endfunc
-
-"Ruby
-let g:ruby_host_prog = '/usr/bin/ruby'
-

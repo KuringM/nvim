@@ -1,18 +1,10 @@
 " ===================== Start of Plugin Settings =====================
 
-
-" ===
-" === eleline.vim
-" ===
-let g:airline_powerline_fonts = 0
-
-" ===
-" === vim-illuminate
-" ===
-let g:Illuminate_delay = 750
-hi illuminatedWord cterm=undercurl gui=undercurl
-
-
+""" _   _           __       _   _____           _
+"""| | | |___  ___ / _|_   _| | |_   _|__   ___ | |___
+"""| | | / __|/ _ \ |_| | | | |   | |/ _ \ / _ \| / __|
+"""| |_| \__ \  __/  _| |_| | |   | | (_) | (_) | \__ \
+""" \___/|___/\___|_|  \__,_|_|   |_|\___/ \___/|_|___/
 
 " ===
 " === FZF
@@ -20,7 +12,6 @@ hi illuminatedWord cterm=undercurl gui=undercurl
 set rtp+=/usr/local/opt/fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 set rtp+=/home/kuring/.linuxbrew/opt/fzf
-nnoremap <c-p> :Leaderf file<CR>
 " noremap <silent> <C-p> :Files<CR>
 noremap <silent> <C-f> :Rg<CR>
 noremap <silent> <C-h> :History<CR>
@@ -54,11 +45,11 @@ noremap <c-d> :BD<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 
 
-
 " ===
 " === Leaderf
 " ===
 " let g:Lf_WindowPosition = 'popup'
+nnoremap <c-p> :Leaderf file<CR>
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewCode = 1
 let g:Lf_ShowHidden = 1
@@ -77,7 +68,6 @@ let g:Lf_WildIgnore = {
         \}
 let g:Lf_UseMemoryCache = 0
 let g:Lf_UseCache = 0
-
 
 
 " ===
@@ -105,13 +95,11 @@ let g:rnvimr_layout = { 'relative': 'editor',
 let g:rnvimr_presets = [{'width': 1.0, 'height': 1.0}]
 
 
-
 " ===
 " === vim-rooter
 " ===
 let g:rooter_patterns = ['__vim_project_root', '.git/']
 let g:rooter_silent_chdir = 1
-
 
 
 " ===
@@ -120,8 +108,62 @@ let g:rooter_silent_chdir = 1
 nnoremap j :AnyJump<CR>
 let g:any_jump_window_width_ratio  = 0.8
 let g:any_jump_window_height_ratio = 0.9
-hi Pmenu guibg=#1b1b1b ctermbg=Black
+"hi Pmenu guibg=#1b1b1b ctermbg=Black
 
+" ===
+" === AsyncTasks
+" ===
+let g:asyncrun_open = 6
+
+
+" ===
+" === AsyncRun
+" ===
+noremap gp :AsyncRun git push<CR>
+
+
+" ===
+" === vim-calendar
+" ===
+"noremap \c :Calendar -position=here<CR>
+noremap \\ :Calendar -view=clock -position=here<CR>
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+augroup calendar-mappings
+	autocmd!
+	" diamond cursor
+	autocmd FileType calendar nmap <buffer> u <Plug>(calendar_up)
+	autocmd FileType calendar nmap <buffer> n <Plug>(calendar_left)
+	autocmd FileType calendar nmap <buffer> e <Plug>(calendar_down)
+	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
+	autocmd FileType calendar nmap <buffer> <c-u> <Plug>(calendar_move_up)
+	autocmd FileType calendar nmap <buffer> <c-n> <Plug>(calendar_move_left)
+	autocmd FileType calendar nmap <buffer> <c-e> <Plug>(calendar_move_down)
+	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_right)
+	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_start_insert)
+	autocmd FileType calendar nmap <buffer> K <Plug>(calendar_start_insert_head)
+	" unmap <C-n>, <C-p> for other plugins
+	autocmd FileType calendar nunmap <buffer> <C-n>
+	autocmd FileType calendar nunmap <buffer> <C-p>
+augroup END
+
+
+" ===
+" === suda.vim
+" ===
+cnoreabbrev sudowrite w suda://%
+cnoreabbrev sw w suda://%
+
+
+
+" MK
+
+""" ____                                                _
+"""|  _ \ _ __ ___   __ _ _ __ __ _ _ __ ___  _ __ ___ (_)_ __   __ _
+"""| |_) | '__/ _ \ / _` | '__/ _` | '_ ` _ \| '_ ` _ \| | '_ \ / _` |
+"""|  __/| | | (_) | (_| | | | (_| | | | | | | | | | | | | | | | (_| |
+"""|_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|_| |_| |_|_|_| |_|\__, |
+"""                 |___/                                       |___/
 
 
 " ===
@@ -143,7 +185,6 @@ let g:vista#renderer#icons = {
 " set statusline+=%{NearestMethodOrFunction()}
 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
-let g:scrollstatus_size = 15
 
 
 
@@ -370,8 +411,8 @@ endfunction
 " ===
 " === CTRLP (Dependency for omnisharp)
 " ===
-let g:ctrlp_map = ''
-let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_map = ''
+"let g:ctrlp_cmd = 'CtrlP'
 
 
 
@@ -520,32 +561,6 @@ let maplocalleader=' '
 
 
 " ===
-" === vim-calendar
-" ===
-"noremap \c :Calendar -position=here<CR>
-noremap \\ :Calendar -view=clock -position=here<CR>
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-augroup calendar-mappings
-	autocmd!
-	" diamond cursor
-	autocmd FileType calendar nmap <buffer> u <Plug>(calendar_up)
-	autocmd FileType calendar nmap <buffer> n <Plug>(calendar_left)
-	autocmd FileType calendar nmap <buffer> e <Plug>(calendar_down)
-	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
-	autocmd FileType calendar nmap <buffer> <c-u> <Plug>(calendar_move_up)
-	autocmd FileType calendar nmap <buffer> <c-n> <Plug>(calendar_move_left)
-	autocmd FileType calendar nmap <buffer> <c-e> <Plug>(calendar_move_down)
-	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_right)
-	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_start_insert)
-	autocmd FileType calendar nmap <buffer> K <Plug>(calendar_start_insert_head)
-	" unmap <C-n>, <C-p> for other plugins
-	autocmd FileType calendar nunmap <buffer> <C-n>
-	autocmd FileType calendar nunmap <buffer> <C-p>
-augroup END
-
-
-" ===
 " === vim-go
 " ===
 let g:go_echo_go_info = 0
@@ -643,22 +658,7 @@ vmap ga :Tabularize /
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
 
-" ===
-" === rainbow
-" ===
-let g:rainbow_active = 1
 
-
-" ===
-" === xtabline
-" ===
-let g:xtabline_settings = {}
-let g:xtabline_settings.enable_mappings = 0
-let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
-let g:xtabline_settings.enable_persistance = 0
-let g:xtabline_settings.last_open_first = 1
-noremap to :XTabCycleMode<CR>
-noremap \p :echo expand('%:p')<CR>
 
 
 " ===
@@ -686,11 +686,6 @@ noremap \p :echo expand('%:p')<CR>
 "noremap <leader>ct :ContextToggle<CR>
 
 
-" ===
-" === suda.vim
-" ===
-cnoreabbrev sudowrite w suda://%
-cnoreabbrev sw w suda://%
 
 
 " ===
@@ -740,16 +735,6 @@ nmap ss <plug>(SubversiveSubstituteLine)
 
 
 
-" ===
-" === AsyncRun
-" ===
-noremap gp :AsyncRun git push<CR>
-
-
-" ===
-" === AsyncTasks
-" ===
-let g:asyncrun_open = 6
 
 
 " ===
@@ -791,15 +776,15 @@ let g:typescript_ignore_browserwords = 1
 " ===
 " === nvim-treesitter
 " ===
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
-  },
-}
-EOF
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"  highlight = {
+"    enable = true,              -- false will disable the whole extension
+"    disable = { "c", "rust" },  -- list of language that will be disabled
+"  },
+"}
+"EOF
 
 " ===================== End of Plugin Settings =====================
 

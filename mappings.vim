@@ -30,7 +30,7 @@ vnoremap Y "+y
 nnoremap < <<
 nnoremap > >>
 
-" Search
+" Search no hightlight
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " Adjacent duplicate words
