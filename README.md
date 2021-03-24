@@ -61,7 +61,7 @@ Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, pow
 
 - [x] [vim-rooter](https://github.com/airblade/vim-rooter) -- Changes Vim working directory to project root.
 
-- [x] [any-jump](https://github.com/pechorin/any-jump) -- Jump to any definition and references eye IDE madness without overhead rocket
+- [x] [any-jump.vim](https://github.com/pechorin/any-jump.vim) -- Jump to any definition and references eye IDE madness without overhead rocket
 
 - [x] [vim-startify](https://github.com/mhinz/vim-startify) -- The fancy start screen for vim.
 
