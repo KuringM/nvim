@@ -66,10 +66,10 @@ Plug 'skywind3000/asyncrun.vim'                                " Run Async Shell
 Plug 'itchyny/calendar.vim'                                    " A calendar application for Vim
 
 " Other useful utilities
-Plug 'lambdalisue/suda.vim' " An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows. do stuff like :sudowrite
+Plug 'lambdalisue/suda.vim'                                    " An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows. do stuff like :sudowrite
 " Plug 'makerj/vim-pdf'
 "Plug 'xolox/vim-session'
-"Plug 'xolox/vim-misc' " vim-session dep
+"Plug 'xolox/vim-misc'                                         " vim-session dep
 
 " Dependencies
 " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -85,10 +85,10 @@ Plug 'lambdalisue/suda.vim' " An alternative sudo.vim for Vim and Neovim, limite
 " Plug 'MattesGroeger/vim-bookmarks'
 
 " Find & Replace
-Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
+Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }         " Find And Replace Vim plugin
 
 " Documentation
-"Plug 'KabbAmine/zeavim.vim' " <LEADER>z to find doc
+"Plug 'KabbAmine/zeavim.vim'                                   " <LEADER>z to find doc
 
 
 """ ____                                                _
@@ -103,44 +103,42 @@ Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
 " Plug 'theniceboy/vim-calc'
 
 " Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'commit':'0b67258', 'do':'TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter', {'commit':'0b67258', 'do':'TSUpdate'}  " Nvim Treesitter configurations and abstraction layer
+Plug 'nvim-treesitter/playground'                              " Treesitter playground integrated into Neovim
+Plug 'nvim-treesitter/nvim-treesitter-refactor'                " Refactor module for nvim-treesitter
+Plug 'nvim-treesitter/playground'                              " Show code context
 Plug 'romgrk/nvim-treesitter-context'
 
 
-
 " Taglist
-Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim' " Viewer & Finder for LSP symbols and tags
 
 " Debugger
 " Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 
 " Auto Complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 " Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': 'v0.0.79'}
-Plug 'wellle/tmux-complete.vim'
+Plug 'wellle/tmux-complete.vim'         " Vim plugin for insert mode completion of words in adjacent tmux panes
 
 " Snippets
 " Plug 'SirVer/ultisnips'
-Plug 'theniceboy/vim-snippets'
+Plug 'theniceboy/vim-snippets' " vim-snipmate default snippets (Previously snipmate-snippets)
 
 " Undo Tree
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree' " The undo history visualizer for VIM
 
 " Git
-Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
-Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
+Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }    " Gitignore plugin for Vim
+Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }  " Create useful .gitignore files for your project
 "Plug 'mhinz/vim-signify'
-Plug 'airblade/vim-gitgutter'
-Plug 'cohama/agit.vim'
+Plug 'airblade/vim-gitgutter'        " A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
+Plug 'cohama/agit.vim' " A powerful Git log viewer
 
 " Autoformat
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'sbdchd/neoformat' " auto format
-
+Plug 'google/vim-maktaba'  " Consistent Vimscript
+Plug 'google/vim-codefmt'  " codefmt is a utility for syntax-aware code formatting.
+Plug 'sbdchd/neoformat' " A (Neo)vim plugin for formatting code.
 " Tex
 " Plug 'lervag/vimtex'
 

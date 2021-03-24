@@ -75,41 +75,41 @@ Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, pow
 
 [suda.vim](https://github.com/lambdalisue/suda.vim) -- An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows
 
-[far.vim](https://github.com/brooth/far.vim) -- 
+[far.vim](https://github.com/brooth/far.vim) -- Find And Replace Vim plugin
 
 #### Programming
 
-[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- 
+[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
 
-[playground](https://github.com/nvim-treesitter/playground) -- 
+[playground](https://github.com/nvim-treesitter/playground) -- Treesitter playground integrated into Neovim
 
-[nvim-treesitter-refactor](https://github.com/nvim-treesitter/nvim-treesitter-refactor) -- 
+[nvim-treesitter-refactor](https://github.com/nvim-treesitter/nvim-treesitter-refactor) -- Refactor module for nvim-treesitter
 
-[nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context) -- 
+[nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context) -- Show code context
 
-[vista.vim](https://github.com/liuchengxu/vista.vim) -- 
+[vista.vim](https://github.com/liuchengxu/vista.vim) -- Viewer & Finder for LSP symbols and tags
 
-[coc.nvim](https://github.com/neoclide/coc.nvim) -- 
+[coc.nvim](https://github.com/neoclide/coc.nvim) -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 
-[tmux-complete.vim](https://github.com/wellle/tmux-complete.vim) -- 
+[tmux-complete.vim](https://github.com/wellle/tmux-complete.vim) -- Vim plugin for insert mode completion of words in adjacent tmux panes
 
-[vim-snippets](https://github.com/theniceboy/vim-snippets) -- 
+[vim-snippets](https://github.com/theniceboy/vim-snippets) -- vim-snipmate default snippets (Previously snipmate-snippets)
 
-[undotree](https://github.com/mbbill/undotree) -- 
+[undotree](https://github.com/mbbill/undotree) -- The undo history visualizer for VIM
 
-[vim-gitignore](https://github.com/theniceboy/vim-gitignore) -- 
+[vim-gitignore](https://github.com/theniceboy/vim-gitignore) -- Gitignore plugin for Vim
 
-[fzf-gitignore](https://github.com/fszymanski/fzf-gitignore) -- 
+[fzf-gitignore](https://github.com/fszymanski/fzf-gitignore) -- Create useful .gitignore files for your project
 
-[vim-gitgutter](https://github.com/airblade/vim-gitgutter) -- 
+[vim-gitgutter](https://github.com/airblade/vim-gitgutter) -- A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
 
-[agit.vim](https://github.com/cohama/agit.vim) -- 
+[agit.vim](https://github.com/cohama/agit.vim) -- A powerful Git log viewer
 
-[vim-maktaba](https://github.com/google/vim-maktaba) -- 
+[vim-maktaba](https://github.com/google/vim-maktaba) -- Consistent Vimscript
 
-[vim-codefmt](https://github.com/google/vim-codefmt) -- 
+[vim-codefmt](https://github.com/google/vim-codefmt) -- codefmt is a utility for syntax-aware code formatting. 
 
-[neoformat](https://github.com/sbdchd/neoformat) -- 
+[neoformat](https://github.com/sbdchd/neoformat) -- A (Neo)vim plugin for formatting code.
 
 [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim) -- 
 

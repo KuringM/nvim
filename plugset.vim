@@ -155,6 +155,13 @@ cnoreabbrev sudowrite w suda://%
 cnoreabbrev sw w suda://%
 
 
+" ===
+" === Far.vim
+" ===
+noremap <LEADER>f :F  **/*<left><left><left><left><left>
+let g:far#mapping = {
+		\ "replace_undo" : ["l"],
+		\ }
 
 " MK
 
@@ -164,6 +171,19 @@ cnoreabbrev sw w suda://%
 """|  __/| | | (_) | (_| | | | (_| | | | | | | | | | | | | | | | (_| |
 """|_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|_| |_| |_|_|_| |_|\__, |
 """                 |___/                                       |___/
+
+" ===
+" === nvim-treesitter
+" ===
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
 
 
 " ===
@@ -184,8 +204,6 @@ let g:vista#renderer#icons = {
 " endfunction
 " set statusline+=%{NearestMethodOrFunction()}
 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
-
 
 
 " ===
@@ -288,6 +306,22 @@ let g:snips_author = 'David Chen'
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 
+" ===
+" === Ultisnips
+" ===
+" let g:tex_flavor = "latex"
+" inoremap <c-n> <nop>
+" let g:UltiSnipsExpandTrigger="<c-e>"
+" let g:UltiSnipsJumpForwardTrigger="<c-e>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', $HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips/']
+" silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
+" " Solve extreme insert-mode lag on macOS (by disabling autotrigger)
+" augroup ultisnips_no_auto_expansion
+"     au!
+"     au VimEnter * au! UltiSnips_AutoTrigger
+" augroup END
+
 
 " ===
 " === Undotree
@@ -307,12 +341,10 @@ function g:Undotree_CustomMap()
 endfunc
 
 
-
 " ===
 " === fzf-gitignore
 " ===
 noremap <LEADER>gi :FzfGitignore<CR>
-
 
 
 " ==
@@ -335,7 +367,6 @@ nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 
 
-
 " ===
 " === Agit
 " ===
@@ -343,9 +374,8 @@ nnoremap <LEADER>gl :Agit<CR>
 let g:agit_no_default_mappings = 1
 
 
-
 " ===
-" === AutoFormat
+" === vim-codefmt---AutoFormat
 " ===
 augroup autoformat_settings
 	" autocmd FileType bzl AutoFormatBuffer buildifier
@@ -360,7 +390,6 @@ augroup autoformat_settings
 	" autocmd FileType rust AutoFormatBuffer rustfmt
 	" autocmd FileType vue AutoFormatBuffer prettier
 augroup END
-
 
 
 " ===
@@ -498,13 +527,6 @@ let g:VM_maps["Undo"]               = 'l'
 let g:VM_maps["Redo"]               = '<C-r>'
 
 
-" ===
-" === Far.vim
-" ===
-noremap <LEADER>f :F  **/*<left><left><left><left><left>
-let g:far#mapping = {
-		\ "replace_undo" : ["l"],
-		\ }
 
 
 " ===
@@ -530,22 +552,6 @@ let g:bullets_enabled_file_types = [
 
 
 
-
-" ===
-" === Ultisnips
-" ===
-" let g:tex_flavor = "latex"
-" inoremap <c-n> <nop>
-" let g:UltiSnipsExpandTrigger="<c-e>"
-" let g:UltiSnipsJumpForwardTrigger="<c-e>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-n>"
-" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', $HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips/']
-" silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
-" " Solve extreme insert-mode lag on macOS (by disabling autotrigger)
-" augroup ultisnips_no_auto_expansion
-"     au!
-"     au VimEnter * au! UltiSnips_AutoTrigger
-" augroup END
 
 
 
@@ -773,18 +779,6 @@ let g:typescript_ignore_browserwords = 1
 
 
 
-" ===
-" === nvim-treesitter
-" ===
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-"  highlight = {
-"    enable = true,              -- false will disable the whole extension
-"    disable = { "c", "rust" },  -- list of language that will be disabled
-"  },
-"}
-"EOF
 
 " ===================== End of Plugin Settings =====================
 
