@@ -52,6 +52,24 @@ hi illuminatedWord cterm=undercurl gui=undercurl
 
 
 " ===
+" === rainbow
+" ===
+let g:rainbow_active = 1
+
+
+" ===
+" === xtabline
+" ===
+let g:xtabline_settings = {}
+let g:xtabline_settings.enable_mappings = 0
+let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
+let g:xtabline_settings.enable_persistance = 0
+let g:xtabline_settings.last_open_first = 1
+noremap to :XTabMode<CR>
+noremap \p :echo expand('%:p')<CR>
+
+
+" ===
 " === Terminal Behaviors
 " ===
 let g:neoterm_autoscroll = 1
@@ -73,25 +91,5 @@ let g:terminal_color_11 = '#F4F99D'
 let g:terminal_color_12 = '#CAA9FA'
 let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
-
-
-" ===
-" === rainbow
-" ===
-let g:rainbow_active = 1
-
-
-" ===
-" === xtabline
-" ===
-let g:xtabline_settings = {}
-let g:xtabline_settings.enable_mappings = 0
-let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
-let g:xtabline_settings.enable_persistance = 0
-let g:xtabline_settings.last_open_first = 1
-noremap to :XTabMode<CR>
-noremap \p :echo expand('%:p')<CR>
-
-
 
 

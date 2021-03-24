@@ -16,12 +16,11 @@
 " source
 " set
 source $XDG_CONFIG_HOME/nvim/machine.vim
-source $XDG_CONFIG_HOME/nvim/editor.vim
+source $XDG_CONFIG_HOME/nvim/editor-setup.vim
 source $XDG_CONFIG_HOME/nvim/ending-work.vim
 
 " map
 source $XDG_CONFIG_HOME/nvim/mappings.vim
-source $XDG_CONFIG_HOME/nvim/others.vim
 source $XDG_CONFIG_HOME/nvim/markdown-set.vim
 
 " Plug
