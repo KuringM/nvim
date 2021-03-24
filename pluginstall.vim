@@ -22,11 +22,12 @@ Plug 'theniceboy/eleline.vim'                                  " elegant statusl
 Plug 'ojroques/vim-scrollstatus'                               " A scrollstatus for vim statuslin
 
 " Other visual enhancement
-Plug 'luochen1990/rainbow' "Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
+Plug 'luochen1990/rainbow'                                     " Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
 
-Plug 'mg979/vim-xtabline'  "Tabline customization with buffer filtering
-Plug 'ryanoasis/vim-devicons' " Adds file type icons to Vim plugins
-Plug 'wincent/terminus' "Enhanced terminal integration for Vim
+Plug 'mg979/vim-xtabline'                                      " Tabline customization with buffer filtering
+Plug 'ryanoasis/vim-devicons'                                  " Adds file type icons to Vim plugins
+Plug 'wincent/terminus'                                        " Enhanced terminal integration for Vim
+
 " General Highlighter
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }      " asynchronously display the colours in file
 Plug 'RRethy/vim-illuminate'                                   " automatically highlighting other uses of the current word under the cursor
@@ -34,7 +35,7 @@ Plug 'RRethy/vim-illuminate'                                   " automatically h
 " Other visual enhancement
 Plug 'luochen1990/rainbow' "Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
 
-Plug 'mg979/vim-xtabline' "Tabline customization with buffer filtering
+Plug 'mg979/vim-xtabline'                                      " Tabline customization with buffer filtering
 Plug 'ryanoasis/vim-devicons'
 Plug 'wincent/terminus'
 
@@ -90,6 +91,27 @@ Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }         " Find And Replac
 " Documentation
 "Plug 'KabbAmine/zeavim.vim'                                   " <LEADER>z to find doc
 
+" Editor Enhancement
+"Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'       " Vim plugin, insert or delete brackets, parens, quotes in pair
+Plug 'mg979/vim-visual-multi'     " Multiple cursors plugin for vim/neovim
+Plug 'tomtom/tcomment_vim'        " An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line. 
+Plug 'theniceboy/antovim'         " Super-simple vim plugin for cycling through antonyms/words related to word under cursor. gs to switch.
+Plug 'tpope/vim-surround'         " surround.vim: quoting/parenthesizing made simple. type yskw' to wrap the word with '' or type cs'` to change 'word' to `word`.
+Plug 'gcmt/wildfire.vim'          " Smart selection of the closest text object. in Visual mode, type k' to select all text in '', or type k) k] k} kp
+Plug 'junegunn/vim-after-object'  " Target text *after* the designated characters. da= to delete what's after =
+Plug 'godlygeek/tabular'          " Vim script for text filtering and alignment. ga, or :Tabularize <regex> to align
+Plug 'tpope/vim-capslock'         " Vim motions on speed! Ctrl+L (insert) to toggle capslock
+Plug 'easymotion/vim-easymotion'  " Vim motions on speed!
+" Plug 'Konfekt/FastFold'
+"Plug 'junegunn/vim-peekaboo'
+"Plug 'wellle/context.vim'
+Plug 'svermeulen/vim-subversive'  " Vim plugin providing operator motions to quickly replace text
+Plug 'theniceboy/argtextobj.vim'  " Text-object like motion for arguments (mod for colemak)
+Plug 'rhysd/clever-f.vim'         " Extended f, F, t and T key mappings for Vim.
+Plug 'chrisbra/NrrwRgn'           " A Narrow Region Plugin for vim (like Emacs Narrow Region)
+Plug 'AndrewRadev/splitjoin.vim'  " Switch between single-line and multiline forms of code
+
 
 """ ____                                                _
 """|  _ \ _ __ ___   __ _ _ __ __ _ _ __ ___  _ __ ___ (_)_ __   __ _
@@ -111,50 +133,50 @@ Plug 'romgrk/nvim-treesitter-context'
 
 
 " Taglist
-Plug 'liuchengxu/vista.vim' " Viewer & Finder for LSP symbols and tags
+Plug 'liuchengxu/vista.vim'                                    " Viewer & Finder for LSP symbols and tags
 
 " Debugger
 " Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 
 " Auto Complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 " Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': 'v0.0.79'}
-Plug 'wellle/tmux-complete.vim'         " Vim plugin for insert mode completion of words in adjacent tmux panes
+Plug 'wellle/tmux-complete.vim'                                " Vim plugin for insert mode completion of words in adjacent tmux panes
 
 " Snippets
 " Plug 'SirVer/ultisnips'
-Plug 'theniceboy/vim-snippets' " vim-snipmate default snippets (Previously snipmate-snippets)
+Plug 'theniceboy/vim-snippets'                                 " vim-snipmate default snippets (Previously snipmate-snippets)
 
 " Undo Tree
-Plug 'mbbill/undotree' " The undo history visualizer for VIM
+Plug 'mbbill/undotree'                                         " The undo history visualizer for VIM
 
 " Git
-Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }    " Gitignore plugin for Vim
-Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }  " Create useful .gitignore files for your project
+Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }   " Gitignore plugin for Vim
+Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create useful .gitignore files for your project
 "Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'        " A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
-Plug 'cohama/agit.vim' " A powerful Git log viewer
+Plug 'cohama/agit.vim'               " A powerful Git log viewer
 
 " Autoformat
-Plug 'google/vim-maktaba'  " Consistent Vimscript
-Plug 'google/vim-codefmt'  " codefmt is a utility for syntax-aware code formatting.
-Plug 'sbdchd/neoformat' " A (Neo)vim plugin for formatting code.
+Plug 'google/vim-maktaba'            " Consistent Vimscript
+Plug 'google/vim-codefmt'            " codefmt is a utility for syntax-aware code formatting.
+Plug 'sbdchd/neoformat'              " A (Neo)vim plugin for formatting code.
 " Tex
 " Plug 'lervag/vimtex'
 
 " CSharp
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
+Plug 'OmniSharp/omnisharp-vim'       " Vim omnicompletion (intellisense) and more for C#
+Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] }  " omnisharp-vim dependency, Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
 
 " HTML, CSS, JavaScript, Typescript, PHP, JSON, etc.
-Plug 'elzr/vim-json'
-Plug 'neoclide/jsonc.vim'
-Plug 'othree/html5.vim'
-Plug 'alvan/vim-closetag'
+Plug 'elzr/vim-json'       " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing. Pathogen-friendly.
+Plug 'neoclide/jsonc.vim'  " jsonc syntax support for vim
+Plug 'othree/html5.vim'    " HTML5 omnicomplete and syntax
+Plug 'alvan/vim-closetag'  " Auto close (X)HTML tags
 " Plug 'hail2u/vim-css3-syntax' " , { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
 " Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
 " Plug 'pangloss/vim-javascript', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
+Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }  " The most accurate syntax highlighting plugin for JavaScript and Flow.js
 " Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
 " Plug 'jelera/vim-javascript-syntax', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
 "Plug 'jaxbot/browserlink.vim'
@@ -165,54 +187,32 @@ Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', '
 " Plug 'leafgarland/typescript-vim'
 
 " Go
-Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
+Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }          " Go development plugin for Vim
 
 " Python
 " Plug 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
-Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
+Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }  " A nicer Python indentation style for vim.
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }  " Semantic Highlighting for Python in Neovim
 "Plug 'vim-scripts/indentpython.vim', { 'for' :['python', 'vim-plug'] }
 "Plug 'plytophogy/vim-virtualenv', { 'for' :['python', 'vim-plug'] }
-Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }
+Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }  " Text objects, folding, and more for Python and other indented languages.
 
 " Flutter
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'f-person/pubspec-assist-nvim', { 'for' : ['pubspec.yaml'] }
+Plug 'dart-lang/dart-vim-plugin'  " Syntax highlighting for Dart in Vim
+Plug 'f-person/pubspec-assist-nvim', { 'for' : ['pubspec.yaml'] }  " Easily add dependencies to your Dart / Flutter project without leaving Neovim
 
 " Swift
-Plug 'keith/swift.vim'
-Plug 'arzg/vim-swift'
+Plug 'keith/swift.vim'            " Vim runtime files for Swift
+Plug 'arzg/vim-swift'             " A Swift syntax plugin for Vim that aims to match Xcode’s level of detail (WIP)
 
 " Markdown
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
-Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
-Plug 'dkarter/bullets.vim'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}  " Instant Markdown previews from VIm!
+Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }  " VIM Table Mode for instant table creation.
+Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }  " A vim 7.4+ plugin to generate table of contents for Markdown files.
+Plug 'dkarter/bullets.vim'        "  Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 
 " Other filetypes
 " Plug 'jceb/vim-orgmode', {'for': ['vim-plug', 'org']}
-
-" Editor Enhancement
-"Plug 'Raimondi/delimitMate'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mg979/vim-visual-multi'
-Plug 'tomtom/tcomment_vim' " in <space>cn to comment a line
-Plug 'theniceboy/antovim' " gs to switch
-Plug 'tpope/vim-surround' " type yskw' to wrap the word with '' or type cs'` to change 'word' to `word`
-Plug 'gcmt/wildfire.vim' " in Visual mode, type k' to select all text in '', or type k) k] k} kp
-Plug 'junegunn/vim-after-object' " da= to delete what's after =
-Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
-Plug 'tpope/vim-capslock'	" Ctrl+L (insert) to toggle capslock
-Plug 'easymotion/vim-easymotion'
-" Plug 'Konfekt/FastFold'
-"Plug 'junegunn/vim-peekaboo'
-"Plug 'wellle/context.vim'
-Plug 'svermeulen/vim-subversive'
-Plug 'theniceboy/argtextobj.vim'
-Plug 'rhysd/clever-f.vim'
-Plug 'chrisbra/NrrwRgn'
-Plug 'AndrewRadev/splitjoin.vim'
-
 
 
 call plug#end()

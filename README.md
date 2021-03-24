@@ -28,153 +28,156 @@
 
 ### Plugs List
 #### Appearance
+- [x] [vim-deus](https://github.com/theniceboy/vim-deus) -- A better color scheme for the late night coder
 
-[vim-deus](https://github.com/theniceboy/vim-deus) -- A better color scheme for the late night coder
+- [x] [vim-bolt](https://github.com/bpietravalle/vim-bolt) -- vim syntax highlighting for firebase-bolt
 
-[vim-bolt](https://github.com/bpietravalle/vim-bolt) -- vim syntax highlighting for firebase-bolt
+- [x] [eleline.vim](https://github.com/theniceboy/eleline.vim) -- Another elegant statusline for vim
 
-[eleline.vim](https://github.com/theniceboy/eleline.vim) -- Another elegant statusline for vim
+- [x] [vim-scrollstatus](https://github.com/ojroques/vim-scrollstatus) --  A Vim plugin to display a scrollbar in the statusline
 
-[vim-scrollstatus](https://github.com/ojroques/vim-scrollstatus) --  A Vim plugin to display a scrollbar in the statusline
+- [x] [vim-hexokinase](https://github.com/RRethy/vim-hexokinase) -- asynchronously display the colours in file
 
-[vim-hexokinase](https://github.com/RRethy/vim-hexokinase) -- asynchronously display the colours in file
+- [x] [vim-illuminate](https://github.com/RRethy/vim-illuminate) --  automatically highlighting other uses of the current word under the cursor.Integrates with Neovim's LSP client for intelligent highlighting.
 
-[vim-illuminate](https://github.com/RRethy/vim-illuminate) --  automatically highlighting other uses of the current word under the cursor.Integrates with Neovim's LSP client for intelligent highlighting.
+- [x] [rainbow](https://github.com/luochen1990/rainbow) -- 
+Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
+
+- [x] [vim-xtabline](https://github.com/mg979/vim-xtabline) -- Tabline customization with buffer filtering
+
+- [x] [vim-devicons](https://github.com/ryanoasis/vim-devicons) -- Adds file type icons to Vim plugins
+
+- [x] [terminus](https://github.com/wincent/terminus) -- Enhanced terminal integration for Vim
 
 #### Useful Tools
 
-[vimcdoc](https://github.com/yianwillis/vimcdoc) -- vim chinese doc
+- [x] [vimcdoc](https://github.com/yianwillis/vimcdoc) -- vim chinese doc
 
-[fzf.vim](https://github.com/junegunn/fzf.vim) -- fzf vim
+- [x] [fzf.vim](https://github.com/junegunn/fzf.vim) -- fzf vim
 
-[LeaderF](https://github.com/Yggdroot/LeaderF) -- An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly for both vim and neovim
+- [x] [LeaderF](https://github.com/Yggdroot/LeaderF) -- An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly for both vim and neovim
 
-[rnvimr](https://github.com/kevinhwang91/rnvimr) -- Make Ranger running in a floating window to communicate with Neovim via RPC
+- [x] [rnvimr](https://github.com/kevinhwang91/rnvimr) -- Make Ranger running in a floating window to communicate with Neovim via RPC
 
-[vim-rooter](https://github.com/airblade/vim-rooter) -- Changes Vim working directory to project root.
+- [x] [vim-rooter](https://github.com/airblade/vim-rooter) -- Changes Vim working directory to project root.
 
-[any-jump](https://github.com/pechorin/any-jump) -- Jump to any definition and references eye IDE madness without overhead rocket
+- [x] [any-jump](https://github.com/pechorin/any-jump) -- Jump to any definition and references eye IDE madness without overhead rocket
 
-[vim-startify](https://github.com/mhinz/vim-startify) -- The fancy start screen for vim.
+- [x] [vim-startify](https://github.com/mhinz/vim-startify) -- The fancy start screen for vim.
 
-[asynctasks.vim](https://github.com/skywind3000/asynctasks.vim) -- Modern Task System for Project Building, Testing and Deploying !!
+- [x] [asynctasks.vim](https://github.com/skywind3000/asynctasks.vim) -- Modern Task System for Project Building, Testing and Deploying !!
 
-[asyncrun.vim](https://github.com/skywind3000/asyncrun.vim) -- Run Async Shell Commands in Vim 8.0 / NeoVim and Output to the Quickfix Window !!
+- [x] [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim) -- Run Async Shell Commands in Vim 8.0 / NeoVim and Output to the Quickfix Window !!
 
-[calendar.vim](https://github.com/itchyny/calendar.vim) -- A calendar application for Vim
+- [x] [calendar.vim](https://github.com/itchyny/calendar.vim) -- A calendar application for Vim
 
-[rainbow](https://github.com/luochen1990/rainbow) -- 
-Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
+- [x] [suda.vim](https://github.com/lambdalisue/suda.vim) -- An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows
 
+- [x] [far.vim](https://github.com/brooth/far.vim) -- Find And Replace Vim plugin
 
-[vim-xtabline](https://github.com/mg979/vim-xtabline) -- Tabline customization with buffer filtering
+- [x] [auto-pairs](https://github.com/jiangmiao/auto-pairs) -- Vim plugin, insert or delete brackets, parens, quotes in pair
 
-[vim-devicons](https://github.com/ryanoasis/vim-devicons) -- Adds file type icons to Vim plugins
+- [x] [vim-visual-multi](https://github.com/mg979/vim-visual-multi) -- Multiple cursors plugin for vim/neovim
 
-[terminus](https://github.com/wincent/terminus) -- Enhanced terminal integration for Vim
+- [x] [tcomment_vim](https://github.com/tomtom/tcomment_vim) -- An extensible & universal comment vim-plugin that also handles embedded filetypes
 
-[suda.vim](https://github.com/lambdalisue/suda.vim) -- An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows
+- [x] [antovim](https://github.com/theniceboy/antovim) -- Super-simple vim plugin for cycling through antonyms/words related to word under cursor
 
-[far.vim](https://github.com/brooth/far.vim) -- Find And Replace Vim plugin
+- [x] [vim-surround](https://github.com/tpope/vim-surround) -- surround.vim: quoting/parenthesizing made simple
+
+- [x] [wildfire.vim](https://github.com/gcmt/wildfire.vim) -- Smart selection of the closest text object
+
+- [x] [vim-after-object](https://github.com/junegunn/vim-after-object) -- Target text *after* the designated characters
+
+- [x] [tabular](https://github.com/godlygeek/tabular) -- Vim script for text filtering and alignment
+
+- [x] [vim-capslock](https://github.com/tpope/vim-capslock) -- Software caps lock
+
+- [x] [vim-easymotion](https://github.com/easymotion/vim-easymotion) -- Vim motions on speed!
+
+- [x] [vim-subversive](https://github.com/svermeulen/vim-subversive) -- Vim plugin providing operator motions to quickly replace text
+
+- [x] [argtextobj](https://github.com/theniceboy/argtextobj.vim) -- Text-object like motion for arguments (mod for colemak)
+
+- [x] [clever-f.vim](https://github.com/rhysd/clever-f.vim) -- Extended f, F, t and T key mappings for Vim.
+
+- [x] [NrrwRgn](https://github.com/chrisbra/NrrwRgn) -- A Narrow Region Plugin for vim (like Emacs Narrow Region)
+
+- [x] [splitjoin](https://github.com/AndrewRadev/splitjoin.vim) -- Switch between single-line and multiline forms of code
+
 
 #### Programming
 
-[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
+- [x] [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
 
-[playground](https://github.com/nvim-treesitter/playground) -- Treesitter playground integrated into Neovim
+- [x] [playground](https://github.com/nvim-treesitter/playground) -- Treesitter playground integrated into Neovim
 
-[nvim-treesitter-refactor](https://github.com/nvim-treesitter/nvim-treesitter-refactor) -- Refactor module for nvim-treesitter
+- [x] [nvim-treesitter-refactor](https://github.com/nvim-treesitter/nvim-treesitter-refactor) -- Refactor module for nvim-treesitter
 
-[nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context) -- Show code context
+- [x] [nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context) -- Show code context
 
-[vista.vim](https://github.com/liuchengxu/vista.vim) -- Viewer & Finder for LSP symbols and tags
+- [x] [vista.vim](https://github.com/liuchengxu/vista.vim) -- Viewer & Finder for LSP symbols and tags
 
-[coc.nvim](https://github.com/neoclide/coc.nvim) -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
+- [x] [coc.nvim](https://github.com/neoclide/coc.nvim) -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 
-[tmux-complete.vim](https://github.com/wellle/tmux-complete.vim) -- Vim plugin for insert mode completion of words in adjacent tmux panes
+- [x] [tmux-complete.vim](https://github.com/wellle/tmux-complete.vim) -- Vim plugin for insert mode completion of words in adjacent tmux panes
 
-[vim-snippets](https://github.com/theniceboy/vim-snippets) -- vim-snipmate default snippets (Previously snipmate-snippets)
+- [x] [vim-snippets](https://github.com/theniceboy/vim-snippets) -- vim-snipmate default snippets (Previously snipmate-snippets)
 
-[undotree](https://github.com/mbbill/undotree) -- The undo history visualizer for VIM
+- [x] [undotree](https://github.com/mbbill/undotree) -- The undo history visualizer for VIM
 
-[vim-gitignore](https://github.com/theniceboy/vim-gitignore) -- Gitignore plugin for Vim
+- [x] [vim-gitignore](https://github.com/theniceboy/vim-gitignore) -- Gitignore plugin for Vim
 
-[fzf-gitignore](https://github.com/fszymanski/fzf-gitignore) -- Create useful .gitignore files for your project
+- [x] [fzf-gitignore](https://github.com/fszymanski/fzf-gitignore) -- Create useful .gitignore files for your project
 
-[vim-gitgutter](https://github.com/airblade/vim-gitgutter) -- A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
+- [x] [vim-gitgutter](https://github.com/airblade/vim-gitgutter) -- A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
 
-[agit.vim](https://github.com/cohama/agit.vim) -- A powerful Git log viewer
+- [x] [agit.vim](https://github.com/cohama/agit.vim) -- A powerful Git log viewer
 
-[vim-maktaba](https://github.com/google/vim-maktaba) -- Consistent Vimscript
+- [x] [vim-maktaba](https://github.com/google/vim-maktaba) -- Consistent Vimscript
 
-[vim-codefmt](https://github.com/google/vim-codefmt) -- codefmt is a utility for syntax-aware code formatting. 
+- [x] [vim-codefmt](https://github.com/google/vim-codefmt) -- codefmt is a utility for syntax-aware code formatting. 
 
-[neoformat](https://github.com/sbdchd/neoformat) -- A (Neo)vim plugin for formatting code.
+- [x] [neoformat](https://github.com/sbdchd/neoformat) -- A (Neo)vim plugin for formatting code.
 
-[omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim) -- 
+- [x] [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim) -- Vim omnicompletion (intellisense) and more for C#
 
-[ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) -- 
+- [x] [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) -- Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
 
-[vim-json](https://github.com/elzr/vim-json) -- 
+- [x] [vim-json](https://github.com/elzr/vim-json) -- A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing. Pathogen-friendly.
 
-[jsonc.vim](https://github.com/neoclide/jsonc.vim) -- 
+- [x] [jsonc.vim](https://github.com/neoclide/jsonc.vim) -- jsonc syntax support for vim
 
-[html5.vim](https://github.com/othree/html5.vim) -- 
+- [x] [html5.vim](https://github.com/othree/html5.vim) -- HTML5 omnicomplete and syntax
 
-[vim-closetag](https://github.com/alvan/vim-closetag) -- 
+- [x] [vim-closetag](https://github.com/alvan/vim-closetag) -- Auto close (X)HTML tags
 
-[vim-js](https://github.com/yuezk/vim-js) -- 
+- [x] [vim-js](https://github.com/yuezk/vim-js) -- The most accurate syntax highlighting plugin for JavaScript and Flow.js
 
-[vim-go](https://github.com/fatih/vim-go) -- 
+- [x] [vim-go](https://github.com/fatih/vim-go) -- Go development plugin for Vim
 
-[vim-python-pep8-index](https://github.com/Vimjas/vim-python-pep8-index) -- 
+- [x] [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent) -- A nicer Python indentation style for vim.
 
-[semshi](https://github.com/numirias/semshi) -- 
+- [x] [semshi](https://github.com/numirias/semshi) -- Semantic Highlighting for Python in Neovim
 
-[braceless.vim](https://github.com/tweekmonster/braceless.vim) -- 
+- [x] [braceless.vim](https://github.com/tweekmonster/braceless.vim) -- Text objects, folding, and more for Python and other indented languages.
 
-[dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin) -- 
+- [x] [dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin) -- Syntax highlighting for Dart in Vim
 
-[pubspec-assist-nvim](https://github.com/f-person/pubspec-assist-nvim) -- 
+- [x] [pubspec-assist-nvim](https://github.com/f-person/pubspec-assist-nvim) -- Easily add dependencies to your Dart / Flutter project without leaving Neovim
 
-[swift.vim](https://github.com/keith/swift.vim) -- 
+- [x] [swift.vim](https://github.com/keith/swift.vim) -- Vim runtime files for Swift
 
-[vim-swift](https://github.com/arzg/vim-swift) -- 
+- [x] [vim-swift](https://github.com/arzg/vim-swift) -- A Swift syntax plugin for Vim that aims to match Xcode’s level of detail (WIP)
 
-[vim-instant-markdown](https://github.com/suan/vim-install-markdown) -- 
+- [x] [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) -- Instant Markdown previews from VIm!
 
-[vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) -- 
+- [x] [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) -- VIM Table Mode for instant table creation.
 
-[vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc) -- 
+- [x] [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc) -- A vim 7.4+ plugin to generate table of contents for Markdown files.
 
-[bullets.vim](https://github.com/dkarter/bullets.vim) -- 
+- [x] [bullets.vim](https://github.com/dkarter/bullets.vim) --  Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 
-[auto-pairs](https://github.com/jiangmiao/auto-pairs) -- 
 
-[vim-visual-multi](https://github.com/mg979/vim-visual-multi) -- 
-
-[tcomment_vim](https://github.com/tomtom/tcomment_vim) -- 
-
-[antovim](https://github.com/theniceboy/antovim) -- 
-
-[vim-surround](https://github.com/tpope/vim-surround) -- 
-
-[wildfire.vim](https://github.com/gcmt/wildfire.vim) -- 
-
-[vim-after-object](https://github.com/junegunn/vim-after-object) -- 
-
-[tabular](https://github.com/godlygeek/tabular) -- 
-
-[vim-easymotion](https://github.com/easymotion/vim-easymotion) -- 
-
-[vim-subversive](https://github.com/svermeulen/vim-subversive) -- 
-
-[argtextobj](https://github.com/theniceboy/argtextobj.vim) -- 
-
-[clever-f.vim](https://github.com/rhysd/clever-f.vim) -- 
-
-[NrrwRgn](https://github.com/chrisbra/NrrwRgn) -- 
-
-[splitjoin](https://github.com/AndrewRadev/splitjoin.vim) -- 
 
 [^_^]: [<++>](https://github.com/<++>/<++>)
