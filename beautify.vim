@@ -45,13 +45,6 @@ let g:scrollstatus_size = 15
 
 
 " ===
-" === vim-illuminate
-" ===
-let g:Illuminate_delay = 750
-hi illuminatedWord cterm=undercurl gui=undercurl
-
-
-" ===
 " === rainbow
 " ===
 let g:rainbow_active = 1

@@ -251,6 +251,14 @@ noremap <c-y> :NR<CR>
 """|_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|_| |_| |_|_|_| |_|\__, |
 """                 |___/                                       |___/
 
+
+" ===
+" === vim-illuminate
+" ===
+let g:Illuminate_delay = 750
+hi illuminatedWord cterm=undercurl gui=undercurl
+
+
 " ===
 " === nvim-treesitter
 " ===
@@ -604,6 +612,10 @@ let g:bullets_enabled_file_types = [
 			\]
 
 
+
+" ===================== End of Plugin Settings =====================
+
+
 " ===
 " === vim-bookmarks
 " ===
@@ -754,6 +766,4 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 " ===
 let g:typescript_ignore_browserwords = 1
 
-
-" ===================== End of Plugin Settings =====================
 

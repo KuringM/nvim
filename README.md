@@ -26,8 +26,9 @@
 - Install `figlet` for inputing text ASCII art
 - Install `xclip` for system clipboard access (`Linux` and `xorg` only)
 
-### Plugs List
+## Plugs List
 #### Appearance
+---
 - [x] [vim-deus](https://github.com/theniceboy/vim-deus) -- A better color scheme for the late night coder
 
 - [x] [vim-bolt](https://github.com/bpietravalle/vim-bolt) -- vim syntax highlighting for firebase-bolt
@@ -50,7 +51,7 @@ Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, pow
 - [x] [terminus](https://github.com/wincent/terminus) -- Enhanced terminal integration for Vim
 
 #### Useful Tools
-
+---
 - [x] [vimcdoc](https://github.com/yianwillis/vimcdoc) -- vim chinese doc
 
 - [x] [fzf.vim](https://github.com/junegunn/fzf.vim) -- fzf vim
@@ -107,7 +108,7 @@ Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, pow
 
 
 #### Programming
-
+---
 - [x] [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
 
 - [x] [playground](https://github.com/nvim-treesitter/playground) -- Treesitter playground integrated into Neovim
@@ -178,6 +179,87 @@ Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, pow
 
 - [x] [bullets.vim](https://github.com/dkarter/bullets.vim) --  Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 
+---
+- [ ] [nerdtree](https://github.com/scrooloose/nerdtree) -- A tree explorer plugin for vim.
+
+- [ ] [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) -- A plugin of NERDTree showing git status
+
+- [ ] [vim-orgmode](https://github.com/jceb/vim-orgmode) -- Text outlining and task management for Vim based on Emacs' Org-Mode
+ 
+
+- [ ] [vim-pdf](https://github.com/makerj/vim-pdf) -- Make VIM as a PDF reader
+ 
+
+- [ ] [vim-session](https://github.com/xolox/vim-session) -- Extended session management for Vim (:mksession on steroids)
+ 
+
+- [ ] [vim-misc](https://github.com/xolox/vim-misc) -- Miscellaneous auto-load Vim scripts
+ 
+
+- [ ] [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils) -- interpret a file by function and cache file automatically
+
+- [ ] [vim-textobj-user](https://github.com/kana/vim-textobj-user) -- Create your own text objects
+ 
+- [ ] [nvim-yarp](https://github.com/roxma/nvim-yarp) -- Yet Another Remote Plugin Framework for Neovim
+
+- [ ] [goyo.vim](https://github.com/junegunn/goyo.vim) -- Distraction-free writing in Vim
+
+- [ ] [vim-wordy](https://github.com/reedes/vim-wordy) -- Uncover usage problems in your writing
+
+- [ ] [thesaurus_query.vim](https://github.com/ron89/thesaurus_query.vim) -- Multi-language Thesaurus Query and Replacement plugin for Vim/NeoVim
+
+- [ ] [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks) -- Vim bookmark plugin
+
+- [ ] [zeavim.vim](https://github.com/KabbAmine/zeavim.vim) -- Zeal for Vim
+
+- [ ] [delimitMate](https://github.com/Raimondi/delimitMate) -- Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 
 
-[^_^]: [<++>](https://github.com/<++>/<++>)
+- [ ] [FastFold](https://github.com/Konfekt/FastFold) -- Speed up Vim by updating folds only when called-for.
+
+- [ ] [vim-peekaboo](https://github.com/junegunn/vim-peekaboo) -- " / @ / CTRL-R
+
+- [ ] [context.vim](https://github.com/wellle/context.vim) -- Vim plugin that shows the context of the currently visible buffer contents
+
+- [ ] [vim-calc](https://github.com/theniceboy/vim-calc) -- A vim plugin that calculates math equations in the current buffer
+
+- [ ] [vimspector](https://github.com/puremourning/vimspector) -- vimspector - A multi-language debugging system for Vim
+
+- [ ] [ultisnips](https://github.com/SirVer/ultisnips) -- UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
+
+- [ ] [vim-signify](https://github.com/mhinz/vim-signify) -- Show a diff using Vim its sign column.
+
+- [ ] [vimtex](https://github.com/lervag/vimtex) -- VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.
+
+- [ ] [vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax) -- CSS3 syntax (and syntax defined in some foreign specifications) support for Vim's built-in syntax/css.vim
+
+- [ ] [PIV](https://github.com/spf13/PIV) -- PHP Integration environment for Vim
+
+- [ ] [vim-javascript](https://github.com/pangloss/vim-javascript) -- Vastly improved Javascript indentation and syntax support in Vim.
+
+- [ ] [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty) -- JSX and TSX syntax pretty highlighting for vim.
+
+- [ ] [vim-javascript-syntax](https://github.com/jelera/vim-javascript-syntax) -- Enhanced javascript syntax file for Vim
+
+- [ ] [browserlink.vim](https://github.com/jaxbot/browserlink.vim) -- Live browser editing for Vim
+
+- [ ] [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) -- Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
+
+- [ ] [vim-vue](https://github.com/posva/vim-vue) -- Syntax Highlight for Vue.js components
+
+- [ ] [vim-svelte](https://github.com/evanleck/vim-svelte) -- Vim syntax highlighting and indentation for Svelte 3 components.
+
+- [ ] [vim-svelte-plugin](https://github.com/leafOfTree/vim-svelte-plugin) -- Vim syntax and indent plugin for .svelte files
+
+- [ ] [typescript-vim](https://github.com/leafgarland/typescript-vim) -- Typescript syntax files for Vim
+
+- [ ] [SimpylFold](https://github.com/tmhedberg/SimpylFold) -- No-BS Python code folding for Vim
+
+- [ ] [indentpython.vim](https://github.com/vim-scripts/indentpython.vim) -- An alternative indentation script for python
+
+- [ ] [vim-virtualenv](https://github.com/plytophogy/vim-virtualenv) -- Vim plugin for working with python virtualenvs
+
+- [ ] [vim-orgmode](https://github.com/jceb/vim-orgmode) -- Text outlining and task management for Vim based on Emacs' Org-Mode
+
+[^_^]: - [ ] [<++>](https://github.com/<++>/<++>)
+
