@@ -181,6 +181,9 @@ noremap <LEADER>/ :set splitright<CR>:vsplit<CR>:term<CR>
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
+" Preass , twice to write down the '<++>' and back to Nomral mode
+inoremap ,, <++><ESC>
+
 " Spelling Check with <space>sc
 noremap <LEADER>sc :set spell!<CR>
 

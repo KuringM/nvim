@@ -34,10 +34,6 @@ Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }      " asynchronously 
 " Other visual enhancement
 Plug 'luochen1990/rainbow'                                     " Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
 
-Plug 'mg979/vim-xtabline'                                      " Tabline customization with buffer filtering
-Plug 'ryanoasis/vim-devicons'                                  " Adds file type icons to Vim plugins
-Plug 'wincent/terminus'                                        " Enhanced terminal integration for Vim
-
 """ _   _           __       _   _____           _
 """| | | |___  ___ / _|_   _| | |_   _|__   ___ | |___
 """| | | / __|/ _ \ |_| | | | |   | |/ _ \ / _ \| / __|
