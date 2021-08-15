@@ -31,6 +31,11 @@ colorscheme deus
 hi NonText ctermfg=gray guifg=grey10
 "hi SpecialKey ctermfg=blue guifg=grey70
 
+" ===
+" === vim-hexokinase
+" ===
+let g:Hexokinase_highlighters = ['backgroundfull']
+
 
 " ===
 " === eleline.vim

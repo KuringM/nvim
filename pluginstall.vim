@@ -54,7 +54,7 @@ Plug 'pechorin/any-jump.vim'                                   " Jump to any def
 
 " Mini Vim-APP
 "Plug 'jceb/vim-orgmode'                                       " Text outlining and task management for Vim based on Emacs' Org-Mode
-Plug 'mhinz/vim-startify'                                      " The fancy start screen for Vim.
+"Plug 'mhinz/vim-startify'                                      " The fancy start screen for Vim.
 Plug 'skywind3000/asynctasks.vim'                              " Modern Task System for Project Building, Testing and Deploying !!
 Plug 'skywind3000/asyncrun.vim'                                " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to the Quickfix Window !!
 
