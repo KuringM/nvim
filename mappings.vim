@@ -44,9 +44,16 @@ vnoremap <LEADER>tt :s/    /\t/g
 noremap <silent> <LEADER>o za
 
 " Open up lazygit
-noremap \g :Git 
+"noremap \g :!Git 
 noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 " nnoremap <c-n> :tabe<CR>:-tabmove<CR>:term lazynpm<CR>
+
+
+" ===
+" === Searching
+" ===
+noremap - N
+noremap = n
 
 
 " ===
@@ -86,33 +93,7 @@ noremap h e
 noremap <C-U> 5<C-y>
 noremap <C-E> 5<C-e>
 
-
 source $XDG_CONFIG_HOME/nvim/cursor.vim
-
-" ===
-" === Insert Mode Cursor Movement
-" ===
-inoremap <C-a> <ESC>A
-
-
-" ===
-" === Command Mode Cursor Movement
-" ===
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-cnoremap <C-b> <Left>
-cnoremap <C-f> <Right>
-cnoremap <M-b> <S-Left>
-cnoremap <M-w> <S-Right>
-
-
-" ===
-" === Searching
-" ===
-noremap - N
-noremap = n
 
 
 " ===
@@ -167,13 +148,23 @@ noremap tmi :+tabmove<CR>
 
 
 " ===
-" === Other useful stuff
+" === Command Mode Cursor Movement
+" ===
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-w> <S-Right>
+
+
+" ===
+" === Nomral Mode Cursor Movement
 " ===
 " Open a new instance of st with the cwd
 nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q<CR>
-
-" Move the next character to the end of the line with ctrl+9
-inoremap <C-u> <ESC>lx$p
 
 " Opening a terminal window
 noremap <LEADER>/ :set splitright<CR>:vsplit<CR>:term<CR>
@@ -181,19 +172,14 @@ noremap <LEADER>/ :set splitright<CR>:vsplit<CR>:term<CR>
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
-" Preass , twice to write down the '<++>' and back to Nomral mode
-inoremap ,, <++><ESC>
-
 " Spelling Check with <space>sc
 noremap <LEADER>sc :set spell!<CR>
 
 " Press ` to change case (instead of ~)
 noremap ` ~
 
-noremap <C-c> zz
-
-" Auto change directory to current dir
-autocmd BufEnter * silent! lcd %:p:h
+" cursor line move to the middle window
+"noremap <C-c> zz
 
 " Call figlet
 noremap tx :r !figlet 
@@ -202,7 +188,27 @@ noremap tx :r !figlet
 noremap \s :%s//g<left><left>
 
 " set wrap
-noremap <LEADER>sw :set wrap<CR>
+noremap <LEADER>sw :set nowrap<CR>
+
+
+" ===
+" === Insert Mode Cursor Movement
+" ===
+" Move to the line home
+inoremap <C-a> <ESC>A
+
+" Move the next character to the end of the line with ctrl+9
+inoremap <C-u> <ESC>lx$p
+
+" Preass , twice to write down the '<++>' and back to Nomral mode
+inoremap ,, <++><ESC>
+
+
+" ===
+" === Other useful stuff
+" ===
+" Auto change directory to current dir
+autocmd BufEnter * silent! lcd %:p:h
 
 " press f10 to show hlgroup
 function! SynGroup()
@@ -253,6 +259,3 @@ func! CompileRunGcc()
 		:term go run .
 	endif
 endfunc
-
-
-

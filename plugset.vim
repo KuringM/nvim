@@ -348,10 +348,10 @@ nnoremap <LEADER>h :call Show_documentation()<CR>
 " let $NVIM_COC_LOG_LEVEL = 'debug'
 " let $NVIM_COC_LOG_FILE = '/Users/david/Desktop/log.txt'
 
-nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
+"nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
-nnoremap <c-c> :CocCommand<CR>
+"nnoremap <c-c> :CocCommand<CR>
 " Text Objects
 xmap kf <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -766,4 +766,9 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 " ===
 let g:typescript_ignore_browserwords = 1
 
+
+" ===
+" === vim-wiki
+" ===
+ let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/', 'path_html': '~/.local/share/vimwiki/'}]
 

@@ -1,7 +1,8 @@
-" ===
 " ====================
 " === Editor Setup ===
 " ====================
+
+
 " ===
 " === System
 " ===
@@ -10,6 +11,7 @@ let &t_ut=''                                " empty to tell Vim it needs to draw
 set autochdir                               " Your working directory will always be the same as your working directory
 
 
+" ===
 " === Editor behavior
 " ===
 set exrc
