@@ -1,63 +1,32 @@
-"""    _
-"""   / \   _ __  _ __   ___  __ _ _ __ __ _ _ __   ___ ___
-"""  / _ \ | '_ \| '_ \ / _ \/ _` | '__/ _` | '_ \ / __/ _ \
-""" / ___ \| |_) | |_) |  __/ (_| | | | (_| | | | | (_|  __/
-"""/_/   \_\ .__/| .__/ \___|\__,_|_|  \__,_|_| |_|\___\___|
-"""        |_|   |_|
+" ===================== Appearance =====================
 
+set t_Co=256
+set termguicolors
 
-" ===
-" === Dress up my vim
-" ===
-set termguicolors " enable true colors support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"set background=dark
-"let ayucolor="mirage"
-"let g:oceanic_next_terminal_bold = 1
-"let g:oceanic_next_terminal_italic = 1
-"let g:one_allow_italics = 1
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-"vim.g:colors_name = 'deus'
+set background=dark    " Setting dark mode
 colorscheme deus
-"color dracula
-"color one
-"color gruvbox
-"let ayucolor="light"
-"color ayu
-"color xcodelighthc
-"set background=light
-"set cursorcolumn
+let g:deus_termcolors=256
 
-hi NonText ctermfg=gray guifg=grey10
-"hi SpecialKey ctermfg=blue guifg=grey70
-
-" ===
-" === vim-hexokinase
-" ===
+" vim-hexokinase
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 
-" ===
-" === eleline.vim
-" ===
+" eleline.vim
 let g:airline_powerline_fonts = 1
 
 
-" ===
-" === vim-scrollstatus
-" ===
+" vim-scrollstatus
 let g:scrollstatus_size = 15
 
 
-" ===
-" === rainbow
-" ===
+" rainbow
 let g:rainbow_active = 1
 
 
-" ===
-" === xtabline
-" ===
+" xtabline
 let g:xtabline_settings = {}
 let g:xtabline_settings.enable_mappings = 0
 let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
@@ -67,9 +36,7 @@ noremap to :XTabMode<CR>
 noremap \p :echo expand('%:p')<CR>
 
 
-" ===
-" === Terminal Behaviors
-" ===
+" Terminal Behaviors
 let g:neoterm_autoscroll = 1
 autocmd TermOpen term://* startinsert
 tnoremap <C-N> <C-\><C-N>
@@ -91,9 +58,7 @@ let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
 
 
-" ===
-" === vim-calendar
-" ===
+" vim-calendar
 "noremap \c :Calendar -position=here<CR>
 noremap \\ :Calendar -view=clock -position=here<CR>
 let g:calendar_google_calendar = 1
@@ -117,9 +82,7 @@ augroup calendar-mappings
 augroup END
 
 
-" ===
-" === dashboard-nvim
-" ===
+" dashboard-nvim
 let g:dashboard_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',

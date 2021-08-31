@@ -1,6 +1,5 @@
-" ===
-" === Basic Mappings
-" ===
+" ===================== Basic Mappings =====================
+
 " Set <LEADER> as <SPACE>, ; as :
 let mapleader=" "
 noremap ; :
@@ -42,11 +41,6 @@ vnoremap <LEADER>tt :s/    /\t/g
 
 " Folding
 noremap <silent> <LEADER>o za
-
-" Open up lazygit
-"noremap \g :!Git 
-noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
-" nnoremap <c-n> :tabe<CR>:-tabmove<CR>:term lazynpm<CR>
 
 
 " ===
@@ -92,8 +86,6 @@ noremap h e
 " Ctrl + U or E will move up/down the view port without moving the cursor
 noremap <C-U> 5<C-y>
 noremap <C-E> 5<C-e>
-
-source $XDG_CONFIG_HOME/nvim/cursor.vim
 
 
 " ===
@@ -179,7 +171,7 @@ noremap <LEADER>sc :set spell!<CR>
 noremap ` ~
 
 " cursor line move to the middle window
-"noremap <C-c> zz
+noremap <C-c> zz
 
 " Call figlet
 noremap tx :r !figlet 
