@@ -213,6 +213,7 @@ map <F10> :call SynGroup()<CR>
 noremap r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
+	let extension = expand('%:e')
 	if &filetype == 'c'
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
@@ -249,5 +250,13 @@ func! CompileRunGcc()
 		set splitbelow
 		:sp
 		:term go run .
+	elseif extension == 'ms'
+		execute "! ps -ef | grep \"zathura /tmp/op.pdf\" | grep -v grep | cut -c 9-16 | xargs kill -s 9"
+		execute "! groff -ms % -Tpdf > /tmp/op.pdf "
+		execute "! zathura /tmp/op.pdf &"
+	elseif extension == 'mom'
+		execute "! ps -ef | grep \"zathura /tmp/op.pdf\" | grep -v grep | cut -c 9-16 | xargs kill -s 9"
+		execute "! groff -mom % -Tpdf > /tmp/op.pdf "
+		execute "! zathura /tmp/op.pdf &"
 	endif
 endfunc
