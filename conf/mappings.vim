@@ -258,5 +258,7 @@ func! CompileRunGcc()
 		execute "! ps -ef | grep \"zathura /tmp/op.pdf\" | grep -v grep | cut -c 9-16 | xargs kill -s 9"
 		execute "! groff -mom % -Tpdf > /tmp/op.pdf "
 		execute "! zathura /tmp/op.pdf &"
+	elseif extension == 'me'
+		execute "! tbl % | groff -me -Tpdf | zathura -"
 	endif
 endfunc
