@@ -39,6 +39,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 
 " Leaderf
 " let g:Lf_WindowPosition = 'popup'
+let g:Lf_CacheDirectory = '/home/kuring/.local/share/'
 nnoremap <c-p> :Leaderf file<CR>
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewCode = 1
