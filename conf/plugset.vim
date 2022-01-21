@@ -308,6 +308,7 @@ let g:agit_no_default_mappings = 1
 
 
 " vim-instant-markdown
+filetype plugin on
 let g:instant_markdown_slow = 0
 let g:instant_markdown_autostart = 0
 " let g:instant_markdown_open_to_the_world = 1
@@ -316,6 +317,35 @@ let g:instant_markdown_allow_external_content = 0
 let g:instant_markdown_mathjax = 1
 let g:instant_markdown_mermaid = 1
 let g:instant_markdown_autoscroll = 1
+
+" markdown-preview
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1
+let g:mkdp_refresh_slow = 0
+let g:mkdp_command_for_global = 0
+let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_ip = ''
+let g:mkdp_browser = ''
+let g:mkdp_echo_preview_url = 0
+let g:mkdp_browserfunc = ''
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+		\ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0
+    \ }
+let g:mkdp_markdown_css = ''
+let g:mkdp_highlight_css = ''
+let g:mkdp_port = ''
+let g:mkdp_page_title = '「${name}」'
+let g:mkdp_filetypes = ['markdown']
 
 " vim-table-mode
 noremap <LEADER>tm :TableModeToggle<CR>

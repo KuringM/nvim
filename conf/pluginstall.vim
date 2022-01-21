@@ -51,7 +51,9 @@ Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create
 Plug 'airblade/vim-gitgutter'                                  " A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
 Plug 'cohama/agit.vim'                                         " A powerful Git log viewer
 """"""""""""""""""""""Language""""""""""""""""""""""""""""
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}          " Instant Markdown previews from VIm!
+"Plug 'suan/vim-instant-markdown', {'for': 'markdown'}          " Instant Markdown previews from VIm!
+"Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }  " VIM Table Mode for instant table creation.
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }                        " A vim 7.4+ plugin to generate table of contents for Markdown files.
 Plug 'dkarter/bullets.vim'                                     "  Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
