@@ -29,7 +29,7 @@ vnoremap Y "+y
 nnoremap < <<
 nnoremap > >>
 
-" Search no hightlight
+" Search no highlight
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " Adjacent duplicate words
@@ -153,7 +153,7 @@ cnoremap <M-w> <S-Right>
 
 
 " ===
-" === Nomral Mode Cursor Movement
+" === Normal Mode Cursor Movement
 " ===
 " Open a new instance of st with the cwd
 nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q<CR>
@@ -192,7 +192,7 @@ inoremap <C-a> <ESC>A
 " Move the next character to the end of the line with ctrl+9
 inoremap <C-u> <ESC>lx$p
 
-" Preass , twice to write down the '<++>' and back to Nomral mode
+" Press , twice to write down the '<++>' and back to Normal mode
 inoremap ,, <++><ESC>
 
 

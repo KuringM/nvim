@@ -306,18 +306,6 @@ nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 nnoremap <LEADER>gl :Agit<CR>
 let g:agit_no_default_mappings = 1
 
-
-" vim-instant-markdown
-filetype plugin on
-let g:instant_markdown_slow = 0
-let g:instant_markdown_autostart = 0
-" let g:instant_markdown_open_to_the_world = 1
-" let g:instant_markdown_allow_unsafe_content = 1
-let g:instant_markdown_allow_external_content = 0
-let g:instant_markdown_mathjax = 1
-let g:instant_markdown_mermaid = 1
-let g:instant_markdown_autoscroll = 1
-
 " markdown-preview
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
@@ -346,6 +334,7 @@ let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
 let g:mkdp_filetypes = ['markdown']
+set updatetime=100
 
 " vim-table-mode
 noremap <LEADER>tm :TableModeToggle<CR>
