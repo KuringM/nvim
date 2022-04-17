@@ -195,6 +195,9 @@ inoremap <C-u> <ESC>lx$p
 " Press , twice to write down the '<++>' and back to Normal mode
 inoremap ,, <++><ESC>
 
+" fuck
+nnoremap <c-z> :u<CR>      " Avoid using this**
+inoremap <c-z> <c-o>:u<CR>
 
 " ===
 " === Other useful stuff
@@ -250,6 +253,10 @@ func! CompileRunGcc()
 		set splitbelow
 		:sp
 		:term go run .
+	elseif &filetype == 'lua'
+		set splitbelow
+		:sp
+		:term lua %:t
 	elseif extension == 'ms'
 		execute "! ps -ef | grep \"zathura /tmp/op.pdf\" | grep -v grep | cut -c 9-16 | xargs kill -s 9"
 		execute "! groff -ms % -Tpdf > /tmp/op.pdf "

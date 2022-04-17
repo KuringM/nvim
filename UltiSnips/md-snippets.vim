@@ -4,7 +4,7 @@ autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4
 " find <++> and press down Enter
 autocmd Filetype markdown inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 " split line
-autocmd Filetype markdown inoremap <buffer> ,n ---<Enter><Enter>
+autocmd Filetype markdown inoremap <buffer> ,n ---<Enter>
 " bold
 autocmd Filetype markdown inoremap <buffer> ,b **** <++><Esc>F*hi
 " delete line
@@ -37,3 +37,7 @@ autocmd Filetype markdown inoremap <buffer> ,5 #####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap <buffer> ,6 ######<Space><Enter><++><Esc>kA
 " color text
 autocmd Filetype markdown inoremap <buffer> ,ct <font color=green><++></font>
+" space format
+autocmd Filetype markdown inoremap <buffer> ,nb &nbsp;
+autocmd Filetype markdown inoremap <buffer> ,en &ensp;
+autocmd Filetype markdown inoremap <buffer> ,em &emsp;
