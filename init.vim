@@ -6,20 +6,20 @@
 
 " Author: @Kuring
 " set begin
-source $XDG_CONFIG_HOME/nvim/conf/machine.vim
-source $XDG_CONFIG_HOME/nvim/conf/editor-setup.vim
+source $HOME/.config/nvim/conf/machine.vim
+source $HOME/.config/nvim/conf/editor-setup.vim
 
 " map
-source $XDG_CONFIG_HOME/nvim/conf/mappings.vim
-source $XDG_CONFIG_HOME/nvim/conf/loadSnips.vim
+source $HOME/.config/nvim/conf/mappings.vim
+source $HOME/.config/nvim/conf/loadSnips.vim
 
 " plug
-source $XDG_CONFIG_HOME/nvim/conf/vim-plug-dl.vim
-source $XDG_CONFIG_HOME/nvim/conf/pluginstall.vim
-source $XDG_CONFIG_HOME/nvim/conf/plugset.vim
+source $HOME/.config/nvim/conf/vim-plug-dl.vim
+source $HOME/.config/nvim/conf/pluginstall.vim
+source $HOME/.config/nvim/conf/plugset.vim
 
 " theme
-source $XDG_CONFIG_HOME/nvim/conf/beautify.vim
+source $HOME/.config/nvim/conf/beautify.vim
 
 " set end
-source $XDG_CONFIG_HOME/nvim/conf/ending-work.vim
+source $HOME/.config/nvim/conf/ending-work.vim

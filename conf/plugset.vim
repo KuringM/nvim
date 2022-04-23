@@ -148,6 +148,7 @@ EOF
 
 " coc.nvim
 let g:coc_global_extensions = [
+	\ 'coc-vimtex',
 	\ 'coc-actions',
 	\ 'coc-css',
 	\ 'coc-diagnostic',
@@ -406,5 +407,21 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 map <LEADER>gy :Goyo<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" vimtex
+let g:tex_flavor = 'latex'
+" use :copen to open error window
+let g:vimtex_quickfix_mode = 0
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_toc_config = {
+\ 'name' : 'TOC',
+\ 'layers' : ['content', 'todo', 'include'],
+\ 'split_width' : 25,
+\ 'todo_sorted' : 0,
+\ 'show_help' : 1,
+\ 'show_numbers' : 1,
+\}
 
 " ===================== End of Plugin Settings =====================

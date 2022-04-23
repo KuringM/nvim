@@ -48,7 +48,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 Plug 'skywind3000/asynctasks.vim'                              " Modern Task System for Project Building, Testing and Deploying !!
 Plug 'skywind3000/asyncrun.vim'                                " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to the Quickfix Window !!
 Plug 'wellle/tmux-complete.vim'                                " Vim plugin for insert mode completion of words in adjacent tmux panes
- Plug 'theniceboy/vim-snippets'                                " vim-snipmate default snippets (Previously snipmate-snippets)
+Plug 'SirVer/ultisnips'
+Plug 'theniceboy/vim-snippets'                                " vim-snipmate default snippets (Previously snipmate-snippets)
 
 """"""""""""""""""""""Git"""""""""""""""""""""""""""""""
 Plug 'mbbill/undotree'                                         " The undo history visualizer for VIM
@@ -69,5 +70,8 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'm
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }                        " A vim 7.4+ plugin to generate table of contents for Markdown files.
 Plug 'junegunn/goyo.vim'                                       " Distraction-free writing in Vim
 Plug 'junegunn/limelight.vim'                                  " All the world's indeed a stage and we are merely players
+
+""""""""""""""""""""""Tex""""""""""""""""""""""""""""
+Plug 'lervag/vimtex'                                           " VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.
 
 call plug#end()
