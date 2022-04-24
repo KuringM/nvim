@@ -21,6 +21,7 @@ Plug 'kevinhwang91/rnvimr'                                     " use Ranger in a
 Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }         " Find And Replace Vim plugin
 
 """""""""""""""""""Editor Enhancement""""""""""""""""""
+Plug 'ybian/smartim'                                           " A Vim plugin to make it stand well with input methods (Mac only)
 Plug 'lilydjwg/fcitx.vim'											                 " keep and restore fcitx state when leaving/re-entering insert mode
 Plug 'lambdalisue/suda.vim'                                    " An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows. do stuff like :sudowrite
 Plug 'mg979/vim-visual-multi'                                  " Multiple cursors plugin for vim/neovim
