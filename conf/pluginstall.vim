@@ -49,7 +49,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 Plug 'skywind3000/asynctasks.vim'                              " Modern Task System for Project Building, Testing and Deploying !!
 Plug 'skywind3000/asyncrun.vim'                                " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to the Quickfix Window !!
 Plug 'wellle/tmux-complete.vim'                                " Vim plugin for insert mode completion of words in adjacent tmux panes
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'theniceboy/vim-snippets'                                " vim-snipmate default snippets (Previously snipmate-snippets)
 
 """"""""""""""""""""""Git"""""""""""""""""""""""""""""""
