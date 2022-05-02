@@ -43,3 +43,5 @@ autocmd Filetype markdown inoremap <buffer> ,en &ensp;
 autocmd Filetype markdown inoremap <buffer> ,em &emsp;
 " A collapsible section containing markdown
 autocmd FileType markdown inoremap <buffer> ,ex <details><NL><Space><Space><summary><++></summary><NL><NL><BS><++><NL></details><NL><NL><++>
+" table
+autocmd FileType markdown inoremap <buffer> ,t \|<++>\|<++>\|<NL>\|:--:\|:--:\|<NL>\|<++>\|<++>\|<NL><NL><++><Esc>A
