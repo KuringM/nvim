@@ -37,10 +37,15 @@ autocmd Filetype markdown inoremap <buffer> ,5 #####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap <buffer> ,6 ######<Space><Enter><++><Esc>kA
 " color text
 autocmd Filetype markdown inoremap <buffer> ,ct <font color=green><++></font>
+" new line
+autocmd FileType markdown inoremap <buffer> ,a <BR><Enter>
 " space format
 autocmd Filetype markdown inoremap <buffer> ,nb &nbsp;
+autocmd Filetype markdown inoremap <buffer> ,nbb &nbsp;&nbsp;
 autocmd Filetype markdown inoremap <buffer> ,en &ensp;
+autocmd Filetype markdown inoremap <buffer> ,enn &ensp;&ensp;
 autocmd Filetype markdown inoremap <buffer> ,em &emsp;
+autocmd Filetype markdown inoremap <buffer> ,emm &emsp;&emsp;
 " A collapsible section containing markdown
 autocmd FileType markdown inoremap <buffer> ,ex <details><NL><Space><Space><summary><++></summary><NL><NL><BS><++><NL></details><NL><NL><++>
 " table
