@@ -31,7 +31,7 @@
 ---
 - [x] [vim-deus](https://github.com/theniceboy/vim-deus) -- A better color scheme for the late night coder
 
-- [_] [vim-bolt](https://github.com/bpietravalle/vim-bolt) -- vim syntax highlighting for firebase-bolt
+- [ ] [vim-bolt](https://github.com/bpietravalle/vim-bolt) -- vim syntax highlighting for firebase-bolt
 
 - [x] [eleline.vim](https://github.com/theniceboy/eleline.vim) -- Another elegant statusline for vim
 
@@ -60,13 +60,13 @@
 
 - [x] [far.vim](https://github.com/brooth/far.vim) -- Find And Replace Vim plugin
 
-- [_] [vim-rooter](https://github.com/airblade/vim-rooter) -- Changes Vim working directory to project root.
+- [ ] [vim-rooter](https://github.com/airblade/vim-rooter) -- Changes Vim working directory to project root.
 
-- [_] [any-jump.vim](https://github.com/pechorin/any-jump.vim) -- Jump to any definition and references eye IDE madness without overhead rocket
+- [ ] [any-jump.vim](https://github.com/pechorin/any-jump.vim) -- Jump to any definition and references eye IDE madness without overhead rocket
 
-- [_] [vim-startify](https://github.com/mhinz/vim-startify) -- The fancy start screen for vim.
+- [ ] [vim-startify](https://github.com/mhinz/vim-startify) -- The fancy start screen for vim.
 
-- [_] [calendar.vim](https://github.com/itchyny/calendar.vim) -- A calendar application for Vim
+- [ ] [calendar.vim](https://github.com/itchyny/calendar.vim) -- A calendar application for Vim
 
 #### Editor Enhancement
 - [x] [smartim](https://github.com/ybian/smartim) -- A Vim plugin to make it stand well with input methods (Mac only)
@@ -81,7 +81,7 @@
 
 - [x] [tcomment_vim](https://github.com/tomtom/tcomment_vim) -- An extensible & universal comment vim-plugin that also handles embedded filetypes
 
-- [_] [antovim](https://github.com/theniceboy/antovim) -- Super-simple vim plugin for cycling through antonyms/words related to word under cursor
+- [ ] [antovim](https://github.com/theniceboy/antovim) -- Super-simple vim plugin for cycling through antonyms/words related to word under cursor
 
 - [x] [vim-surround](https://github.com/tpope/vim-surround) -- surround.vim: quoting/parenthesizing made simple
 
@@ -93,17 +93,17 @@
 
 - [x] [clever-f.vim](https://github.com/rhysd/clever-f.vim) -- Extended f, F, t and T key mappings for Vim.
 
-- [_] [vim-capslock](https://github.com/tpope/vim-capslock) -- Software caps lock
+- [ ] [vim-capslock](https://github.com/tpope/vim-capslock) -- Software caps lock
 
-- [_] [vim-easymotion](https://github.com/easymotion/vim-easymotion) -- Vim motions on speed!
+- [ ] [vim-easymotion](https://github.com/easymotion/vim-easymotion) -- Vim motions on speed!
 
-- [_] [vim-subversive](https://github.com/svermeulen/vim-subversive) -- Vim plugin providing operator motions to quickly replace text
+- [ ] [vim-subversive](https://github.com/svermeulen/vim-subversive) -- Vim plugin providing operator motions to quickly replace text
 
-- [_] [argtextobj](https://github.com/theniceboy/argtextobj.vim) -- Text-object like motion for arguments (mod for colemak)
+- [ ] [argtextobj](https://github.com/theniceboy/argtextobj.vim) -- Text-object like motion for arguments (mod for colemak)
 
 - [x] [NrrwRgn](https://github.com/chrisbra/NrrwRgn) -- A Narrow Region Plugin for vim (like Emacs Narrow Region)
 
-- [_] [splitjoin](https://github.com/AndrewRadev/splitjoin.vim) -- Switch between single-line and multiline forms of code
+- [ ] [splitjoin](https://github.com/AndrewRadev/splitjoin.vim) -- Switch between single-line and multiline forms of code
 
 - [x] [neoformat](https://github.com/sbdchd/neoformat) -- A (Neo)vim plugin for formatting code.
 
@@ -142,10 +142,10 @@
 
 - [x] [agit.vim](https://github.com/cohama/agit.vim) -- A powerful Git log viewer
 
-- [_] [vim-maktaba](https://github.com/google/vim-maktaba) -- Consistent Vimscript
+- [ ] [vim-maktaba](https://github.com/google/vim-maktaba) -- Consistent Vimscript
 
 #### Language
-- [_] [vim-codefmt](https://github.com/google/vim-codefmt) -- codefmt is a utility for syntax-aware code formatting. 
+- [ ] [vim-codefmt](https://github.com/google/vim-codefmt) -- codefmt is a utility for syntax-aware code formatting. 
 
 - [x] [bullets.vim](https://github.com/dkarter/bullets.vim) --  Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 
@@ -158,7 +158,7 @@
 #### Markdown 
 - [x] [markdown-preview.vim](https://github.com/iamcco/markdown-preview.nvim)
 
-- [_] [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) -- Instant Markdown previews from VIm!
+- [ ] [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) -- Instant Markdown previews from VIm!
 
 - [x] [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) -- VIM Table Mode for instant table creation.
 
@@ -172,33 +172,33 @@
 - [x] [vimtex](https://github.com/lervag/vimtex) -- VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.
 
 #### other
-- [_] [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim) -- Vim omnicompletion (intellisense) and more for C#
+- [ ] [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim) -- Vim omnicompletion (intellisense) and more for C#
 
-- [_] [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) -- Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
+- [ ] [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) -- Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
 
-- [_] [vim-json](https://github.com/elzr/vim-json) -- A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing. Pathogen-friendly.
+- [ ] [vim-json](https://github.com/elzr/vim-json) -- A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing. Pathogen-friendly.
 
-- [_] [jsonc.vim](https://github.com/neoclide/jsonc.vim) -- jsonc syntax support for vim
+- [ ] [jsonc.vim](https://github.com/neoclide/jsonc.vim) -- jsonc syntax support for vim
 
-- [_] [html5.vim](https://github.com/othree/html5.vim) -- HTML5 omnicomplete and syntax
+- [ ] [html5.vim](https://github.com/othree/html5.vim) -- HTML5 omnicomplete and syntax
 
-- [_] [vim-closetag](https://github.com/alvan/vim-closetag) -- Auto close (X)HTML tags
+- [ ] [vim-closetag](https://github.com/alvan/vim-closetag) -- Auto close (X)HTML tags
 
-- [_] [vim-js](https://github.com/yuezk/vim-js) -- The most accurate syntax highlighting plugin for JavaScript and Flow.js
+- [ ] [vim-js](https://github.com/yuezk/vim-js) -- The most accurate syntax highlighting plugin for JavaScript and Flow.js
 
-- [_] [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent) -- A nicer Python indentation style for vim.
+- [ ] [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent) -- A nicer Python indentation style for vim.
 
-- [_] [semshi](https://github.com/numirias/semshi) -- Semantic Highlighting for Python in Neovim
+- [ ] [semshi](https://github.com/numirias/semshi) -- Semantic Highlighting for Python in Neovim
 
-- [_] [braceless.vim](https://github.com/tweekmonster/braceless.vim) -- Text objects, folding, and more for Python and other indented languages.
+- [ ] [braceless.vim](https://github.com/tweekmonster/braceless.vim) -- Text objects, folding, and more for Python and other indented languages.
 
-- [_] [dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin) -- Syntax highlighting for Dart in Vim
+- [ ] [dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin) -- Syntax highlighting for Dart in Vim
 
-- [_] [pubspec-assist-nvim](https://github.com/f-person/pubspec-assist-nvim) -- Easily add dependencies to your Dart / Flutter project without leaving Neovim
+- [ ] [pubspec-assist-nvim](https://github.com/f-person/pubspec-assist-nvim) -- Easily add dependencies to your Dart / Flutter project without leaving Neovim
 
-- [_] [swift.vim](https://github.com/keith/swift.vim) -- Vim runtime files for Swift
+- [ ] [swift.vim](https://github.com/keith/swift.vim) -- Vim runtime files for Swift
 
-- [_] [vim-swift](https://github.com/arzg/vim-swift) -- A Swift syntax plugin for Vim that aims to match Xcode’s level of detail (WIP)
+- [ ] [vim-swift](https://github.com/arzg/vim-swift) -- A Swift syntax plugin for Vim that aims to match Xcode’s level of detail (WIP)
 
 - [ ] [nerdtree](https://github.com/scrooloose/nerdtree) -- A tree explorer plugin for vim.
 
