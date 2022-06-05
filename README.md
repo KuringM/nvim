@@ -6,6 +6,9 @@
 - Install `node`, and do `npm install -g neovim`
 - Install nerd-fonts (actually it's optional but it looks real good)
 
+### LSP need
+- Install	`ccls`(a C/C++/Objective-C language server.) macos `brew install ccls`
+
 ## Some Installation
 
 ### For Python Debugger (via `vimspector`)
