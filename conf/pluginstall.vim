@@ -15,6 +15,7 @@ Plug 'glepnir/dashboard-nvim'                                  " vim dashboard
 
 """""""""""""""""""""Search"""""""""""""""""""
 Plug 'yianwillis/vimcdoc'                                      " vim chinese doc
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'                                        " fuzzy finder
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }              " An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.
 Plug 'kevinhwang91/rnvimr'                                     " use Ranger in a floating window
@@ -55,7 +56,8 @@ Plug 'theniceboy/vim-snippets'                                " vim-snipmate def
 """"""""""""""""""""""Git"""""""""""""""""""""""""""""""
 Plug 'mbbill/undotree'                                         " The undo history visualizer for VIM
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }   " Gitignore plugin for Vim
-Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create useful .gitignore files for your project
+"Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create useful .gitignore files for your project
+Plug 'theniceboy/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create useful .gitignore files for your project
 Plug 'airblade/vim-gitgutter'                                  " A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
 Plug 'cohama/agit.vim'                                         " A powerful Git log viewer
 

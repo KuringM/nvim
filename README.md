@@ -24,6 +24,7 @@
 ### For FZF
 - Install `fzf`
 - Install `ag` (`the_silver_searcher`)
+- Install `rg`
 
 ### And also...
 - Install `figlet` for inputing text ASCII art
