@@ -178,6 +178,7 @@ noremap tx :r !figlet
 
 " find and replace
 noremap \s :%s//g<left><left>
+vnoremap \s :s//g<left><left>
 
 " set wrap
 noremap <LEADER>sw :set nowrap<CR>
