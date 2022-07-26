@@ -7,9 +7,10 @@ let g:python3_host_prog='/usr/bin/python3'
 " Ruby
 let g:ruby_host_prog = '/usr/bin/ruby'
 
-let g:mkdp_browser = 'google-chrome-stable'
-let g:mkdp_browserfunc = 'open '
-
+" Flutter
 let g:flutter_default_device = 'iPhone'
 let g:flutter_run_args = "--flavor dev"
 
+" App variable 
+let g:mkdp_browser = 'google-chrome-stable'
+let g:mkdp_browserfunc = 'open '

@@ -1,5 +1,5 @@
 {
-	"session.directory": "~/.config/nvim/sessions/",
+	"session.directory": "~/.cache/nvim/tmp/sessions/",
 	"coc.preferences.hoverTarget": "preview",
 	"coc.preferences.enableFloatHighlight": true,
 	"coc.preferences.snippetStatusText": "Ⓢ ",

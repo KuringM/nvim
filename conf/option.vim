@@ -49,14 +49,14 @@ set completeopt=longest,noinsert,menuone,noselect,preview
 set ttyfast                                 "should make scrolling faster
 set lazyredraw                              "same as above
 set visualbell
-silent !mkdir -p ~/.config/nvim/tmp/backup
-silent !mkdir -p ~/.config/nvim/tmp/undo
-silent !mkdir -p ~/.config/nvim/tmp/sessions
-set backupdir=~/.config/nvim/tmp/backup,.
-set directory=~/.config/nvim/tmp/backup,.
+silent !mkdir -p ~/.cache/nvim/tmp/backup
+silent !mkdir -p ~/.cache/nvim/tmp/undo
+silent !mkdir -p ~/.cache/nvim/tmp/sessions
+set backupdir=~/.cache/nvim/tmp/backup,.
+set directory=~/.cache/nvim/tmp/backup,.
 if has('persistent_undo')
 	set undofile
-	set undodir=~/.config/nvim/tmp/undo,.
+	set undodir=~/.cache/nvim/tmp/undo,.
 endif
 set colorcolumn=100
 set updatetime=100                          " Faster completion
