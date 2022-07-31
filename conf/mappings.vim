@@ -77,8 +77,8 @@ noremap <silent> N 0
 noremap <silent> I $
 
 " Faster in-line navigation
-noremap W 5w
-noremap B 5b
+" noremap W 5w
+" noremap B 5b
 
 " set h (same as n, cursor left) to 'end of word'
 noremap h e
@@ -131,6 +131,8 @@ noremap <LEADER>q <C-w>j:q<CR>
 " ===
 " Create a new tab with tu
 noremap tu :tabe<CR>
+" Move a split page to a new tab
+noremap te :winc T<CR>
 " Move around tabs with tn and ti
 noremap tn :-tabnext<CR>
 noremap ti :+tabnext<CR>
@@ -143,13 +145,13 @@ noremap tmi :+tabmove<CR>
 " === Command Mode Cursor Movement
 " ===
 cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-cnoremap <C-b> <Left>
-cnoremap <C-f> <Right>
-cnoremap <M-b> <S-Left>
-cnoremap <M-w> <S-Right>
+cnoremap <C-o> <End>
+cnoremap <C-u> <Up>
+cnoremap <C-e> <Down>
+cnoremap <C-n> <Left>
+cnoremap <C-i> <Right>
+cnoremap <c-b> <S-Left>
+cnoremap <c-w> <S-Right>
 
 
 " ===
@@ -169,6 +171,9 @@ noremap <LEADER>sc :set spell!<CR>
 
 " Press ` to change case (instead of ~)
 noremap ` ~
+" remap gl/gL as gu/gU 
+noremap gl gu
+noremap gL gU
 
 " cursor line move to the middle window
 noremap <C-c> zz

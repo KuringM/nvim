@@ -6,15 +6,17 @@
 
 " Author: @Kuring
 
+" ~/.config/nvim/conf/autoload.vim
+" ~/.config/nvim/conf/option.vim
+" ~/.config/nvim/conf/mappings.vim
+" ~/.config/nvim/conf/plugin.vim
 
 " loading my nvim config
 let s:conf_files = [
 			\ 'autoload.vim',
 			\ 'option.vim',
 			\ 'mappings.vim',
-			\ 'pluginstall.vim',
-			\ 'plugset.vim',
-			\ 'beautify.vim'
+			\ 'plugin.vim',
 			\]
 
 for s:fname in s:conf_files
