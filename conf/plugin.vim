@@ -213,6 +213,7 @@ Plug 'ybian/smartim'                                           " A Vim plugin to
 
 Plug 'lilydjwg/fcitx.vim'	                                     " keep and restore fcitx state when leaving/re-entering insert mode
 Plug 'lambdalisue/suda.vim'                                    " An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows. do stuff like :sudowrite
+	let g:suda_smart_edit = 1
 	cnoreabbrev sudowrite w suda://%
 	cnoreabbrev sw w suda://%
 
@@ -235,16 +236,22 @@ Plug 'mg979/vim-visual-multi'                                  " Multiple cursor
 
 Plug 'jiangmiao/auto-pairs'                                    " Vim plugin, insert or delete brackets, parens, quotes in pair
 Plug 'tomtom/tcomment_vim'                                     " An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
-	nnoremap ci cl
 	let g:tcomment_textobject_inlinecomment = ''
+	nnoremap ci cl
 	nmap <LEADER>cn g>c
 	vmap <LEADER>cn g>
 	nmap <LEADER>cu g<c
 	vmap <LEADER>cu g<
 
-"Plug 'theniceboy/antovim'                                      " Super-simple vim plugin for cycling through antonyms/words related to word under cursor. gs to switch.
-Plug 'tpope/vim-surround'                                      " surround.vim: quoting/parenthesizing made simple. type yskw' to wrap the word with '' or type cs'` to change 'word' to `word`.
+" Plug 'theniceboy/antovim'                                      " Super-simple vim plugin for cycling through antonyms/words related to word under cursor. gs to switch.
+Plug 'tpope/vim-surround'                                      " surround.vim: quoting/parenthesizing made simple. type yskw' to wrap the word with '' or type cs'` to change 'word' to `word`. In visual mode <CR>norm cs'` to block replace.
 Plug 'gcmt/wildfire.vim'                                       " Smart selection of the closest text object. in Visual mode, type k' to select all text in '', or type k) k] k} kp
+map <c-b> <Plug>(wildfire-quick-select)
+let g:wildfire_objects = {
+    \ "*" : ["i'", 'i"', "i)", "i]", "i}", "it"],
+    \ "html,xml" : ["at", "it"],
+\ }
+
 Plug 'junegunn/vim-after-object'                               " Target text *after* the designated characters. da= to delete what's after =
 	autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
