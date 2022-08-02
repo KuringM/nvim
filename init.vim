@@ -16,7 +16,7 @@ let s:conf_files = [
 			\ 'autoload.vim',
 			\ 'option.vim',
 			\ 'mappings.vim',
-			\ 'plugin.vim',
+			\ 'plugin.vim'
 			\]
 
 for s:fname in s:conf_files
