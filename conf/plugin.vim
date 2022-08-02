@@ -84,7 +84,7 @@ Plug 'wincent/terminus'                                        " Enhanced termin
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }      " asynchronously display the colours in file
 	let g:Hexokinase_highlighters = ['backgroundfull']
 
-Plug 'glepnir/dashboard-nvim'                                  " vim dashboard
+Plug 'glepnir/dashboard-nvim', { 'branch': 'async-render' }    " nvim dashboard
 	let g:dashboard_custom_header = [
 	  \'               ▄▄██████████▄▄             ',
 	  \'               ▀▀▀   ██   ▀▀▀             ',
@@ -320,16 +320,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 		\ 'coc-vimlsp',
 		\ 'coc-yaml',
 		\ 'coc-yank']
-	inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ coc#refresh()
-	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-	inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
 	function! s:check_back_space() abort
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~# '\s'
 	endfunction
+
+	inoremap <silent><expr> <TAB>
+		\ coc#pum#visible() ? coc#pum#next(1):
+		\ <SID>check_back_space() ? "\<Tab>" :
+		\ coc#refresh()
+  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+	inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
 	inoremap <silent><expr> <c-space> coc#refresh()
 	inoremap <silent><expr> <c-o> coc#refresh()
 	function! Show_documentation()
