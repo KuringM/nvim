@@ -149,9 +149,9 @@ cnoremap <C-o> <End>
 cnoremap <C-u> <Up>
 cnoremap <C-e> <Down>
 cnoremap <C-n> <Left>
-cnoremap <C-i> <Right>
-cnoremap <c-b> <S-Left>
-cnoremap <c-w> <S-Right>
+" cnoremap <C-i> <Right>
+cnoremap <C-b> <S-Left>
+cnoremap <C-w> <S-Right>
 
 
 " ===
@@ -285,87 +285,87 @@ function! CheckChineseMark()
 		let s:line=search('。')
 		execute s:line . "s/。/\./g"
 	endif
-	
+
 	if search('，')
 		let s:line=search('，')
 		execute s:line . "s/，/,/g"
 	endif
-	
+
 	if search('；')
 		let s:line=search('；')
 		execute s:line . "s/；/,/g"
 	endif
-	
+ 
 	if  search('？')
 		let s:line=search('？')
 		execute s:line . "s/？/?/g"
 	endif
-	
+
 	if search('：')
 		let s:line=search('：')
 		execute s:line . "s/：/\:/g"
 	endif
-	
+
 	if search('‘')
 		let s:line=search('‘')
 		execute s:line . "s/‘/\'/g"
 	endif
-	
+
 	if search('’')
 		let s:line=search('’')
 		execute s:line . "s/’/\'/g"
 	endif
-	
+
 	if search('”')
 		let s:line=search('”')
 		execute s:line . "s/”/\"/g"
 	endif
-	
+
 	if search('“')
 		let s:line=search('“')
 		execute s:line . "s/“/\"/g"
 	endif
-	
+
 	if search('《')
 		let s:line=search('《')
 		execute s:line . "s/《/\</g"
 	endif
-	
+
 	if search('》')
 		let s:linie=search('》')
 		execute s:line . "s/》/\>/g"
 	endif
-	
+
 	if search('——')
 		let s:line=search('——')
 		execute s:line . "s/——/-/g"
 	endif
-	
+
 	if search('）')
 		let s:line=search('）')
 		execute s:line . "s/）/\)/g"
 	endif
-	
+
 	if search('（')
 		let s:line=search('（')
 		execute s:line . "s/（/\(/g"
 	endif
-	
+
 	if search('……')
 		let s:line=search('……')
 		execute s:line . "s/……/^/g"
 	endif
-	
+
 	if search('￥')
 		let s:line=search('￥')
 		execute s:line . "s/￥/$/g"
 	endif
-	
+
 	if search('！')
 		let s:line=search('！')
 		execute s:line . "s/！/!/g"
 	endif
-	
+
 	if  search('·')
 		let s:line=search('·')
 		execute s:line . "s/·/`/g"
