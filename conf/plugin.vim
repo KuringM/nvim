@@ -252,6 +252,7 @@ let g:wildfire_objects = {
     \ "html,xml" : ["at", "it"],
 \ }
 
+" TODO: error  <07-08-22, Kuring> "
 Plug 'junegunn/vim-after-object'                               " Target text *after* the designated characters. da= to delete what's after =
 	autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
@@ -266,6 +267,20 @@ Plug 'chrisbra/NrrwRgn'                                        " A Narrow Region
 
 Plug 'sbdchd/neoformat'                                        " A (Neo)vim plugin for formatting code.
 Plug 'vim-scripts/Tabmerge'                                    " Merge a tab's windows with the current tab
+Plug 'mbbill/undotree'                                         " The undo history visualizer for VIM
+	let g:undotree_DiffAutoOpen = 1
+	let g:undotree_SetFocusWhenToggle = 1
+	let g:undotree_ShortIndicators = 1
+	let g:undotree_WindowLayout = 2
+	let g:undotree_DiffpanelHeight = 8
+	let g:undotree_SplitWidth = 24
+	function g:Undotree_CustomMap()
+		nmap <buffer> u <plug>UndotreeNextState
+		nmap <buffer> e <plug>UndotreePreviousState
+		nmap <buffer> U 5<plug>UndotreeNextState
+		nmap <buffer> E 5<plug>UndotreePreviousState
+	endfunc
+	noremap L :UndotreeToggle<CR>
 
 """"""""""""""""""nvim-treesitter"""""""""""""""""""""""
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}    " Nvim Treesitter configurations and abstraction layer
@@ -325,16 +340,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~# '\s'
 	endfunction
-
 	inoremap <silent><expr> <TAB>
 		\ coc#pum#visible() ? coc#pum#next(1):
 		\ <SID>check_back_space() ? "\<Tab>" :
 		\ coc#refresh()
   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-	inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+	inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 	inoremap <silent><expr> <c-space> coc#refresh()
 	inoremap <silent><expr> <c-o> coc#refresh()
+
 	function! Show_documentation()
 		call CocActionAsync('highlight')
 		if (index(['vim','help'], &filetype) >= 0)
@@ -400,21 +416,6 @@ Plug 'wellle/tmux-complete.vim'                                " Vim plugin for 
 Plug 'theniceboy/vim-snippets'                                " vim-snipmate default snippets (Previously snipmate-snippets)
 
 """"""""""""""""""""""Git"""""""""""""""""""""""""""""""
-Plug 'mbbill/undotree'                                         " The undo history visualizer for VIM
-	noremap L :UndotreeToggle<CR>
-	let g:undotree_DiffAutoOpen = 1
-	let g:undotree_SetFocusWhenToggle = 1
-	let g:undotree_ShortIndicators = 1
-	let g:undotree_WindowLayout = 2
-	let g:undotree_DiffpanelHeight = 8
-	let g:undotree_SplitWidth = 24
-	function g:Undotree_CustomMap()
-		nmap <buffer> u <plug>UndotreeNextState
-		nmap <buffer> e <plug>UndotreePreviousState
-		nmap <buffer> U 5<plug>UndotreeNextState
-		nmap <buffer> E 5<plug>UndotreePreviousState
-	endfunc
-
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }   " Gitignore plugin for Vim
 "Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create useful .gitignore files for your project
 Plug 'theniceboy/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }       " Create useful .gitignore files for your project
@@ -591,6 +592,13 @@ require'nvim-treesitter.configs'.setup {
 			node_decremental = '<BS>',
 			scope_incremental = '<TAB>',
 			}
+	},
+
+	refactor = {
+		highlight_definitions = {
+			enable = true,
+			clear_on_cursor_move = true,
+		}
 	}
 }
 EOF

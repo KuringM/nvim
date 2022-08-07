@@ -111,6 +111,10 @@
 
 - [x] [neoformat](https://github.com/sbdchd/neoformat) -- A (Neo)vim plugin for formatting code.
 
+- [x] [Tabmerge](https://github.com/vim-scripts/Tabmerge) -- Merge a tab's windows with the current tab
+
+- [x] [undotree](https://github.com/mbbill/undotree) -- The undo history visualizer for VIM
+
 #### nvim-treesitter
 - [x] [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
 
@@ -136,8 +140,6 @@
 - [x] [vim-snippets](https://github.com/theniceboy/vim-snippets) -- vim-snipmate default snippets (Previously snipmate-snippets)
 
 #### Git
-- [x] [undotree](https://github.com/mbbill/undotree) -- The undo history visualizer for VIM
-
 - [x] [vim-gitignore](https://github.com/theniceboy/vim-gitignore) -- Gitignore plugin for Vim
 
 - [x] [fzf-gitignore](https://github.com/fszymanski/fzf-gitignore) -- Create useful .gitignore files for your project
