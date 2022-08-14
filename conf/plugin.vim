@@ -282,6 +282,13 @@ Plug 'mbbill/undotree'                                         " The undo histor
 	endfunc
 	noremap L :UndotreeToggle<CR>
 
+Plug 'junegunn/goyo.vim'                                       " Distraction-free writing in Vim
+	map <LEADER>gy :Goyo<CR>
+	autocmd! User GoyoEnter Limelight
+	autocmd! User GoyoLeave Limelight!
+
+Plug 'junegunn/limelight.vim'                                  " All the world's indeed a stage and we are merely players
+
 """"""""""""""""""nvim-treesitter"""""""""""""""""""""""
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}    " Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/playground'                              " Treesitter playground integrated into Neovim
@@ -360,10 +367,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 		endif
 	endfunction
 	nnoremap <LEADER>h :call Show_documentation()<CR>
-	" set runtimepath^=~/.config/nvim/coc-extensions/coc-flutter-tools/
-	" let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
-	" let $NVIM_COC_LOG_LEVEL = 'debug'
-	" let $NVIM_COC_LOG_FILE = '/Users/david/Desktop/log.txt'
 	"nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 	nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 	nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
@@ -542,12 +545,6 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 	let g:vmt_fence_text = 'TOC'
 	let g:vmt_fence_closing_text = '/TOC'
 
-Plug 'junegunn/goyo.vim'                                       " Distraction-free writing in Vim
-	map <LEADER>gy :Goyo<CR>
-	autocmd! User GoyoEnter Limelight
-	autocmd! User GoyoLeave Limelight!
-
-Plug 'junegunn/limelight.vim'                                  " All the world's indeed a stage and we are merely players
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " live edit html, css, and javascript in vim
 
 """"""""""""""""""""""Tex""""""""""""""""""""""""""""
