@@ -10,8 +10,8 @@ autocmd FileType markdown inoremap <buffer> \bvm \begin{vmatrix}<Enter><Enter>\e
 " Operators
 autocmd FileType markdown inoremap <buffer> \sq \sqrt[]{} <Esc>F{a
 autocmd FileType markdown inoremap <buffer> \fr \frac{}{<++>} <Esc>2F{a
-autocmd Filetype markdown inoremap <buffer> \limm \lim\limits_{<++>\to <++>}
-autocmd Filetype markdown inoremap <buffer> \intt \int_{<++>}^{<++>}mathrm{d}
+autocmd Filetype markdown inoremap <buffer> \limm \lim\limits_{\to <++>} <++><Esc>F{a
+autocmd Filetype markdown inoremap <buffer> \intt \int_{}^{<++>}<++>\mathrm{d}<++><Esc>3F{a
 autocmd FileType markdown inoremap <buffer> \summ \sum\limits_{<++>}^{<++>}
 autocmd FileType markdown inoremap <buffer> \prodd \prod\limits_{<++>}^{<++>}
 
@@ -26,6 +26,9 @@ autocmd FileType markdown inoremap <buffer> \ep \epsilon
 autocmd FileType markdown inoremap <buffer> \lra \Leftrightarrow 
 autocmd FileType markdown inoremap <buffer> \ra \Rightarrow 
 autocmd FileType markdown inoremap <buffer> \la \Leftarrow 
+
+" Extensible Arrows
+autocmd FileType markdown inoremap <buffer> \xle \xlongequal
 
 " Misc
 autocmd Filetype markdown inoremap <buffer> ,zhu $\textcolor{red}{注}$ 
