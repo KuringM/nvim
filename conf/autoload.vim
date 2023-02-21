@@ -24,6 +24,10 @@ endif
 source $HOME/.config/nvim/UltiSnips/md-snippets.vim
 source $HOME/.config/nvim/UltiSnips/tex-snippets.vim
 
+" Scripts
+source $HOME/.config/nvim/scripts/Rcompile.vim
+source $HOME/.config/nvim/scripts/TurnCP2EP.vim
+
 " auto spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 
