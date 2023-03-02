@@ -8,8 +8,8 @@ autocmd FileType markdown inoremap <buffer> \bbm \begin{bmatrix}<Enter><Enter>\e
 autocmd FileType markdown inoremap <buffer> \bvm \begin{vmatrix}<Enter><Enter>\end{vmatrix} <Esc>1ka
 
 " Operators
-autocmd FileType markdown inoremap <buffer> \sq \sqrt[]{} <Esc>F{a
-autocmd FileType markdown inoremap <buffer> \fr \frac{}{<++>} <Esc>2F{a
+autocmd FileType markdown inoremap <buffer> \sq \sqrt[]{<++>} <++><Esc>F[a
+autocmd FileType markdown inoremap <buffer> \fr \frac{}{<++>} <++><Esc>2F{a
 autocmd Filetype markdown inoremap <buffer> \limm \lim\limits_{\to <++>} <++><Esc>F{a
 autocmd Filetype markdown inoremap <buffer> \intt \int_{}^{<++>}<++>\mathrm{d}<++><Esc>3F{a
 autocmd FileType markdown inoremap <buffer> \summ \sum\limits_{<++>}^{<++>}
