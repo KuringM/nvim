@@ -357,6 +357,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 
 	inoremap <silent><expr> <c-space> coc#refresh()
 	inoremap <silent><expr> <c-o> coc#refresh()
+	" use <C-n> navigating the completion list
+	inoremap <expr> <C-n> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 	function! Show_documentation()
 		call CocActionAsync('highlight')
@@ -406,7 +408,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 	imap <C-l> <Plug>(coc-snippets-expand)
 	vmap <C-e> <Plug>(coc-snippets-select)
 	let g:coc_snippet_next = '<c-e>'
-	let g:coc_snippet_prev = '<c-n>'
+	let g:coc_snippet_prev = '<c-u>'
 	imap <C-e> <Plug>(coc-snippets-expand-jump)
 	autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
