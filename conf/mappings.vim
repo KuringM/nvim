@@ -152,6 +152,7 @@ cnoremap <C-n> <Left>
 " cnoremap <C-i> <Right>
 cnoremap <C-b> <S-Left>
 cnoremap <C-w> <S-Right>
+" TODO: c-i work, but tab fail  <03-03-23, Kuring> "
 
 
 " ===

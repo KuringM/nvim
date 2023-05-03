@@ -71,3 +71,4 @@ set encoding=utf-8
 
 " set spell check identify en_us and cjk
 set spelllang=en_us,cjk
+set nocompatible

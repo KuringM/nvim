@@ -11,8 +11,13 @@ Plug 'theniceboy/nvim-deus'                                    " vim theme
 	set background=dark    " Setting dark mode
 	let g:deus_termcolors=256
 
-Plug 'kuringm/eleline.vim'                                     " 🌿 Another elegant statusline for vim
+" TODO: config eleline to show nvim modes  <03-03-23, Kuring> "
+" Plug 'liuchengxu/eleline.vim'                                     " 🌿 Another elegant statusline for vim
+" Plug 'kuringm/eleline.vim'                                     " 🌿 Another elegant statusline for vim
 	let g:airline_powerline_fonts = 1
+
+Plug 'glepnir/spaceline.vim'
+let g:spaceline_custom_vim_status = {"n": "🅝 ","V":"🅥 ","v":"🅥 ","\<C-v>": "🅥 ","i":"🅘 ","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"🅒 ","!":"SE"}
 
 Plug 'ojroques/vim-scrollstatus'                               " A scrollstatus for vim statuslin
 	let g:scrollstatus_size = 20
@@ -235,6 +240,7 @@ Plug 'mg979/vim-visual-multi'                                  " Multiple cursor
 	let g:VM_maps["Redo"]               = '<C-r>'
 
 Plug 'jiangmiao/auto-pairs'                                    " Vim plugin, insert or delete brackets, parens, quotes in pair
+	let g:AutoPairsFlyMode = 1
 Plug 'tomtom/tcomment_vim'                                     " An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 	let g:tcomment_textobject_inlinecomment = ''
 	nnoremap ci cl
