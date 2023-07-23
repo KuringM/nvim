@@ -130,9 +130,11 @@ noremap <LEADER>q <C-w>j:q<CR>
 " === Tab management
 " ===
 " Create a new tab with tu
-noremap tu :tabe<CR>
+noremap tk :tabe<CR>
 " Move a split page to a new tab
 noremap te :winc T<CR>
+" Merge two tabs
+noremap tu :Tabmerge<CR><C-w>t<C-w>H<C-w>l
 " Move around tabs with tn and ti
 noremap tn :-tabnext<CR>
 noremap ti :+tabnext<CR>
