@@ -390,6 +390,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 	omap ac <Plug>(coc-classobj-a)
 	" Useful commands
 	nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+	vnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 	nmap <silent> gd <Plug>(coc-definition)
 	nmap <silent> gy <Plug>(coc-type-definition)
 	" nmap <silent> gi <Plug>(coc-implementation)
