@@ -413,10 +413,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 	noremap <silent> <leader>ts :CocList tasks<CR>
 	" coc-snippets
 	imap <C-l> <Plug>(coc-snippets-expand)
+	" Use <C-e> for both expand and jump (make expand higher priority.)
+	imap <C-e> <Plug>(coc-snippets-expand-jump)
 	vmap <C-e> <Plug>(coc-snippets-select)
 	let g:coc_snippet_next = '<c-e>'
 	let g:coc_snippet_prev = '<c-u>'
-	imap <C-e> <Plug>(coc-snippets-expand-jump)
 	autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 Plug 'skywind3000/asynctasks.vim'                              " Modern Task System for Project Building, Testing and Deploying !!
