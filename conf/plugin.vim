@@ -353,6 +353,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~# '\s'
 	endfunction
+
+	" ===
+	" === Navigating in Completion list
+	" ===
+	" use <C-n> navigating the prev completion list
+	inoremap <expr> <C-n> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+	" use <Tab> navigating the next completion list
+	" because <C-i> and <Tab> send same codes, therefore <C-i> also can navigating the next completion list.
 	inoremap <silent><expr> <TAB>
 		\ coc#pum#visible() ? coc#pum#next(1):
 		\ <SID>check_back_space() ? "\<Tab>" :
@@ -363,8 +372,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 
 	inoremap <silent><expr> <c-space> coc#refresh()
 	inoremap <silent><expr> <c-o> coc#refresh()
-	" use <C-n> navigating the completion list
-	inoremap <expr> <C-n> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 	function! Show_documentation()
 		call CocActionAsync('highlight')
@@ -412,9 +419,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                " Nodejs extensio
 	" coc-tasks
 	noremap <silent> <leader>ts :CocList tasks<CR>
 	" coc-snippets
-	imap <C-l> <Plug>(coc-snippets-expand)
 	" Use <C-e> for both expand and jump (make expand higher priority.)
 	imap <C-e> <Plug>(coc-snippets-expand-jump)
+	imap <C-CR> <Plug>(coc-snippets-expand)
 	vmap <C-e> <Plug>(coc-snippets-select)
 	let g:coc_snippet_next = '<c-e>'
 	let g:coc_snippet_prev = '<c-u>'
