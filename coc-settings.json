@@ -122,6 +122,7 @@
 	"list.previewHighlightGroup": "Statement",
 	"list.nextKeymap": "<C-e>",
 	"list.previousKeymap": "<C-u>",
+	"list.floatPreview": true,
 	"yaml.format.enable": true,
 	"signature.target": "float",
 	"yank.enableCompletion": false,
