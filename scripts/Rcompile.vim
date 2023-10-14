@@ -25,6 +25,8 @@ func! CompileRunGcc()
 		silent! exec "!".g:mkdp_browser." % &"
 	elseif &filetype == 'markdown'
 		exec "MarkdownPreview"
+	elseif extension == 'md'
+		exec "MarkdownPreview"
 	elseif &filetype == 'tex'
 		silent! exec "VimtexStop"
 		silent! exec "VimtexCompile"

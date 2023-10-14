@@ -30,6 +30,8 @@ source $HOME/.config/nvim/scripts/TurnCP2EP.vim
 
 " auto spell
 autocmd BufRead,BufNewFile *.md setlocal spell
+" ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
+let g:markdown_recommended_style = 0
 
 " ===================== Ending Work =====================
 exec "nohlsearch"

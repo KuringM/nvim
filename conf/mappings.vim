@@ -7,7 +7,7 @@ noremap ; :
 " Save & quit
 noremap Q :q<CR>
 noremap <C-q> :qa<CR>
-noremap S :w<CR>
+noremap S :w<CR>:source $MYVIMRC<CR>
 
 " Open the vimrc file anytime
 noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>

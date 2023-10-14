@@ -1,9 +1,153 @@
-# snip
+priority -50
+
 snippet mid "\mid \mid"
 	\\mid ${1} \\mid ${0}
 endsnippet
 
-snippet srt "\sqrt{}"
-	\\sqrt{${1}} ${0}
+
+####################
+# MATH Environment #
+###################$
+
+snippet al "begin{align} Align whith a number" b
+\begin{align}
+	& ${0:${VISUAL}}
+\end{align}
 endsnippet
 
+snippet ald "begin{aligned} Align without a number" b
+\begin{aligned}
+	& ${0:${VISUAL}}
+\end{aligned}
+endsnippet
+
+snippet aln "begin{align*} Align without a number" b
+\begin{align*}
+	& ${0:${VISUAL}}
+\end{align*}
+endsnippet
+
+snippet ca "begin{cases}" b
+\begin{cases}
+	& ${0:${VISUAL}}
+\end{cases}
+endsnippet
+
+snippet eqn "begin{equation}" b
+\begin{equation}
+\begin{split}
+	$1
+	&= $2\\\\
+	&= $3
+\end{split}
+\end{equation}
+endsnippet
+
+snippet kh "big braces" b
+\left\\{
+\begin{array}{ll}
+$1\\\\
+$2
+\end{array}
+\right.
+$0
+endsnippet
+
+# Snippet syntax Transformations
+# A transformation has the following syntax: >
+#    ${<tab_stop_no/regular_expression/replacement/options}
+snippet mtx "begin{*matrix}" b
+\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
+	& $2
+\end{${1}}
+endsnippet
+
+####################
+#  Math Operators  #
+####################
+snippet fr "\frac" 
+\frac{$1}{$2} $0
+endsnippet
+
+snippet sq "\sqrt{}"
+\sqrt[$2]{$1} $0 
+endsnippet
+
+snippet lim "\lim\limits_{}"
+\lim $0
+endsnippet
+
+snippet limm "\lim\limits_{}"
+\lim\limits_{$1\to $2} $0
+endsnippet
+
+snippet int "\int{}"
+\int_{$1}^{$2} $0
+endsnippet
+
+snippet intt "\int{}"
+\int_{$1}^{$2} $3\mathrm{d}$0
+endsnippet
+
+snippet summ "\sum\limits"
+\sum\limits_{$1}}^{$2} $0
+endsnippet
+
+snippet prodd "\prod\limits"
+\prod\limits_{$1}^{$2} $0
+endsnippet
+
+
+##################
+#  Math Unicode  #
+##################
+snippet alp "\alpha"
+\alpha
+endsnippet
+snippet be "\beta"
+\beta
+endsnippet
+snippet ga "\gamma"
+\gamma
+endsnippet
+snippet lam "\lambda"
+\lambda
+endsnippet
+snippet ep "\epsilon"
+\epsilon
+endsnippet
+snippet vep "\varepsilon"
+\varepsilon
+endsnippet
+snippet hu "arc"
+\overset{\LARGE{\frown}}{$1} $0
+endsnippet
+
+#################
+#  Math Arrows  #
+#################
+snippet lra "Leftrightarrow"
+\Leftrightarrow
+endsnippet
+snippet la "Leftarrow"
+\Leftarrow
+endsnippet
+snippet ra "Rightarrow"
+\Rightarrow
+endsnippet
+snippet xle "xlongequal"
+\xlongequal
+endsnippet
+
+#######################
+#  LaTex Text Format  #
+#######################
+snippet tc "color text"
+\textcolor{green}{$1} $0
+endsnippet
+snippet tb "bf text"
+\textbf{$1} $0
+endsnippet
+snippet cb "color box"
+\colorbox{#FEFDD3}{\textcolor{black}{$1}} $0
+endsnippet
