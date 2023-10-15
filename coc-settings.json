@@ -75,6 +75,8 @@
 	"snippets.trace": "verbose",
 	"snippet.statusText": "SNIP",
 	"snippets.triggerCharacters": [":"],
+	"snippets.autoTrigger": true,
+	"snippets.ultisnips.trace": true,
 	"session.directory": "~/.cache/nvim/tmp/sessions/",
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"coc.preferences.messageLevel": "error",

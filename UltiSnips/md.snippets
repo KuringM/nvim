@@ -47,8 +47,8 @@ snippet ic "Inline code" i
 endsnippet
 
 snippet cbl "Codeblock" b
-\`\`\`
-$1
+\`\`\`${1:tex}
+$2
 \`\`\`
 $0
 endsnippet
@@ -70,15 +70,15 @@ endsnippet
 ###################
 
 snippet ita "italics" i
-*${1:${VISUAL}}*$0
+*${1:${VISUAL}}* $0
 endsnippet
 
 snippet bo "bold" i
-**${1:${VISUAL}}**$0
+**${1:${VISUAL}}** $0
 endsnippet
 
 snippet bi "bold italics" i
-***${1:${VISUAL}}***$0
+***${1:${VISUAL}}*** $0
 endsnippet
 
 snippet sr "strikethrough" i
@@ -111,22 +111,22 @@ endsnippet
 ###########
 #  Space  #
 ###########
-snippet nb "nbsp one space"
+snippet nb "nbsp one space" i
 &nbsp;$0
 endsnippet
-snippet nnb "two space"
+snippet nnb "two space" i
 &nbsp;&nbsp;$0
 endsnippet
-snippet en "two sapce"
+snippet en "two sapce" i
 &ensp;$0
 endsnippet
-snippet een "enspensp"
+snippet een "enspensp" i
 &ensp;&ensp;$0
 endsnippet
-snippet em "emsp"
+snippet em "emsp" i
 &emsp;$0
 endsnippet
-snippet eem "emspemsp"
+snippet eem "emspemsp" i
 &emsp;&emsp;$0
 endsnippet
 
@@ -142,10 +142,10 @@ $0
 endsnippet
 
 snippet fc "font color"
-<font color=green>$1</font> $0
+<font color=${1:green}>$2</font> $0
 endsnippet
 
-snippet nl "newline" i
+snippet n "newline" i
 <BR>
 $0
 endsnippet
