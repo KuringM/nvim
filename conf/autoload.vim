@@ -20,23 +20,9 @@ if has_machine_specific_file == 0
 endif
 
 " ===================== Loading Some UltiSnips =====================
-" Snippets
-source $HOME/.config/nvim/UltiSnips/md-snippets.vim
-source $HOME/.config/nvim/UltiSnips/tex-snippets.vim
-
 " Scripts
 source $HOME/.config/nvim/scripts/Rcompile.vim
 source $HOME/.config/nvim/scripts/TurnCP2EP.vim
-
-" auto spell
-autocmd BufRead,BufNewFile *.md setlocal spell
-" ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
-let g:markdown_recommended_style = 0
-
-" find <++>
-autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
-" find <++> and press down Enter
-autocmd Filetype markdown inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 
 " ===================== Ending Work =====================
 exec "nohlsearch"

@@ -204,8 +204,10 @@ inoremap <C-u> <ESC>lx$p
 
 " Press , twice to write down the '<++>' and back to Normal mode
 inoremap ,, <++><ESC>
-" Press ?? twice to write down the '?_?' and back to Normal mode
-inoremap ?? ?_?<Esc>
+" find <++>
+autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
+" find <++> and press down Enter
+autocmd Filetype markdown inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 
 " fuck
 nnoremap <c-z> :u<CR>      " Avoid using this**

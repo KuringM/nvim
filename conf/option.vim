@@ -72,3 +72,8 @@ set encoding=utf-8
 " set spell check identify en_us and cjk
 set spelllang=en_us,cjk
 set nocompatible
+
+" auto spell
+autocmd BufRead,BufNewFile *.md setlocal spell
+" ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
+let g:markdown_recommended_style = 0
