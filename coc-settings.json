@@ -64,14 +64,17 @@
 		">>": "gitUnstage"
 	},
 	"suggest.snippetIndicator": "",
-	"snippet.highlight": false,
+	"snippet.highlight": true,
 	"snippets.ultisnips.directories": [
 		"$HOME/.config/nvim/UltiSnips/",
 		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
 	],
 	"snippets.extends": {
-		"markdown": ["markdownd", "tex"]
+		"markdown": ["markdownd", "tex", "md"]
 	},
+	"snippets.trace": "verbose",
+	"snippet.statusText": "SNIP",
+	"snippets.triggerCharacters": [":"],
 	"session.directory": "~/.cache/nvim/tmp/sessions/",
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"coc.preferences.messageLevel": "error",

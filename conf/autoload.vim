@@ -33,5 +33,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
 let g:markdown_recommended_style = 0
 
+" find <++>
+autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
+" find <++> and press down Enter
+autocmd Filetype markdown inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
+
 " ===================== Ending Work =====================
 exec "nohlsearch"
