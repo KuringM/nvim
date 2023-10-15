@@ -70,7 +70,7 @@
 		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
 	],
 	"snippets.extends": {
-		"markdown": ["markdownd", "tex", "md"]
+		"markdown": ["markdownd", "tex"]
 	},
 	"snippets.trace": "verbose",
 	"snippet.statusText": "SNIP",

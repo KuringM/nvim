@@ -63,35 +63,35 @@ endsnippet
 ####################
 #  Math Operators  #
 ####################
-snippet fr "\frac" 
+snippet fr "\frac" i
 \frac{$1}{$2} $0
 endsnippet
 
-snippet sq "\sqrt{}"
+snippet sq "\sqrt{}" i
 \sqrt[$2]{$1} $0 
 endsnippet
 
-snippet lim "\lim\limits_{}"
+snippet lim "\lim\limits_{}" i
 \lim $0
 endsnippet
 
-snippet limm "\lim\limits_{}"
+snippet limm "\lim\limits_{}" i
 \lim\limits_{$1\to $2} $0
 endsnippet
 
-snippet int "\int{}"
+snippet int "\int{}" i
 \int_{$1}^{$2} $0
 endsnippet
 
-snippet intt "\int{}"
+snippet intt "\int{}" i
 \int_{$1}^{$2} $3\mathrm{d}$0
 endsnippet
 
-snippet summ "\sum\limits"
+snippet summ "\sum\limits" i
 \sum\limits_{$1}}^{$2} $0
 endsnippet
 
-snippet prodd "\prod\limits"
+snippet prodd "\prod\limits" i
 \prod\limits_{$1}^{$2} $0
 endsnippet
 
@@ -99,53 +99,94 @@ endsnippet
 ##################
 #  Math Unicode  #
 ##################
-snippet alp "\alpha"
+snippet alp "\alpha" i
 \alpha
 endsnippet
-snippet be "\beta"
+snippet be "\beta" i
 \beta
 endsnippet
-snippet ga "\gamma"
+snippet ga "\gamma" i
 \gamma
 endsnippet
-snippet lam "\lambda"
+snippet lam "\lambda" i
 \lambda
 endsnippet
-snippet ep "\epsilon"
+snippet ep "\epsilon" i
 \epsilon
 endsnippet
-snippet vep "\varepsilon"
+snippet vep "\varepsilon" i
 \varepsilon
 endsnippet
-snippet hu "arc"
-\overset{\LARGE{\frown}}{$1} $0
+snippet de "\delta" i
+\delta
+endsnippet
+snippet bec "\because" i
+\because
+endsnippet
+snippet thf "\therefore" i
+\therefore
+endsnippet
+snippet gs "\gepslant" i
+\gepslant
+endsnippet
+snippet ls "\leqslant" i
+\leqslant
+endsnippet
+snippet inf "\infty" i
+\infty
 endsnippet
 
 #################
 #  Math Arrows  #
 #################
-snippet lra "Leftrightarrow"
+snippet lra "Leftrightarrow" i
 \Leftrightarrow
 endsnippet
-snippet la "Leftarrow"
+snippet la "Leftarrow" i
 \Leftarrow
 endsnippet
-snippet ra "Rightarrow"
+snippet ra "Rightarrow" i
 \Rightarrow
 endsnippet
-snippet xle "xlongequal"
+snippet xle "xlongequal" i
 \xlongequal
+endsnippet
+snippet hu "arc" i
+\overset{\LARGE{\frown}}{$1} $0
 endsnippet
 
 #######################
 #  LaTex Text Format  #
 #######################
-snippet tc "color text"
+snippet tc "color text" i
 \textcolor{green}{$1} $0
 endsnippet
-snippet tb "bf text"
+snippet tb "bf text" i
 \textbf{$1} $0
 endsnippet
-snippet cb "color box"
+snippet cb "color box" i
 \colorbox{#FEFDD3}{\textcolor{black}{$1}} $0
+endsnippet
+
+snippet hs1 "f(x)" i
+f(x) $0
+endsnippet
+snippet ds1 "f'(x)" i
+f'(x) $0
+endsnippet
+snippet sl1 "{x_0}" i
+\\{x_n\\} $0
+endsnippet
+snippet x1 "x_0" i
+x_0 $0
+endsnippet
+
+snippet jx "0 < | x - x_0 | < \detla" i
+0 < | x - x_0 | < \delta $0
+endsnippet
+snippet jx1 "| x_n - a | < \varepsilon" i
+| x_n - a | < \varepsilon $0
+endsnippet
+snippet jx2 "| f(x) - A | < \varepsilon" i
+| f(x) - A | < ${1:\varepsilon} $0
 endsnippet
