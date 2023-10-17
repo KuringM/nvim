@@ -76,7 +76,7 @@ snippet lim "\lim\limits_{}" i
 endsnippet
 
 snippet limm "\lim\limits_{}" i
-\lim\limits_{$1\to $2} $0
+\lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)} $0
 endsnippet
 
 snippet int "\int{}" i
@@ -111,10 +111,10 @@ endsnippet
 snippet lam "\lambda" i
 \lambda
 endsnippet
-snippet ep "\epsilon" i
+snippet ep "\epsilon" w
 \epsilon
 endsnippet
-snippet vep "\varepsilon" i
+snippet vep "\varepsilon" w
 \varepsilon
 endsnippet
 snippet de "\delta" i
@@ -126,14 +126,20 @@ endsnippet
 snippet thf "\therefore" i
 \therefore
 endsnippet
-snippet gs "\gepslant" i
-\gepslant
+snippet gs "\geqslant" i
+\geqslant
 endsnippet
 snippet ls "\leqslant" i
 \leqslant
 endsnippet
 snippet inf "\infty" i
 \infty
+endsnippet
+snippet mr "mathring" w
+\mathring{${1:U}} ${2:(x_0)} $0
+endsnippet
+snippet ex "exists" w
+\exists
 endsnippet
 
 #################
@@ -158,6 +164,9 @@ endsnippet
 #######################
 #  LaTex Text Format  #
 #######################
+snippet m "mathrm" w
+\mathrm{$1}\\ $0
+endsnippet
 snippet tc "color text" i
 \textcolor{green}{$1} $0
 endsnippet
@@ -175,7 +184,7 @@ snippet ds1 "f'(x)" i
 f'(x) $0
 endsnippet
 snippet sl1 "{x_0}" i
-\\{x_n\\} $0
+\\{${1:x_n}\\} $0
 endsnippet
 snippet x1 "x_0" w
 x_0 $0
@@ -188,5 +197,5 @@ snippet jx1 "| x_n - a | < \varepsilon" i
 | x_n - a | < \varepsilon $0
 endsnippet
 snippet jx2 "| f(x) - A | < \varepsilon" i
-| f(x) - A | < ${1:\varepsilon} $0
+| f(x) - ${1:A} | < ${2:\varepsilon} $0
 endsnippet
