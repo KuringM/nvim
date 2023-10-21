@@ -3,13 +3,16 @@
 call plug#begin('~/.config/nvim/plugged')
 
 """""""""""""""""""""Pretty Dress""""""""""""""""""""""
-Plug 'theniceboy/nvim-deus'                                    " vim theme
+" Plug 'theniceboy/nvim-deus'                                    " vim theme
+Plug 'Avimitin/neovim-deus'
 	set t_Co=256
 	set termguicolors
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 	set background=dark    " Setting dark mode
 	let g:deus_termcolors=256
+
+Plug 'sainnhe/everforest'
 
 " TODO: config eleline to show nvim modes  <03-03-23, Kuring> "
 " Plug 'liuchengxu/eleline.vim'                                     " 🌿 Another elegant statusline for vim
@@ -19,8 +22,9 @@ Plug 'theniceboy/nvim-deus'                                    " vim theme
 Plug 'glepnir/spaceline.vim'
 let g:spaceline_custom_vim_status = {"n": "🅝 ","V":"🅥 ","v":"🅥 ","\<C-v>": "🅥 ","i":"🅘 ","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"🅒 ","!":"SE"}
 
-Plug 'ojroques/vim-scrollstatus'                               " A scrollstatus for vim statuslin
-	let g:scrollstatus_size = 20
+" Plug 'ojroques/vim-scrollstatus'                               " A scrollstatus for vim statuslin
+	" let g:scrollstatus_size = 20
+Plug 'ojroques/nvim-scrollbar'                               " A scrollstatus for vim statuslin
 
 Plug 'luochen1990/rainbow'                                     " Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
 	let g:rainbow_active = 1
@@ -444,6 +448,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 	let g:mkdp_filetypes = ['markdown']
 	set updatetime=100
 
+Plug 'yaocccc/nvim-hl-mdcodeblock.lua'
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }  " VIM Table Mode for instant table creation.
 	noremap <LEADER>tm :TableModeToggle<CR>
 	"let g:table_mode_disable_mappings = 1
@@ -488,7 +493,7 @@ require'nvim-treesitter.configs'.setup {
 	
   highlight = {
     enable = true,
-    disable = { "c", "rust" },
+    disable = { "c", "rust" ,},
     additional_vim_regex_highlighting = true,
   },
 
@@ -512,3 +517,24 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 source $HOME/.config/nvim/conf/plugin/coc.vim
+lua require('scrollbar').setup {}
+
+" if has('termguicolors')
+" 	set termguicolors
+" endif
+"
+" " For dark version.
+" set background=dark
+"
+" " For light version.
+" " set background=light
+"
+" " Set contrast.
+" " This configuration option should be placed before `colorscheme everforest`.
+" " Available values: 'hard', 'medium'(default), 'soft'
+" let g:everforest_background = 'hard'
+"
+" " For better performance
+" let g:everforest_better_performance = 1
+"
+" colorscheme everforest

@@ -2,10 +2,40 @@ snippet mid "\mid \mid"
 	\\mid ${1} \\mid ${0}
 endsnippet
 
+# Accent
+snippet mr "mathring" w
+\mathring{${1:U}} ${2:(x_0)} $0
+endsnippet
 
-####################
-# MATH Environment #
-###################$
+# Environments
+# Snippet syntax Transformations
+# A transformation has the following syntax: >
+#    ${<tab_stop_no/regular_expression/replacement/options}
+snippet mtx "begin{*matrix}" b
+\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
+	& $2
+\end{${1}}
+endsnippet
+
+snippet kh "big braces" b
+\left\\{
+\begin{array}{ll}
+$1\\\\
+$2
+\end{array}
+\right.
+$0
+endsnippet
+
+snippet eqn "begin{equation}" b
+\begin{equation}
+\begin{split}
+	$1
+	&= $2\\\\
+	&= $3
+\end{split}
+\end{equation}
+endsnippet
 
 snippet al "begin{align} Align whith a number" b
 \begin{align}
@@ -31,74 +61,10 @@ snippet ca "begin{cases}" b
 \end{cases}
 endsnippet
 
-snippet eqn "begin{equation}" b
-\begin{equation}
-\begin{split}
-	$1
-	&= $2\\\\
-	&= $3
-\end{split}
-\end{equation}
-endsnippet
-
-snippet kh "big braces" b
-\left\\{
-\begin{array}{ll}
-$1\\\\
-$2
-\end{array}
-\right.
-$0
-endsnippet
-
-# Snippet syntax Transformations
-# A transformation has the following syntax: >
-#    ${<tab_stop_no/regular_expression/replacement/options}
-snippet mtx "begin{*matrix}" b
-\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
-	& $2
-\end{${1}}
-endsnippet
-
-####################
-#  Math Operators  #
-####################
-snippet fr "\frac" i
-\frac{$1}{$2} $0
-endsnippet
-
-snippet sq "\sqrt{}" i
-\sqrt[$2]{$1} $0 
-endsnippet
-
-snippet lim "\lim\limits_{}" i
-\lim $0
-endsnippet
-
-snippet limm "\lim\limits_{}" i
-\lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)} $0
-endsnippet
-
-snippet int "\int{}" i
-\int_{$1}^{$2} $0
-endsnippet
-
-snippet intt "\int{}" i
-\int_{$1}^{$2} $3\mathrm{d}$0
-endsnippet
-
-snippet summ "\sum\limits" i
-\sum\limits_{$1}}^{$2} $0
-endsnippet
-
-snippet prodd "\prod\limits" i
-\prod\limits_{$1}^{$2} $0
-endsnippet
 
 
-##################
-#  Math Unicode  #
-##################
+# Letters and Unicode
+## Greek Letters
 snippet alp "\alpha" i
 \alpha
 endsnippet
@@ -114,11 +80,24 @@ endsnippet
 snippet ep "\epsilon" w
 \epsilon
 endsnippet
-snippet vep "\varepsilon" w
+snippet ve "\varepsilon" w
 \varepsilon
 endsnippet
 snippet de "\delta" i
 \delta
+endsnippet
+
+## Other Letters
+snippet re "\Reals" w
+\Reals 
+endsnippet
+
+# Logic and Set Theory
+snippet fa "\forall" w
+\forall
+endsnippet
+snippet ex "exists" w
+\exists
 endsnippet
 snippet bec "\because" i
 \because
@@ -126,25 +105,57 @@ endsnippet
 snippet thf "\therefore" i
 \therefore
 endsnippet
+snippet im "implies" w
+\implies
+endsnippet
+
+# Operators
+# Big Operators
+snippet int "\int{}" i
+\int_{$1}^{$2} $0
+endsnippet
+snippet intt "\int{}" i
+\int_{$1}^{$2} $3\mathrm{d}$0
+endsnippet
+snippet summ "\sum\limits" i
+\sum\limits_{$1}}^{$2} $0
+endsnippet
+snippet prodd "\prod\limits" i
+\prod\limits_{$1}^{$2} $0
+endsnippet
+
+## Binary Operators
+snippet cap "\cap" i
+\cap
+endsnippet
+snippet cup "\cup" i
+\cup
+endsnippet
+## Fractions and Binomials
+snippet fr "\frac" i
+\frac{$1}{$2} $0
+endsnippet
+snippet sq "\sqrt{}" i
+\sqrt[$2]{$1} $0 
+endsnippet
+
+## Math Operators
+snippet lim "\lim\limits_{}" i
+\lim $0
+endsnippet
+snippet limm "\lim\limits_{}" i
+\lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)} $0
+endsnippet
+
+# Relations
 snippet gs "\geqslant" i
 \geqslant
 endsnippet
 snippet ls "\leqslant" i
 \leqslant
 endsnippet
-snippet inf "\infty" i
-\infty
-endsnippet
-snippet mr "mathring" w
-\mathring{${1:U}} ${2:(x_0)} $0
-endsnippet
-snippet ex "exists" w
-\exists
-endsnippet
 
-#################
-#  Math Arrows  #
-#################
+## Arrows
 snippet lra "Leftrightarrow" i
 \Leftrightarrow
 endsnippet
@@ -157,13 +168,10 @@ endsnippet
 snippet xle "xlongequal" i
 \xlongequal
 endsnippet
-snippet hu "arc" i
-\overset{\LARGE{\frown}}{$1} $0
-endsnippet
 
-#######################
-#  LaTex Text Format  #
-#######################
+# Style, Color, Size, and Font
+
+## Color
 snippet m "mathrm" w
 \mathrm{$1}\\ $0
 endsnippet
@@ -177,6 +185,19 @@ snippet cb "color box" i
 \colorbox{#FEFDD3}{\textcolor{black}{$1}} $0
 endsnippet
 
+## Size
+snippet hu "arc" i
+\overset{\LARGE{\frown}}{$1} $0
+endsnippet
+
+# Symbols and Punctuation
+snippet inf "\infty" i
+\infty
+endsnippet
+
+##################
+#  Tex shortcut  #
+##################
 snippet hs1 "f(x)" i
 f(x) $0
 endsnippet
@@ -198,4 +219,10 @@ snippet jx1 "| x_n - a | < \varepsilon" i
 endsnippet
 snippet jx2 "| f(x) - A | < \varepsilon" i
 | f(x) - ${1:A} | < ${2:\varepsilon} $0
+endsnippet
+snippet ue "U(x_0, \delta)" w
+\mathring{U}(x_0,\delta) $0
+endsnippet
+snippet jh "{}" w
+\\{$0 \\}
 endsnippet
