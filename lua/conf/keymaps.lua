@@ -4,18 +4,24 @@ local mode_nvo = {'n', 'v', 'o'}
 local mode_n = {'n'}
 local mode_i = {'i'}
 local mode_v = {'v'}
+local mode_c = {'c'}
 
 -- nvim keymaps
 G.g.mapleader = " "  -- Set <LEADER> as <SPACE>, ; as :
 G.map({
+	-- Normal Remap
 	{ mode= mode_nvo, lhs= ';', rhs= ':' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= '`', rhs= '~' , opt= { noremap = true } },  -- 切换光标下字符的大小写，并把光标向右移
+	-- Remap Actions
+	{ mode= mode_nvo, lhs= 'l', rhs= 'u' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'k', rhs= 'i' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'K', rhs= 'I' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= 'Q', rhs= ':q<CR>' , opt= { noremap = true } },  -- Quit
 	{ mode= mode_nvo, lhs= 'S', rhs= ':w<CR>' , opt= { noremap = true } },  -- Save
-	{ mode= mode_nvo, lhs= '<LEADER>r', rhs= ':source $MYVIMRC<CR>' , opt= { noremap = true } }, -- Roload VIMRC
-	{ mode= mode_nvo, lhs= 'Y', rhs= 'y$' , opt= { noremap = true } },  -- make Y to copy till the end of the line
+	{ mode= mode_n, lhs= 'Y', rhs= 'y$' , opt= { noremap = true } },  -- make Y to copy till the end of the line
 	{ mode= mode_v, lhs= 'Y', rhs= '\"+y' , opt= { noremap = true } },  -- Copy to system clipboard
 
-	-- Movement
+	-- Movement 
 	{ mode= mode_nvo, lhs= 'u', rhs= 'k' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= 'e', rhs= 'j' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= 'n', rhs= 'h' , opt= { noremap = true } },
@@ -31,13 +37,24 @@ G.map({
 	-- Ctrl + U or E will move up/down the view port without moving the cursor
 	{ mode= mode_nvo, lhs= '<C-U', rhs= '5<C-y>' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= '<C-E>', rhs= '5<C-e>' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= '<C-c>', rhs= 'zz' , opt= { noremap = true } },  -- cursor line move to the middle window
 
-	-- Actions
-	{ mode= mode_nvo, lhs= 'l', rhs= 'u' , opt= { noremap = true } },
-	{ mode= mode_nvo, lhs= 'k', rhs= 'i' , opt= { noremap = true } },
-	{ mode= mode_nvo, lhs= 'K', rhs= 'I' , opt= { noremap = true } },
+	-- Movement in Command
+	{ mode= mode_c, lhs= '<C-a>', rhs= '<Home>' , opt= { noremap = true } },
+	{ mode= mode_c, lhs= '<C-o>', rhs= '<End>' , opt= { noremap = true } },
+	{ mode= mode_c, lhs= '<C-u>', rhs= '<Up>' , opt= { noremap = true } },
+	{ mode= mode_c, lhs= '<C-e>', rhs= '<Down>' , opt= { noremap = true } },
+	{ mode= mode_c, lhs= '<C-n>', rhs= '<Left>' , opt= { noremap = true } },
+	-- { mode= mode_c, lhs= '<C-i>', rhs= '<Right>' , opt= { noremap = true } },
+	{ mode= mode_c, lhs= '<C-b>', rhs= '<S-Left>' , opt= { noremap = true } },
+	{ mode= mode_c, lhs= '<C-w>', rhs= '<S-Right>' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'tx', rhs= ':r !figlet' , opt= { noremap = true } },  -- Call figlet
 
-	-- Window management
+	--  Movement in Insert Mode
+	{ mode= mode_i, lhs= '<C-a>', rhs= '<ESC>A' , opt= { noremap = true } },  -- Move to the line home
+	{ mode= mode_i, lhs= '<C-u>', rhs= '<ESC>lx$p' , opt= { noremap = true } },  -- Move the next character to the end of the line with ctrl+9
+
+	-- Movement in Split Windows
 	-- Use <space> + new arrow keys for moving the cursor around windows
 	{ mode= mode_nvo, lhs= '<leader>w', rhs= '<C-w>w' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= '<leader>u', rhs= '<C-w>k' , opt= { noremap = true } },
@@ -77,5 +94,43 @@ G.map({
 	-- Avoid those shortcut
 	{ mode= mode_n, lhs= '<c-z>', rhs= ':u<CR>' , opt= { noremap = true } },
 	{ mode= mode_i, lhs= '<c-z>', rhs= '<c-o>:u<CR>' , opt= { noremap = true } },
+
+	-- Super LEADER
+	{ mode= mode_nvo, lhs= '<LEADER>r', rhs= ':source $MYVIMRC<CR>' , opt= { noremap = true } }, -- Roload VIMRC
+	{ mode= mode_nvo, lhs= '<leader>o', rhs= 'za' , opt= { noremap = true,  silent= true} },  -- Folding
+	{ mode= mode_nvo, lhs= '<leader>sc', rhs= ':set spell!<CR>' , opt= { noremap = true } },  -- Spelling Check with <space>sc
+	{ mode= mode_nvo, lhs= '<leader>sw', rhs= ':set wrap<CR>' , opt= { noremap = true } },  -- set wrap
+
+	-- unshown in cw maps
+	-- unshown in cw maps
+	{ mode= mode_n, lhs= '<', rhs= '<<' , opt= { noremap = true } },
+	{ mode= mode_n, lhs= '>', rhs= '>>' , opt= { noremap = true } },
+	-- { mode= mode_nvo, lhs= '<leader>dw', rhs= '/\(\<\w\+\>\)\_s*\1' , opt= { noremap = true } },  -- Adjacent duplicate words
+	{ mode= mode_nvo, lhs= '<leader><CR>', rhs= ':nohlsearch<CR>' , opt= { noremap = true } },  -- Search no highlight
+	-- Space to Tab
+	{ mode= mode_n, lhs= '<leader>tt', rhs= ':%s/    /\t/g' , opt= { noremap = true } },
+	{ mode= mode_v, lhs= '<leader>tt', rhs= ':s/    /\t/g' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= '-', rhs= 'N' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= '=', rhs= 'n' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'gl', rhs= 'gu' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'gL', rhs= 'gU' , opt= { noremap = true } },  -- 跨越的文本成为大写。
+	-- find and replace
+	{ mode= mode_n, lhs= "\\s", rhs= ':%s//g<left><left>' , opt= { noremap = true } },
+	{ mode= mode_v, lhs= '\\s', rhs= ':s//g<left><left>' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= '<++>', rhs= '<++>' , opt= { noremap = true } },
+
 })
-	-- { mode= mode_nvo, lhs= '<++>', rhs= '<++>' , opt= { noremap = true } },
+
+local function run_vim_shortcut(shortcut)
+	local escaped_shortcut = vim.api.nvim_replace_termcodes(shortcut, true, false, true)
+	vim.api.nvim_feedkeys(escaped_shortcut, 'n', true)
+end
+
+-- close win below
+vim.keymap.set("n", "<leader>q", function()
+	vim.cmd("TroubleClose")
+	local wins = vim.api.nvim_tabpage_list_wins(0)
+	if #wins > 1 then
+		run_vim_shortcut([[<C-w>j:q<CR>]])
+	end
+end, { noremap = true, silent = true })
