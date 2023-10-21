@@ -1,12 +1,3 @@
-snippet mid "\mid \mid"
-	\\mid ${1} \\mid ${0}
-endsnippet
-
-# Accent
-snippet mr "mathring" w
-\mathring{${1:U}} ${2:(x_0)} $0
-endsnippet
-
 # Environments
 # Snippet syntax Transformations
 # A transformation has the following syntax: >
@@ -32,7 +23,7 @@ snippet eqn "begin{equation}" b
 \begin{split}
 	$1
 	&= $2\\\\
-	&= $3
+	&= $0
 \end{split}
 \end{equation}
 endsnippet
@@ -154,6 +145,9 @@ endsnippet
 snippet ls "\leqslant" i
 \leqslant
 endsnippet
+snippet equ "\equiv" i
+\equiv
+endsnippet
 
 ## Arrows
 snippet lra "Leftrightarrow" i
@@ -198,17 +192,14 @@ endsnippet
 ##################
 #  Tex shortcut  #
 ##################
-snippet hs1 "f(x)" i
-f(x) $0
+snippet fu "Function: f(x)" i
+${1:f}(x) $0
 endsnippet
-snippet ds1 "f'(x)" i
-f'(x) $0
+snippet der "Derivative: f'(x)" i
+${1:f}'(x) $0
 endsnippet
-snippet sl1 "{x_0}" i
-\\{${1:x_n}\\} $0
-endsnippet
-snippet x1 "x_0" w
-x_0 $0
+snippet sn "Sequence of number {x_0}" i
+\\{${1:x}_n\\} $0
 endsnippet
 
 snippet jx "0 < | x - x_0 | < \detla" i
@@ -220,9 +211,12 @@ endsnippet
 snippet jx2 "| f(x) - A | < \varepsilon" i
 | f(x) - ${1:A} | < ${2:\varepsilon} $0
 endsnippet
-snippet ue "U(x_0, \delta)" w
-\mathring{U}(x_0,\delta) $0
+snippet mr "mathring" w
+\mathring{${1:U}} (${2:x_0}) $0
 endsnippet
-snippet jh "{}" w
+snippet set "{}" w
 \\{$0 \\}
+endsnippet
+snippet mid "\mid \mid"
+\\mid ${1} \\mid ${0}
 endsnippet
