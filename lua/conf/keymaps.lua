@@ -115,8 +115,8 @@ G.map({
 	{ mode= mode_nvo, lhs= 'gl', rhs= 'gu' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= 'gL', rhs= 'gU' , opt= { noremap = true } },  -- 跨越的文本成为大写。
 	-- find and replace
-	{ mode= mode_n, lhs= "\\s", rhs= ':%s//g<left><left>' , opt= { noremap = true } },
-	{ mode= mode_v, lhs= '\\s', rhs= ':s//g<left><left>' , opt= { noremap = true } },
+	{ mode= mode_n, lhs= [[\s]], rhs= ':%s//g<left><left>' , opt= { noremap = true } },
+	{ mode= mode_v, lhs= [[\s]], rhs= ':s//g<left><left>' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= '<++>', rhs= '<++>' , opt= { noremap = true } },
 
 })
