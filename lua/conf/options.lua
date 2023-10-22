@@ -11,7 +11,7 @@ vim.opt.number         = true                         -- Line numbers
 vim.opt.relativenumber = true                         -- Line relative numbers
 vim.opt.cursorline     = true                         -- Enable highlighting of the current line
 vim.opt.hidden         = true                         -- Required to keep multiple buffers open multiple buffers
--- vim.opt.noexpandtab    = true                         -- Don't use softtabstop spaces instead of tab characters for indentation
+vim.o.noexpandtab    = true                         -- Don't use softtabstop spaces instead of tab characters for indentation
 vim.opt.tabstop        = 2                               -- <TAB> in file represent 2 space
 vim.opt.shiftwidth     = 2                            -- Indent by 2 spaces when using >>, <<, == etc.
 vim.opt.softtabstop    = 2                           -- Indent by 2 when pressing <TAB>
@@ -20,7 +20,7 @@ vim.opt.list      = true                         -- Show space,tabs,newlines,tra
 vim.opt.listchars= 'tab:|\\ ,trail:▫'             -- Show char for tabs,trailing space
 vim.opt.scrolloff=4                             -- Leave 4 lines down cursor"
 vim.opt.ttimeoutlen=0                           -- No timeoutlen for preeing keys
--- vim.opt.notimeout = true                              -- No timeout
+vim.o.notimeout = true                              -- No timeout
 vim.opt.viewoptions='cursor,folds,slash,unix'
 vim.opt.wrap =true                                   -- Text surround below line
 vim.opt.tw=0                                    -- Maximum worth for inserting text
@@ -31,7 +31,7 @@ vim.opt.foldenable = true
 vim.opt.formatoptions = vim.o.formatoptions:gsub('tc', '')
 vim.opt.splitright  = true                            -- Horizontal splits will automatically be below
 vim.opt.splitbelow  = true                            -- Vertical splits will automatically be to the right
--- vim.opt.noshowmode  = true                            -- We don't need to see things like -- INSERT -- anymore
+vim.o.noshowmode  = true                            -- We don't need to see things like -- INSERT -- anymore
 vim.opt.showcmd     = true
 vim.opt.wildmenu    = true
 vim.opt.ignorecase  = true
@@ -42,7 +42,7 @@ vim.opt.completeopt = 'longest,noinsert,menuone,noselect,preview'
 vim.opt.ttyfast     = true                            -- should make scrolling faster
 vim.opt.lazyredraw  = true                            -- same as above
 vim.opt.visualbell  = true 
--- vim.opt.colorcolumn=100
+vim.opt.colorcolumn = '100'
 vim.opt.updatetime=100                          -- Faster completion
 vim.opt.virtualedit= 'block'
 -- vim.opt fileencoding
@@ -51,7 +51,7 @@ vim.opt.termencoding='utf-8'
 vim.opt.encoding='utf-8'
 -- vim.opt spell check identify en_us and cjk
 vim.opt.spelllang='en_us,cjk'
---vim.opt.nocompatible = true 
+vim.o.nocompatible = true 
 -- ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
 vim.g.markdown_recommended_style = 0
 
