@@ -10,3 +10,4 @@ _machine_specific.vim
 .vim-bookmarks
 .backColor
 
+lua/conf/machine_specific.lua

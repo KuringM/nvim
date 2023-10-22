@@ -1,59 +1,57 @@
-local set = vim.opt
 -- Editor Setup
-
 -- System
-set.clipboard += 'unnamedplus'                  -- Copy paste between vim and everything else
+vim.opt.clipboard:append {'unnamedplus'}                  -- Copy paste between vim and everything else
 -- let &t_ut=''                                -- empty to tell Vim it needs to draw the background color
-set.autochdir = true                               -- Your working directory will always be the same as your working directory
+vim.opt.autochdir = true                               -- Your working directory will always be the same as your working directory
 
 -- Editor behavior
-set.exrc           = true
-set.secure         = true
-set.number         = true                         -- Line numbers
-set.relativenumber = true                         -- Line relative numbers
-set.cursorline     = true                         -- Enable highlighting of the current line
-set.hidden         = true                         -- Required to keep multiple buffers open multiple buffers
-set.noexpandtab    = true                         -- Don't use softtabstop spaces instead of tab characters for indentation
-set.tabstop        = 2                               -- <TAB> in file represent 2 space
-set.shiftwidth     = 2                            -- Indent by 2 spaces when using >>, <<, == etc.
-set.softtabstop    = 2                           -- Indent by 2 when pressing <TAB>
-set.autoindent =true                              -- Keep indentation from previous line
-set.list      = true                         -- Show space,tabs,newlines,trailing space,wrapped lines
-set.listchars= 'tab:|\\ ,trail:▫'             -- Show char for tabs,trailing space
-set.scrolloff=4                             -- Leave 4 lines down cursor"
-set.ttimeoutlen=0                           -- No timeoutlen for preeing keys
-set.notimeout = true                              -- No timeout
-set.viewoptions='cursor,folds,slash,unix'
-set.wrap =true                                   -- Text surround below line
-set.tw=0                                    -- Maximum worth for inserting text
-set.indentexpr= ''
-set.foldmethod = 'indent'
-set.foldlevel=99
-set.foldenable = true
-set.formatoptions = vim.o.formatoptions:gsub('tc', '')
-set.splitright  = true                            -- Horizontal splits will automatically be below
-set.splitbelow  = true                            -- Vertical splits will automatically be to the right
-set.noshowmode  = true                            -- We don't need to see things like -- INSERT -- anymore
-set.showcmd     = true
-set.wildmenu    = true
-set.ignorecase  = true
-set.smartcase   = true
-set.shortmess   = vim.o.shortmess .. 'c'                            -- Don't pass messages to |ins-completion-menu|.
-set.inccommand  = split
-set.completeopt = 'longest,noinsert,menuone,noselect,preview'
-set.ttyfast     = true                            -- should make scrolling faster
-set.lazyredraw  = true                            -- same as above
-set.visualbell  = true 
-set.colorcolumn=100
-set.updatetime=100                          -- Faster completion
-set.virtualedit= 'block'
--- set fileencoding
-set.fileencodings='utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
-set.termencoding='utf-8'
-set.encoding='utf-8'
--- set spell check identify en_us and cjk
-set.spelllang='en_us,cjk'
-set.nocompatible = true 
+vim.opt.exrc           = true
+vim.opt.secure         = true
+vim.opt.number         = true                         -- Line numbers
+vim.opt.relativenumber = true                         -- Line relative numbers
+vim.opt.cursorline     = true                         -- Enable highlighting of the current line
+vim.opt.hidden         = true                         -- Required to keep multiple buffers open multiple buffers
+-- vim.opt.noexpandtab    = true                         -- Don't use softtabstop spaces instead of tab characters for indentation
+vim.opt.tabstop        = 2                               -- <TAB> in file represent 2 space
+vim.opt.shiftwidth     = 2                            -- Indent by 2 spaces when using >>, <<, == etc.
+vim.opt.softtabstop    = 2                           -- Indent by 2 when pressing <TAB>
+vim.opt.autoindent =true                              -- Keep indentation from previous line
+vim.opt.list      = true                         -- Show space,tabs,newlines,trailing space,wrapped lines
+vim.opt.listchars= 'tab:|\\ ,trail:▫'             -- Show char for tabs,trailing space
+vim.opt.scrolloff=4                             -- Leave 4 lines down cursor"
+vim.opt.ttimeoutlen=0                           -- No timeoutlen for preeing keys
+-- vim.opt.notimeout = true                              -- No timeout
+vim.opt.viewoptions='cursor,folds,slash,unix'
+vim.opt.wrap =true                                   -- Text surround below line
+vim.opt.tw=0                                    -- Maximum worth for inserting text
+vim.opt.indentexpr= ''
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel=99
+vim.opt.foldenable = true
+vim.opt.formatoptions = vim.o.formatoptions:gsub('tc', '')
+vim.opt.splitright  = true                            -- Horizontal splits will automatically be below
+vim.opt.splitbelow  = true                            -- Vertical splits will automatically be to the right
+-- vim.opt.noshowmode  = true                            -- We don't need to see things like -- INSERT -- anymore
+vim.opt.showcmd     = true
+vim.opt.wildmenu    = true
+vim.opt.ignorecase  = true
+vim.opt.smartcase   = true
+vim.opt.shortmess   = vim.o.shortmess .. 'c'                            -- Don't pass messages to |ins-completion-menu|.
+vim.opt.inccommand  = split
+vim.opt.completeopt = 'longest,noinsert,menuone,noselect,preview'
+vim.opt.ttyfast     = true                            -- should make scrolling faster
+vim.opt.lazyredraw  = true                            -- same as above
+vim.opt.visualbell  = true 
+-- vim.opt.colorcolumn=100
+vim.opt.updatetime=100                          -- Faster completion
+vim.opt.virtualedit= 'block'
+-- vim.opt fileencoding
+vim.opt.fileencodings='utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
+vim.opt.termencoding='utf-8'
+vim.opt.encoding='utf-8'
+-- vim.opt spell check identify en_us and cjk
+vim.opt.spelllang='en_us,cjk'
+--vim.opt.nocompatible = true 
 -- ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
 vim.g.markdown_recommended_style = 0
 
