@@ -1,7 +1,9 @@
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
+
 -- Editor Setup
 -- System
 vim.opt.clipboard:append {'unnamedplus'}                  -- Copy paste between vim and everything else
--- let &t_ut=''                                -- empty to tell Vim it needs to draw the background color
+vim.cmd([[let &t_ut='']])                               -- empty to tell Vim it needs to draw the background color
 vim.opt.autochdir = true                               -- Your working directory will always be the same as your working directory
 
 -- Editor behavior
@@ -12,6 +14,7 @@ vim.opt.relativenumber = true                         -- Line relative numbers
 vim.opt.cursorline     = true                         -- Enable highlighting of the current line
 vim.opt.hidden         = true                         -- Required to keep multiple buffers open multiple buffers
 vim.o.noexpandtab    = true                         -- Don't use softtabstop spaces instead of tab characters for indentation
+vim.o.smarttab = true
 vim.opt.tabstop        = 2                               -- <TAB> in file represent 2 space
 vim.opt.shiftwidth     = 2                            -- Indent by 2 spaces when using >>, <<, == etc.
 vim.opt.softtabstop    = 2                           -- Indent by 2 when pressing <TAB>
@@ -28,17 +31,19 @@ vim.opt.indentexpr= ''
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel=99
 vim.opt.foldenable = true
+vim.o.foldlevelstart = 99
 vim.opt.formatoptions = vim.o.formatoptions:gsub('tc', '')
 vim.opt.splitright  = true                            -- Horizontal splits will automatically be below
 vim.opt.splitbelow  = true                            -- Vertical splits will automatically be to the right
-vim.o.noshowmode  = true                            -- We don't need to see things like -- INSERT -- anymore
+-- vim.o.noshowmode  = true                            -- We don't need to see things like -- INSERT -- anymore
 vim.opt.showcmd     = true
 vim.opt.wildmenu    = true
 vim.opt.ignorecase  = true
 vim.opt.smartcase   = true
 vim.opt.shortmess   = vim.o.shortmess .. 'c'                            -- Don't pass messages to |ins-completion-menu|.
-vim.opt.inccommand  = split
+vim.opt.inccommand  = 'split'
 vim.opt.completeopt = 'longest,noinsert,menuone,noselect,preview'
+vim.o.completeopt = 'menuone,noinsert,noselect,preview'
 vim.opt.ttyfast     = true                            -- should make scrolling faster
 vim.opt.lazyredraw  = true                            -- same as above
 vim.opt.visualbell  = true 
