@@ -1,5 +1,4 @@
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
-
 -- Editor Setup
 -- System
 vim.opt.clipboard:append {'unnamedplus'}                  -- Copy paste between vim and everything else
