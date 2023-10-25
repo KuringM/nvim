@@ -52,7 +52,6 @@ G.map({
 
 	--  Movement in Insert Mode
 	{ mode= mode_i, lhs= '<C-a>', rhs= '<ESC>A' , opt= { noremap = true } },  -- Move to the line home
-	{ mode= mode_i, lhs= '<C-u>', rhs= '<ESC>lx$p' , opt= { noremap = true } },  -- Move the next character to the end of the line with ctrl+9
 
 	-- Movement in Split Windows
 	-- Use <space> + new arrow keys for moving the cursor around windows

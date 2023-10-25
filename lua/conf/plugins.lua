@@ -31,12 +31,12 @@ end
 vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
 require("lazy").setup({
+	require("conf.plugins.colorscheme"),  -- nvim colorscheme
+	require("conf.plugins.editor"),
 	-- require("conf.plugins.telescope").config,
 	-- require("conf.plugins.fzf"),
-	require("conf.plugins.colorscheme"),
 	-- require("conf.plugins.notify"),
 	-- require("conf.plugins.statusline"),
-	-- require("conf.plugins.editor"),
 	-- require("conf.plugins.scrollbar"),
 	-- require("conf.plugins.tabline"),
 	-- require("conf.plugins.autocomplete").config,
@@ -46,7 +46,6 @@ require("lazy").setup({
 	-- require("conf.plugins.go"),
 	-- require("conf.plugins.treesitter"),
 	-- require("conf.plugins.joshuto"),
-	-- require("conf.plugins.comment"),
 	-- require("conf.plugins.surround"),
 	-- require("conf.plugins.project"),
 	-- require("conf.plugins.wilder"),
