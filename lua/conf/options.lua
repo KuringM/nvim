@@ -55,7 +55,7 @@ vim.opt.termencoding='utf-8'
 vim.opt.encoding='utf-8'
 -- vim.opt spell check identify en_us and cjk
 vim.opt.spelllang='en_us,cjk'
-vim.o.nocompatible = true 
+vim.o.nocompatible = true
 -- ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
 vim.g.markdown_recommended_style = 0
 
