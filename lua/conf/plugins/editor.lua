@@ -13,15 +13,13 @@ inoremap <c-u> <ESC>:call <SID>MakePair()<CR>
 ]])
 
 return {
-	require('conf/plugins/editor_plugins/tcomment_vim'),  -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
-	require('conf/plugins/editor_plugins/vim-illuminate'),  -- automatically highlighting other uses of the current word under the cursor
-	require('conf/plugins/editor_plugins/bullets_vim'),  -- Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
-	-- require('conf/plugins/editor_plugins/vim-smoothie')
-	require('conf/plugins/editor_plugins/nvim-colorizer'),
+	require('conf/plugins/plugins_editor/tcomment_vim'),  -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
+	require('conf/plugins/plugins_editor/bullets_vim'),  -- Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
+	-- require('conf/plugins/plugins_editor/vim-smoothie')
+	require('conf/plugins/plugins_editor/move_nvim'),
+	-- require('conf/plugins/plugins_editor/substitute_nvim'),
+	require('conf/plugins/plugins_editor/nvim-ufo'),
+	require('conf/plugins/plugins_editor/nvim-autopairs'),
 	{ 'theniceboy/antovim', lazy = false, },
 	{ 'gcmt/wildfire.vim',  lazy = false, },
-	require('conf/plugins/editor_plugins/move_nvim'),
-	-- require('conf/plugins/editor_plugins/substitute_nvim'),
-	require('conf/plugins/editor_plugins/nvim-ufo'),
-	require('conf/plugins/editor_plugins/nvim-autopairs'),
 }

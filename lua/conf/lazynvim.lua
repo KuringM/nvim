@@ -31,8 +31,8 @@ end
 vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
 require("lazy").setup({
-	require("conf.plugins.colorscheme"),  -- nvim colorscheme
-	require("conf.plugins.editor"),
+	require("conf.plugins.appearance"),  -- nvim appearance enhancment
+	require("conf.plugins.editor"),  -- nvim editor enhancement
 	-- require("conf.plugins.telescope").config,
 	-- require("conf.plugins.fzf"),
 	-- require("conf.plugins.notify"),

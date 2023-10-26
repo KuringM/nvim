@@ -1,5 +1,5 @@
 return
-{ -- automatically highlighting other uses of the current word under the cursor
+{ -- automatically highlighting other uses of the current word under the cursor.
 	"RRethy/vim-illuminate",
 	config = function()
 		require('illuminate').configure({

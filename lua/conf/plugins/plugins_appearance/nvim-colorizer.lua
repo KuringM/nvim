@@ -1,5 +1,5 @@
 return
-{
+{	-- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 	"NvChad/nvim-colorizer.lua",
 	opts = {
 		filetypes = { "*" },
@@ -14,7 +14,7 @@ return
 			css = false,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
 			css_fn = false,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
 			-- Available modes for `mode`: foreground, background,  virtualtext
-			mode = "virtualtext", -- Set the display mode.
+			mode = "background", -- Set the display mode.
 			-- Available methods are false / true / "normal" / "lsp" / "both"
 			-- True is same as normal
 			tailwind = true,
