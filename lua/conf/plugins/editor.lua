@@ -16,8 +16,9 @@ return {
 	require('conf/plugins/plugins_editor/tcomment_vim'),  -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 	require('conf/plugins/plugins_editor/bullets_vim'),  -- Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 	-- require('conf/plugins/plugins_editor/vim-smoothie')
-	require('conf/plugins/plugins_editor/move_nvim'),
-	-- require('conf/plugins/plugins_editor/substitute_nvim'),
+	require('conf/plugins/plugins_editor/move_nvim'),   -- Gain the power to move lines and blocks and auto-indent them!
+	require('conf/plugins/plugins_editor/yanky_nvim'),   --  Improved Yank and Put functionalities for Neovim
+	require('conf/plugins/plugins_editor/substitute_nvim'),   -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
 	require('conf/plugins/plugins_editor/nvim-ufo'),
 	require('conf/plugins/plugins_editor/nvim-autopairs'),
 	{ 'theniceboy/antovim', lazy = false, },

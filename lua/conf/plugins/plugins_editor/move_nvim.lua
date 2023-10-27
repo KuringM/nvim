@@ -1,5 +1,5 @@
 return
-{
+{ -- Gain the power to move lines and blocks and auto-indent them!
 	"fedepujol/move.nvim",
 	config = function()
 		local opts = { noremap = true, silent = true }
