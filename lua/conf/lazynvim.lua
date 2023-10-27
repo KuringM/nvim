@@ -31,10 +31,11 @@ end
 vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
 require("lazy").setup({
-	require("conf.plugins.coc"),  -- nvim editor enhancement
 	require("conf.plugins.appearance"),  -- nvim appearance enhancment
 	require("conf.plugins.editor"),  -- nvim editor enhancement
+	require("conf.plugins.coc"),  -- nvim editor enhancement
 	require("conf.plugins.treesitter"),
+	-- require("conf.plugins.go"),
 	-- require("conf.plugins.telescope").config,
 	-- require("conf.plugins.fzf"),
 	-- require("conf.plugins.notify"),
@@ -45,7 +46,6 @@ require("lazy").setup({
 	-- require("conf.plugins.debugger"),
 	-- require("conf.plugins.lspconfig").config,
 	-- require("conf.plugins.flutter"),
-	-- require("conf.plugins.go"),
 	-- require("conf.plugins.joshuto"),
 	-- require("conf.plugins.surround"),
 	-- require("conf.plugins.project"),

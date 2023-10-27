@@ -41,6 +41,7 @@ return {
 					},
 				}
 			})
+			vim.keymap.set('n', '<f10>', ':TSHighlightCapturesUnderCursor<CR>', {noremap =  true})
 		end
 	},
 	{
