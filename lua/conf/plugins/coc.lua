@@ -47,8 +47,8 @@ return{
 		local keyset = vim.keymap.set
 		-- Autocomplete
 		function _G.check_back_space()
-				local col = vim.fn.col('.') - 1
-				return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+			local col = vim.fn.col('.') - 1
+			return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
 		end
 
 		local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
@@ -91,8 +91,6 @@ return{
 				command = "silent call CocActionAsync('highlight')",
 				desc = "Highlight symbol under cursor on CursorHold"
 		})
-
-
 
 		keyset("i", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
 		keyset("v", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
