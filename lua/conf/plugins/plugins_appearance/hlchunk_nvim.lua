@@ -6,7 +6,7 @@ return {
 			require('hlchunk').setup({
 				chunk = {
 					enable = true,
-					use_treesitter = true,
+					use_treesitter = false,
 					style = {
 						{ fg = "#806d9c" },
 					},
