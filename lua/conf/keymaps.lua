@@ -95,7 +95,7 @@ G.map({
 	{ mode= mode_i, lhs= '<c-z>', rhs= '<c-o>:u<CR>' , opt= { noremap = true } },
 
 	-- Super LEADER
-	{ mode= mode_nvo, lhs= '<LEADER>r', rhs= ':source $MYVIMRC<CR>' , opt= { noremap = true } }, -- Roload VIMRC
+	-- { mode= mode_nvo, lhs= '<LEADER>r', rhs= ':source $MYVIMRC<CR>' , opt= { noremap = true } }, -- Roload VIMRC
 	{ mode= mode_nvo, lhs= '<leader>o', rhs= 'za' , opt= { noremap = true,  silent= true} },  -- Folding
 	{ mode= mode_nvo, lhs= '<leader>sc', rhs= ':set spell!<CR>' , opt= { noremap = true } },  -- Spelling Check with <space>sc
 	{ mode= mode_nvo, lhs= '<leader>sw', rhs= ':set wrap<CR>' , opt= { noremap = true } },  -- set wrap

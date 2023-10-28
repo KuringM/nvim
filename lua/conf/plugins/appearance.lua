@@ -8,4 +8,6 @@ return {
 	require('conf/plugins/plugins_appearance/gitsigns_nvim'),   -- Git integration for buffers
 	require('conf/plugins/plugins_appearance/nvim-scrollbar'),  -- Extensible Neovim Scrollbar
 	-- require('conf/plugins/plugins_appearance/blamer_nvim'),
+	require('conf/plugins/plugins_appearance/bufferline_nvim'),  -- A snazzy bufferline for Neovim
+	require('conf/plugins/plugins_appearance/nvim-notify')  -- A fancy, configurable, notification manager for NeoVim
 }
