@@ -67,6 +67,7 @@
 	"snippet.highlight": true,
 	"snippets.ultisnips.directories": [
 		"$HOME/.config/nvim/UltiSnips/",
+		"$HOME/.local/share/nvim/lazy/vim-snippets/UltiSnips",
 		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
 	],
 	"snippets.extends": {
