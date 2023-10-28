@@ -21,8 +21,9 @@ return {
 	require('conf/plugins/plugins_editor/substitute_nvim'),   -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
 	require('conf/plugins/plugins_editor/nvim-ufo'),
 	require('conf/plugins/plugins_editor/nvim-autopairs'),
-	require('conf/plugins/plugins_editor/telescope_nvim'),  -- Find, Filter, Preview, Pick. All lua, all the time.
-	require('conf/plugins/plugins_editor/commander_nvim'),  -- Find, Filter, Preview, Pick. All lua, all the time.
+	-- require('conf/plugins/plugins_editor/telescope_nvim'),  -- Find, Filter, Preview, Pick. All lua, all the time.
+	-- require('conf/plugins/plugins_editor/commander_nvim'),
+	require('conf/plugins/plugins_editor/fzf-lua'),
 	{ 'theniceboy/antovim', lazy = false, },
 	{ 'gcmt/wildfire.vim',  lazy = false, },
 }

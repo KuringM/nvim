@@ -35,9 +35,7 @@ require("lazy").setup({
 	require("conf.plugins.editor"),  -- nvim editor enhancement
 	require("conf.plugins.coc"),  -- coc
 	require("conf.plugins.treesitter"),
-	-- require("conf.plugins.fzf"),
 	-- require("conf.plugins.autocomplete").config,
-	-- require("conf.plugins.debugger"),
 	-- require("conf.plugins.lspconfig").config,
 	-- require("conf.plugins.flutter"),
 	-- require("conf.plugins.joshuto"),
