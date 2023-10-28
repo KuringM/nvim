@@ -1,6 +1,9 @@
 return{
 	'neoclide/coc.nvim',
 	branch = 'release',
+	dependencies = {
+		'theniceboy/vim-snippets'
+	},
 	config = function()
 		vim.cmd([[
 		let g:coc_global_extensions = [
