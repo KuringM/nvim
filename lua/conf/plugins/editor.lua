@@ -29,6 +29,7 @@ return {
 	{ 'sjl/clam.vim'   },  -- A lightweight Vim plugin for working with shell commands.
 	{ 'AmaiSaeta/capture.vim' },   -- Capture ex-command output to new buffer.
 	require('conf/plugins/plugins_editor/smartim'),  -- A Vim plugin to make it stand well with input methods (Mac only)
-	{	'lilydjwg/fcitx.vim' },  -- keep and restore fcitx state when leaving/re-entering insert mode
+	-- {	'lilydjwg/fcitx.vim' },  -- keep and restore fcitx state when leaving/re-entering insert mode
 	require('conf/plugins/plugins_editor/Tabmerge'),  -- Merge a tab's windows with the current tab
+	require('conf/plugins/plugins_editor/nvim-surround'),  -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 }

@@ -33,24 +33,20 @@ vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
 	require("conf.plugins.appearance"),  -- nvim appearance enhancment
 	require("conf.plugins.editor"),  -- nvim editor enhancement
+	require("conf.plugins.lsp"),
 	require("conf.plugins.coc"),  -- coc
 	require("conf.plugins.treesitter"),
-	require("conf.plugins.lsp"),
 	-- require("conf.plugins.autocomplete").config,
 	-- require("conf.plugins.lspconfig").config,
-	-- require("conf.plugins.flutter"),
 	-- require("conf.plugins.joshuto"),
-	-- require("conf.plugins.surround"),
 	-- require("conf.plugins.project"),
 	-- require("conf.plugins.wilder"),
 	-- require("conf.plugins.multi-cursor"),
 	-- require("conf.plugins.copilot"),
-	-- require("conf.plugins.markdown"),
 	-- require("conf.plugins.search"),
 	-- require("conf.plugins.snippets"),
 	-- require("conf.plugins.window-management"),
 	-- require("conf.plugins.undo"),
-	-- require("conf.plugins.ft"),
 	-- require("conf.plugins.fun"),
 	-- require("conf.plugins.winbar"),
 	-- require("conf.plugins.leap"),
