@@ -32,4 +32,6 @@ return {
 	-- {	'lilydjwg/fcitx.vim' },  -- keep and restore fcitx state when leaving/re-entering insert mode
 	require('conf/plugins/plugins_editor/Tabmerge'),  -- Merge a tab's windows with the current tab
 	require('conf/plugins/plugins_editor/nvim-surround'),  -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
+	require('conf/plugins/plugins_editor/vim-visual-multi'),  -- Multiple cursors plugin for vim/neovim
+	require('conf/plugins/plugins_editor/undotree'),  -- The undo history visualizer for VIM
 }

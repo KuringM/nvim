@@ -1,4 +1,7 @@
 return {
+	require('conf/plugins/plugins_lsp/treesitter'),
+	require('conf/plugins/plugins_lsp/coc'),
+	require('conf/plugins/plugins_lsp/go'),
 	require('conf/plugins/plugins_lsp/nvim-dap'),
 	require('conf/plugins/plugins_lsp/go'),
 	require('conf/plugins/plugins_lsp/dart'),

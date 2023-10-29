@@ -22,7 +22,8 @@ return {
 					"kdl",
 					"vim",
 					"terraform",
-					-- "markdown",
+					"markdown",
+					"markdown_inline",
 				},
 				highlight = {
 					enable = true,

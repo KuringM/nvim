@@ -33,28 +33,17 @@ vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
 	require("conf.plugins.appearance"),  -- nvim appearance enhancment
 	require("conf.plugins.editor"),  -- nvim editor enhancement
-	require("conf.plugins.lsp"),
-	require("conf.plugins.coc"),  -- coc
-	require("conf.plugins.treesitter"),
+	require("conf.plugins.lsp"),  -- nvim lsp
 	-- require("conf.plugins.autocomplete").config,
 	-- require("conf.plugins.lspconfig").config,
 	-- require("conf.plugins.project"),
-	-- require("conf.plugins.multi-cursor"),
 	-- require("conf.plugins.copilot"),
 	-- require("conf.plugins.search"),
 	-- require("conf.plugins.snippets"),
 	-- require("conf.plugins.window-management"),
-	-- require("conf.plugins.undo"),
 	-- require("conf.plugins.fun"),
 	-- require("conf.plugins.winbar"),
 	-- require("conf.plugins.leap"),
 	-- { "dstein64/vim-startuptime" },
 }, {
 })
-
--- require("plugin.vertical_cursor_movement")
-
--- local swap_ternary = require("plugin.swap_ternary")
--- vim.keymap.set("n", "<leader>st", swap_ternary.swap_ternary, { noremap = true })
-
--- require("plugin.compile_run")

@@ -1,5 +1,5 @@
 return {
-	'gelguy/wilder.nvim',
+	'gelguy/wilder.nvim',  -- A more adventurous wildmenu
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
