@@ -133,3 +133,17 @@ vim.keymap.set("n", "<leader>q", function()
 		run_vim_shortcut([[<C-w>j:q<CR>]])
 	end
 end, { noremap = true, silent = true })
+
+-- Move the next character to the end of the line with ctrl+u in Insert Mode.
+vim.cmd([[
+fun! s:MakePair()
+	let line = getline('.')
+	let len = strlen(line)
+	if line[len - 1] == ";" || line[len - 1] == ","
+		normal! lx$P
+	else
+		normal! lx$p
+	endif
+endfun
+inoremap <c-u> <ESC>:call <SID>MakePair()<CR>
+]])

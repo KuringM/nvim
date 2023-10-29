@@ -1,16 +1,3 @@
--- Move the next character to the end of the line with ctrl+u in Insert Mode.
-vim.cmd([[
-fun! s:MakePair()
-	let line = getline('.')
-	let len = strlen(line)
-	if line[len - 1] == ";" || line[len - 1] == ","
-		normal! lx$P
-	else
-		normal! lx$p
-	endif
-endfun
-inoremap <c-u> <ESC>:call <SID>MakePair()<CR>
-]])
 
 return {
 	require('conf/plugins/plugins_editor/tcomment_vim'),  -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
@@ -35,4 +22,5 @@ return {
 	require('conf/plugins/plugins_editor/vim-visual-multi'),  -- Multiple cursors plugin for vim/neovim
 	require('conf/plugins/plugins_editor/undotree'),  -- The undo history visualizer for VIM
 	require('conf/plugins/plugins_editor/flash_nvim'),  -- Navigate your code with search labels, enhanced character motions and Treesitter integration
+	-- require('conf/plugins/plugins_editor/leap_nvim'),  -- Neovim's answer to the mouse 🦘
 }
