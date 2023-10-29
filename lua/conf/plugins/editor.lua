@@ -34,4 +34,5 @@ return {
 	require('conf/plugins/plugins_editor/nvim-surround'),  -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 	require('conf/plugins/plugins_editor/vim-visual-multi'),  -- Multiple cursors plugin for vim/neovim
 	require('conf/plugins/plugins_editor/undotree'),  -- The undo history visualizer for VIM
+	require('conf/plugins/plugins_editor/flash_nvim'),  -- Navigate your code with search labels, enhanced character motions and Treesitter integration
 }

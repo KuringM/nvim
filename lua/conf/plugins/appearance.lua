@@ -11,5 +11,6 @@ return {
 	require('conf/plugins/plugins_appearance/bufferline_nvim'),  -- A snazzy bufferline for Neovim
 	-- require('conf/plugins/plugins_appearance/nvim-notify'),  -- A fancy, configurable, notification manager for NeoVim
 	require('conf/plugins/plugins_appearance/joshuto_nvim'),  -- ranger-like terminal file manager written in Rust
-	require('conf/plugins/plugins_appearance/wilder_nvim')  -- A more adventurous wildmenu
+	require('conf/plugins/plugins_appearance/wilder_nvim'),  -- A more adventurous wildmenu
+	-- require('conf/plugins/plugins_appearance/dropbar_nvim'),  -- IDE-like breadcrumbs, out of the box
 }

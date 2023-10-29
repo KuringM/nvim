@@ -2,7 +2,6 @@ vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 -- Editor Setup
 -- System
 vim.opt.clipboard:append {'unnamedplus'}                  -- Copy paste between vim and everything else
-vim.cmd([[let &t_ut='']])                               -- empty to tell Vim it needs to draw the background color
 vim.opt.autochdir = true                               -- Your working directory will always be the same as your working directory
 
 -- Editor behavior
