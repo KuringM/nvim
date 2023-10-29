@@ -27,7 +27,7 @@
 		"e": "nodeNext",
 		"E": "expandableNext",
 		"i": "open",
-		"I": "openInVsplit",
+		"I": "open:vsplit.plain",
 		"<cr>": "open",
 		"<tab>": "actionMenu",
 		"gl": "expandRecursive",
