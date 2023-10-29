@@ -95,7 +95,7 @@ return{
 				desc = "Highlight symbol under cursor on CursorHold"
 		})
 
-		keyset("i", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
+		keyset("n", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
 		keyset("v", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
 		-- coc explorer
 		keyset("n", "tt", "<CMD>CocCommand explorer<CR>")
