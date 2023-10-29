@@ -20,6 +20,7 @@
 	"explorer.keyMappings.global": {
 		"h": "toggleSelection",
 		"l": "collapse",
+		"L": "collapse:all",
 		"u": "nodePrev",
 		"U": "expandablePrev",
 		"n": "gotoParent",
