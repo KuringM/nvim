@@ -29,4 +29,5 @@ return {
 	require('conf/plugins/plugins_editor/nvim-spectre'),  -- Find the enemy and replace them with dark power.
 	-- require('conf/plugins/plugins_editor/ultisnips'),  -- UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 	-- require('conf/plugins/plugins_editor/LuaSnip'),  -- Snippet Engine for Neovim written in Lua.
+	require('conf/plugins/plugins_editor/vim-rooter'),  -- Changes Vim working directory to project root.
 }
