@@ -23,8 +23,8 @@ return {
 	require('conf/plugins/plugins_editor/undotree'),  -- The undo history visualizer for VIM
 	require('conf/plugins/plugins_editor/flash_nvim'),  -- Navigate your code with search labels, enhanced character motions and Treesitter integration
 	-- require('conf/plugins/plugins_editor/leap_nvim'),  -- Neovim's answer to the mouse 🦘
-	-- search
-	require('conf/plugins/plugins_editor/nvim-hlslens'),
-	require('conf/plugins/plugins_editor/any-jump'),
-	require('conf/plugins/plugins_editor/nvim-spectre'),
+	-- search, jump
+	require('conf/plugins/plugins_editor/nvim-hlslens'),   -- Hlsearch Lens for Neovim
+	require('conf/plugins/plugins_editor/any-jump'),  -- Jump to any definition and references 👁 IDE madness without overhead 🚀
+	require('conf/plugins/plugins_editor/nvim-spectre'),  -- Find the enemy and replace them with dark power.
 }
