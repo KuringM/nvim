@@ -38,10 +38,7 @@ require("lazy").setup({
 	-- require("conf.plugins.lspconfig").config,
 	-- require("conf.plugins.project"),
 	-- require("conf.plugins.copilot"),
-	-- require("conf.plugins.search"),
-	-- require("conf.plugins.snippets"),
 	-- require("conf.plugins.window-management"),
-	-- require("conf.plugins.fun"),
-	-- { "dstein64/vim-startuptime" },
+	{ "dstein64/vim-startuptime" },  -- A plugin for profiling Vim and Neovim startup time.
 }, {
 })

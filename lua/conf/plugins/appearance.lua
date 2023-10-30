@@ -13,4 +13,7 @@ return {
 	require('conf/plugins/plugins_appearance/joshuto_nvim'),  -- ranger-like terminal file manager written in Rust
 	require('conf/plugins/plugins_appearance/wilder_nvim'),  -- A more adventurous wildmenu
 	-- require('conf/plugins/plugins_appearance/dropbar_nvim'),  -- IDE-like breadcrumbs, out of the box
+	require('conf/plugins/plugins_appearance/cellular-automaton_nvim'),  -- A useless plugin that might help you cope with stubbornly broken tests or overall lack of sense in life. It lets you execute aesthetically pleasing, cellular automaton animations based on the content of neovim buffer.
+	require('conf/plugins/plugins_appearance/colorful-winsep_nvim'),  -- Make your nvim window separators colorful
+	require('conf/plugins/plugins_appearance/NeoZoom_lua'),  -- A simple usecase of floating window to help you focus.
 }
