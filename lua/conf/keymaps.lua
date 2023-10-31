@@ -53,11 +53,16 @@ G.map({
 	{ mode= mode_nvo, lhs= 'se', rhs= ':set splitbelow<CR>:split<CR>' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= 'sn', rhs= ':set nosplitright<CR>:vsplit<CR>:set splitright<CR>' , opt= { noremap = true } },
 	{ mode= mode_nvo, lhs= 'si', rhs= ':set splitright<CR>:vsplit<CR>' , opt= { noremap = true } },
-	-- Rotate screens
-	{ mode= mode_nvo, lhs= 'sh', rhs= '<C-w>t<C-w>K' , opt= { noremap = true } },  -- Place two screens up and down
-	{ mode= mode_nvo, lhs= 'sv', rhs= '<C-w>t<C-w>H' , opt= { noremap = true } },  -- Place the two screens side by side
-	{ mode= mode_nvo, lhs= 'srh', rhs= '<C-w>b<C-w>K' , opt= { noremap = true } },
-	{ mode= mode_nvo, lhs= 'srv', rhs= '<C-w>b<C-w>H' , opt= { noremap = true } },
+	-- Move/Rotate windows
+	{ mode= mode_nvo, lhs= 'sh', rhs= '<C-w>K' , opt= { noremap = true } },  -- Place two screens up and down / Move nowSplitWindow to 1st
+	{ mode= mode_nvo, lhs= 'sv', rhs= '<C-w>H' , opt= { noremap = true } },  -- Place the two screens side by side / Move nowSplitWindow to 1st
+	-- { mode= mode_nvo, lhs= 'srh', rhs= '<C-w>b<C-w>K' , opt= { noremap = true } },
+	-- { mode= mode_nvo, lhs= 'srv', rhs= '<C-w>b<C-w>H' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'sr', rhs= '<C-w>x' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'smu', rhs= '<C-w>K' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'sme', rhs= '<C-w>J' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'smn', rhs= '<C-w>H' , opt= { noremap = true } },
+	{ mode= mode_nvo, lhs= 'smi', rhs= '<C-w>L' , opt= { noremap = true } },
 
 	-- Tab management
 	{ mode= mode_nvo, lhs= 'tu', rhs= ':tabe<CR>' , opt= { noremap = true } },  -- Create a new tab with tu
