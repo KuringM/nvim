@@ -36,6 +36,7 @@ require("lazy").setup({
 	require("conf.plugins.lsp"),  -- nvim lsp
 	-- require("conf.plugins.autocomplete").config,
 	-- require("conf.plugins.lspconfig").config,
+	{ 'yianwillis/vimcdoc'},  -- vim chinese doc
 	{ "dstein64/vim-startuptime" },  -- A plugin for profiling Vim and Neovim startup time.
 }, {
 })
