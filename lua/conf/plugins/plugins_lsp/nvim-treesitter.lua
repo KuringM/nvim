@@ -25,7 +25,7 @@ return {
 					"terraform",
 					"markdown",
 					"markdown_inline",
-					"katex",
+					"latex",
 				},
 				highlight = {
 					enable = true,
