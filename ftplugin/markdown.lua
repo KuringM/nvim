@@ -29,13 +29,13 @@ local gray_light  = '#c0c0c0'
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.md", command = "setlocal spell", })
 -- H1~H6
-vim.api.nvim_set_hl(0, "@text.title.1", { fg = red, bold = ture})
-vim.api.nvim_set_hl(0, '@text.title.2', { fg=orange, bold =ture})
-vim.api.nvim_set_hl(0, '@text.title.3', { fg=yellow, bold =ture})
-vim.api.nvim_set_hl(0, '@text.title.4', { fg=green_dark , bold =ture})
-vim.api.nvim_set_hl(0, '@text.title.5', { fg=cyan  , bold =ture})
-vim.api.nvim_set_hl(0, '@text.title.6', { fg=purple, bold =ture})
--- vim.api.nvim_set_hl(0, '@text.title.6', { fg=purple_light, bold =ture})
+vim.api.nvim_set_hl(0, "@text.title.1", { fg = red, bold = true})
+vim.api.nvim_set_hl(0, '@text.title.2', { fg=orange, bold =true})
+vim.api.nvim_set_hl(0, '@text.title.3', { fg=yellow, bold =true})
+vim.api.nvim_set_hl(0, '@text.title.4', { fg=green_dark , bold =true})
+vim.api.nvim_set_hl(0, '@text.title.5', { fg=cyan  , bold =true})
+vim.api.nvim_set_hl(0, '@text.title.6', { fg=purple, bold =true})
+-- vim.api.nvim_set_hl(0, '@text.title.6', { fg=purple_light, bold =true})
 vim.api.nvim_set_hl(0, '@text.title.1.marker', {fg=orange})
 vim.api.nvim_set_hl(0, '@text.title.2.marker', {fg=orange})
 vim.api.nvim_set_hl(0, '@text.title.3.marker', {fg=orange})
@@ -44,7 +44,11 @@ vim.api.nvim_set_hl(0, '@text.title.5.marker', {fg=orange})
 vim.api.nvim_set_hl(0, '@text.title.6.marker', {fg=orange})
 
 -- Italic, Bold, BoldItalic, Strike
-vim.api.nvim_set_hl(0, '@text.emphasis', {fg=gray})
-vim.api.nvim_set_hl(0, '@text.strong', {fg=gray_light})
+vim.api.nvim_set_hl(0, '@text.emphasis', {fg=gray, italic= true})
+vim.api.nvim_set_hl(0, '@text.strong', {fg=gray_light, bold= true})
 -- vim.api.nvim_set_hl(0, {'@text.emphasis', '@text.strong',}, {fg=orange})
-vim.api.nvim_set_hl(0, '@text.strike', {fg=red_dark})
+vim.api.nvim_set_hl(0, '@text.strike', {fg=red_dark, strikethrough= true})
+
+-- Tex
+vim.api.nvim_set_hl(0, '@text.environment', {fg=turqoise, bold=true})
+vim.api.nvim_set_hl(0, '@function', {fg=gray, italic= true})
