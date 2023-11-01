@@ -50,5 +50,5 @@ vim.api.nvim_set_hl(0, '@text.strong', {fg=gray_light, bold= true})
 vim.api.nvim_set_hl(0, '@text.strike', {fg=red_dark, strikethrough= true})
 
 -- Tex
-vim.api.nvim_set_hl(0, '@text.environment', {fg=turqoise, bold=true})
+vim.api.nvim_set_hl(0, '@text.environment', {fg=blue, bold=true})
 vim.api.nvim_set_hl(0, '@function', {fg=gray, italic= true})
