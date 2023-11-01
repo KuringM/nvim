@@ -1,7 +1,8 @@
 return {
-	"nvim-treesitter/playground",
+	"nvim-treesitter/playground",  -- Treesitter playground integrated into Neovim
+	'nvim-treesitter/nvim-treesitter-refactor', -- Refactor module for nvim-treesitter
 	{
-		"nvim-treesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter",  -- Nvim Treesitter configurations and abstraction layer
 		lazy = false,
 		priority = 1000,
 		build = ":TSUpdate",
@@ -24,6 +25,7 @@ return {
 					"terraform",
 					"markdown",
 					"markdown_inline",
+					"katex",
 				},
 				highlight = {
 					enable = true,
@@ -46,7 +48,7 @@ return {
 		end
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-context",
+		"nvim-treesitter/nvim-treesitter-context",  -- Show code context
 		config = function()
 			local tscontext = require('treesitter-context')
 			tscontext.setup {
