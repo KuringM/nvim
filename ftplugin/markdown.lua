@@ -26,29 +26,38 @@ local gray        = '#928374'
 local gray_dark   = '#3c3836'
 local gray_darker = '#242a32'
 local gray_light  = '#c0c0c0'
+local foreground            = '#f8f8f2'
+local background            = '#282a36'
+local selection_foreground  = '#ffffff'
+local selection_background  = '#44475a'
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.md", command = "setlocal spell", })
--- H1~H6
-vim.api.nvim_set_hl(0, "@text.title.1", { fg = red, bold = true})
-vim.api.nvim_set_hl(0, '@text.title.2', { fg=orange, bold =true})
-vim.api.nvim_set_hl(0, '@text.title.3', { fg=yellow, bold =true})
-vim.api.nvim_set_hl(0, '@text.title.4', { fg=green_dark , bold =true})
-vim.api.nvim_set_hl(0, '@text.title.5', { fg=cyan  , bold =true})
-vim.api.nvim_set_hl(0, '@text.title.6', { fg=purple, bold =true})
--- vim.api.nvim_set_hl(0, '@text.title.6', { fg=purple_light, bold =true})
-vim.api.nvim_set_hl(0, '@text.title.1.marker', {fg=orange})
-vim.api.nvim_set_hl(0, '@text.title.2.marker', {fg=orange})
-vim.api.nvim_set_hl(0, '@text.title.3.marker', {fg=orange})
-vim.api.nvim_set_hl(0, '@text.title.4.marker', {fg=orange})
-vim.api.nvim_set_hl(0, '@text.title.5.marker', {fg=orange})
-vim.api.nvim_set_hl(0, '@text.title.6.marker', {fg=orange})
 
--- Italic, Bold, BoldItalic, Strike
-vim.api.nvim_set_hl(0, '@text.emphasis', {fg=gray, italic= true})
-vim.api.nvim_set_hl(0, '@text.strong', {fg=gray_light, bold= true})
--- vim.api.nvim_set_hl(0, {'@text.emphasis', '@text.strong',}, {fg=orange})
-vim.api.nvim_set_hl(0, '@text.strike', {fg=red_dark, strikethrough= true})
+local HGS ={
+	-- H1~H6
+	{ hg = "@text.title.1", style = { fg = red,         bold = true} },
+	{ hg = '@text.title.2', style = { fg = orange,      bold = true} },
+	{ hg = '@text.title.3', style = { fg = yellow,      bold = true} },
+	{ hg = '@text.title.4', style = { fg = green_dark , bold = true} },
+	{ hg = '@text.title.5', style = { fg = cyan  ,      bold = true} },
+	{ hg = '@text.title.6', style = { fg = purple,      bold = true} },
 
--- Tex
-vim.api.nvim_set_hl(0, '@text.environment', {fg=blue, bold=true})
-vim.api.nvim_set_hl(0, '@function', {fg=gray, italic= true})
+	-- H1-H6's markers
+	{ hg = '@text.title.1.marker', style = { fg = orange } },
+	{ hg = '@text.title.2.marker', style = { fg = orange } },
+	{ hg = '@text.title.3.marker', style = { fg = orange } },
+	{ hg = '@text.title.4.marker', style = { fg = orange } },
+	{ hg = '@text.title.5.marker', style = { fg = orange } },
+	{ hg = '@text.title.6.marker', style = { fg = orange } },
+
+	-- Italic, Bold, BoldItalic, Strike, LaTEX environment, LaTEX function
+	{ hg = '@text.emphasis'    , style = { fg=gray, italic= true } },
+	{ hg = '@text.strong'      , style = { fg=gray_light, bold= true } },
+	{ hg = '@text.strike'      , style = { fg=red_dark, strikethrough= true, italic= true } },
+	{ hg = '@text.environment' , style = { fg=gray, bold=true } },
+	{ hg = '@function'         , style = { fg=gray, italic= true } },
+}
+
+for _,HG in pairs(HGS) do
+	vim.api.nvim_set_hl(0, HG.hg, HG.style)
+end
