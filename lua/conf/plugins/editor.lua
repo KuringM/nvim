@@ -1,4 +1,10 @@
 return {
+	-- Code Format
+	require("conf/plugins/plugins_editor/tabular"),            -- vim script for text filtering and alignment
+	-- require('conf/plugins/plugins_editor/formatter_nvim'),
+	require("conf/plugins/plugins_editor/conform_nvim"),
+
+
 	require("conf/plugins/plugins_editor/tcomment_vim"),       -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 	require("conf/plugins/plugins_editor/bullets_vim"),        -- Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 	-- require('conf/plugins/plugins_editor/vim-smoothie')
@@ -30,9 +36,4 @@ return {
 	-- require('conf/plugins/plugins_editor/LuaSnip'),         -- Snippet Engine for Neovim written in Lua.
 	require("conf/plugins/plugins_editor/vim-rooter"),         -- Changes Vim working directory to project root.
 	require("conf/plugins/plugins_editor/copilot_vim"),        -- Neovim plugin for GitHub Copilot
-
-	-- Code Format
-	require("conf/plugins/plugins_editor/tabular"),            -- vim script for text filtering and alignment
-	-- require('conf/plugins/plugins_editor/formatter_nvim'),
-	require("conf/plugins/plugins_editor/conform_nvim"),
 }
