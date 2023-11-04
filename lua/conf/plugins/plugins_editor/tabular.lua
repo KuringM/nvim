@@ -14,9 +14,21 @@ return {
 			[[:Tabularize //l1l1l1<left><left><left><left><left><left><left>]],
 			{ noremap = true }
 		)
-		vim.cmd([[AddTabularPattern first_comma /^[^,]*\zs,/l1l1l1]])
+
 		vim.cmd([[
-			AddTabularPipeline multiple_spaces / \{2,}/
+			" Aligning text with <Leader>a
+			if exists(":Tabularize")
+				noremap  <Leader>a= :Tabularize /=/l1l1l1<CR>
+				vnoremap <Leader>a= :Tabularize /=/l1l1l1<CR>
+				noremap  <Leader>a: :Tabularize /:\zs/l1l1l1<CR>
+				vnoremap <Leader>a: :Tabularize /:\zs/l1l1l1<CR>
+				noremap  <Leader>a, :Tabularize /,\zs/l1l1l1<CR>
+				vnoremap <Leader>a, :Tabularize /,\zs/l1l1l1<CR>
+				noremap  <Leader>a-- :Tabularize /--\zs/l1l1l1<CR>
+				vnoremap <Leader>a-- :Tabularize /--\zs/l1l1l1<CR>
+			endif
+			AddTabularPattern! first_comma /^[^,]*\zs,/l1l1l1
+			AddTabularPipeline! multiple_spaces / \{2,}/
 			\ map(a:lines, "substitute(v:val, ' \{2,}', '  ', 'g')")
 			\   | tabular#TabularizeStrings(a:lines, '  ', 'l0')
 		]])
