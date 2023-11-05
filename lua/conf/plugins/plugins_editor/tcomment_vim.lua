@@ -1,10 +1,9 @@
-return{
-	-- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
-	"tomtom/tcomment_vim",
+return {
+	"tomtom/tcomment_vim", -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 	event = "BufRead",
 	config = function()
 		vim.g.tcomment_maps = true
-		vim.g.tcomment_textobject_inlinecomment = ''
+		vim.g.tcomment_textobject_inlinecomment = ""
 
 		vim.cmd([[
 			nmap <LEADER>cn g>c
@@ -13,5 +12,5 @@ return{
 			vmap <LEADER>cu g<
 			unmap ic
 		]])
-	end
+	end,
 }
