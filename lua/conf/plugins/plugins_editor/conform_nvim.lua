@@ -1,6 +1,10 @@
 return {
 	"stevearc/conform.nvim", -- -- Lightweight yet powerful formatter plugin for Neovim
 	event = "VeryLazy",
+	build = {
+		"brew install fsouza/prettierd/prettierd",
+		"brew install stylua",
+	},
 	config = function()
 		-- local status, conform = pcall(require, "conform")
 		-- if not status then
