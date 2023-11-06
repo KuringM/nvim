@@ -148,6 +148,12 @@ endsnippet
 snippet equ "\equiv" i
 \equiv
 endsnippet
+snippet sbs "\subset" i
+\subset
+endsnippet
+snippet sps "\supset" i
+\supset
+endsnippet
 
 ## Arrows
 snippet lra "Leftrightarrow" i
@@ -166,14 +172,8 @@ endsnippet
 # Style, Color, Size, and Font
 
 ## Color
-snippet m "mathrm" w
-\mathrm{$1}\\ $0
-endsnippet
 snippet tc "color text" i
 \textcolor{green}{$1} $0
-endsnippet
-snippet tb "bf text" i
-\textbf{$1} $0
 endsnippet
 snippet cb "color box" i
 \colorbox{#FEFDD3}{\textcolor{black}{$1}} $0
@@ -182,6 +182,20 @@ endsnippet
 ## Size
 snippet hu "arc" i
 \overset{\LARGE{\frown}}{$1} $0
+endsnippet
+
+# Font
+snippet tbf "\textbf" i
+\textbf{$1} $0
+endsnippet
+snippet m "\mathrm" w
+\mathrm{$1}\\ $0
+endsnippet
+snippet mb "\mathbb" w
+\mathbb{$1}\\ $0
+endsnippet
+snippet mo "\mathop" w
+\mathop{$1}
 endsnippet
 
 # Symbols and Punctuation
