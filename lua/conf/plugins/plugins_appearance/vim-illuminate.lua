@@ -3,9 +3,9 @@ return {
 	config = function()
 		require("illuminate").configure({
 			providers = {
-				"lsp",
-				-- "treesitter",
 				"regex",
+				"lsp",
+				"treesitter",
 			},
 		})
 		vim.cmd("hi IlluminatedWordText guibg=#393E4D gui=none")
