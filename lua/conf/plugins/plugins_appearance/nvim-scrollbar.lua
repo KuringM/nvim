@@ -1,8 +1,7 @@
-return
-{ -- Extensible Neovim Scrollbar
-	"petertriho/nvim-scrollbar",
+return {
+	"petertriho/nvim-scrollbar", -- Extensible Neovim Scrollbar
 	dependencies = {
-		"kevinhwang91/nvim-hlslens",  -- Hlsearch Lens for Neovim
+		"kevinhwang91/nvim-hlslens", -- Hlsearch Lens for Neovim
 	},
 	config = function()
 		local group = vim.api.nvim_create_augroup("scrollbar_set_git_colors", {})

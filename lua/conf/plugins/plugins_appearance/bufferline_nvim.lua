@@ -1,8 +1,7 @@
-return
-{  -- A snazzy bufferline for Neovim
-	'akinsho/bufferline.nvim',
+return {
+	"akinsho/bufferline.nvim", -- A snazzy bufferline for Neovim
 	version = "*",
-	dependencies = 'nvim-tree/nvim-web-devicons',
+	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
 		options = {
 			mode = "tabs",
@@ -13,7 +12,7 @@ return
 				return " " .. icon .. count
 			end,
 			indicator = {
-				icon = '▎', -- this should be omitted if indicator style is not 'icon'
+				icon = "▎", -- this should be omitted if indicator style is not 'icon'
 				-- style = 'icon' | 'underline' | 'none',
 				style = "icon",
 			},
@@ -24,6 +23,6 @@ return
 			tab_size = 16,
 			padding = 0,
 			separator_style = "thick",
-		}
-	}
+		},
+	},
 }

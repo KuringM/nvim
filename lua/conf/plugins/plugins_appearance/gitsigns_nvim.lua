@@ -1,6 +1,5 @@
-return
-{ -- Git integration for buffers
-	"lewis6991/gitsigns.nvim",
+return {
+	"lewis6991/gitsigns.nvim", -- Git integration for buffers
 	config = function()
 		require('gitsigns').setup({
 			signs = {
@@ -17,5 +16,5 @@ return
 		vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "H", ":Gitsigns preview_hunk_inline<CR>", { noremap = true, silent = true })
-	end
+	end,
 }

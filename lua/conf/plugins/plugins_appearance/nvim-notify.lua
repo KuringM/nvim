@@ -1,6 +1,5 @@
-return
-{  -- A fancy, configurable, notification manager for NeoVim
-	"rcarriga/nvim-notify",
+return {
+	"rcarriga/nvim-notify", -- A fancy, configurable, notification manager for NeoVim
 	config = function()
 		local notify = require("notify")
 		vim.notify = notify
@@ -15,12 +14,12 @@ return
 			render = "compact",
 			stages = "fade_in_slide_out",
 			timeout = 3000,
-			top_down = true
+			top_down = true,
 		})
 		local opts = { noremap = true, silent = true }
 		vim.keymap.set("n", ",;", function()
-			require('telescope').extensions.notify.notify({
-				layout_strategy = 'vertical',
+			require("telescope").extensions.notify.notify({
+				layout_strategy = "vertical",
 				layout_config = {
 					width = 0.9,
 					height = 0.9,
@@ -29,7 +28,7 @@ return
 				wrap_results = true,
 				previewer = false,
 			})
-		end, opts);
-		vim.keymap.set("n", "<LEADER>n;", notify.dismiss, opts);
-	end
+		end, opts)
+		vim.keymap.set("n", "<LEADER>n;", notify.dismiss, opts)
+	end,
 }
