@@ -15,7 +15,7 @@ return {
 	-- Git
 	require("conf/plugins/plugins_appearance/gitsigns_nvim"),           -- Git integration for buffers
 	require("conf/plugins/plugins_appearance/lazygit_nvim"),            -- Plugin for calling lazygit from within neovim.
-	require('conf/plugins/plugins_appearance/blamer_nvim'),             -- A git blame plugin for neovim inspired by VS Code's GitLens plugin
+	-- require('conf/plugins/plugins_appearance/blamer_nvim'),             -- A git blame plugin for neovim inspired by VS Code's GitLens plugin
 
 	-- Windows
 	require("conf/plugins/plugins_appearance/wilder_nvim"),             -- A more adventurous wildmenu
