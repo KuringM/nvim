@@ -9,13 +9,13 @@ return {
 			},
 		})
 		vim.cmd("hi IlluminatedWordText guibg=#393E4D gui=none")
-		vim.api.nvim_set_keymap("n", "=", "", {
+		vim.api.nvim_set_keymap("n", "<leader>=", "", {
 			noremap = true,
 			callback = function()
 				require("illuminate").goto_next_reference(wrap)
 			end,
 		})
-		vim.api.nvim_set_keymap("n", "-", "", {
+		vim.api.nvim_set_keymap("n", "<leader>-", "", {
 			noremap = true,
 			callback = function()
 				require("illuminate").goto_prev_reference(wrap)
