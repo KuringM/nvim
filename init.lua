@@ -2,6 +2,7 @@ require('conf/options')
 require('conf.keymaps')
 require('conf.lazynvim')
 require("plugin.compile_run")
+require("plugin.TurnCP2EP")
 
 -- require("plugin.vertical_cursor_movement")
 
