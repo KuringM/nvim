@@ -5,97 +5,116 @@ local CheckChineseMark = function()
 			let s:line=search('。')
 			execute s:line . "s/。/\. /g"
 		]])
-	elseif vim.fn.search("，") then
+	end
+	if vim.fn.search("，") then
 		vim.cmd([[
 			let s:line=search('，')
 			execute s:line . "s/，/, /g"
 		]])
-	elseif vim.fn.search("；") then
+	end
+	if vim.fn.search("；") then
 		vim.cmd([[
 			let s:line=search('；')
 			execute s:line . "s/；/;/g"
 		]])
-	elseif vim.fn.search("？") then
+	end
+	if vim.fn.search("？") then
 		vim.cmd([[
 			let s:line=search('？')
 			execute s:line . "s/？/?/g"
 		]])
-	elseif vim.fn.search("：") then
+	end
+	if vim.fn.search("：") then
 		vim.cmd([[
 			let s:line=search('：')
 			execute s:line . "s/：/\:/g"
 		]])
-	elseif vim.fn.search("‘") then
+	end
+	if vim.fn.search("‘") then
 		vim.cmd([[
 			let s:line=search('‘')
 			execute s:line . "s/‘/\'/g"
 		]])
-	elseif vim.fn.search("’") then
+	end
+	if vim.fn.search("’") then
 		vim.cmd([[
 			let s:line=search('’')
 			execute s:line . "s/’/\'/g"
 		]])
-	elseif vim.fn.search("”") then
+	end
+	if vim.fn.search("”") then
 		vim.cmd([[
 			let s:line=search('”')
 			execute s:line . "s/”/\"/g"
 		]])
-	elseif vim.fn.search("“") then
+	end
+	if vim.fn.search("“") then
 		vim.cmd([[
 			let s:line=search('“')
 			execute s:line . "s/“/\"/g"
 		]])
-	elseif vim.fn.search("《") then
+	end
+	if vim.fn.search("《") then
 		vim.cmd([[
 			let s:line=search('《')
 			execute s:line . "s/《/\</g"
 		]])
-	elseif vim.fn.search("》") then
+	end
+	if vim.fn.search("》") then
 		vim.cmd([[
 			let s:linie=search('》')
 			execute s:line . "s/》/\>/g"
 		]])
-	elseif vim.fn.search("——") then
+	end
+	if vim.fn.search("——") then
 		vim.cmd([[
 			let s:line=search('——')
 		execute s:line . "s/——/-/g"
 		]])
-	elseif vim.fn.search("）") then
+	end
+	if vim.fn.search("）") then
 		vim.cmd([[
 			let s:line=search('）')
 			execute s:line . "s/）/\)/g"
 		]])
-	elseif vim.fn.search("（") then
+	end
+	if vim.fn.search("（") then
 		vim.cmd([[
 			let s:line=search('（')
 			execute s:line . "s/（/\(/g"
 		]])
-	elseif vim.fn.search("……") then
+	end
+	if vim.fn.search("……") then
 		vim.cmd([[
 			let s:line=search('……')
 			execute s:line . "s/……/^/g"
 		]])
-	elseif vim.fn.search("¥") then
+	end
+	if vim.fn.search("¥") then
 		vim.cmd([[
 			let s:line=search('¥')
 			execute s:line . "s/¥/$/g"
 		]])
-	elseif vim.fn.search("！") then
+	end
+	if vim.fn.search("！") then
 		vim.cmd([[
 			let s:line=search('！')
 			execute s:line . "s/！/!/g"
 		]])
-	elseif vim.fn.search("·") then
+	end
+	if vim.fn.search("·") then
 		vim.cmd([[
 			let s:line=search('·')
 			execute s:line . "s/·/`/g"
 		]])
-	elseif vim.fn.search("【") then
+	end
+	if vim.fn.search("【") then
 		vim.cmd([[
 			let s:line=search('【')
 			execute s:line . "s/【/[/g"
 		]])
-	elseif vim.fn.search("】") then
+	end
+	if vim.fn.search("】") then
 		vim.cmd([[
 			let s:line=search('】')
 			execute s:line . "s/】/]/g"
