@@ -1,20 +1,20 @@
 -- Snippets
 -- please read through this file and change what you need to change
-vim.g.snips_author = 'Kuring'
+vim.g.snips_author = "Kuring"
 
 -- Python
 -- vim.g.python_host_prog = '/usr/bin/python2'
-vim.g.python3_host_prog = '/usr/bin/python3'
+vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- Ruby
-vim.g.ruby_host_prog = '/usr/bin/ruby'
+vim.g.ruby_host_prog = "/usr/bin/ruby"
 
 -- Flutter
 --vim.g.flutter_default_device = 'iPhone'
 --vim.g.flutter_run_args = ----flavor dev--
 
 -- Markdown
--- App variable 
+-- App variable
 -- vim.g.mkdp_browser = 'google-chrome-stable'
 --
 -- -- command open Google Chrome on mac
