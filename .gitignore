@@ -1,14 +1,13 @@
-*.swp
-.DS_Store
-view/
-plugged/
-sessions/
-autoload/plug.vim.old
-tmp/
-.netrwhist
-_machine_specific.vim
-.vim-bookmarks
-.backColor
+# ignore everything
+/*
+/*/
 
-lua/conf/machine_specific.lua
-lazy-lock.json
+# ... but these:
+!/README.md
+!/.gitignore
+!/UltiSnips/
+!/ftplugin/
+!/lua/
+/lua/conf/machine_specific.lua
+!/coc-settings.json
+!/init.lua
