@@ -40,11 +40,12 @@ return {
 				zig = { "zigfmt" },
 				markdown = {
 					"prettierd",
-					"markdownlint",
+					"latexindet",
+					"injected",
 				},
 			},
 		})
-
+		require("conform.formatters.injected").options.ignore_errors = true
 		vim.api.nvim_set_keymap("n", [[\f]], "", {
 			noremap = true,
 			silent = true,
