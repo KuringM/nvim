@@ -1,6 +1,8 @@
+local adds = [[conf/plugins/plugins_appearance/]]
+
 return {
 	-- Colorscheme
-	require("conf/plugins/plugins_appearance/nvim-deus"),               -- The color scheme for neovim.
+	require( adds .. "nvim-deus"),               -- The color scheme for neovim.
 	require("conf/plugins/plugins_appearance/nvim-colorizer"),          -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 
 	-- Some Bar
