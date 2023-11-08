@@ -30,10 +30,11 @@ for _, v in ipairs(lazy_keys) do
 end
 vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
+local a = "conf.plugins."
 require("lazy").setup({
-	require("conf.plugins.appearance"),  -- nvim appearance enhancment
-	require("conf.plugins.editor"),  -- nvim editor enhancement
-	require("conf.plugins.lsp"),  -- nvim lsp
+	require( a .. "appearance"),  -- nvim appearance enhancment
+	require( a .. "editor"),  -- nvim editor enhancement
+	require( a .. "lsp"),  -- nvim lsp
 	-- require("conf.plugins.autocomplete").config,
 	-- require("conf.plugins.lspconfig").config,
 	{ 'yianwillis/vimcdoc'},  -- vim chinese doc
