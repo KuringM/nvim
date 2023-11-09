@@ -1,5 +1,7 @@
 local colors = require('colors')
 
+-- ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
+vim.g.markdown_recommended_style = 0
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.md", command = "setlocal spell", })
 
 local HGS ={
