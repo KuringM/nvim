@@ -1,10 +1,6 @@
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
--- Editor Setup
--- System
-vim.opt.clipboard:append {'unnamedplus'}                  -- Copy paste between vim and everything else
-vim.opt.autochdir = true                               -- Your working directory will always be the same as your working directory
-
--- Editor behavior
+vim.opt.clipboard:append {'unnamedplus'}           -- Copy paste between vim and everything else
+vim.opt.autochdir      = true                      -- Your working directory will always be the same as your working directory
 vim.o.incsearch        = true
 vim.opt.exrc           = true
 vim.opt.secure         = true
@@ -34,7 +30,7 @@ vim.o.foldlevelstart   = 99
 vim.opt.formatoptions  = vim.o.formatoptions:gsub('tc', '')
 vim.opt.splitright     = true                      -- Horizontal splits will automatically be below
 vim.opt.splitbelow     = true                      -- Vertical splits will automatically be to the right
--- vim.o.noshowmode    = true                      -- We don't need to see things like -- INSERT -- anymore
+-- vim.o.noshowmode       = true                      -- We don't need to see things like -- INSERT -- anymore
 vim.opt.showcmd        = true
 vim.opt.wildmenu       = true
 vim.opt.ignorecase     = true
@@ -56,9 +52,8 @@ vim.opt.encoding      = 'utf-8'
 -- vim.opt spell check identify en_us and cjk
 vim.opt.spelllang  = 'en_us,cjk'
 vim.o.nocompatible = true
--- ban markdown markdown_recommended_style, like expandtab tabstop=4 softtabstop=4 shiftwidth=4!
-vim.g.markdown_recommended_style = 0
 
+-- Add a tmp directory for backup
 vim.cmd([[
 silent !mkdir -p $HOME/.config/nvim/tmp/backup
 silent !mkdir -p $HOME/.config/nvim/tmp/undo
@@ -71,8 +66,8 @@ if has('persistent_undo')
 endif
 ]])
 
--- auto spell
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", command = "silent! lcd %:p:h", })
+-- Auto change directory to current dir
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", command = "lcd %:p:h", })
 
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
 
