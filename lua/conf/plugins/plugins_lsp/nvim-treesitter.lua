@@ -71,7 +71,7 @@ return {
 		end,
 	},
 	{
-		"HiPhish/nvim-ts-rainbow2",
+		"HiPhish/nvim-ts-rainbow2", -- Rainbow delimiters for Neovim through Tree-sitter
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				rainbow = {
