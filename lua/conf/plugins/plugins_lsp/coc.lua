@@ -67,7 +67,7 @@ return {
 
 		keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 		keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
-		keyset("i", "<c-o>", "coc#refresh()", { silent = true, expr = true })
+		-- keyset("i", "<c-o>", "coc#refresh()", { silent = true, expr = true })
 
 		--[[function! Show_documentation()
 			call CocActionAsync('highlight')
