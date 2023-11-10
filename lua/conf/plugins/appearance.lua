@@ -27,12 +27,11 @@ return {
 	require( a .. "joshuto_nvim"),            -- ranger-like terminal file manager written in Rust
 	require( a .. "rnvimr"),                  -- use Ranger in a floating window
 
-	-- Funny Games
-	require( a .. "cellular-automaton_nvim"), -- A useless plugin that might help you cope with stubbornly broken tests or overall lack of sense in life. It lets you execute aesthetically pleasing, cellular automaton animations based on the content of neovim buffer.
-
 	-- Notify
 	require( a .. "nvim-notify"),             -- A fancy, configurable, notification manager for NeoVim
 
+	-- Funny Games
+	require( a .. "cellular-automaton_nvim"), -- A useless plugin that might help you cope with stubbornly broken tests or overall lack of sense in life. It lets you execute aesthetically pleasing, cellular automaton animations based on the content of neovim buffer.
 	-- require(a .. "NeoZoom_lua"),          -- A simple usecase of floating window to help you focus.
 	-- require(a .. "dropbar_nvim"),         -- IDE-like breadcrumbs, out of the box
 }
