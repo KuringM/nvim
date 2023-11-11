@@ -1,5 +1,5 @@
 return {
-"mbbill/undotree",  -- The undo history visualizer for VIM
+	"mbbill/undotree", -- The undo history visualizer for VIM
 	keys = { "L" },
 	config = function()
 		vim.cmd([[
@@ -16,5 +16,5 @@ return {
 				nmap <buffer> U 5<plug>UndotreeNextState
 				nmap <buffer> E 5<plug>UndotreePreviousState
 			endfunc]])
-	end
+	end,
 }

@@ -1,5 +1,5 @@
 return {
-	"mg979/vim-visual-multi",  -- Multiple cursors plugin for vim/neovim
+	"mg979/vim-visual-multi", -- Multiple cursors plugin for vim/neovim
 	init = function()
 		vim.cmd([[
 			let g:VM_leader                     = {'default': ',', 'visual': ',', 'buffer': ','}
@@ -17,5 +17,5 @@ return {
 			let g:VM_maps["Redo"]               = '<C-r>'
 			noremap <leader>sa <Plug>(VM-Select-All)
 		]])
-	end
+	end,
 }

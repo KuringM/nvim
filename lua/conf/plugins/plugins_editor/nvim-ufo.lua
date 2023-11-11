@@ -1,6 +1,7 @@
-return
-{
-	"kevinhwang91/nvim-ufo",
-	dependencies = { "kevinhwang91/promise-async", },
-	config = function() require('ufo').setup() end
+return {
+	"kevinhwang91/nvim-ufo", -- Not UFO in the sky, but an ultra fold in Neovim.
+	dependencies = { "kevinhwang91/promise-async" },
+	config = function()
+		require("ufo").setup()
+	end,
 }

@@ -1,9 +1,10 @@
 return {
-	"stevearc/conform.nvim", -- -- Lightweight yet powerful formatter plugin for Neovim
+	"stevearc/conform.nvim", -- Lightweight yet powerful formatter plugin for Neovim
 	event = "VeryLazy",
 	build = {
 		"brew install fsouza/prettierd/prettierd",
 		"brew install stylua",
+		"brew install deno"
 	},
 	config = function()
 		-- local status, conform = pcall(require, "conform")
@@ -40,9 +41,11 @@ return {
 				zig = { "zigfmt" },
 				markdown = {
 					"prettierd",
+					-- "deno_fmt",
 					"latexindet",
 					"injected",
 				},
+				tex = { "latexindet" },
 			},
 		})
 		require("conform.formatters.injected").options.ignore_errors = true
