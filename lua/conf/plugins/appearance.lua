@@ -11,6 +11,7 @@ return {
 	require( a .. "nvim-scrollbar"),          -- Extensible Neovim Scrollbar
 
 	-- Search
+	require( a .. "nvim-hlslens"),            -- Hlsearch Lens for Neovim
 	require( a .. "vim-illuminate"),          -- automatically highlighting other uses of the current word under the cursor.
 	require( a .. "hlchunk_nvim"),            -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 
@@ -32,6 +33,8 @@ return {
 
 	-- Funny Games
 	require( a .. "cellular-automaton_nvim"), -- A useless plugin that might help you cope with stubbornly broken tests or overall lack of sense in life. It lets you execute aesthetically pleasing, cellular automaton animations based on the content of neovim buffer.
+
+	-- TODO
 	-- require(a .. "NeoZoom_lua"),          -- A simple usecase of floating window to help you focus.
 	-- require(a .. "dropbar_nvim"),         -- IDE-like breadcrumbs, out of the box
 }

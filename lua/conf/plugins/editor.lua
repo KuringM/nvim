@@ -11,30 +11,27 @@ return {
 	{ "AmaiSaeta/capture.vim" },         -- Capture ex-command output to new buffer.
 	require( a .. "Tabmerge"),           -- Merge a tab"s windows with the current tab
 	require( a .. "tcomment_vim"),       -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
-	require( a .. "move_nvim"),          -- Gain the power to move lines and blocks and auto-indent them!
-	require( a .. "yanky_nvim"),         -- Improved Yank and Put functionalities for Neovim
-	require( a .. "nvim-surround"),      -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 	require( a .. "vim-visual-multi"),   -- Multiple cursors plugin for vim/neovim
 	require( a .. "undotree"),           -- The undo history visualizer for VIM
 
-	-- Search Enhance
-	require( a .. "fzf-lua"),
+	-- Search, Jump, Substitute, Yank...
 	require( a .. "flash_nvim"),         -- Navigate your code with search labels, enhanced character motions and Treesitter integration
-	{ "theniceboy/antovim", lazy = false },
-	{ "gcmt/wildfire.vim", lazy = false },
-	{ "sjl/clam.vim" },                  -- A lightweight Vim plugin for working with shell commands.
+	require( a .. "any-jump"),           -- Jump to any definition and references 👁 IDE madness without overhead 🚀
+	require( a .. "move_nvim"),          -- Gain the power to move lines and blocks and auto-indent them!
+	require( a .. "nvim-surround"),      -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 
 	-- Keyboard Enhance
 	require( a .. "smartim"),            -- A Vim plugin to make it stand well with input methods (Mac only)
 	-- { "lilydjwg/fcitx.vim" },         -- keep and restore fcitx state when leaving/re-entering insert mode
-	
-	-- search, jump
-	require( a .. "nvim-hlslens"),       -- Hlsearch Lens for Neovim
-	require( a .. "any-jump"),           -- Jump to any definition and references 👁 IDE madness without overhead 🚀
-	require( a .. "vim-rooter"),         -- Changes Vim working directory to project root.
-	require( a .. "copilot_vim"),        -- Neovim plugin for GitHub Copilot
 
 	-- TODO
+	require( a .. "yanky_nvim"),         -- Improved Yank and Put functionalities for Neovim
+	require( a .. "fzf-lua"),
+	{ "theniceboy/antovim", lazy = false },
+	{ "gcmt/wildfire.vim", lazy = false },
+	{ "sjl/clam.vim" },                  -- A lightweight Vim plugin for working with shell commands.
+	require( a .. "copilot_vim"),        -- Neovim plugin for GitHub Copilot
+	require( a .. "vim-rooter"),         -- Changes Vim working directory to project root.
 	-- require( a .. "vim-smoothie"),
 	-- require( a .. "nvim-ufo"),        -- Not UFO in the sky, but an ultra fold in Neovim.
 	-- require( a .. "nvim-spectre"),    -- Find the enemy and replace them with dark power.
