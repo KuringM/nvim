@@ -1,7 +1,7 @@
 return {
-	"gbprod/yanky.nvim", --  Improved Yank and Put functionalities for Neovim
+	"gbprod/yanky.nvim", -- Improved Yank and Put functionalities for Neovim
 	dependencies = {
-		"kkharji/sqlite.lua",
+		"kkharji/sqlite.lua", -- SQLite LuaJIT binding with a very simple api.
 	},
 	config = function()
 		vim.keymap.set("n", "<leader>y", ":Telescope yank_history<CR>")
