@@ -26,6 +26,8 @@ return {
 				vnoremap <Leader>a, :Tabularize /,\zs/l1l1l1<CR>
 				noremap  <Leader>a-- :Tabularize /--/l1l1l1<CR>
 				vnoremap <Leader>a-- :Tabularize /--/l1l1l1<CR>
+				noremap  <Leader>a// :Tabularize ////l1l1l1<CR>
+				vnoremap <Leader>a// :Tabularize ////l1l1l1<CR>
 			endif
 			AddTabularPattern! first_comma /^[^,]*\zs,/l1l1l1
 			AddTabularPattern! first_< /^[^<]*\zs</l1l1l1

@@ -4,7 +4,8 @@ return {
 	build = {
 		"brew install fsouza/prettierd/prettierd",
 		"brew install stylua",
-		"brew install deno"
+		"brew install deno",
+		"brew install clang-format",
 	},
 	config = function()
 		-- local status, conform = pcall(require, "conform")
@@ -15,7 +16,7 @@ return {
 
 		require("conform").setup({
 			formatters_by_ft = {
-				c = { "clang_format" },
+				cpp = { "clang-format" },
 				go = {
 					formatters = { "gofumpt", "goimports" },
 					run_all_formatters = true,
