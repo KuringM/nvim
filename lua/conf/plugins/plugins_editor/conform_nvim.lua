@@ -22,6 +22,7 @@ return {
 					run_all_formatters = true,
 				},
 				html = { "prettierd" },
+				css  = { "prettierd" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
 				rust = { "rustfmt" },
