@@ -90,7 +90,6 @@ endsnippet
 snippet vp "\varphi" w
 \varphi
 endsnippet
-
 snippet de "\delta" i
 \delta
 endsnippet
@@ -112,6 +111,9 @@ snippet tau "\tau" i
 endsnippet
 snippet nab "\nabla" i
 \nabla
+endsnippet
+snippet rho "\rho" i
+\rho
 endsnippet
 
 
@@ -304,9 +306,27 @@ endsnippet
 snippet set "{}" w
 \\{$1 \\} $0
 endsnippet
+
 snippet mid "\mid \mid" i
-\\mid ${1} \\mid ${0}
+|$1|$0
 endsnippet
+priority 2
+snippet bm "\big\mid \mid" i
+\big|$1\big|$0
+endsnippet
+priority 3
+snippet bbm "\mid \mid" i
+\Big|$1\Big|$0
+endsnippet
+priority 4
+snippet bbbm "\mid \mid" i
+\bigg|$1\bigg|$0
+endsnippet
+priority 5
+snippet bbbbm "\mid \mid" i
+\Bigg|$1\Bigg|$0
+endsnippet
+
 snippet nl "\newline" b
 \newline
 $0
