@@ -22,10 +22,9 @@ endsnippet
 snippet kh "big braces" 
 \left\\{
 \begin{array}{ll}
-$1
+$0
 \end{array}
 \right.
-$0
 endsnippet
 
 priority 1
@@ -115,7 +114,9 @@ endsnippet
 snippet rho "\rho" i
 \rho
 endsnippet
-
+snippet the "\theta" i
+\theta
+endsnippet
 
 ## Other Letters
 snippet re "\Reals" w
@@ -186,6 +187,9 @@ endsnippet
 snippet cup "\cup" i
 \cup
 endsnippet
+snippet cir "\circ" i
+\circ
+endsnippet
 ## Fractions and Binomials
 snippet fr "\frac" i
 \frac{$1}{$2}$0
@@ -193,7 +197,7 @@ endsnippet
 
 priority 1
 snippet sq "\sqrt{}" i
-\sqrt[$2]{$1}$0
+\sqrt[$1]{$2}$0
 endsnippet
 
 ## Math Operators
@@ -201,7 +205,7 @@ snippet lim "\lim\limits_{}" i
 \lim $0
 endsnippet
 snippet limm "\lim\limits_{}" i
-\lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)} $0
+\lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)}$0
 endsnippet
 
 ###############
