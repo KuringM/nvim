@@ -6,6 +6,10 @@ snippet til "tilde" i
 \tilde{$1}$0
 endsnippet
 
+snippet bar "bar" i
+\bar{$1}$0
+endsnippet
+
 ##################
 #  Environments  #
 ##################
@@ -99,6 +103,8 @@ priority 2
 snippet vde "\delta" i
 \varDelta
 endsnippet
+
+priority 0
 snippet ome "\omega" i
 \omega
 endsnippet
@@ -167,6 +173,15 @@ endsnippet
 priority 1
 snippet intt "\int{}" i
 \int_{$1}^{$2} $3\mathrm{d}$0
+endsnippet
+
+priority 2
+snippet iint "\iint" i
+\iint\limits_{$1} $0
+endsnippet
+
+snippet iintt "\iint" i
+\iint\limits_{${1:D}} ${2:f(x,y)} \mathrm{d}${0:\sigma}
 endsnippet
 
 priority 1
