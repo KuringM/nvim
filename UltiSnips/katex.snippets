@@ -1,3 +1,8 @@
+# snippet test1 "Using python" b
+# `!p snip.rv = "this is only sometimes here " if t[1] else ""`${1:text}
+# `!p snip.rv = "this is only sometimes here " if t[1] else ""`${1:}
+# endsnippet
+
 #############
 #  Accents  #
 #############
@@ -9,6 +14,18 @@ endsnippet
 snippet bar "bar" i
 \bar{$1}$0
 endsnippet
+
+
+snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
+\vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
+endsnippet
+
+# snippet "be(gin)?( (\S+))?" "begin{} / end{}" br
+# \begin{${1:`!p
+# snip.rv = match.group(3) if match.group(2) is not None else "something"`}}
+#     ${2:${VISUAL}}
+# \end{$1}$0
+# endsnippet
 
 ##################
 #  Environments  #
@@ -200,6 +217,15 @@ endsnippet
 snippet prodd "\prod\limits" i
 \prod\limits_{$1}^{$2}$0
 endsnippet
+snippet ip "inner product <*,*>" i
+\big< $1 \big>$0
+endsnippet
+snippet mod "modulo |*|" i
+\Big| $1 \Big|$0
+endsnippet
+snippet norm "norm ||*||" i
+\Big|\Big| $2 \Big|\Big|_{${1:1}}$0
+endsnippet
 
 ## Binary Operators
 snippet cap "\cap" i
@@ -365,4 +391,14 @@ $0
 endsnippet
 snippet te "\text" i
 \text{$1}$0
+endsnippet
+snippet sgn "singal x(t),y(t),h(t)..." i
+${1:x}(t)$0
+endsnippet
+snippet seq "sequence x[n],y[n],h[n]..." i
+${1:x}[n]$0
+endsnippet
+
+snippet deg "degree" i
+\degree$0
 endsnippet
