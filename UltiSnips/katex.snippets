@@ -1,7 +1,25 @@
-# snippet test1 "Using python" b
-# `!p snip.rv = "this is only sometimes here " if t[1] else ""`${1:text}
-# `!p snip.rv = "this is only sometimes here " if t[1] else ""`${1:}
-# endsnippet
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|rho|tau|xi|eta|cap|cup|circ)' "singals" rw
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
+\vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
+endsnippet
+
+snippet mtx "begin{*matrix}" b
+\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
+	& $2
+\end{${1}}
+endsnippet
+
+snippet '(?<!\\)([2-3])?int(\S+)?( )?(\S+)?' "supper int" ir
+`!p
+a = ((int(match.group(1)) - 1)*"i" + "int") if match.group(1) is not None  else 'int'
+b = "_{" + match.group(2) + "}" if match.group(2) is not None else ''
+c = "^{" + match.group(4) + "}" if match.group(4) is not None else ''
+snip.rv = "\\" + a + b + c
+`  ${1:`!p snip.rv = "f(x,y)" if match.group(1) == "2" else ( "f(x,y,z)" if match.group(1) == "3" else "f(x)")`} \mathrm{d}${2:`!p snip.rv = "\sigma" if match.group(1) == "2" else ( "v" if match.group(1) == "3" else "x")`}
+endsnippet
 
 #############
 #  Accents  #
@@ -13,31 +31,6 @@ endsnippet
 
 snippet bar "bar" i
 \bar{$1}$0
-endsnippet
-
-
-snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
-\vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
-endsnippet
-
-# snippet "be(gin)?( (\S+))?" "begin{} / end{}" br
-# \begin{${1:`!p
-# snip.rv = match.group(3) if match.group(2) is not None else "something"`}}
-#     ${2:${VISUAL}}
-# \end{$1}$0
-# endsnippet
-
-##################
-#  Environments  #
-##################
-
-# Snippet syntax Transformations
-# A transformation has the following syntax: >
-#    ${<tab_stop_no/regular_expression/replacement/options}
-snippet mtx "begin{*matrix}" b
-\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
-	& $2
-\end{${1}}
 endsnippet
 
 snippet kh "big braces" 
@@ -128,23 +121,11 @@ endsnippet
 snippet sig "\sigma" i
 \sigma
 endsnippet
-snippet tau "\tau" i
-\tau
-endsnippet
 snippet nab "\nabla" i
 \nabla
 endsnippet
-snippet rho "\rho" i
-\rho
-endsnippet
 snippet the "\theta" i
 \theta
-endsnippet
-snippet xi "\xi" i
-\xi
-endsnippet
-snippet eta "\eta" i
-\eta
 endsnippet
 
 ## Other Letters
@@ -189,28 +170,6 @@ endsnippet
 ###############
 
 ## Big Operators
-snippet int "\int{}" i
-\int_{$1}^{$2} $0
-endsnippet
-
-priority 1
-snippet intt "\int{}" i
-\int_{$1}^{$2} $3\mathrm{d}$0
-endsnippet
-
-priority 2
-snippet iint "\iint" i
-\iint\limits_{$1} $0
-endsnippet
-
-snippet iintt "\iint" i
-\iint\limits_{${1:D}} ${2:f(x,y)} \mathrm{d}${0:\sigma}
-endsnippet
-
-priority 1
-snippet uint "\int{}" i
-\int $1 \mathrm{d}x$0
-endsnippet
 snippet summ "\sum\limits" i
 \sum\limits_{$1}^{$2}$0
 endsnippet
@@ -227,16 +186,6 @@ snippet norm "norm ||*||" i
 \Big|\Big| $2 \Big|\Big|_{${1:1}}$0
 endsnippet
 
-## Binary Operators
-snippet cap "\cap" i
-\cap
-endsnippet
-snippet cup "\cup" i
-\cup
-endsnippet
-snippet cir "\circ" i
-\circ
-endsnippet
 ## Fractions and Binomials
 snippet fr "\frac" i
 \frac{$1}{$2}$0
@@ -400,5 +349,5 @@ ${1:x}[n]$0
 endsnippet
 
 snippet deg "degree" i
-\degree$0
+\degree
 endsnippet
