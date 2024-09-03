@@ -8,7 +8,7 @@ vim.opt.number         = true                      -- Line numbers
 vim.opt.relativenumber = true                      -- Line relative numbers
 vim.opt.cursorline     = true                      -- Enable highlighting of the current line
 vim.opt.hidden         = true                      -- Required to keep multiple buffers open multiple buffers
-vim.o.noexpandtab      = true                      -- Don't use softtabstop spaces instead of tab characters for indentation
+vim.o.expandtab        = false                      -- Don't use softtabstop spaces instead of tab characters for indentation
 vim.o.smarttab         = true
 vim.opt.tabstop        = 2                         -- <TAB> in file represent 2 space
 vim.opt.shiftwidth     = 2                         -- Indent by 2 spaces when using >>, <<,== etc.
@@ -47,11 +47,11 @@ vim.opt.updatetime     = 100                       -- Faster completion
 vim.opt.virtualedit    = 'block'
 -- vim.opt fileencoding
 vim.opt.fileencodings = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
-vim.opt.termencoding  = 'utf-8'
+-- vim.opt.termencoding  = 'utf-8'
 vim.opt.encoding      = 'utf-8'
 -- vim.opt spell check identify en_us and cjk
-vim.opt.spelllang  = 'en_us,cjk'
-vim.o.nocompatible = true
+vim.opt.spelllang     = 'en_us,cjk'
+vim.o.compatible      = false
 
 -- Add a tmp directory for backup
 vim.cmd([[
