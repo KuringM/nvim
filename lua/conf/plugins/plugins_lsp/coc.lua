@@ -5,6 +5,9 @@ return {
 		"theniceboy/vim-snippets",
 		-- "honza/vim-snippets",
 	},
+	build = {
+		"brew install lua-language-server"
+	},
 	config = function()
 		vim.cmd([[
 		let g:coc_global_extensions = [
@@ -33,6 +36,7 @@ return {
 			\ 'coc-vetur',
 			\ 'coc-vimlsp',
 			\ 'coc-yaml',
+			\ 'coc-lua',
 			\ 'coc-yank']
 		]])
 		--
