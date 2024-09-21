@@ -13,7 +13,7 @@ return {
 	require(a .. "tcomment_vim"),       -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 	require(a .. "vim-visual-multi"),   -- Multiple cursors plugin for vim/neovim
 	require(a .. "undotree"),           -- The undo history visualizer for VIM
-	require(a .. "copilot_vim"),        -- Neovim plugin for GitHub Copilot
+	-- require(a .. "copilot_vim"),        -- Neovim plugin for GitHub Copilot
 
 	-- Search, Jump, Substitute, Yank, Object...
 	require(a .. "flash_nvim"),         -- Navigate your code with search labels, enhanced character motions and Treesitter integration
