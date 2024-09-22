@@ -55,14 +55,14 @@ vim.o.compatible      = false
 
 -- Add a tmp directory for backup
 vim.cmd([[
-silent !mkdir -p $HOME/.config/nvim/tmp/backup
-silent !mkdir -p $HOME/.config/nvim/tmp/undo
+silent !mkdir -p $HOME/.cache/nvim/tmp/backup
+silent !mkdir -p $HOME/.cache/nvim/tmp/undo
 " silent !mkdir -p $HOME/.config/nvim/tmp/sessions
-set backupdir=$HOME/.config/nvim/tmp/backup,.
-set directory=$HOME/.config/nvim/tmp/backup,.
+set backupdir=$HOME/.cache/nvim/tmp/backup,.
+set directory=$HOME/.cache/nvim/tmp/backup,.
 if has('persistent_undo')
 	set undofile
-	set undodir=$HOME/.config/nvim/tmp/undo,.
+	set undodir=$HOME/.cache/nvim/tmp/undo,.
 endif
 ]])
 
