@@ -8,6 +8,6 @@
 !/UltiSnips/
 !/ftplugin/
 !/lua/
-/lua/conf/machine_specific.lua
+/lua/machine_specific.lua
 !/coc-settings.json
 !/init.lua

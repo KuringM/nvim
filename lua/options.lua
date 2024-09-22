@@ -100,7 +100,7 @@ vim.cmd([[hi NonText ctermfg=gray guifg=grey10]])
 
 -- load machine_specific configrations
 local config_path = vim.fn.stdpath("config")
-local current_config_path = config_path .. "/lua/conf/machine_specific.lua"
+local current_config_path = config_path .. "/lua/machine_specific.lua"
 if not vim.loop.fs_stat(current_config_path) then
 	local current_config_file = io.open(current_config_path, "wb")
 	local default_config_path = config_path .. "/lua/_machine_specific_default.lua"
@@ -112,4 +112,4 @@ if not vim.loop.fs_stat(current_config_path) then
 		io.close(current_config_file)
 	end
 end
-require("conf.machine_specific")
+require("machine_specific")
