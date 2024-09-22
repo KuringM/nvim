@@ -6,7 +6,7 @@ return {
 		options = {
 			mode = "tabs",
 			-- diagnostics = "nvim_lsp",
-			diagnostics = "cos",
+			diagnostics = "coc",
 			diagnostics_indicator = function(count, level, diagnostics_dict, context)
 				local icon = level:match("error") and " " or " "
 				return " " .. icon .. count
@@ -23,6 +23,24 @@ return {
 			tab_size = 16,
 			padding = 0,
 			separator_style = "thick",
+			hover = {
+				enabled = true,
+				delay = 200,
+				reveal = {'close'}
+			},
+			
 		},
 	},
+	config = function ()
+		require('bufferline').setup({
+			highlights = {
+				fill = {
+					bg = vim.g.terminal_color_8,
+				},
+				background = {
+					bg = vim.g.terminal_color_8,
+				},
+			},
+		})
+	end,
 }

@@ -6,6 +6,7 @@
 
 return {
 	"nvim-lualine/lualine.nvim", -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+	dependencies = { 'nvim-tree/nvim-web-devicons'},
 	-- You can optionally lazy-load heirline on UiEnter
 	-- to make sure all required plugins and colorschemes are loaded before setup
 	-- event = "UiEnter",
@@ -30,9 +31,9 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "filename" },
+				lualine_a = { "mode", "g:coc_status" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = {},
+				lualine_c = { "filename" },
 				lualine_x = {},
 				lualine_y = { "filesize", "encoding", "fileformat", "filetype" },
 				lualine_z = { "location" },
