@@ -7,14 +7,15 @@ return {
 			on_open = function(win)
 				vim.api.nvim_win_set_config(win, { border = "none" })
 			end,
-			background_colour = "#202020",
-			fps = 60,
 			level = 2,
-			minimum_width = 50,
+			timeout = 5,
+			max_height = 5,
+			stages = "slide",
+			-- background_colour = "#020221",
+			fps = 60,
 			render = "compact",
-			stages = "fade_in_slide_out",
-			timeout = 3000,
-			top_down = true,
+			minimum_width = 50,
+			-- top_down = true,
 		})
 		local opts = { noremap = true, silent = true }
 		vim.keymap.set("n", ",;", function()
@@ -26,9 +27,7 @@ return {
 					-- preview_height = 0.1,
 				},
 				wrap_results = true,
-				previewer = false,
 			})
 		end, opts)
-		vim.keymap.set("n", "<LEADER>n;", notify.dismiss, opts)
 	end,
 }
