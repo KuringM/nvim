@@ -30,7 +30,7 @@ for _, v in ipairs(lazy_keys) do
 end
 vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
-local a = "conf.plugins."
+local a = "plugins."
 require("lazy").setup({
 	require( a .. "appearance"),  -- nvim appearance enhancment
 	require( a .. "editor"),  -- nvim editor enhancement

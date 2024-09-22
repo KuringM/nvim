@@ -8,7 +8,7 @@ return {
 				vim.api.nvim_win_set_config(win, { border = "none" })
 			end,
 			level = 2,
-			timeout = 5,
+			timeout = 1000,
 			max_height = 5,
 			stages = "slide",
 			-- background_colour = "#020221",

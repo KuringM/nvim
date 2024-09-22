@@ -1,4 +1,4 @@
-local a = [[conf/plugins/plugins_appearance/]]
+local a = [[/plugins/plugins_appearance/]]
 
 return {
 	-- Colorscheme

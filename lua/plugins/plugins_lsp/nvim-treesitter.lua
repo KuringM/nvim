@@ -1,6 +1,4 @@
 return {
-	"nvim-treesitter/playground", -- Treesitter playground integrated into Neovim
-	"nvim-treesitter/nvim-treesitter-refactor", -- Refactor module for nvim-treesitter
 	{
 		"nvim-treesitter/nvim-treesitter", -- Nvim Treesitter configurations and abstraction layer
 		lazy = false,
@@ -86,4 +84,6 @@ return {
 			})
 		end,
 	},
+	"nvim-treesitter/playground", -- Treesitter playground integrated into Neovim
+	"nvim-treesitter/nvim-treesitter-refactor", -- Refactor module for nvim-treesitter
 }
