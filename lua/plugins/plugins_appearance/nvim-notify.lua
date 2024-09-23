@@ -18,7 +18,7 @@ return {
 			-- top_down = true,
 		})
 		local opts = { noremap = true, silent = true }
-		vim.keymap.set("n", ",;", function()
+		vim.keymap.set("n", "<leader>;", function()
 			require("telescope").extensions.notify.notify({
 				layout_strategy = "vertical",
 				layout_config = {

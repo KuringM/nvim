@@ -6,7 +6,8 @@ return {
 		-- "honza/vim-snippets",
 	},
 	build = {
-		"brew install lua-language-server"
+		"brew install lua-language-server",
+		"brew install bash-language-server",
 	},
 	config = function()
 		vim.cmd([[
@@ -37,6 +38,7 @@ return {
 			\ 'coc-vimlsp',
 			\ 'coc-yaml',
 			\ 'coc-lua',
+			\ 'coc-sh',
 			\ 'coc-yank']
 		]])
 		--
