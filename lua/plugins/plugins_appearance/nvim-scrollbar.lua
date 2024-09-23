@@ -24,7 +24,7 @@ return {
 			show = true,
 			handle = {
 				text = " ",
-				color = "#928374",
+				color = "#7D7D7D",
 				hide_if_all_visible = true,
 			},
 			marks = {
