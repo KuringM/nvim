@@ -1,12 +1,16 @@
 return {
 	"kevinhwang91/rnvimr", -- use Ranger in a floating window
+	build = {
+		"pip3 install ranger-fm pynvim",
+	},
 	config = function()
 		vim.cmd([[
-			let g:rnvimr_ex_enable = 1
-			let g:rnvimr_pick_enable = 1
+			let g:rnvimr_enable_ex = 1
+			let g:rnvimr_enable_pick = 1
 			" let g:rnvimr_draw_border = 0
-			let g:rnvimr_bw_enable = 1
+			let g:rnvimr_enable_bw = 1
 			highlight link RnvimrNormal CursorLine
+			nnoremap <silent> R :RnvimrToggle<CR><C-\><C-n>:RnvimrResize 0<CR>
 			let g:rnvimr_action = {
 									\ '<C-t>': 'NvimEdit tabedit',
 									\ '<C-x>': 'NvimEdit split',
@@ -21,7 +25,6 @@ return {
 									\ 'row': 0,
 									\ 'style': 'minimal' }
 			let g:rnvimr_presets = [{'width': 1.0, 'height': 1.0}]
-			nnoremap <silent> R :RnvimrToggle<CR><C-\><C-n>:RnvimrResize 0<CR>
 		]])
 	end,
 }
