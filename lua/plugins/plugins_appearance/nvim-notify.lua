@@ -12,7 +12,7 @@ return {
 			max_height = 5,
 			stages = "slide",
 			fps = 60,
-			render = "compact",
+			render = "wrapped-compact",
 			minimum_width = 50,
 			top_down = true,
 		})

@@ -52,3 +52,10 @@
 | Shortcut |    Action   |
 |:--------:|:-----------:|
 |    `space` `;`   | notify history |
+
+
+#### [Eandrju/cellular-automaton.nvim](http://www.github.com/Eandrju/cellular-automaton.nvim)
+
+| Shortcut |    Action   |
+|:--------:|:-----------:|
+|    `space` `rr`   | CellularAutomaton game_of_life  |
