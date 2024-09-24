@@ -11,7 +11,7 @@ return {
 	require(a .. "bufferline_nvim"),         -- A snazzy bufferline for Neovim
 	require(a .. "nvim-scrollbar"),          -- Extensible Neovim Scrollbar
 
-	-- Search
+	-- Search rice and enhance
 	require(a .. "nvim-hlslens"),            -- Hlsearch Lens for Neovim
 	require(a .. "vim-illuminate"),          -- automatically highlighting other uses of the current word under the cursor.
 	require(a .. "hlchunk_nvim"),            -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
@@ -21,12 +21,11 @@ return {
 	require(a .. "lazygit_nvim"),            -- Plugin for calling lazygit from within neovim.
 	-- require(a .. "blamer_nvim"),             -- A git blame plugin for neovim inspired by VS Code"s GitLens plugin
 
-	-- Windows
+	-- Interface rice and enhance
 	require(a .. "wilder_nvim"),             -- A more adventurous wildmenu
 	require(a .. "colorful-winsep_nvim"),    -- Make your nvim window separators colorful
 
 	-- Files Manager
-	require(a .. "joshuto_nvim"),            -- ranger-like terminal file manager written in Rust
 	require(a .. "rnvimr"),                  -- use Ranger in a floating window
 
 	-- Notify
