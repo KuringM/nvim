@@ -45,3 +45,10 @@
 | Shortcut |    Action   |
 |:--------:|:-----------:|
 |    `R`   | open ranger |
+
+
+#### [rcarriga/nvim-notify](http://www.github.com/rcarriga/nvim-notify)
+
+| Shortcut |    Action   |
+|:--------:|:-----------:|
+|    `space` `;`   | notify history |

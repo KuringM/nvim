@@ -11,11 +11,10 @@ return {
 			timeout = 1000,
 			max_height = 5,
 			stages = "slide",
-			-- background_colour = "#020221",
 			fps = 60,
 			render = "compact",
 			minimum_width = 50,
-			-- top_down = true,
+			top_down = true,
 		})
 		local opts = { noremap = true, silent = true }
 		vim.keymap.set("n", "<leader>;", function()
