@@ -1,9 +1,3 @@
--- local current_signature = function()
--- 	if not pcall(require, 'lsp_signature') then return end
--- 	local sig = require("lsp_signature").status_line(50)
--- 	return sig.label .. "🐼" .. sig.hint
--- end
-
 return {
 	"nvim-lualine/lualine.nvim", -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 	dependencies = { 'nvim-tree/nvim-web-devicons'},

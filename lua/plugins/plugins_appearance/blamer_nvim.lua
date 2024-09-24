@@ -4,7 +4,9 @@ return {
 		vim.g.blamer_enabled = true
 		vim.g.blamer_relative_time = true
 		vim.g.blamer_prefix = " -> "
-		vim.g.blamer_format = "%y/%m/$d %H:%M"
-		-- highlight Blamer guifg=lightgrey
+		vim.g.blamer_date_format = '%Y/%m/$d %H:%M'
+		vim.cmd([[
+			highlight Blamer guifg=lightgrey
+		]])
 	end,
 }

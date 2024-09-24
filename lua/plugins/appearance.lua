@@ -19,7 +19,7 @@ return {
 	-- Git
 	require(a .. "gitsigns_nvim"),           -- Git integration for buffers
 	require(a .. "lazygit_nvim"),            -- Plugin for calling lazygit from within neovim.
-	-- require(a .. "blamer_nvim"),             -- A git blame plugin for neovim inspired by VS Code"s GitLens plugin
+	require(a .. "blamer_nvim"),             -- A git blame plugin for neovim inspired by VS Code"s GitLens plugin
 
 	-- Interface rice and enhance
 	require(a .. "wilder_nvim"),             -- A more adventurous wildmenu
