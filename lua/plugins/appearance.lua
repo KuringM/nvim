@@ -1,10 +1,11 @@
 local a = [[/plugins/plugins_appearance/]]
 
 return {
-	-- Colorscheme
+	-- Colorscheme Rice
 	require(a .. "nvim-deus"),               -- The color scheme for neovim.
 	require(a .. "falcon"),                  -- The color scheme for neovim.
 	require(a .. "nvim-colorizer"),          -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
+	require(a .. "hlchunk_nvim"),            -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 
 	-- Some Bar
 	require(a .. "lualine_nvim"),            -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
@@ -14,7 +15,6 @@ return {
 	-- Search rice and enhance
 	require(a .. "nvim-hlslens"),            -- Hlsearch Lens for Neovim
 	require(a .. "vim-illuminate"),          -- automatically highlighting other uses of the current word under the cursor.
-	require(a .. "hlchunk_nvim"),            -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 
 	-- Git
 	require(a .. "gitsigns_nvim"),           -- Git integration for buffers

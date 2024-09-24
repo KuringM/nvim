@@ -1,24 +1,41 @@
 return {
 	"shellRaining/hlchunk.nvim", -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 	init = function()
-		vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, { pattern = "*", command = "EnableHL" })
 		require("hlchunk").setup({
 			chunk = {
 				enable = true,
-				use_treesitter = false,
+				use_treesitter = true,
 				style = {
 					{ fg = "#806d9c" },
 				},
 			},
 			indent = {
+				enable = true,
 				chars = { "│", "¦", "┆", "┊" },
-				use_treesitter = false,
+				use_treesitter = true,
+				style = {
+					vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
+				},
+			},
+			line_num = {
+				enable = true,
+				use_treesitter = true,
 			},
 			blank = {
 				enable = true,
-			},
-			line_num = {
-				use_treesitter = true,
+				chars = {
+					"․",
+					"⁚",
+					"⁖",
+					"⁘",
+					"⁙",
+				},
+				style = {
+					{ bg = "#434437" },
+					{ bg = "#2f4440" },
+					{ bg = "#433054" },
+					{ bg = "#284251" },
+				},
 			},
 		})
 	end,

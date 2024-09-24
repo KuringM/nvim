@@ -1,5 +1,13 @@
 ## My Nvim `Lua.conf`
 
+## Plugins
+
+### Appearance Rice
+	"theniceboy/nvim-deus",
+	"fenetikm/falcon",
+	"NvChad/nvim-colorizer.lua", -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
+	"shellRaining/hlchunk.nvim", -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
+
 ## Nvim shortcut
 
 | Shortcut | Action |
@@ -8,6 +16,7 @@
 
 
 ## Nvim plugin's Shortcut
+
 
 
 ### [kevinhwang91/nvim-hl](http://www.github.com/kevinhwang91/nvim-hlslens)
