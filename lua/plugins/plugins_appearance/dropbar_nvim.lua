@@ -1,11 +1,13 @@
 return {
-	"Bekaboo/dropbar.nvim",  -- IDE-like breadcrumbs, out of the box
-	commit = "19011d96959cd40a7173485ee54202589760caae",
+	"Bekaboo/dropbar.nvim", -- IDE-like breadcrumbs, out of the box
+	dependencies = {
+		"nvim-telescope/telescope-fzf-native.nvim",
+	},
 	config = function()
 		local api = require("dropbar.api")
-		vim.keymap.set('n', '<Leader>;', api.pick)
-		vim.keymap.set('n', '[c', api.goto_context_start)
-		vim.keymap.set('n', ']c', api.select_next_context)
+		vim.keymap.set("n", "<Leader>;", api.pick)
+		vim.keymap.set("n", "[c", api.goto_context_start)
+		vim.keymap.set("n", "]c", api.select_next_context)
 
 		local confirm = function()
 			local menu = api.get_current_dropbar_menu()
@@ -33,7 +35,7 @@ return {
 				quick_navigation = true,
 				---@type table<string, string|function|table<string, string|function>>
 				keymaps = {
-					['<LeftMouse>'] = function()
+					["<LeftMouse>"] = function()
 						local menu = api.get_current_dropbar_menu()
 						if not menu then
 							return
@@ -49,14 +51,14 @@ return {
 							end
 							return
 						end
-						menu:click_at({ mouse.line, mouse.column }, nil, 1, 'l')
+						menu:click_at({ mouse.line, mouse.column }, nil, 1, "l")
 					end,
-					['<CR>'] = confirm,
-					['i'] = confirm,
-					['<esc>'] = quit_curr,
-					['q'] = quit_curr,
-					['n'] = quit_curr,
-					['<MouseMove>'] = function()
+					["<CR>"] = confirm,
+					["i"] = confirm,
+					["<esc>"] = quit_curr,
+					["q"] = quit_curr,
+					["n"] = quit_curr,
+					["<MouseMove>"] = function()
 						local menu = api.get_current_dropbar_menu()
 						if not menu then
 							return
@@ -70,5 +72,5 @@ return {
 				},
 			},
 		})
-	end
+	end,
 }
