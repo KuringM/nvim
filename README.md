@@ -77,3 +77,11 @@
 |   Shortcut   |             Action             |
 | :----------: | :----------------------------: |
 | `space` `rr` | CellularAutomaton game_of_life |
+
+#### [Bekaboo/dropbar.nvim](http://www.github.com/Eandrju/Bekaboo/dropbar.nvim)
+
+| Shortcut |       Action        |
+| :------: | :-----------------: |
+|   `\d`   |        pick         |
+|   `[c`   | goto context start  |
+|   `]c`   | select next context |
