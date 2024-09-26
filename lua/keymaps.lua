@@ -107,6 +107,7 @@ G.map({
 	{ mode = mode_nvo   , lhs = "<leader><CR>" , rhs = ":nohlsearch<CR>"     , opt = { noremap = true } } , -- No highlight!
 	{ mode = mode_nvo   , lhs = "<leader>sc"   , rhs = ":set spell!<CR>"     , opt = { noremap = true } } , -- Spelling Check with <space>sc
 	{ mode = mode_nvo   , lhs = "<leader>sw"   , rhs = ":set wrap!<CR>"      , opt = { noremap = true } } , -- set wrap
+	{ mode = mode_nvo   , lhs = "<leader>."    , rhs = "@:"                  , opt = { noremap = true } } , -- repeat last commnad-line change
 	-- { mode= mode_nvo , lhs= '<leader>o'     , rhs= 'za'                   , opt= { noremap = true      , silent= true} }                  , -- Folding
 	-- { mode= mode_nvo , lhs= '<leader>O'     , rhs= 'zA'                   , opt= { noremap = true      , silent= true} }                  , -- Folding
 	-- { mode= mode_n   , lhs= '<leader>tt'    , rhs= ':%s/    /\t/g'        , opt= { noremap = true } }  ,
