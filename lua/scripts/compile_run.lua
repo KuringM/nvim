@@ -45,7 +45,7 @@ local compileRun = function()
 		]])
 	elseif ft == 'sh' then
 		vim.cmd([[
-			:!time bash %
+			:!zsh %
 		]])
 	elseif ft == 'python' then
 		vim.cmd([[

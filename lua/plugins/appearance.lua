@@ -3,7 +3,7 @@ local a = [[/plugins/plugins_appearance/]]
 return {
 	-- Colorscheme rice
 	require(a .. "nvim-deus"),               -- The color scheme for neovim.
-	require(a .. "falcon"),                  -- The color scheme for neovim.
+	-- require(a .. "falcon"),                  -- The color scheme for neovim.
 	require(a .. "nvim-colorizer"),          -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 	require(a .. "hlchunk_nvim"),            -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 
