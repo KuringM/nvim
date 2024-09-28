@@ -1,10 +1,14 @@
 return {
 	"nvim-lualine/lualine.nvim", -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-	dependencies = { 'nvim-tree/nvim-web-devicons'},
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	-- You can optionally lazy-load heirline on UiEnter
 	-- to make sure all required plugins and colorschemes are loaded before setup
 	-- event = "UiEnter",
 	config = function()
+		-- cool function for progress
+		local progress = function()
+			return "%l/%L:%c"
+		end
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -30,7 +34,7 @@ return {
 				lualine_c = { "filename" },
 				lualine_x = {},
 				lualine_y = { "filesize", "encoding", "fileformat", "filetype" },
-				lualine_z = { "location" },
+				lualine_z = { progress, "progress", "selectioncount" },
 			},
 			inactive_sections = {
 				lualine_a = {},
