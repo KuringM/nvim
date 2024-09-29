@@ -32,9 +32,9 @@ G.map({
 	{ mode    = mode_c , lhs = "<C-u>" , rhs = "<Up>"      , opt = { noremap = true } } ,
 	{ mode    = mode_c , lhs = "<C-e>" , rhs = "<Down>"    , opt = { noremap = true } } ,
 	{ mode    = mode_c , lhs = "<C-n>" , rhs = "<Left>"    , opt = { noremap = true } } ,
-	-- { mode = mode_c , lhs = '<C-i>' , rhs = '<Right>'   , opt = { noremap = true } } , -- NOT WORK! Because <C-I> is <TAB>
-	-- { mode = mode_c , lhs = '<C-b>' , rhs = '<S-Left>'  , opt = { noremap = true } } , -- same as <C-o>
-	-- { mode = mode_c , lhs = '<C-w>' , rhs = '<S-Right>' , opt = { noremap = true } } , -- same as <C-a>
+	{ mode    = mode_c , lhs = '<C-i>' , rhs = '<Right>'   , opt = { noremap = true } } , -- neovm use libtermkey save it
+	{ mode    = mode_c , lhs = '<C-b>' , rhs = '<S-Left>'  , opt = { noremap = true } } ,
+	{ mode    = mode_c , lhs = '<C-w>' , rhs = '<S-Right>' , opt = { noremap = true } } ,
 
 	-- Movement in Insert Mode
 	-- { mode = mode_i,  lhs = "<C-a>",  rhs = "<ESC>A",   opt = { noremap = true } },  -- Move to the line END
@@ -51,6 +51,7 @@ G.map({
 
 	-- Window Split
 	-- split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+
 	{ mode = mode_nvo , lhs = "su" , rhs = ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>"  , opt = { noremap = true } } ,
 	{ mode = mode_nvo , lhs = "se" , rhs = ":set splitbelow<CR>:split<CR>"                       , opt = { noremap = true } } ,
 	{ mode = mode_nvo , lhs = "sn" , rhs = ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>" , opt = { noremap = true } } ,
