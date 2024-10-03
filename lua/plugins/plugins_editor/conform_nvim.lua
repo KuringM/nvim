@@ -16,34 +16,32 @@ return {
 
 		require("conform").setup({
 			formatters_by_ft = {
+				bash = { "shfmt" },
+				zsh = { "shfmt" },
 				cpp = { "clang-format" },
-				go = {
-					formatters = { "gofumpt", "goimports" },
-					run_all_formatters = true,
-				},
+				css = { "prettierd" },
 				html = { "prettierd" },
-				css  = { "prettierd" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
-				rust = { "rustfmt" },
-				bash = { "shfmt" },
 				lua = { "stylua" },
-				-- Conform will use the first available formatter in the list
+				rust = { "rustfmt" },
 				javascript = { "prettierd" },
 				typescript = { "prettierd" },
 				javascriptreact = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				vue = { "prettierd" },
-				-- Formatters can also be specified with additional options
-				python = {
-					formatters = { "isort", "black" },
-					-- Run formatters one after another instead of stopping at the first success
+				yaml = { "prettierd" },
+				zig = { "zigfmt" },
+				go = {
+					formatters = { "gofumpt", "goimports" },
 					run_all_formatters = true,
 				},
-				zig = { "zigfmt" },
+				python = {
+					formatters = { "isort", "black" },
+					run_all_formatters = true,
+				},
 				markdown = {
 					"prettierd",
-					-- "deno_fmt",
 					"latexindet",
 					"injected",
 				},

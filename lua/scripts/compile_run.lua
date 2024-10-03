@@ -34,7 +34,7 @@ local compileRun = function()
 			exec "!javac %"
 			exec "!time java %<"
 		]])
-	elseif ft == "sh" then
+	elseif ft == "sh" or "zsh" then
 		split()
 		vim.cmd("term zsh %")
 	elseif ft == "python" then

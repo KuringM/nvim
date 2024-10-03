@@ -24,7 +24,7 @@ return {
 	-- Git
 	require(a .. "gitsigns_nvim"),           -- Git integration for buffers
 	require(a .. "lazygit_nvim"),            -- Plugin for calling lazygit from within neovim.
-	require(a .. "blamer_nvim"),             -- A git blame plugin for neovim inspired by VS Code"s GitLens plugin
+	-- require(a .. "blamer_nvim"),             -- A git blame plugin for neovim inspired by VS Code"s GitLens plugin
 
 	-- Funny Games
 	require(a .. "cellular-automaton_nvim"), -- A useless plugin that might help you cope with stubbornly broken tests or overall lack of sense in life. It lets you execute aesthetically pleasing, cellular automaton animations based on the content of neovim buffer.

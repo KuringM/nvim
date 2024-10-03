@@ -41,18 +41,18 @@ endsnippet
 #  Markdonw Base Syntax  #
 ##########################
 snippet link "Link to something"
-[$1](${4:http://${2:www.github.com/}$3})$0
+[$1](${4:https://${2:www.github.com/}$3})$0
 endsnippet
 
 snippet img "Image"
 ![${1:pic alt}](${2:path}${3/.+/ "/}${3:opt title}${3/.+/"/})$0
 endsnippet
 
-snippet ic "Inline code" i
+snippet ci "Inline code" i
 \`$1\`$0
 endsnippet
 
-snippet cbl "Codeblock" b
+snippet cb "Codeblock" b
 \`\`\`${1:tex}
 $2
 \`\`\`
@@ -87,7 +87,7 @@ snippet bi "bold italics" i
 <b><i>${1:${VISUAL}}</i></b>$0
 endsnippet
 
-snippet sr "strikethrough" i
+snippet st "strikethrough" i
 <s>$1</s>$0
 endsnippet
 

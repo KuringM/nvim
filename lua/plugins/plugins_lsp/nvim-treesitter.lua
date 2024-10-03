@@ -24,6 +24,7 @@ return {
 					"markdown",
 					"markdown_inline",
 					"latex",
+					"yaml",
 				},
 				highlight = {
 					enable = true,

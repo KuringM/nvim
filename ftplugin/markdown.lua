@@ -28,6 +28,7 @@ local HGS ={
 	{ hg = '@markup.strike'      , style = { fg = colors.red_dark   , strikethrough = true , italic = true } } ,
 	{ hg = '@markup.environment' , style = { fg = colors.gray       , bold          = true                 } } ,
 	{ hg = '@function'           , style = { fg = colors.gray       , italic        = true                 } } ,
+	{ hg = '@punctuation.special'        , style = { fg = colors.orange     , italic        = true                 } } ,
 }
 
 for _,HG in pairs(HGS) do

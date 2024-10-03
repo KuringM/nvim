@@ -37,9 +37,12 @@ G.map({
 	{ mode    = mode_c , lhs = '<C-w>' , rhs = '<S-Right>' , opt = { noremap = true } } ,
 
 	-- Movement in Insert Mode
-	-- { mode = mode_i,  lhs = "<C-a>",  rhs = "<ESC>A",   opt = { noremap = true } },  -- Move to the line END
-	{ mode = mode_i,  lhs = "<C-a>",  rhs = "<Left>",   opt = { noremap = true } },
-	{ mode = mode_i,  lhs = "<C-o>",  rhs = "<Right>",  opt = { noremap = true } },
+	-- { mode = mode_i,  lhs = "<C-a>",  rhs = "<ESC>A", opt = { noremap = true } },  -- Move to the line END
+	-- { mode = mode_i,  lhs = "<C-u>",  rhs = "<Up>",      opt = { noremap = true } },
+	-- { mode = mode_i,  lhs = "<C-n>",  rhs = "<Left>",    opt = { noremap = true } },
+	-- { mode = mode_i,  lhs = "<C-e>",  rhs = "<Down>",    opt = { noremap = true } },
+	-- { mode = mode_i,  lhs = "<C-i>",  rhs = "<Right>",   opt = { noremap = true } },
+	{ mode = mode_i,  lhs = "<C-v>",  rhs = "<C-R>*",   opt = { noremap = true } }, -- Paste in Insert Mode
 
 	-- Movement in Split Windows
 	-- Use <space> + new arrow keys for moving the cursor around windows
