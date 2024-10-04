@@ -15,11 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 local lazy_cmd = require("lazy.view.config").commands
 local lazy_keys = {
 	{ cmd = "install", key = "i" },
-	{ cmd = "update",  key = "u" },
-	{ cmd = "sync",    key = "s" },
-	{ cmd = "clean",   key = "cl" },
-	{ cmd = "check",   key = "ch" },
-	{ cmd = "log",     key = "l" },
+	{ cmd = "update", key = "u" },
+	{ cmd = "sync", key = "s" },
+	{ cmd = "clean", key = "cl" },
+	{ cmd = "check", key = "ch" },
+	{ cmd = "log", key = "l" },
 	{ cmd = "restore", key = "rs" },
 	{ cmd = "profile", key = "p" },
 	{ cmd = "profile", key = "p" },
@@ -30,14 +30,13 @@ for _, v in ipairs(lazy_keys) do
 end
 vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
-local a = "plugins."
+local a = "plugin."
 require("lazy").setup({
-	require( a .. "appearance"),  -- nvim appearance enhancment
-	require( a .. "editor"),  -- nvim editor enhancement
-	require( a .. "lsp"),  -- nvim lsp
+	require(a .. "appearance"), -- nvim appearance enhancment
+	require(a .. "editor"), -- nvim editor enhancement
+	require(a .. "lsp"), -- nvim lsp
 	-- require("conf.plugins.autocomplete").config,
 	-- require("conf.plugins.lspconfig").config,
-	{ 'yianwillis/vimcdoc'},  -- vim chinese doc
-	{ "dstein64/vim-startuptime" },  -- A plugin for profiling Vim and Neovim startup time.
-}, {
-})
+	{ "yianwillis/vimcdoc" }, -- vim chinese doc
+	{ "dstein64/vim-startuptime" }, -- A plugin for profiling Vim and Neovim startup time.
+}, {})

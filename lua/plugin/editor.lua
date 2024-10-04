@@ -1,4 +1,4 @@
-local a = [[plugins/plugins_editor/]]
+local a = [[plugin/plugins_editor/]]
 
 return {
 	-- Format Enhance

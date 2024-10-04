@@ -1,4 +1,4 @@
-local a = [[/plugins/plugins_appearance/]]
+local a = [[/plugin/plugins_appearance/]]
 
 return {
 	-- Colorscheme rice
