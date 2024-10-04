@@ -61,5 +61,17 @@ return {
 				})
 			end,
 		})
+		vim.api.nvim_set_keymap("v", [[\f]], "", {
+			noremap = true,
+			silent = true,
+			callback = function()
+				local conform = require("conform")
+				conform.format({
+					bufnr = buffer_id,
+					async = false,
+					lsp_fallback = true,
+				})
+			end,
+		})
 	end,
 }
