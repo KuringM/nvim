@@ -20,7 +20,7 @@ return {
 	require(a .. "any-jump"),           -- Jump to any definition and references 👁 IDE madness without overhead 🚀
 	require(a .. "move_nvim"),          -- Gain the power to move lines and blocks and auto-indent them!
 	require(a .. "nvim-surround"),      -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
-	require(a .. "yanky_nvim"),         -- Improved Yank and Put functionalities for Neovim
+	require(a .. "nvim-neoclip"),       -- Clipboard manager neovim plugin with telescope integration
 	require(a .. "fzf-lua"),            -- Improved fzf.vim written in lua
 	require(a .. "telescope_nvim"),     -- Find, Filter, Preview, Pick. All lua, all the time.
 	{ "theniceboy/antovim", lazy = false }, -- Super-simple vim plugin for cycling through antonyms/words related to word under cursor. "gs"
