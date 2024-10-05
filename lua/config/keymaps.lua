@@ -39,6 +39,7 @@ G.map({
 	{ mode = mode_nvo, lhs = "l",            rhs = "u",                      opt = { noremap = true } }, -- undo
 	{ mode = mode_n,   lhs = "Y",            rhs = "y$",                     opt = { noremap = true } }, -- make Y to copy till the end of the line
 	{ mode = mode_v,   lhs = "Y",            rhs = '"+y',                    opt = { noremap = true } }, -- Copy to system clipboard
+	{ mode = mode_nvo, lhs = "P",            rhs = ":pu<CR>",                opt = { noremap = true } }, -- Paste in a new line
 	{ mode = mode_nvo, lhs = "s",            rhs = "<nop>",                  opt = { noremap = true } }, -- Disable the default s key
 	{ mode = mode_nvo, lhs = "S",            rhs = ":w<CR>",                 opt = { noremap = true } }, -- Save
 	{ mode = mode_nvo, lhs = "h",            rhs = "e",                      opt = { noremap = true } }, -- set h (same as n, cursor left) to 'end of word'
