@@ -63,6 +63,11 @@ return {
 			vim.g.vmt_fence_closing_text = "/TOC"
 		end,
 	},
+	{
+		"dkarter/bullets.vim", -- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
+		lazy = false,
+		ft = { "markdown", "txt" },
+	},
 	-- {
 	-- 	"instant-markdown/vim-instant-markdown", -- Instant Markdown previews from Vim
 	-- 	ft = { "markdown" },
@@ -79,7 +84,7 @@ return {
 	-- 		vim.cmd([[highlight Headline2 guibg=#21262d]])
 	-- 		vim.cmd([[highlight CodeBlock guibg=#1c1c1c]])
 	-- 		vim.cmd([[highlight Dash guibg=#D19A66 gui=bold]])
-  --
+	--
 	-- 		require("headlines").setup({
 	-- 			org = {
 	-- 				headline_highlights = { "Headline1", "Headline2" },

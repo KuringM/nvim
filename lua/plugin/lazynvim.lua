@@ -35,8 +35,4 @@ require("lazy").setup({
 	require(a .. "rice"), -- nvim appearance enhancment
 	require(a .. "editor"), -- nvim editor enhancement
 	require(a .. "lsp"), -- nvim lsp
-	-- require("conf.plugins.autocomplete").config,
-	-- require("conf.plugins.lspconfig").config,
-	{ "yianwillis/vimcdoc" }, -- vim chinese doc
-	{ "dstein64/vim-startuptime" }, -- A plugin for profiling Vim and Neovim startup time.
 }, {})
