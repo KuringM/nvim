@@ -16,6 +16,9 @@ return {
 	require(a .. "dropbar_nvim"),            -- IDE-like breadcrumbs, out of the box
 	require(a .. "nvim-notify"),             -- A fancy, configurable, notification manager for NeoVim
 	require(a .. "rnvimr"),                  -- use Ranger in a floating window
+	require(a .. "nvim-ufo"),                -- Not UFO in the sky, but an ultra fold in Neovim.
+	require(a .. "statuscol_nvim"),          -- Status column plugin that provides a configurable 'statuscolumn' and click handlers.
+	require(a .. "nvim-spectre"),    -- Find the enemy and replace them with dark power.
 
 	-- Search rice and enhance
 	require(a .. "nvim-hlslens"),            -- Hlsearch Lens for Neovim

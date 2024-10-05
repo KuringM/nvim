@@ -1,6 +1,5 @@
-return
-{
-	"FeiyouG/commander.nvim",
+return {
+	"FeiyouG/commander.nvim", -- Create and manage keybindings and commands in a more organized manner, and search them quickly through Telescope
 	config = function()
 		local commander = require("commander")
 		commander.setup({
@@ -8,7 +7,7 @@ return
 				enable = true,
 			},
 		})
-		vim.keymap.set('n', '<c-q>', require("commander").show, m)
+		vim.keymap.set("n", "<c-q>", require("commander").show, m)
 		commander.add({
 			{
 				desc = "Run Simulator",
@@ -19,5 +18,5 @@ return
 				cmd = "<CMD>Telescope git_status<CR>",
 			},
 		})
-	end
+	end,
 }

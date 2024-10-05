@@ -24,6 +24,8 @@ return {
 					},
 				},
 			})
+
+			require("telescope").load_extension("telescope-tabs")
 		end
 	},
 }

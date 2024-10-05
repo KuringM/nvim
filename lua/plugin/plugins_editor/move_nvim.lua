@@ -1,6 +1,7 @@
 return {
 	"fedepujol/move.nvim", -- Gain the power to move lines and blocks and auto-indent them!
 	config = function()
+		require("move").setup({})
 		local opts = { noremap = true, silent = true }
 		-- Normal-mode commands
 		vim.keymap.set("n", "<c-y>", ":MoveLine(1)<CR>", opts)

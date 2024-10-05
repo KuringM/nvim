@@ -26,9 +26,9 @@ G.map({
 	{ mode = mode_nvo, lhs = "I",            rhs = "$",                      opt = { noremap = true } },
 	{ mode = mode_nvo, lhs = "gu",           rhs = "gk",                     opt = { noremap = true } },
 	{ mode = mode_nvo, lhs = "ge",           rhs = "gj",                     opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "<C-U>",        rhs = "5<C-y>",                 opt = { noremap = true } }, -- Ctrl + U or E will move up/down the view port without moving the cursor
-	{ mode = mode_nvo, lhs = "<C-E>",        rhs = "5<C-e>",                 opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "<C-c>",        rhs = "zz",                     opt = { noremap = true } }, -- cursor line move to the middle window
+	{ mode = mode_nvo, lhs = "<C-U>",        rhs = "5<C-Y>",                 opt = { noremap = true } }, -- Ctrl + U or E will move up/down the view port without moving the cursor
+	{ mode = mode_nvo, lhs = "<C-E>",        rhs = "5<C-E>",                 opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "<C-C>",        rhs = "zz",                     opt = { noremap = true } }, -- cursor line move to the middle window
 	{ mode = mode_nvo, lhs = "-",            rhs = "N",                      opt = { noremap = true } }, -- Search preview
 	{ mode = mode_nvo, lhs = "=",            rhs = "n",                      opt = { noremap = true } }, -- Search next
 	{ mode = mode_nvo, lhs = "<up>",         rhs = ":res +5<CR>",            opt = { noremap = true } }, -- Resize Windows with arrow keys
@@ -54,14 +54,12 @@ G.map({
 	{ mode = mode_nvo, lhs = "<leader>sc",   rhs = ":set spell!<CR>",        opt = { noremap = true } }, -- Spelling Check with <space>sc
 	{ mode = mode_nvo, lhs = "<leader>sw",   rhs = ":set wrap!<CR>",         opt = { noremap = true } }, -- set wrap
 	{ mode = mode_nvo, lhs = "<leader>.",    rhs = "@:",                     opt = { noremap = true } }, -- repeat last commnad-line change
-	{ mode = mode_nvo, lhs = '<leader>o',    rhs = 'za',                     opt = { noremap = true, silent= true} }, -- Folding
-	{ mode = mode_nvo, lhs = '<leader>O',    rhs = 'zA',                     opt = { noremap = true, silent= true} }, -- Folding
 	{ mode = mode_nvo, lhs = '<LEADER>r',    rhs = ':source $MYVIMRC<CR>',   opt = { noremap = true } }, -- Roload VIMRC
 	{ mode = mode_nvo, lhs = '<leader>dw',   rhs = [[/\(\<\w\+\>\)\_s*\1]],  opt = { noremap = true } }, -- Adjacent duplicate words
 	{ mode = mode_n,   lhs = [[\s]],         rhs = ":%s//g<left><left>",     opt = { noremap = true } },
 	{ mode = mode_v,   lhs = [[\s]],         rhs = ":s//g<left><left>",      opt = { noremap = true } },
 	{ mode = mode_nvo, lhs = "tx",           rhs = ":r !figlet ",            opt = { noremap = true } }, -- Call figlet
-	{ mode = mode_n, lhs = "<c-z>", rhs = ":u<CR>",      opt = { noremap = true } },
+	{ mode = mode_n,   lhs = "<C-Z>",        rhs = ":u<CR>",                 opt = { noremap = true } },
 
 	-------------------------------
 	--       Split Windows       --
@@ -71,18 +69,18 @@ G.map({
 	{ mode = mode_nvo, lhs = "se",        rhs = ":set splitbelow<CR>:split<CR>",                       opt = { noremap = true } },
 	{ mode = mode_nvo, lhs = "sn",        rhs = ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opt = { noremap = true } },
 	{ mode = mode_nvo, lhs = "si",        rhs = ":set splitright<CR>:vsplit<CR>",                      opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "<leader>w", rhs = "<C-w>w", opt = { noremap = true } }, -- Use <space> + new arrow keys for moving the cursor around windows
-	{ mode = mode_nvo, lhs = "<leader>u", rhs = "<C-w>k", opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "<leader>e", rhs = "<C-w>j", opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "<leader>n", rhs = "<C-w>h", opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "<leader>i", rhs = "<C-w>l", opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "sh",        rhs = "<C-w>K", opt = { noremap = true } }, -- Place two screens up and down / Move nowSplitWindow to 1st
-	{ mode = mode_nvo, lhs = "sv",        rhs = "<C-w>H", opt = { noremap = true } }, -- Place the two screens side by side / Move nowSplitWindow to 1st
-	{ mode = mode_nvo, lhs = "sr",        rhs = "<C-w>x", opt = { noremap = true } }, -- Swap the current window with the next window
-	{ mode = mode_nvo, lhs = "smu",       rhs = "<C-w>K", opt = { noremap = true } }, -- Move split windows
-	{ mode = mode_nvo, lhs = "sme",       rhs = "<C-w>J", opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "smn",       rhs = "<C-w>H", opt = { noremap = true } },
-	{ mode = mode_nvo, lhs = "smi",       rhs = "<C-w>L", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "<leader>w", rhs = "<C-W>w", opt = { noremap = true } }, -- Use <space> + new arrow keys for moving the cursor around windows
+	{ mode = mode_nvo, lhs = "<leader>u", rhs = "<C-W>k", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "<leader>e", rhs = "<C-W>j", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "<leader>n", rhs = "<C-W>h", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "<leader>i", rhs = "<C-W>l", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "sh",        rhs = "<C-W>K", opt = { noremap = true } }, -- Place two screens up and down / Move nowSplitWindow to 1st
+	{ mode = mode_nvo, lhs = "sv",        rhs = "<C-W>H", opt = { noremap = true } }, -- Place the two screens side by side / Move nowSplitWindow to 1st
+	{ mode = mode_nvo, lhs = "sr",        rhs = "<C-W>x", opt = { noremap = true } }, -- Swap the current window with the next window
+	{ mode = mode_nvo, lhs = "smu",       rhs = "<C-W>K", opt = { noremap = true } }, -- Move split windows
+	{ mode = mode_nvo, lhs = "sme",       rhs = "<C-W>J", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "smn",       rhs = "<C-W>H", opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "smi",       rhs = "<C-W>L", opt = { noremap = true } },
 
 	-------------------------------
 	--            Tab            --
@@ -99,24 +97,24 @@ G.map({
 	--                              Commnad                               --
 	------------------------------------------------------------------------
 
-	{ mode = mode_c, lhs = "<C-a>", rhs = "<Home>",    opt = { noremap = true } }, -- move cursor to the beginning
-	{ mode = mode_c, lhs = "<C-o>", rhs = "<End>",     opt = { noremap = true } }, -- move cursor to the ending
-	{ mode = mode_c, lhs = "<C-u>", rhs = "<Up>",      opt = { noremap = true } }, -- history up
-	{ mode = mode_c, lhs = "<C-e>", rhs = "<Down>",    opt = { noremap = true } }, -- history down
-	{ mode = mode_c, lhs = "<C-n>", rhs = "<Left>",    opt = { noremap = true } }, -- move cursor left
-	{ mode = mode_c, lhs = '<C-i>', rhs = '<Right>',   opt = { noremap = true } }, -- move cursor left "neovm use libtermkey"
-	{ mode = mode_c, lhs = '<C-f>', rhs = '<S-Left>',  opt = { noremap = true } }, -- move cursor left one word
-	{ mode = mode_c, lhs = '<C-w>', rhs = '<S-Right>', opt = { noremap = true } }, -- move cursor right one word
-	{ mode = mode_c, lhs = '<C-l>', rhs = '<C-w>',     opt = { noremap = true } }, -- delete the word before the cursor
-	{ mode = mode_c, lhs = '<C-l>', rhs = '<C-U>',     opt = { noremap = true } }, -- detete all before the cursor
+	{ mode = mode_c, lhs = "<C-A>", rhs = "<Home>",    opt = { noremap = true } }, -- move cursor to the beginning
+	{ mode = mode_c, lhs = "<C-O>", rhs = "<End>",     opt = { noremap = true } }, -- move cursor to the ending
+	{ mode = mode_c, lhs = "<C-U>", rhs = "<Up>",      opt = { noremap = true } }, -- history up
+	{ mode = mode_c, lhs = "<C-E>", rhs = "<Down>",    opt = { noremap = true } }, -- history down
+	{ mode = mode_c, lhs = "<C-N>", rhs = "<Left>",    opt = { noremap = true } }, -- move cursor left
+	{ mode = mode_c, lhs = '<C-I>', rhs = '<Right>',   opt = { noremap = true } }, -- move cursor left "neovm use libtermkey"
+	{ mode = mode_c, lhs = '<C-F>', rhs = '<S-Left>',  opt = { noremap = true } }, -- move cursor left one word
+	{ mode = mode_c, lhs = '<C-W>', rhs = '<S-Right>', opt = { noremap = true } }, -- move cursor right one word
+	{ mode = mode_c, lhs = '<C-L>', rhs = '<C-W>',     opt = { noremap = true } }, -- delete the word before the cursor
+	{ mode = mode_c, lhs = '<C-H>', rhs = '<C-U>',     opt = { noremap = true } }, -- detete all before the cursor
 
 	------------------------------------------------------------------------
 	--                               Insert                               --
 	------------------------------------------------------------------------
 
-	{ mode = mode_i, lhs = "<C-a>", rhs = "<ESC>A",      opt = { noremap = true } },  -- Move to the line END
-	{ mode = mode_i, lhs = "<C-v>", rhs = "<C-R>*",      opt = { noremap = true } }, -- Paste in Insert Mode
-	{ mode = mode_i, lhs = "<c-z>", rhs = "<c-o>:u<CR>", opt = { noremap = true } }, -- Avoid those shortcut
+	{ mode = mode_i, lhs = "<C-A>", rhs = "<ESC>A",      opt = { noremap = true } },  -- Move to the line END
+	{ mode = mode_i, lhs = "<C-V>", rhs = "<C-R>*",      opt = { noremap = true } }, -- Paste in Insert Mode
+	{ mode = mode_i, lhs = "<c-Z>", rhs = "<C-O>:u<CR>", opt = { noremap = true } }, -- Avoid those shortcut
 })
 
 -- close win below
@@ -128,7 +126,7 @@ vim.keymap.set("n", "<leader>q", function()
 	require("trouble").close()
 	local wins = vim.api.nvim_tabpage_list_wins(0)
 	if #wins > 1 then
-		run_vim_shortcut([[<C-w>j:q<CR>]])
+		run_vim_shortcut([[<C-W>j:q<CR>]])
 	end
 end, { noremap = true, silent = true })
 
@@ -143,5 +141,5 @@ fun! s:MakePair()
 		normal! lx$p
 	endif
 endfun
-inoremap <c-u> <ESC>:call <SID>MakePair()<CR>
+inoremap <C-U> <ESC>:call <SID>MakePair()<CR>
 ]])
