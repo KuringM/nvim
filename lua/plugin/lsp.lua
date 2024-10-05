@@ -1,4 +1,4 @@
-local a = "plugin/plugins_lsp/"
+local a = "plugin/LSP/"
 
 return {
 	require(a .. "nvim-treesitter"),

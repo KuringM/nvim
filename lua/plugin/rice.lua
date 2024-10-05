@@ -1,4 +1,4 @@
-local a = [[/plugin/plugins_appearance/]]
+local a = [[/plugin/Rice/]]
 
 return {
 	-- Colorscheme rice
@@ -19,6 +19,13 @@ return {
 	require(a .. "nvim-ufo"),                -- Not UFO in the sky, but an ultra fold in Neovim.
 	require(a .. "statuscol_nvim"),          -- Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 	require(a .. "nvim-spectre"),    -- Find the enemy and replace them with dark power.
+	require(a .. "fzf-lua"),            -- Improved fzf.vim written in lua
+	require(a .. "telescope_nvim"),     -- Find, Filter, Preview, Pick. All lua, all the time.
+	require(a .. "flash_nvim"),         -- Navigate your code with search labels, enhanced character motions and Treesitter integration
+	require(a .. "any-jump"),           -- Jump to any definition and references 👁 IDE madness without overhead 🚀
+	require(a .. "undotree"),           -- The undo history visualizer for VIM
+	require(a .. "commander_nvim"),     -- Create and manage keybindings and commands in a more organized manner, and search them quickly through Telescope
+	require(a .. "which-key"), -- 💥 Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 
 	-- Search rice and enhance
 	require(a .. "nvim-hlslens"),            -- Hlsearch Lens for Neovim

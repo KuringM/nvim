@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
 local a = "plugin."
 require("lazy").setup({
-	require(a .. "appearance"), -- nvim appearance enhancment
+	require(a .. "rice"), -- nvim appearance enhancment
 	require(a .. "editor"), -- nvim editor enhancement
 	require(a .. "lsp"), -- nvim lsp
 	-- require("conf.plugins.autocomplete").config,

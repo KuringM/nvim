@@ -7,7 +7,7 @@ return {
 				enable = true,
 			},
 		})
-		vim.keymap.set("n", "<c-q>", require("commander").show, m)
+		vim.keymap.set("n", "<c-q>", require("commander").show, { noremap = true, nowait = true })
 		commander.add({
 			{
 				desc = "Run Simulator",

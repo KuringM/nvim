@@ -1,4 +1,4 @@
-local a = [[plugin/plugins_editor/]]
+local a = [[plugin/Editor/]]
 
 return {
 	{ "sjl/clam.vim" },                  -- A lightweight Vim plugin for working with shell commands.
@@ -15,15 +15,9 @@ return {
 	require(a .. "Tabmerge"),           -- Merge a tab"s windows with the current tab
 	require(a .. "tcomment_vim"),       -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 	require(a .. "vim-visual-multi"),   -- Multiple cursors plugin for vim/neovim
-	require(a .. "undotree"),           -- The undo history visualizer for VIM
 	-- require(a .. "copilot_vim"),        -- Neovim plugin for GitHub Copilot
-	require(a .. "flash_nvim"),         -- Navigate your code with search labels, enhanced character motions and Treesitter integration
-	require(a .. "any-jump"),           -- Jump to any definition and references 👁 IDE madness without overhead 🚀
 	require(a .. "move_nvim"),          -- Gain the power to move lines and blocks and auto-indent them!
 	require(a .. "nvim-surround"),      -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 	require(a .. "nvim-neoclip"),       -- Clipboard manager neovim plugin with telescope integration
-	require(a .. "fzf-lua"),            -- Improved fzf.vim written in lua
-	require(a .. "telescope_nvim"),     -- Find, Filter, Preview, Pick. All lua, all the time.
 	require(a .. "substitute_nvim"),    -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
-	require(a .. "commander_nvim"),     -- Create and manage keybindings and commands in a more organized manner, and search them quickly through Telescope
 }
