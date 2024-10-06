@@ -29,7 +29,6 @@ return {
 	require(a .. "flash_nvim"),           -- Navigate your code with search labels, enhanced character motions and Treesitter integration
 	require(a .. "any-jump"),             -- Jump to any definition and references 👁 IDE madness without overhead 🚀
 	require(a .. "nvim-hlslens"),         -- Hlsearch Lens for Neovim
-	require(a .. "vim-illuminate"),       -- automatically highlighting other uses of the current word under the cursor.
 	require(a .. "rnvimr"),               -- use Ranger in a floating window
 	require(a .. "nvim-spectre"),         -- Find the enemy and replace them with dark power.
 

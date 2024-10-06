@@ -21,8 +21,8 @@ return {
 						\ 'sequence_diagrams': {},
 						\ 'flowchart_diagrams': {},
 						\ 'content_editable': v:false,
-						\ 'disable_filename': 0
-						\ 'toc': {}
+						\ 'disable_filename': 0,
+						\ 'toc': {},
 						\ }
 				set updatetime=100
 			]])

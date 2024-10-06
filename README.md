@@ -21,96 +21,96 @@ ${toc}
 
 > IDE-like breadcrumbs, out of the box
 
-| Shortcut |       Action        |
-| :------: | :-----------------: |
-|   `\d`   |        pick         |
-|   `[c`   | goto context start  |
-|   `]c`   | select next context |
+| Shortcut | Action              |
+| :------- | :------------------ |
+| `\d`     | pick                |
+| `[c`     | goto context start  |
+| `]c`     | select next context |
 
 ###### [kevinhwang91/nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
 
 > Not UFO in the sky, but an ultra fold in Neovim.petertriho/nvim-scrollbar) -- Extensible Neovim Scrollbar
 
-| Shortcut |         Action          |
-| :------: | :---------------------: |
-|   `zR`   |     open all folds      |
-|   `zM`   |     close all folds     |
-|   `zr`   | open folds except kinds |
-|   `zk`   |   preview folded maps   |
+| Shortcut | Action                  |
+| :------- | :---------------------- |
+| `zR`     | open all folds          |
+| `zM`     | close all folds         |
+| `zr`     | open folds except kinds |
+| `zk`     | preview folded maps     |
 
 ###### [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 
 > A fancy, configurable, notification manager for NeoVim
 
-|  Shortcut   |     Action     |
-| :---------: | :------------: |
+| Shortcut    | Action         |
+| :---------- | :------------- |
 | `space` `;` | notify history |
 
 ###### [mbbill/undotree](https://github.com/mbbill/undotree)
 
 > The undo history visualizer for VIM
 
-| Shortcut |     Action      |
-| :------: | :-------------: |
-|   `L`    | Undotree toggle |
+| Shortcut | Action          |
+| :------- | :-------------- |
+| `L`      | Undotree toggle |
 
 ###### [FeiyouG/commander.nvim](https://github.com/FeiyouG/commander.nvim)
 
 > Create and manage keybindings and commands in a more organized manner, and search them quickly through Telescope
 
-|  Shortcut  |       Action        |
-| :--------: | :-----------------: |
+| Shortcut   | Action              |
+| :--------- | :------------------ |
 | `ctrl` `q` | telescope commander |
 
 ###### [vim-scripts/Tabmerge](https://github.com/vim-scripts/Tabmerge)
 
 > Merge a tab)s windows with the current tab
 
-|  Shortcut   |  Action   |
-| :---------: | :-------: |
+| Shortcut    | Action    |
+| :---------- | :-------- |
 | `t` `m` `e` | Tab merge |
 
 ###### [ibhagwan/fzf-lua](https://github.com/ibhagwan/fzf-lua)
 
 > Improved fzf.vim written in lua
 
-|  Shortcut  |  Action  |
-| :--------: | :------: |
+| Shortcut   | Action   |
+| :--------- | :------- |
 | `ctrl` `f` | fzf grep |
 
 ###### [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 > Find, Filter, Preview, Pick. All lua, all the time.
 
-|   Shortcut   |               Action                |
-| :----------: | :---------------------------------: |
-|  `ctrl` `t`  |           telescope tabs            |
-|  `ctrl` `p`  |        telescope find files         |
-| `space` `rs` |          telescope resume           |
-|  `ctrl` `w`  |          telescope buffers          |
-|  `ctrl` `h`  |         telescope oldfiles          |
-|  `ctrl` `_`  | telescope current_buffer_fuzzy_find |
-|   `z` `=`    |       telescope spell_suggest       |
-| `space` `d`  |        telescope diagnostics        |
-|   `\` `g`    |        telescope git_status         |
-|     `:`      |         telescope commands          |
+| Shortcut     | Action                              |
+| :----------- | :---------------------------------- |
+| `ctrl` `t`   | telescope tabs                      |
+| `ctrl` `p`   | telescope find files                |
+| `space` `rs` | telescope resume                    |
+| `ctrl` `w`   | telescope buffers                   |
+| `ctrl` `h`   | telescope oldfiles                  |
+| `ctrl` `_`   | telescope current_buffer_fuzzy_find |
+| `z` `=`      | telescope spell_suggest             |
+| `space` `d`  | telescope diagnostics               |
+| `\` `g`      | telescope git_status                |
+| `:`          | telescope commands                  |
 
 ###### [folke/flash.nvim](https://github.com/folke/flash.nvim)
 
 > Navigate your code with search labels, enhanced character motions and Treesitter integration
 
-| Shortcut |      Action      |
-| :------: | :--------------: |
-|  `esc`   |    flash jump    |
-|   `T`    | flash treesitter |
+| Shortcut | Action           |
+| :------- | :--------------- |
+| `esc`    | flash jump       |
+| `T`      | flash treesitter |
 
 ###### [pechorin/any-jump.vim](https://github.com/pechorin/any-jump.vim)
 
 > Jump to any definition and references 👁 IDE madness without overhead 🚀
 
-| Shortcut |  Action  |
-| :------: | :------: |
-|   `j`    | any jump |
+| Shortcut | Action   |
+| :------- | :------- |
+| `j`      | any jump |
 
 ###### [kevinhwang91/nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 
@@ -127,53 +127,53 @@ ${toc}
 
 > automatically highlighting other uses of the current word under the cursor.
 
-|  Shortcut   |          Action          |
-| :---------: | :----------------------: |
-| `space` `=` |   go to next reference   |
+| Shortcut    | Action                   |
+| :---------- | :----------------------- |
+| `space` `=` | go to next reference     |
 | `space` `-` | go to previous reference |
 
 ###### [kevinhwang91/rnvimr](https://github.com/kevinhwang91/rnvimr)
 
 > use Ranger in a floating window
 
-| Shortcut |   Action    |
-| :------: | :---------: |
-|   `R`    | open ranger |
+| Shortcut | Action      |
+| :------- | :---------- |
+| `R`      | open ranger |
 
 ###### [nvim-pack/nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
 
 > Find the enemy and replace them with dark power.
 
-|  Shortcut   |    Action    |
-| :---------: | :----------: |
+| Shortcut    | Action       |
+| :---------- | :----------- |
 | `space` `F` | open spectre |
 
 ###### [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 > Git integration for buffers
 
-|   Shortcut   |               Action               |
-| :----------: | :--------------------------------: |
-| `space` `g-` |      `Gitsigns prev_hunk<CR>`      |
-| `space` `g=` |      `Gitsigns next_hunk<CR>`      |
-| `space` `gb` |     `Gitsigns blame_line<CR>`      |
-| `space` `gr` |     `Gitsigns reset_hunk<CR>`      |
-|     `H`      | `Gitsigns preview_hunk_inline<CR>` |
+| Shortcut     | Action                             |
+| :----------- | :--------------------------------- |
+| `space` `g-` | `Gitsigns prev_hunk<CR>`           |
+| `space` `g=` | `Gitsigns next_hunk<CR>`           |
+| `space` `gb` | `Gitsigns blame_line<CR>`          |
+| `space` `gr` | `Gitsigns reset_hunk<CR>`          |
+| `H`          | `Gitsigns preview_hunk_inline<CR>` |
 
 ###### [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
 > Plugin for calling lazygit from within neovim.
 
-|  Shortcut  |   Action    |
-| :--------: | :---------: |
+| Shortcut   | Action      |
+| :--------- | :---------- |
 | `Ctrl` `g` | open laygit |
 
 ###### [Eandrju/cellular-automaton.nvim)](https://github.com/Eandrju/cellular-automaton.nvim)
 
 > A useless plugin that might help you cope with stubbornly broken tests or overall lack of sense in life. It lets you execute aesthetically pleasing, cellular automaton animations based on the content of neovim buffer.
 
-|   Shortcut   |             Action             |
-| :----------: | :----------------------------: |
+| Shortcut     | Action                         |
+| :----------- | :----------------------------- |
 | `space` `rr` | CellularAutomaton game_of_life |
 
 ## Editor
@@ -194,9 +194,9 @@ ${toc}
 
 > vim script for text filtering and alignment
 
-|    Shortcut     |    Action     |
-| :-------------: | :-----------: |
-|     `\` `t`     |  Tabularize   |
+| Shortcut        | Action        |
+| :-------------- | :------------ |
+| `\` `t`         | Tabularize    |
 | `space` `a` `-` | Tabularize /= |
 
 ###### [stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)
@@ -204,64 +204,105 @@ ${toc}
 > Lightweight yet powerful formatter plugin for Neovim
 
 | Shortcut | Action  |
-| :------: | :-----: |
+| :------- | :------ |
 | `\` `f`  | conform |
 
 ###### [tomtom/tcomment_vim](https://github.com/tomtom/tcomment_vim)
 
 > An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
 
-|    Shortcut     |  Action   |
-| :-------------: | :-------: |
-| `space` `c` `n` |  comment  |
+| Shortcut        | Action    |
+| :-------------- | :-------- |
+| `space` `c` `n` | comment   |
 | `space` `c` `u` | uncomment |
 
 ###### [fedepujol/move.nvim](https://github.com/fedepujol/move.nvim)
 
 > Gain the power to move lines and blocks and auto-indent them!
 
-|  Shortcut  |     Action     |
-| :--------: | :------------: |
-| `ctrl` `l` |  move line up  |
+| Shortcut   | Action         |
+| :--------- | :------------- |
+| `ctrl` `l` | move line up   |
 | `ctrl` `y` | move line down |
 
 ###### [gbprod/substitute.nvim](https://github.com/gbprod/substitute.nvim)
 
 > Neovim plugin introducing a new operators motions to quickly replace and exchange text.
 
-|   Shortcut   |              Action               |
-| :----------: | :-------------------------------: |
-|     `s`      |    substitute operator/visual     |
-|     `ss`     |          substitute line          |
-|     `sI`     |          substitute eol           |
+| Shortcut     | Action                            |
+| :----------- | :-------------------------------- |
+| `s`          | substitute operator/visual        |
+| `ss`         | substitute line                   |
+| `sI`         | substitute eol                    |
 | `space` `s`  | substitute ranger operator/visual |
-| `space` `ss` |      substitute ranger word       |
+| `space` `ss` | substitute ranger word            |
 
 ###### [AckslD/nvim-neoclip](https://github.com/AckslD/nvim-neoclip)
 
 > Clipboard manager neovim plugin with telescope integration
 
-|  Shortcut   |      Action       |
-| :---------: | :---------------: |
+| Shortcut    | Action            |
+| :---------- | :---------------- |
 | `space` `y` | telescope neoclip |
 
 ###### [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 
 > Multiple cursors plugin for vim/neovim
 
-|    Shortcut     |     Action     |
-| :-------------: | :------------: |
+| Shortcut        | Action         |
+| :-------------- | :------------- |
 | `space` `s` `a` | vim select all |
 
 ## LSP
 
-"iamcco/markdown-preview.nvim", -- markdown preview plugin for (neo)vim
-"dhruvasagar/vim-table-mode", -- VIM Table Mode for instant table creation.
+### treesitter
 
-|    Shortcut     |      Action       |
-| :-------------: | :---------------: |
-| `space` `t` `m` | table moed toggle |
+- [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview plugin for (neo)vim
+- [dhruvasagar/vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) -- VIM Table Mode for instant table creation.
 
-"mzlogin/vim-markdown-toc", -- A vim 7.4+ plugin to generate table of contents for Markdown files.
-"dkarter/bullets.vim", -- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
-		"nvim-treesitter/nvim-treesitter", -- Nvim Treesitter configurations and abstraction layer
+| Shortcut        | Action             |
+| :-------------- | :----------------- |
+| `space` `t` `m` | table moed togglee |
+
+- [mzlogin/vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc) -- A vim 7.4+ plugin to generate table of contents for Markdown files.
+- [dkarter/bullets.vim](https://github.com/dkarter/bullets.vim) -- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
+
+| Shortcut | Action                      |
+| :------- | :-------------------------- |
+| `g` `n`  | node incremental selection  |
+| `g` `i`  | node decremental selection  |
+| `g` `m`  | scope incremental selection |
+
+- [nvim-treesitter/nvim-treesitter-refactor](https://github.com/nvim-treesitter/nvim-treesitter-refactor) -- Refactor module for nvim-treesitter
+- [nvim-treesitter/playground](https://github.com/nvim-treesitter/playground) -- Treesitter playground integrated into Neovim
+
+| Shortcut | Action                                                       |
+| :------- | :----------------------------------------------------------- |
+| `f10`    | Show treesitter and syntax highlight groups under the cursor |
+
+- [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) -- Show code context
+
+| Shortcut | Action        |
+| :------- | :------------ |
+| `[` `c`  | go to context |
+
+- [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) -- Rainbow delimiters for Neovim with Tree-sitter},
+
+### coc
+
+###### [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
+
+| Shortcut        | Action                        |
+| :-------------- | :---------------------------- |
+| `space` `h`     | show documentation in preview |
+| `t` `t`         | toggle explorer               |
+| `t` `s`         | translator                    |
+| `space` `-`     | diagnostics previous          |
+| `space` `=`     | diagnostics next              |
+| `g` `d`         | go to definition              |
+| `g` `y`         | go to type definition         |
+| `g` `i`         | go to implementation          |
+| `g` `r`         | go to references              |
+| `space` `r` `n` | rename                        |
+| `space` `f`     | format selected               |

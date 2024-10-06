@@ -1,4 +1,5 @@
 {
+	"vimlsp.debug": false,
   "explorer.width": 38,
   "explorer.quitOnOpen": true,
   "explorer.sources": [

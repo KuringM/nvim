@@ -1,5 +1,5 @@
 return {
-	"neoclide/coc.nvim",
+	"neoclide/coc.nvim", -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 	branch = "release",
 	dependencies = {
 		"theniceboy/vim-snippets",
@@ -41,22 +41,14 @@ return {
 			\ 'coc-sh',
 			\ 'coc-yank']
 		]])
-		--
-		-- Some servers have issues with backup files, see #649
+
 		vim.opt.backup = false
 		vim.opt.writebackup = false
-
-		-- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
-		-- delays and poor user experience
 		vim.opt.updatetime = 300
-
-		-- Always show the signcolumn, otherwise it would shift the text each time
-		-- diagnostics appeared/became resolved
 		vim.opt.signcolumn = "yes"
 
 		local keyset = vim.keymap.set
-		-- Autocomplete
-		function _G.check_back_space()
+		function _G.check_back_space() -- Autocomplete
 			local col = vim.fn.col(".") - 1
 			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 		end
@@ -65,30 +57,15 @@ return {
 		keyset(
 			"i",
 			"<TAB>",
-			'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
+			[[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]],
 			opts
 		)
 		keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 		keyset("i", "<c-n>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-
 		keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
-		keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
-		-- keyset("i", "<c-o>", "coc#refresh()", { silent = true, expr = true })
+		keyset("i", "<c-o>", "coc#refresh()", { silent = true, expr = true }) -- trigger completion
 
-		--[[function! Show_documentation()
-			call CocActionAsync('highlight')
-			if (index(['vim','help'], &filetype) >= 0)
-				execute 'h '.expand('<cword>')
-			else
-				call CocAction('doHover')
-			endif
-		endfunction
-		nnoremap <LEADER>h :call Show_documentation()<CR>
-		]]
-		--
-
-		-- Use K to show documentation in preview window
-		function _G.show_docs()
+		function _G.show_docs() -- show documentation in preview window
 			local cw = vim.fn.expand("<cword>")
 			if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
 				vim.api.nvim_command("h " .. cw)
@@ -108,28 +85,10 @@ return {
 			desc = "Highlight symbol under cursor on CursorHold",
 		})
 
-		-- keyset("n", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
-		-- keyset("v", "<space>y", "<CMD>:<C-u>CocList -A --normal yank<cr>")
 		-- coc explorer
 		keyset("n", "tt", "<CMD>CocCommand explorer<CR>")
 		-- coc-translator
 		keyset("n", "ts", "<Plug>(coc-translator-p)")
-
-		--[[
-		" Remap for do codeAction of selected region
-		function! s:cocActionsOpenFromSelected(type) abort
-			execute 'CocCommand actions.open ' . a:type
-		endfunction
-		xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-		nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-		" coctodolist
-		nnoremap <leader>tn :CocCommand todolist.create<CR>
-		nnoremap <leader>tl :CocList todolist<CR>
-		nnoremap <leader>tu :CocCommand todolist.download<CR>:CocCommand todolist.upload<CR>
-		" coc-tasks
-		noremap <silent> <leader>ts :CocList tasks<CR>
-		]]
-		--
 
 		-- coc-snippets
 		keyset("i", "<c-e>", "<Plug>(coc-snippets-expand-jump)")
@@ -143,7 +102,7 @@ return {
 		keyset("n", "<leader>=", "<Plug>(coc-diagnostic-next)", { silent = true })
 
 		-- coc code navigation
-		keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
+		-- keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
 		keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
 		keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 		keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
