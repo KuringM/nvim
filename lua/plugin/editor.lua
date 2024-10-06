@@ -11,7 +11,7 @@ return {
 	require(a .. "smartim"),                -- A Vim plugin to make it stand well with input methods (Mac only)
 	require(a .. "nvim-autopairs"),         -- autopairs for neovim written by lua
 	require(a .. "nvim-surround"),          -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
-	require(a .. "vim-rooter"),             -- Changes Vim working directory to project root.
+	-- require(a .. "vim-rooter"),             -- Changes Vim working directory to project root.
 	require(a .. "tabular"),                -- vim script for text filtering and alignment
 	require(a .. "conform_nvim"),           -- Lightweight yet powerful formatter plugin for Neovim
 	require(a .. "tcomment_vim"),           -- An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.

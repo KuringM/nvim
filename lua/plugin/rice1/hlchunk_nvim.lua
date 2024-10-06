@@ -22,19 +22,13 @@ return {
 				use_treesitter = true,
 			},
 			blank = {
-				enable = true,
+				enable = false,
 				chars = {
-					"․",
-					"⁚",
-					"⁖",
-					"⁘",
-					"⁙",
+					" ",
 				},
 				style = {
-					{ bg = "#434437" },
-					{ bg = "#2f4440" },
-					{ bg = "#433054" },
-					{ bg = "#284251" },
+					{ bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("cursorline")), "bg", "gui") },
+					{ bg = "", fg = "" },
 				},
 			},
 		})

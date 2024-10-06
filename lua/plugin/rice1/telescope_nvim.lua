@@ -112,6 +112,5 @@ return {
 		ts.load_extension("fzf")
 		ts.load_extension("dap")
 		ts.load_extension("simulators")
-		ts.load_extension("flutter")
 	end,
 }
