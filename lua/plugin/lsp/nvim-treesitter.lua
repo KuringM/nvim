@@ -7,84 +7,81 @@ return {
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
-					"c",
-					"lua",
-					"html",
-					"javascript",
-					"typescript",
-					"query",
-					"dart",
-					"java",
-					"prisma",
 					"bash",
-					"go",
-					"kdl",
-					"vim",
-					"terraform",
+					"c",
+					"html",
+					"java",
+					"javascript",
+					"json",
+					"latex",
+					"lua",
 					"markdown",
 					"markdown_inline",
-					"latex",
+					"query",
+					"vim",
+					"vimdoc",
 					"yaml",
 				},
-				highlight = {
-					enable = true,
-					disable = {}, -- list of language that will be disabled
-				},
-				indent = {
-					enable = false,
-				},
+				sync_install = true, -- Install parsers synchronously (only applied to `ensure_installed`)
+				highlight = { enable = true },
+				indent = { enable = true },
 				incremental_selection = {
 					enable = true,
 					keymaps = {
-						init_selection = "<c-n>",
-						node_incremental = "<c-n>",
-						node_decremental = "<c-h>",
-						scope_incremental = "<c-l>",
+						init_selection = "gn",
+						node_incremental = "gn",
+						node_decremental = "gi",
+						scope_incremental = "gm",
 					},
 				},
 			})
+			vim.wo.foldmethod = "expr"
+			vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-refactor", -- Refactor module for nvim-treesitter
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				refactor = {
+					highlight_definitions = {
+						enable = true,
+						clear_on_cursor_move = true, -- Set to false if you have an `updatetime` of ~100.
+					},
+					highlight_current_scope = { enable = true },
+					smart_rename = {
+						enable = true, -- Assign keymaps to false to disable them, e.g. `smart_rename = false`.
+						keymaps = {
+							smart_rename = "grr",
+						},
+					},
+					navigation = {
+						enable = true, -- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
+						keymaps = {
+							goto_definition = "gd",
+							list_definitions = "gD",
+							list_definitions_toc = "gO",
+							goto_next_usage = "<a-*>",
+							goto_previous_usage = "<a-#>",
+						},
+					},
+				},
+			})
+		end,
+	},
+	{
+		"nvim-treesitter/playground", -- Treesitter playground integrated into Neovim
+		config = function()
 			vim.keymap.set("n", "<f10>", ":TSHighlightCapturesUnderCursor<CR>", { noremap = true })
 		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context", -- Show code context
 		config = function()
-			local tscontext = require("treesitter-context")
-			tscontext.setup({
-				enable = true,
-				max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit
-				min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
-				line_numbers = true,
-				multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
-				trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-				mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
-				-- Separator between context and content. Should be a single character string, like '-'.
-				-- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
-				separator = nil,
-				zindex = 20, -- The Z-index of the context window
-				on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-			})
 			vim.keymap.set("n", "[c", function()
-				tscontext.go_to_context()
-			end, { silent = true })
+				require("treesitter-context").go_to_context(vim.v.count1)
+			end, { silent = true, desc = "go to context" })
 		end,
 	},
-	{
-		"HiPhish/nvim-ts-rainbow2", -- Rainbow delimiters for Neovim through Tree-sitter
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				rainbow = {
-					enable = true,
-					-- list of languages you want to disable the plugin for
-					disable = { "jsx", "cpp" },
-					-- Which query to use for finding delimiters
-					query = "rainbow-parens",
-					-- Highlight the entire buffer all at once
-					strategy = require("ts-rainbow").strategy.global,
-				},
-			})
-		end,
-	},
-	"nvim-treesitter/playground", -- Treesitter playground integrated into Neovim
-	"nvim-treesitter/nvim-treesitter-refactor", -- Refactor module for nvim-treesitter
+	"HiPhish/rainbow-delimiters.nvim", -- Rainbow delimiters for Neovim with Tree-sitter},
 }
