@@ -1,5 +1,5 @@
-return { -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
-	"gbprod/substitute.nvim",
+return {
+	"gbprod/substitute.nvim", -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
 	config = function()
 		local substitute = require("substitute")
 		substitute.setup({

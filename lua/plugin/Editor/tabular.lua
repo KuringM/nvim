@@ -1,4 +1,3 @@
-local G = require("G")
 return {
 	"godlygeek/tabular", -- vim script for text filtering and alignment
 	config = function()

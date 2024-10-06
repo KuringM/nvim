@@ -7,17 +7,17 @@ return {
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
+					"c",
+					"lua",
 					"html",
 					"javascript",
 					"typescript",
 					"query",
 					"dart",
 					"java",
-					"c",
 					"prisma",
 					"bash",
 					"go",
-					"lua",
 					"kdl",
 					"vim",
 					"terraform",

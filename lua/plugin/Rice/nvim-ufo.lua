@@ -52,9 +52,6 @@ return {
 				vim.fn.CocActionAsync("definitionHover") -- coc.nvim
 				vim.lsp.buf.hover()
 			end
-		end)
-		vim.keymap.set("n", "<leader>z", function()
-			local _ = require("ufo").peekFoldedLinesUnderCursor()
 		end, {
 			desc = "Preview folded maps",
 		})

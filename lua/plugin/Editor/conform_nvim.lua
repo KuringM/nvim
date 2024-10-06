@@ -8,12 +8,6 @@ return {
 		"brew install clang-format",
 	},
 	config = function()
-		-- local status, conform = pcall(require, "conform")
-		-- if not status then
-		-- 		vim.notify("not found conform")
-		-- 		return
-		-- end
-
 		require("conform").setup({
 			formatters_by_ft = {
 				bash = { "shfmt" },

@@ -1,31 +1,29 @@
 return {
 	{
-		"AckslD/nvim-neoclip.lua",
+		"AckslD/nvim-neoclip.lua", -- Clipboard manager neovim plugin with telescope integration
 		dependencies = {
-			'nvim-telescope/telescope.nvim',
-			{ 'kkharji/sqlite.lua', module = 'sqlite' },
+			"nvim-telescope/telescope.nvim",
+			{ "kkharji/sqlite.lua", module = "sqlite" },
 		},
 		config = function()
 			vim.keymap.set("n", "<leader>y", ":Telescope neoclip<CR>", { noremap = true })
-			require('neoclip').setup({
+			require("neoclip").setup({
 				history = 1000,
 				enable_persistent_history = true,
 				keys = {
 					telescope = {
 						i = {
-							select = '<c-y>',
-							paste = '<cr>',
-							paste_behind = '<c-g>',
-							replay = '<c-q>', -- replay a macro
-							delete = '<c-d>', -- delete an entry
-							edit = '<c-k>', -- edit an entry
+							select = "<c-y>",
+							paste = "<cr>",
+							paste_behind = "<c-g>",
+							replay = "<c-q>", -- replay a macro
+							delete = "<c-d>", -- delete an entry
+							edit = "<c-k>", -- edit an entry
 							custom = {},
 						},
 					},
 				},
 			})
-
-			require("telescope").load_extension("telescope-tabs")
-		end
+		end,
 	},
 }
