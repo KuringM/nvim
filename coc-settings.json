@@ -115,4 +115,12 @@
     "variable": "\ue71b"
   },
   "Lua.diagnostics.globals": ["vim"],
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh","zsh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
 }
