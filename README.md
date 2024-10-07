@@ -1,10 +1,10 @@
-## My Nvim `Lua.conf`
+# My Nvim `Lua.conf`
 
 ${toc}
 
-## Plugins
+# Plugins
 
-### Rice
+## Rice
 
 - [theniceboy/nvim-deus](https://github.com/theniceboy/nvim-deus)
 - [fenetikm/falcon](https://github.com/fenetikm/falcon)
@@ -123,15 +123,6 @@ ${toc}
 | `g*`     | Search for the next text under the cursor     |
 | `g#`     | Search for the previous text under the cursor |
 
-###### [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
-
-> automatically highlighting other uses of the current word under the cursor.
-
-| Shortcut    | Action                   |
-| :---------- | :----------------------- |
-| `space` `=` | go to next reference     |
-| `space` `-` | go to previous reference |
-
 ###### [kevinhwang91/rnvimr](https://github.com/kevinhwang91/rnvimr)
 
 > use Ranger in a floating window
@@ -207,14 +198,13 @@ ${toc}
 | :------- | :------ |
 | `\` `f`  | conform |
 
-###### [tomtom/tcomment_vim](https://github.com/tomtom/tcomment_vim)
+###### [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
-> An extensible & universal comment vim-plugin that also handles embedded filetypes. in <space>cn to comment a line.
+> 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
-| Shortcut        | Action    |
-| :-------------- | :-------- |
-| `space` `c` `n` | comment   |
-| `space` `c` `u` | uncomment |
+| Shortcut        | Action                                          |
+| :-------------- | :---------------------------------------------- |
+| `space` `c` `c` | Toggles the current line using linewise comment |
 
 ###### [fedepujol/move.nvim](https://github.com/fedepujol/move.nvim)
 
@@ -257,15 +247,6 @@ ${toc}
 
 ### treesitter
 
-- [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview plugin for (neo)vim
-- [dhruvasagar/vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) -- VIM Table Mode for instant table creation.
-
-| Shortcut        | Action             |
-| :-------------- | :----------------- |
-| `space` `t` `m` | table moed togglee |
-
-- [mzlogin/vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc) -- A vim 7.4+ plugin to generate table of contents for Markdown files.
-- [dkarter/bullets.vim](https://github.com/dkarter/bullets.vim) -- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- Nvim Treesitter configurations and abstraction layer
 
 | Shortcut | Action                      |
@@ -291,7 +272,9 @@ ${toc}
 
 ### coc
 
-###### [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
+###### [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
+
+> Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 
 | Shortcut        | Action                        |
 | :-------------- | :---------------------------- |
@@ -306,3 +289,18 @@ ${toc}
 | `g` `r`         | go to references              |
 | `space` `r` `n` | rename                        |
 | `space` `f`     | format selected               |
+
+### markdown
+
+- [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview plugin for (neo)vim
+
+###### [dhruvasagar/vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
+
+> VIM Table Mode for instant table creation.
+
+| Shortcut        | Action             |
+| :-------------- | :----------------- |
+| `space` `t` `m` | table moed togglee |
+
+- [mzlogin/vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc) -- A vim 7.4+ plugin to generate table of contents for Markdown files.
+- [dkarter/bullets.vim](https://github.com/dkarter/bullets.vim) -- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
