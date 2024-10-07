@@ -5,9 +5,9 @@ return {
 	},
 	config = function()
 		local api = require("dropbar.api")
-		vim.keymap.set("n", "\\d", api.pick)
-		vim.keymap.set("n", "[c", api.goto_context_start)
-		vim.keymap.set("n", "]c", api.select_next_context)
+		vim.keymap.set("n", [[\dp]], api.pick, { desc = "open dropbar pick" })
+		vim.keymap.set("n", [[\dg]], api.goto_context_start, { desc = "dropbar goto context start" })
+		vim.keymap.set("n", [[\ds]], api.select_next_context, { desc = "dropbar select next context" })
 
 		local confirm = function()
 			local menu = api.get_current_dropbar_menu()
@@ -30,10 +30,6 @@ return {
 
 		require("dropbar").setup({
 			menu = {
-				-- When on, automatically set the cursor to the closest previous/next
-				-- clickable component in the direction of cursor movement on CursorMoved
-				quick_navigation = true,
-				---@type table<string, string|function|table<string, string|function>>
 				keymaps = {
 					["<LeftMouse>"] = function()
 						local menu = api.get_current_dropbar_menu()
@@ -68,6 +64,13 @@ return {
 							return
 						end
 						menu:update_hover_hl({ mouse.line, mouse.column - 1 })
+					end,
+					["f"] = function()
+						local menu = api.get_current_dropbar_menu()
+						if not menu then
+							return
+						end
+						menu:fuzzy_find_open()
 					end,
 				},
 			},
