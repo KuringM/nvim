@@ -5,9 +5,9 @@ return {
 	},
 	config = function()
 		local api = require("dropbar.api")
-		vim.keymap.set("n", [[\dp]], api.pick, { desc = "open dropbar pick" })
-		vim.keymap.set("n", [[\dg]], api.goto_context_start, { desc = "dropbar goto context start" })
-		vim.keymap.set("n", [[\ds]], api.select_next_context, { desc = "dropbar select next context" })
+		vim.keymap.set("n", [[<leader>dp]], api.pick, { desc = "open dropbar pick" })
+		vim.keymap.set("n", [[<leader>dg]], api.goto_context_start, { desc = "dropbar goto context start" })
+		vim.keymap.set("n", [[<leader>ds]], api.select_next_context, { desc = "dropbar select next context" })
 
 		local confirm = function()
 			local menu = api.get_current_dropbar_menu()

@@ -10,6 +10,7 @@ ${toc}
 - [fenetikm/falcon](https://github.com/fenetikm/falcon)
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) -- A snazzy bufferline for Neovim
+- [petertriho/nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar) -- Extensible Neovim Scrollbar
 - [gelguy/wilder.nvim](https://github.com/gelguy/wilder.nvim) -- A more adventurous wildmenu
 - [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 - [nvim-zh/colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim) -- Make your nvim window separators colorful
@@ -23,13 +24,13 @@ ${toc}
 
 | Shortcut    | Action                      |
 | :---------- | :-------------------------- |
-| `\` `d` `p` | dropbar pick                |
-| `\` `d` `g` | dropbar goto context start  |
-| `\` `d` `s` | dropbar select next context |
+| `space` `d` `p` | dropbar pick                |
+| `space` `d` `g` | dropbar goto context start  |
+| `space` `d` `s` | dropbar select next context |
 
 ###### [kevinhwang91/nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
 
-> Not UFO in the sky, but an ultra fold in Neovim.petertriho/nvim-scrollbar) -- Extensible Neovim Scrollbar
+> Not UFO in the sky, but an ultra fold in Neovim.
 
 | Shortcut | Action                  |
 | :------- | :---------------------- |
