@@ -8,39 +8,21 @@ return {
 	build = {
 		"brew install lua-language-server",
 		"brew install bash-language-server",
+		"pip3 install pynvim",
 	},
 	config = function()
-		vim.cmd([[
-		let g:coc_global_extensions = [
-			\ 'coc-vimtex',
-			\ 'coc-actions',
-			\ 'coc-css',
-			\ 'coc-diagnostic',
-			\ 'coc-explorer',
-			\ 'coc-flutter-tools',
-			\ 'coc-gitignore',
-			\ 'coc-html',
-			\ 'coc-json',
-			\ 'coc-lists',
-			\ 'coc-prettier',
-			\ 'coc-pyright',
-			\ 'coc-python',
-			\ 'coc-snippets',
-			\ 'coc-sourcekit',
-			\ 'coc-stylelint',
-			\ 'coc-syntax',
-			\ 'coc-tasks',
-			\ 'coc-todolist',
-			\ 'coc-translator',
-			\ 'coc-tslint-plugin',
-			\ 'coc-tsserver',
-			\ 'coc-vetur',
-			\ 'coc-vimlsp',
-			\ 'coc-yaml',
-			\ 'coc-lua',
-			\ 'coc-sh',
-			\ 'coc-yank']
-		]])
+		vim.g.coc_global_extensions = {
+			"coc-explorer",
+			"coc-css",
+			"coc-html",
+			"coc-json",
+			"coc-lua",
+			"coc-snippets",
+			"coc-translator",
+			"coc-vimlsp",
+			"coc-vimtex",
+			"coc-yaml",
+		}
 
 		vim.opt.backup = false
 		vim.opt.writebackup = false
