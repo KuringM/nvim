@@ -4,14 +4,6 @@ return {
 		"nvim-lua/plenary.nvim", -- plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- FZF sorter for telescope written in c
 		{
-			"LukasPietzschmann/telescope-tabs", -- Fly through your tabs in NeoVim ✈️
-			config = function()
-				local tstabs = require("telescope-tabs")
-				tstabs.setup({})
-				vim.keymap.set("n", "<c-t>", tstabs.list_tabs, {})
-			end,
-		},
-		{
 			"stevearc/dressing.nvim", -- Neovim plugin to improve the default vim.ui interfaces
 			config = function()
 				require("dressing").setup({
@@ -50,18 +42,6 @@ return {
 		},
 	},
 	config = function()
-		local builtin = require("telescope.builtin")
-		local m = { noremap = true, nowait = true }
-		vim.keymap.set("n", "<c-p>", builtin.find_files, m)
-		vim.keymap.set("n", "<leader>rs", builtin.resume, m)
-		vim.keymap.set("n", "<c-w>", builtin.buffers, m)
-		vim.keymap.set("n", "<c-h>", builtin.oldfiles, m)
-		vim.keymap.set("n", "<c-_>", builtin.current_buffer_fuzzy_find, m)
-		vim.keymap.set("n", "z=", builtin.spell_suggest, m)
-		vim.keymap.set("n", "<leader>d", builtin.diagnostics, m)
-		vim.keymap.set("n", [[\g]], builtin.git_status, m)
-		vim.keymap.set("n", ":", builtin.commands, m)
-
 		local ts = require("telescope")
 		ts.setup({
 			defaults = {
@@ -112,5 +92,50 @@ return {
 		ts.load_extension("fzf")
 		ts.load_extension("dap")
 		ts.load_extension("simulators")
+
+		local builtin = require("telescope.builtin")
+		vim.keymap.set(
+			"n",
+			"<leader>tf",
+			builtin.find_files,
+			{ noremap = true, nowait = true, desc = "Telescope find files" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>tb",
+			builtin.buffers,
+			{ noremap = true, nowait = true, desc = "Telescope buffers" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>to",
+			builtin.oldfiles,
+			{ noremap = true, nowait = true, desc = "Telescope old files" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>ts",
+			builtin.spell_suggest,
+			{ noremap = true, nowait = true, desc = "Telescope spell suggest" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>td",
+			builtin.diagnostics,
+			{ noremap = true, nowait = true, desc = "Telescope diagnostics" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>tg",
+			builtin.git_status,
+			{ noremap = true, nowait = true, desc = "Telescope git status" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>tt",
+			builtin.treesitter,
+			{ noremap = true, nowait = true, desc = "Telescope treesitter" }
+		)
+		vim.keymap.set("n", ":", builtin.commands, { noremap = true, nowait = true, desc = "Telescope commands" })
 	end,
 }

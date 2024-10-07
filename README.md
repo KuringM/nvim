@@ -21,11 +21,11 @@ ${toc}
 
 > IDE-like breadcrumbs, out of the box
 
-| Shortcut | Action              |
-| :------- | :------------------ |
-| `\d`     | pick                |
-| `[c`     | goto context start  |
-| `]c`     | select next context |
+| Shortcut    | Action                      |
+| :---------- | :-------------------------- |
+| `\` `d` `p` | dropbar pick                |
+| `\` `d` `g` | dropbar goto context start  |
+| `\` `d` `s` | dropbar select next context |
 
 ###### [kevinhwang91/nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
 
@@ -54,14 +54,6 @@ ${toc}
 | :------- | :-------------- |
 | `L`      | Undotree toggle |
 
-###### [FeiyouG/commander.nvim](https://github.com/FeiyouG/commander.nvim)
-
-> Create and manage keybindings and commands in a more organized manner, and search them quickly through Telescope
-
-| Shortcut   | Action              |
-| :--------- | :------------------ |
-| `ctrl` `q` | telescope commander |
-
 ###### [vim-scripts/Tabmerge](https://github.com/vim-scripts/Tabmerge)
 
 > Merge a tab)s windows with the current tab
@@ -82,18 +74,16 @@ ${toc}
 
 > Find, Filter, Preview, Pick. All lua, all the time.
 
-| Shortcut     | Action                              |
-| :----------- | :---------------------------------- |
-| `ctrl` `t`   | telescope tabs                      |
-| `ctrl` `p`   | telescope find files                |
-| `space` `rs` | telescope resume                    |
-| `ctrl` `w`   | telescope buffers                   |
-| `ctrl` `h`   | telescope oldfiles                  |
-| `ctrl` `_`   | telescope current_buffer_fuzzy_find |
-| `z` `=`      | telescope spell_suggest             |
-| `space` `d`  | telescope diagnostics               |
-| `\` `g`      | telescope git_status                |
-| `:`          | telescope commands                  |
+| Shortcut        | Action                  |
+| :-------------- | :---------------------- |
+| `space` `t` `f` | telescope find files    |
+| `space` `t` `b` | telescope buffers       |
+| `space` `t` `o` | telescope oldfiles      |
+| `space` `t` `s` | telescope spell_suggest |
+| `space` `t` `d` | telescope diagnostics   |
+| `space` `t` `g` | telescope git_status    |
+| `space` `t` `t` | telescope treesitter    |
+| `:`             | telescope commands      |
 
 ###### [folke/flash.nvim](https://github.com/folke/flash.nvim)
 

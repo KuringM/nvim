@@ -19,7 +19,6 @@ return {
 	require(a .. "colorful-winsep_nvim"), -- Make your nvim window separators colorful
 	require(a .. "nvim-notify"),          -- A fancy, configurable, notification manager for NeoVim
 	require(a .. "undotree"),             -- The undo history visualizer for VIM
-	require(a .. "commander_nvim"),       -- Create and manage keybindings and commands in a more organized manner, and search them quickly through Telescope
 	require(a .. "which-key"),            -- 💥 Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 	require(a .. "Tabmerge"),             -- Merge a tab"s windows with the current tab
 
