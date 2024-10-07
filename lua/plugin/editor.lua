@@ -19,5 +19,4 @@ return {
 	require(a .. "substitute_nvim"),        -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
 	require(a .. "nvim-neoclip"),           -- Clipboard manager neovim plugin with telescope integration
 	require(a .. "vim-visual-multi"),       -- Multiple cursors plugin for vim/neovim
-	require(a .. "cool-substitute"),       -- Simple but effective quick substitute for neovim
 }

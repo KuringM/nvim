@@ -22,8 +22,8 @@ ${toc}
 
 > IDE-like breadcrumbs, out of the box
 
-| Shortcut    | Action                      |
-| :---------- | :-------------------------- |
+| Shortcut        | Action                      |
+| :-------------- | :-------------------------- |
 | `space` `d` `p` | dropbar pick                |
 | `space` `d` `g` | dropbar goto context start  |
 | `space` `d` `s` | dropbar select next context |
@@ -193,9 +193,9 @@ ${toc}
 
 > 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
-| Shortcut        | Action                                          |
-| :-------------- | :---------------------------------------------- |
-| `space` `c` `c` | Toggles the current line using linewise comment |
+| Shortcut    | Action                                          |
+| :---------- | :---------------------------------------------- |
+| `space` `c` | Toggles the current line using linewise comment |
 
 ###### [fedepujol/move.nvim](https://github.com/fedepujol/move.nvim)
 
@@ -230,9 +230,10 @@ ${toc}
 
 > Multiple cursors plugin for vim/neovim
 
-| Shortcut        | Action         |
-| :-------------- | :------------- |
-| `space` `s` `a` | vim select all |
+| Shortcut        | Action                                                          |
+| :-------------- | :-------------------------------------------------------------- |
+| `ctrl` `k`      | adds a word under cursor, keep pressing to find next occurrence |
+| `space` `s` `a` | vim select all                                                  |
 
 ## LSP
 
