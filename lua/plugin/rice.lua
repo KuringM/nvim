@@ -5,8 +5,8 @@ return {
 	--                           RICE Interface                           --
 	------------------------------------------------------------------------
 
+	require(a .. "falcon"),               -- The color scheme for neovim.
 	require(a .. "nvim-deus"),            -- The color scheme for neovim.
-	-- require(a .. "falcon"),               -- The color scheme for neovim.
 	require(a .. "lualine_nvim"),         -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 	require(a .. "bufferline_nvim"),      -- A snazzy bufferline for Neovim
 	require(a .. "nvim-scrollbar"),       -- Extensible Neovim Scrollbar

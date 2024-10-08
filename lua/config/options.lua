@@ -66,9 +66,6 @@ if has('persistent_undo')
 endif
 ]])
 
--- Auto change directory to current dir
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", command = "lcd %:p:h", })
-
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
 
 vim.cmd([[autocmd TermOpen term://* startinsert]])

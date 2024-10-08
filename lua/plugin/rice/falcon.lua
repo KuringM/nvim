@@ -10,7 +10,7 @@ return {
 			"let g:falcon_airline = 1
 			"let g:airline_theme = 'falcon'
 			set termguicolors
-			colorscheme falcon
+			" colorscheme falcon
 		]])
 	end,
 }

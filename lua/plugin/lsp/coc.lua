@@ -1,3 +1,5 @@
+local G = require("G")
+
 return {
 	"neoclide/coc.nvim", -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 	branch = "release",
@@ -36,13 +38,15 @@ return {
 		end
 
 		local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+		G.map({
+			{ "i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts },
+		})
 		keyset(
 			"i",
 			"<TAB>",
 			[[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]],
 			opts
 		)
-		keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 		keyset("i", "<c-n>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 		keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 		keyset("i", "<c-o>", "coc#refresh()", { silent = true, expr = true }) -- trigger completion
@@ -122,5 +126,7 @@ return {
 		keyset("o", "kc", "<Plug>(coc-classobj-i)", opts)
 		keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
 		keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
+		vim.api.nvim_set_hl(0, "CocHintSign", { fg = "#15aabf" })
+		vim.api.nvim_set_hl(0, "CocUnusedHighlight", { fg = "#c0c0c0", italic = true })
 	end,
 }

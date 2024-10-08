@@ -61,6 +61,7 @@ G.map({
 	{ mode = mode_v,   lhs = [[\s]],         rhs = ":s//g<left><left>",      opt = { noremap = true } },
 	{ mode = mode_nvo, lhs = "tx",           rhs = ":r !figlet ",            opt = { noremap = true } }, -- Call figlet
 	{ mode = mode_n,   lhs = "<C-Z>",        rhs = ":u<CR>",                 opt = { noremap = true } },
+	{ mode = mode_nvo, lhs = "<F10>",        rhs = ":Inspect<CR>",            opt = { noremap = true } }, -- show the highlight group under the cursor
 
 	-------------------------------
 	--       Split Windows       --

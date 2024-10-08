@@ -70,12 +70,6 @@ return {
 		end,
 	},
 	{
-		"nvim-treesitter/playground", -- Treesitter playground integrated into Neovim
-		config = function()
-			vim.keymap.set("n", "<f10>", ":TSHighlightCapturesUnderCursor<CR>", { noremap = true })
-		end,
-	},
-	{
 		"nvim-treesitter/nvim-treesitter-context", -- Show code context
 		config = function()
 			vim.keymap.set("n", "gt", function()
