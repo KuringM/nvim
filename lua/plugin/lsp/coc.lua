@@ -31,25 +31,10 @@ return {
 		vim.opt.updatetime = 300
 		vim.opt.signcolumn = "yes"
 
-		local keyset = vim.keymap.set
 		function _G.check_back_space() -- Autocomplete
 			local col = vim.fn.col(".") - 1
 			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 		end
-
-		local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-		G.map({
-			{ "i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts },
-		})
-		keyset(
-			"i",
-			"<TAB>",
-			[[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]],
-			opts
-		)
-		keyset("i", "<c-n>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-		keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
-		keyset("i", "<c-o>", "coc#refresh()", { silent = true, expr = true }) -- trigger completion
 
 		function _G.show_docs() -- show documentation in preview window
 			local cw = vim.fn.expand("<cword>")
@@ -61,7 +46,57 @@ return {
 				vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
 			end
 		end
-		keyset("n", "<leader>h", "<CMD>lua _G.show_docs()<CR>", { silent = true })
+
+		local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+		local opts1 = { silent = true, nowait = true }
+		G.map({
+			{ "i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts },
+			{
+				"i",
+				"<TAB>",
+				[[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]],
+				opts,
+			},
+			{
+				"i",
+				"<c-n>",
+				[[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]],
+				opts,
+			},
+			{
+				"i",
+				"<cr>",
+				[[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
+				opts,
+			},
+			{ "i", "<c-o>",      "coc#refresh()",								{ silent = true, expr = true } }, -- trigger completion
+			{ "n", "<leader>h",  "<CMD>lua _G.show_docs()<CR>", { silent = true } },
+			{ "n", "tt",         "<CMD>CocCommand explorer<CR>" },
+			{ "n", "ts",         "<Plug>(coc-translator-p)" },
+			{ "i", "<c-e>",      "<Plug>(coc-snippets-expand-jump)" }, -- both expand and jump (make expand higher priority.)
+			{ "i", "<c-CR>",     "<Plug>(coc-snippets-expand)" }, -- trigger snippet expand
+			{ "v", "<c-e>",      "<Plug>(coc-snippets-select)" }, -- select text for visual placeholder of snippet
+			{ "n", "<leader>-",  "<Plug>(coc-diagnostic-prev)", { silent = true } }, -- navigation diagnostic
+			{ "n", "<leader>=",  "<Plug>(coc-diagnostic-next)", { silent = true } },
+			{ "n", "gd",         "<Plug>(coc-definition)",      { silent = true } }, -- Goto code navigation
+			{ "n", "gy",         "<Plug>(coc-type-definition)", { silent = true } },
+			{ "n", "gi",         "<Plug>(coc-implementation)",  { silent = true } },
+			{ "n", "gr",         "<Plug>(coc-references)",      { silent = true } },
+			{ "n", "<leader>rn", "<Plug>(coc-rename)",          { silent = true } }, -- Symbol renaming
+			{ "x", "<leader>f",  "<Plug>(coc-format-selected)", { silent = true } }, -- Formatting selected code
+			{ "n", "<leader>f",  "<Plug>(coc-format-selected)", { silent = true } },
+			{ "x", "kf",         "<Plug>(coc-funcobj-i)",	 opts1 }, -- Map function and class text objects
+			{ "o", "kf",         "<Plug>(coc-funcobj-i)",	 opts1 },
+			{ "x", "af",         "<Plug>(coc-funcobj-a)",	 opts1 },
+			{ "o", "af",         "<Plug>(coc-funcobj-a)",	 opts1 },
+			{ "x", "kc",         "<Plug>(coc-classobj-i)", opts1 },
+			{ "o", "kc",         "<Plug>(coc-classobj-i)", opts1 },
+			{ "x", "ac",         "<Plug>(coc-classobj-a)", opts1 },
+			{ "o", "ac",         "<Plug>(coc-classobj-a)", opts1 },
+
+		})
+		vim.g.coc_snippet_next = "<c-e>" -- jump to next placeholder
+		vim.g.coc_snippet_prev = "<c-u>" -- jump to previous placeholder
 
 		-- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 		vim.api.nvim_create_augroup("CocGroup", {})
@@ -70,35 +105,6 @@ return {
 			command = "silent call CocActionAsync('highlight')",
 			desc = "Highlight symbol under cursor on CursorHold",
 		})
-
-		-- coc explorer
-		keyset("n", "tt", "<CMD>CocCommand explorer<CR>")
-		-- coc-translator
-		keyset("n", "ts", "<Plug>(coc-translator-p)")
-
-		-- coc-snippets
-		keyset("i", "<c-e>", "<Plug>(coc-snippets-expand-jump)")
-		keyset("i", "<c-CR>", "<Plug>(coc-snippets-expand)")
-		keyset("v", "<c-e>", "<Plug>(coc-snippets-select)")
-		vim.g.coc_snippet_next = "<c-e>"
-		vim.g.coc_snippet_prev = "<c-u>"
-
-		-- coc-diagnostic
-		keyset("n", "<leader>-", "<Plug>(coc-diagnostic-prev)", { silent = true })
-		keyset("n", "<leader>=", "<Plug>(coc-diagnostic-next)", { silent = true })
-
-		-- coc code navigation
-		-- keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
-		keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
-		keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-		keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
-
-		-- Symbol renaming
-		keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
-
-		-- Formatting selected code
-		keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-		keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
 
 		-- Setup formatexpr specified filetype(s)
 		vim.api.nvim_create_autocmd("FileType", {
@@ -116,16 +122,6 @@ return {
 			desc = "Update signature help on jump placeholder",
 		})
 
-		-- Map function and class text objects
-		-- NOTE: Requires 'textDocument.documentSymbol' support from the language server
-		keyset("x", "kf", "<Plug>(coc-funcobj-i)", opts)
-		keyset("o", "kf", "<Plug>(coc-funcobj-i)", opts)
-		keyset("x", "af", "<Plug>(coc-funcobj-a)", opts)
-		keyset("o", "af", "<Plug>(coc-funcobj-a)", opts)
-		keyset("x", "kc", "<Plug>(coc-classobj-i)", opts)
-		keyset("o", "kc", "<Plug>(coc-classobj-i)", opts)
-		keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
-		keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
 		vim.api.nvim_set_hl(0, "CocHintSign", { fg = "#15aabf" })
 		vim.api.nvim_set_hl(0, "CocUnusedHighlight", { fg = "#c0c0c0", italic = true })
 	end,
