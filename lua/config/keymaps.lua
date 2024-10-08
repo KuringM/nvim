@@ -105,7 +105,7 @@ G.map({
 	{ mode = mode_c, lhs = "<C-E>", rhs = "<Down>",    opt = { noremap = true } }, -- history down
 	{ mode = mode_c, lhs = "<C-N>", rhs = "<Left>",    opt = { noremap = true } }, -- move cursor left
 	{ mode = mode_c, lhs = '<C-I>', rhs = '<Right>',   opt = { noremap = true } }, -- move cursor left "neovm use libtermkey"
-	{ mode = mode_c, lhs = '<C-F>', rhs = '<S-Left>',  opt = { noremap = true } }, -- move cursor left one word
+	{ mode = mode_c, lhs = '<C-B>', rhs = '<S-Left>',  opt = { noremap = true } }, -- move cursor left one word
 	{ mode = mode_c, lhs = '<C-W>', rhs = '<S-Right>', opt = { noremap = true } }, -- move cursor right one word
 	{ mode = mode_c, lhs = '<C-L>', rhs = '<C-W>',     opt = { noremap = true } }, -- delete the word before the cursor
 	{ mode = mode_c, lhs = '<C-H>', rhs = '<C-U>',     opt = { noremap = true } }, -- detete all before the cursor
