@@ -121,8 +121,9 @@ return {
 			command = "call CocActionAsync('showSignatureHelp')",
 			desc = "Update signature help on jump placeholder",
 		})
-
-		vim.api.nvim_set_hl(0, "CocHintSign", { fg = "#15aabf" })
-		vim.api.nvim_set_hl(0, "CocUnusedHighlight", { fg = "#c0c0c0", italic = true })
+		G.hl({
+			{ "CocHintSign", { fg = "#15aabf" }},
+			{"CocUnusedHighlight", { fg = "#c0c0c0", italic = true }}
+		})
 	end,
 }

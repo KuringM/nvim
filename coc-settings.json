@@ -85,7 +85,6 @@
     "markdown": ["markdownd", "katex"]
   },
 	"suggest.noselect": true,
-  "suggest.enablePreselect": false,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.completionItemKindLabels": {
     "class": "\uf0e8",

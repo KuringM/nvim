@@ -24,4 +24,10 @@ function G.map(maps)
 	end
 end
 
+function G.hl(hls)
+	for _, hl in pairs(hls) do
+		vim.api.nvim_set_hl(0, hl[1], hl[2])
+	end
+end
+
 return G
