@@ -44,7 +44,7 @@
     "gl": "expandRecursive",
     "gh": "collapseRecursive",
     "o": "expand",
-    "O": "openInTab",
+    "O": "open:tab",
     "yp": "copyFilepath",
     "yn": "copyFilename",
     "yy": "copyFile",
