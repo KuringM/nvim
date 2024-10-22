@@ -1,5 +1,6 @@
 return {
 	"windwp/nvim-autopairs", -- autopairs for neovim written by lua
+	event = "InsertEnter",
 	config = function()
 		local remap = vim.api.nvim_set_keymap
 		local npairs = require("nvim-autopairs")
