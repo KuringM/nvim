@@ -6,12 +6,13 @@ return {
 		"brew install stylua",
 		"brew install deno",
 		"brew install clang-format",
+		"pip install beautysh",
 	},
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				bash = { "shfmt" },
-				zsh = { "shfmt" },
+				bash = { "beautysh" },
+				zsh = { "beautysh" },
 				cpp = { "clang-format" },
 				css = { "prettierd" },
 				html = { "prettierd" },
@@ -46,24 +47,12 @@ return {
 		vim.api.nvim_set_keymap("n", [[\f]], "", {
 			noremap = true,
 			silent = true,
+			desc = "conform formatter",
 			callback = function()
 				local conform = require("conform")
 				conform.format({
-					bufnr = buffer_id,
 					async = false,
-					lsp_fallback = true,
-				})
-			end,
-		})
-		vim.api.nvim_set_keymap("v", [[\f]], "", {
-			noremap = true,
-			silent = true,
-			callback = function()
-				local conform = require("conform")
-				conform.format({
-					bufnr = buffer_id,
-					async = false,
-					lsp_fallback = true,
+					lsp_format = "nerver",
 				})
 			end,
 		})
