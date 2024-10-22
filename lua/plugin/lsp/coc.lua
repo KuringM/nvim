@@ -60,7 +60,7 @@ return {
 			{
 				"i",
 				"<c-n>",
-				[[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], -- prev coc popupmenu or del char before corsor
+				[[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], -- prev coc popupmenu or del char before cursor
 				opts,
 			},
 			{
@@ -69,7 +69,8 @@ return {
 				[[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
 				opts,
 			},
-			{ "i", "<c-o>",      "coc#refresh()",								{ silent = true, expr = true } }, -- trigger completion
+			-- { "i", "<c-o>",      "coc#refresh()",								{ silent = true, expr = true } }, -- trigger completion
+			{ "i", "<c-o>",      "<Del>",							        	{ silent = true } }, -- der char after cursor
 			{ "n", "<leader>h",  "<CMD>lua _G.show_docs()<CR>", { silent = true } },
 			{ "n", "tt",         "<CMD>CocCommand explorer<CR>" },
 			{ "n", "ts",         "<Plug>(coc-translator-p)" },
