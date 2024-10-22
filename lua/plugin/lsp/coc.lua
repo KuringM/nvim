@@ -60,7 +60,7 @@ return {
 			{
 				"i",
 				"<c-n>",
-				[[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]],
+				[[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], -- prev coc popupmenu or del char before corsor
 				opts,
 			},
 			{
