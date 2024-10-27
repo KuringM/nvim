@@ -84,7 +84,7 @@
   "snippets.extends": {
     "markdown": ["markdownd", "katex"]
   },
-	"suggest.noselect": true,
+  "suggest.noselect": true,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.completionItemKindLabels": {
     "class": "\uf0e8",
@@ -118,7 +118,7 @@
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
-      "filetypes": ["sh","zsh"],
+      "filetypes": ["sh", "zsh"],
       "ignoredRootPaths": ["~"]
     }
   }

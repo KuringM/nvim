@@ -15,6 +15,7 @@ return {
 	config = function()
 		vim.g.coc_global_extensions = {
 			"coc-explorer",
+			"coc-clangd",
 			"coc-css",
 			"coc-html",
 			"coc-json",
@@ -94,8 +95,8 @@ return {
 			{ "o", "kc",         "<Plug>(coc-classobj-i)", opts1 },
 			{ "x", "ac",         "<Plug>(coc-classobj-a)", opts1 },
 			{ "o", "ac",         "<Plug>(coc-classobj-a)", opts1 },
-
 		})
+
 		vim.g.coc_snippet_next = "<c-e>" -- jump to next placeholder
 		vim.g.coc_snippet_prev = "<c-u>" -- jump to previous placeholder
 
