@@ -25,23 +25,15 @@ endsnippet
 #  Accents  #
 #############
 
-snippet til "tilde" i
-\tilde{$1}$0
+snippet '(?<!\\)(til|bar)' "accents" rw
+\\`!p 
+list = ["tilde", "bar"]
+for a in list:
+	if match.group(1) in a:
+		snip.rv = a
+`{$1}$0
 endsnippet
 
-snippet bar "bar" i
-\bar{$1}$0
-endsnippet
-
-snippet kh "big braces" 
-\left\\{
-\begin{array}{ll}
-$0
-\end{array}
-\right.
-endsnippet
-
-priority 1
 snippet eqn "begin{equation}" b
 \begin{equation}
 \begin{split}
@@ -180,10 +172,10 @@ snippet ip "inner product <*,*>" i
 \big< $1 \big>$0
 endsnippet
 snippet mod "modulo |*|" i
-\Big| $1 \Big|$0
+\Big\mid $1 \Big\mid $0
 endsnippet
 snippet norm "norm ||*||" i
-\Big|\Big| $2 \Big|\Big|_{${1:1}}$0
+\Big\mid\Big\mid $2 \Big\mid\Big\mid_{${1:1}}$0
 endsnippet
 
 ## Fractions and Binomials
@@ -299,13 +291,13 @@ snippet sn "Sequence of number {x_0}" i
 endsnippet
 
 snippet jx "0 < | x - x_0 | < \detla" i
-0 < | x - x_0 | < \delta $0
+0 < \mid x - x_0 \mid < \delta $0
 endsnippet
 snippet jx1 "| x_n - a | < \varepsilon" i
-| x_n - a | < \varepsilon $0
+\mid x_n - a \mid < \varepsilon $0
 endsnippet
 snippet jx2 "| f(x) - A | < \varepsilon" i
-| f(x) - ${1:A} | < ${2:\varepsilon} $0
+\mid f(x) - ${1:A} \mid < ${2:\varepsilon} $0
 endsnippet
 snippet mr "mathring" w
 \mathring{${1:U}} (${2:x_0}) $0
@@ -315,23 +307,23 @@ snippet set "{}" w
 endsnippet
 
 snippet mid "\mid \mid" i
-|$1|$0
+\mid $1 \mid $0
 endsnippet
 priority 2
 snippet bm "\big\mid \mid" i
-\big|$1\big|$0
+\big\mid $1\big\mid $0
 endsnippet
 priority 3
 snippet bbm "\mid \mid" i
-\Big|$1\Big|$0
+\Big\mid $1\Big\mid $0
 endsnippet
 priority 4
 snippet bbbm "\mid \mid" i
-\bigg|$1\bigg|$0
+\bigg\mid $1 \bigg\mid $0
 endsnippet
 priority 5
 snippet bbbbm "\mid \mid" i
-\Bigg|$1\Bigg|$0
+\Bigg\mid $1\Bigg\mid $0
 endsnippet
 
 snippet nl "\newline" b
