@@ -6,6 +6,7 @@ return {
 		"brew install stylua",
 		"brew install deno",
 		"brew install clang-format",
+		"brew install tex-fmt",
 		"pip install beautysh",
 	},
 	config = function()
@@ -31,19 +32,42 @@ return {
 					formatters = { "gofumpt", "goimports" },
 					run_all_formatters = true,
 				},
-				python = {
-					formatters = { "isort", "black" },
-					run_all_formatters = true,
-				},
+				python = { "black" },
 				markdown = {
 					"prettierd",
-					"latexindet",
+					-- "latexindent",
+					"texfmt",
 					"injected",
 				},
-				tex = { "latexindet" },
+				tex = { "tex-fmt", stop_after_first = true },
+			},
+			formatters = {
+				texfmt = {
+					command = "/opt/homebrew/bin/tex-fmt",
+				},
 			},
 		})
-		require("conform.formatters.injected").options.ignore_errors = true
+		-- Customize the "tex-fmt" formatter
+		require("conform").formatters.texfmt = {
+			inherit = true,
+			command = "tex-fmt",
+			args = { "-s", "-n", "--usetabs", "--tabsize", "1" },
+		}
+		-- Customize the "injected" formatter
+		require("conform").formatters.injected = {
+			options = {
+				ignore_errors = false,
+				lang_to_ft = {
+					bash = "sh",
+					markdown = "md",
+				},
+				lang_to_ext = {
+					latex = "tex",
+					markdown = "md",
+				},
+				lang_to_formatters = {},
+			},
+		}
 		vim.api.nvim_set_keymap("n", [[\f]], "", {
 			noremap = true,
 			silent = true,

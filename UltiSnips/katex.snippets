@@ -1,4 +1,4 @@
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|rho|tau|xi|eta|cap|cup|circ)' "singals" rw
+snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rw
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -289,13 +289,13 @@ endsnippet
 #  Tex shortcut  #
 ##################
 snippet fu "Function: f(x)" i
-${1:f}(x) $0
+${1:f}(${2:x})$0
 endsnippet
 snippet der "Derivative: f'(x)" i
-${1:f}'(x) $0
+${1:f}'(${2:x})$0
 endsnippet
 snippet sn "Sequence of number {x_0}" i
-\\{${1:x}_n\\} $0
+\\{${1:x}_n\\}$0
 endsnippet
 
 snippet jx "0 < | x - x_0 | < \detla" i
