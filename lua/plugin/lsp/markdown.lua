@@ -10,6 +10,7 @@ return {
 		config = function()
 			vim.cmd([[
 				let g:mkdp_auto_close = 0
+				let g:mkdp_images_path = "./Accessory"
 				let g:mkdp_preview_options = {
 						\ 'mkit': {},
 						\ 'katex': {},
