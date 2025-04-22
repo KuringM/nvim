@@ -30,7 +30,6 @@ return {
 	require(a .. "any-jump"),             -- Jump to any definition and references 👁 IDE madness without overhead 🚀
 	require(a .. "nvim-hlslens"),         -- Hlsearch Lens for Neovim
 	require(a .. "rnvimr"),               -- use Ranger in a floating window
-	require(a .. "nvim-spectre"),         -- Find the enemy and replace them with dark power.
 
 	-- Git
 	require(a .. "gitsigns_nvim"),        -- Git integration for buffers
