@@ -77,7 +77,7 @@
   },
   "snippet.highlight": true,
   "snippets.shortcut": "Snip",
-	"snippets.execContext": true,
+  // "snippets.execContext": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.local/share/nvim/lazy/vim-snippets/UltiSnips",
@@ -86,6 +86,7 @@
   "snippets.extends": {
     "markdown": ["markdown", "katex"]
   },
+  "coc.source.vimtex.filetypes": ["tex", "markdown"],
   "suggest.noselect": true,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.completionItemKindLabels": {

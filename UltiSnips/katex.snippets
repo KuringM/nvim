@@ -58,9 +58,9 @@ endsnippet
 
 priority 1
 # context "match[0] in gLettters_Dict"
-snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
-\\`!p snip.rv = gLettters_Dict[match.group(1)]`
-endsnippet
+# snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
+# \\`!p snip.rv = gLettters_Dict[match.group(1)]`
+# endsnippet
 
 priority 2
 snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
@@ -68,9 +68,9 @@ snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
 endsnippet
 
 snippet mtx "begin{*matrix}" b
-\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
+\begin{${1:matrix}${1/(p)|(b)|(v)|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 	& $2
-\end{${1}}
+\end{${1:matrix}${1/(p)|(b)|(v)|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 endsnippet
 
 snippet '(?<!\\)([2-3])?int(\S+)?( )?(\S+)?' "supper int" ir
@@ -93,22 +93,22 @@ snippet eqn "begin{equation}" b
 \end{equation}
 endsnippet
 
-snippet al "begin{align} Align whith a number" b
+snippet al "Align whith a number" b
 \begin{align}
 	& ${0:${VISUAL}}
 \end{align}
 endsnippet
 
-snippet ald "begin{aligned} Align without a number" b
-\begin{aligned}
-	& ${0:${VISUAL}}
-\end{aligned}
-endsnippet
-
-snippet aln "begin{align*} Align without a number" b
+snippet aln "Align whith a number" b
 \begin{align*}
 	& ${0:${VISUAL}}
 \end{align*}
+endsnippet
+
+snippet ald "Aligned" b
+\begin{aligned}
+	& ${0:${VISUAL}}
+\end{aligned}
 endsnippet
 
 snippet ca "begin{cases}" b
@@ -118,20 +118,20 @@ snippet ca "begin{cases}" b
 endsnippet
 
 snippet ub "\underbrace" w
-\underbrace{$1}_{$2} $0
+\underbrace{${1:${VISUAL}}}_{$2} $0
 endsnippet
 
 ## Big Operators
-snippet summ "\sum\limits" i
+snippet summ "\sum\limits" w
 \sum\limits_{$1}^{$2}$0
 endsnippet
-snippet prodd "\prod\limits" i
+snippet prodd "\prod\limits" w
 \prod\limits_{$1}^{$2}$0
 endsnippet
 snippet ip "inner product <*,*>" i
 \big< $1 \big>$0
 endsnippet
-snippet mod "modulo |*|" i
+snippet mod "modulo |*|" w
 \Big\mid $1 \Big\mid $0
 endsnippet
 snippet norm "norm ||*||" i
