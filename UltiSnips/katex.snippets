@@ -1,7 +1,68 @@
-snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rw
+global !p
+gLettters_Dict = { 
+"alp": "alpha",
+"be":"beta", 
+"ga" : "gamma",
+"lam":"lambda",
+"ep":"epsilon",
+"ve":"varepsilon",
+"vp":"varphi",
+"de":"delta",
+"del":"Delta",
+"vde":"delta",
+"ome":"omega",
+"sig":"sigma",
+"nab":"nabla",
+"the":"theta",
+"re": "Reals",
+"fa": "forall",
+"ex": "exists",
+"bec": "because",
+"thf": "therefore",
+"im": "implies",
+"bs": "backsim",
+"ap": "approx",
+"gs": "geqslant",
+"ls": "leqslant",
+"equ": "equiv",
+"sbs": "subset",
+"sps": "supset",
+"lra": "Leftrightarrow",
+"la": "Leftarrow",
+"ra": "Rightarrow",
+"xle": "xlongequal",
+"inf": "infty",
+"deg": "degree",
+"lim": "lim",
+}
+
+list2={
+"til": "tilde",
+"bar": "bar",
+"tbf": "textbf",
+"m": "mathrm",
+"mb": "mathbb",
+"mo": "mathop",
+"te": "text",
+}
+endglobal
+
+snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
+priority 2
+snippet '(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rw
+\\`!p snip.rv = list2[match.group(1)]`{$1}$0
+endsnippet
+
+priority 1
+# context "match[0] in gLettters_Dict"
+snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
+\\`!p snip.rv = gLettters_Dict[match.group(1)]`
+endsnippet
+
+priority 2
 snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
 \vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
 endsnippet
@@ -21,18 +82,6 @@ snip.rv = "\\" + a + b + c
 `  ${1:`!p snip.rv = "f(x,y)" if match.group(1) == "2" else ( "f(x,y,z)" if match.group(1) == "3" else "f(x)")`} \mathrm{d}${2:`!p snip.rv = "\sigma" if match.group(1) == "2" else ( "v" if match.group(1) == "3" else "x")`}
 endsnippet
 
-#############
-#  Accents  #
-#############
-
-snippet '(?<!\\)(til|bar)' "accents" rw
-\\`!p 
-list = ["tilde", "bar"]
-for a in list:
-	if match.group(1) in a:
-		snip.rv = a
-`{$1}$0
-endsnippet
 
 snippet eqn "begin{equation}" b
 \begin{equation}
@@ -68,98 +117,9 @@ snippet ca "begin{cases}" b
 \end{cases}
 endsnippet
 
-
-#########################
-#  Letters and Unicode  #
-#########################
-
-## Greek Letters
-snippet alp "\alpha" i
-\alpha
-endsnippet
-snippet be "\beta" i
-\beta
-endsnippet
-snippet ga "\gamma" i
-\gamma
-endsnippet
-snippet lam "\lambda" i
-\lambda
-endsnippet
-snippet ep "\epsilon" w
-\epsilon
-endsnippet
-snippet ve "\varepsilon" w
-\varepsilon
-endsnippet
-snippet vp "\varphi" w
-\varphi
-endsnippet
-snippet de "\delta" i
-\delta
-endsnippet
-snippet del "\Delta" i
-\Delta
-endsnippet
-priority 2
-snippet vde "\delta" i
-\varDelta
-endsnippet
-
-priority 0
-snippet ome "\omega" i
-\omega
-endsnippet
-snippet sig "\sigma" i
-\sigma
-endsnippet
-snippet nab "\nabla" i
-\nabla
-endsnippet
-snippet the "\theta" i
-\theta
-endsnippet
-
-## Other Letters
-snippet re "\Reals" w
-\Reals
-endsnippet
-
-############
-#  Layout  #
-############
-
-### Annotation
 snippet ub "\underbrace" w
 \underbrace{$1}_{$2} $0
 endsnippet
-
-#########################
-#  Logic and Set Thory  #
-#########################
-
-snippet fa "\forall" w
-\forall
-endsnippet
-snippet ex "exists" w
-\exists
-endsnippet
-snippet bec "\because" i
-\because
-endsnippet
-snippet thf "\therefore" i
-\therefore
-endsnippet
-snippet im "implies" w
-\implies
-endsnippet
-snippet bs "backsim" w
-\backsim
-endsnippet
-
-###############
-#  Operators  #
-###############
 
 ## Big Operators
 snippet summ "\sum\limits" i
@@ -183,15 +143,11 @@ snippet fr "\frac" i
 \frac{$1}{$2}$0
 endsnippet
 
-priority 1
 snippet sq "\sqrt{}" i
 \sqrt[$1]{$2}$0
 endsnippet
 
 ## Math Operators
-snippet lim "\lim\limits_{}" i
-\lim $0
-endsnippet
 snippet limm "\lim\limits_{}" i
 \lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)}$0
 endsnippet
@@ -202,79 +158,16 @@ snippet subop "mathop limits" i
 \mathop{$1}\limits_{$2}$0
 endsnippet
 
-
-###############
-#  Relations  #
-###############
-
-snippet ap "\approx" i
-\approx
-endsnippet
-snippet gs "\geqslant" i
-\geqslant
-endsnippet
-snippet ls "\leqslant" i
-\leqslant
-endsnippet
-snippet equ "\equiv" i
-\equiv
-endsnippet
-snippet sbs "\subset" i
-\subset
-endsnippet
-snippet sps "\supset" i
-\supset
-endsnippet
-
-## Arrows
-snippet lra "Leftrightarrow" i
-\Leftrightarrow
-endsnippet
-snippet la "Leftarrow" i
-\Leftarrow
-endsnippet
-snippet ra "Rightarrow" i
-\Rightarrow
-endsnippet
-snippet xle "xlongequal" i
-\xlongequal
-endsnippet
-
-# Style, Color, Size, and Font
-
-## Color
 snippet tc "color text" i
 \textcolor{${2:green}}{$1}$0
 endsnippet
+
 snippet cbo "color box" i
 \colorbox{#FEFDD3}{\textcolor{black}{$$1}}$0
 endsnippet
 
-## Size
 snippet hu "arc" i
 \overset{\LARGE{\frown}}{$1} $0
-endsnippet
-
-##########
-#  Font  #
-##########
-
-snippet tbf "\textbf" i
-\textbf{$1} $0
-endsnippet
-snippet m "\mathrm" w
-\mathrm{$1}$0
-endsnippet
-snippet mb "\mathbb" w
-\mathbb{$1}$0
-endsnippet
-snippet mo "\mathop" w
-\mathop{$1}
-endsnippet
-
-# Symbols and Punctuation
-snippet inf "\infty" i
-\infty
 endsnippet
 
 ##################
@@ -309,19 +202,15 @@ endsnippet
 snippet mid "\mid \mid" i
 \mid $1 \mid $0
 endsnippet
-priority 2
 snippet bm "\big\mid \mid" i
 \big\mid $1\big\mid $0
 endsnippet
-priority 3
 snippet bbm "\mid \mid" i
 \Big\mid $1\Big\mid $0
 endsnippet
-priority 4
 snippet bbbm "\mid \mid" i
 \bigg\mid $1 \bigg\mid $0
 endsnippet
-priority 5
 snippet bbbbm "\mid \mid" i
 \Bigg\mid $1\Bigg\mid $0
 endsnippet
@@ -329,17 +218,4 @@ endsnippet
 snippet nl "\newline" b
 \newline
 $0
-endsnippet
-snippet te "\text" i
-\text{$1}$0
-endsnippet
-snippet sgn "singal x(t),y(t),h(t)..." i
-${1:x}(t)$0
-endsnippet
-snippet seq "sequence x[n],y[n],h[n]..." i
-${1:x}[n]$0
-endsnippet
-
-snippet deg "degree" i
-\degree
 endsnippet

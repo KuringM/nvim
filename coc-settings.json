@@ -77,13 +77,14 @@
   },
   "snippet.highlight": true,
   "snippets.shortcut": "Snip",
+	"snippets.execContext": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.local/share/nvim/lazy/vim-snippets/UltiSnips",
     "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
   ],
   "snippets.extends": {
-    "markdown": ["markdownd", "katex"]
+    "markdown": ["markdown", "katex"]
   },
   "suggest.noselect": true,
   "suggest.triggerAfterInsertEnter": true,
