@@ -1,0 +1,65 @@
+global !p
+
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+gLettters_Dict = { 
+"alp": "alpha",
+"be":"beta", 
+"ga" : "gamma",
+"lam":"lambda",
+"ep":"epsilon",
+"ve":"varepsilon",
+"vp":"varphi",
+"de":"delta",
+"del":"Delta",
+"vde":"delta",
+"ome":"omega",
+"sig":"sigma",
+"nab":"nabla",
+"the":"theta",
+"re": "Reals",
+"fa": "forall",
+"ex": "exists",
+"bec": "because",
+"thf": "therefore",
+"im": "implies",
+"bs": "backsim",
+"ap": "approx",
+"gs": "geqslant",
+"ls": "leqslant",
+"equ": "equiv",
+"sbs": "subset",
+"sps": "supset",
+"lra": "Leftrightarrow",
+"la": "Leftarrow",
+"ra": "Rightarrow",
+"xle": "xlongequal",
+"inf": "infty",
+"deg": "degree",
+"lim": "lim",
+}
+
+list2={
+"til": "tilde",
+"bar": "bar",
+"tbf": "textbf",
+"m": "mathrm",
+"mb": "mathbb",
+"mo": "mathop",
+"te": "text",
+}
+endglobal
+
+snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+snippet '(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rw
+\\`!p snip.rv = list2[match.group(1)]`{$1}$0
+endsnippet
+
+# context "math()"
+# snippet '\b[a-zA-z]+\b' "Greek Letters" rw
+# \\`!p snip.rv = gLettters_Dict[match[0]]`
+# endsnippet

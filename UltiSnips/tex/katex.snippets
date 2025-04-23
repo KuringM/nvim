@@ -3,70 +3,8 @@ global !p
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 
-gLettters_Dict = { 
-"alp": "alpha",
-"be":"beta", 
-"ga" : "gamma",
-"lam":"lambda",
-"ep":"epsilon",
-"ve":"varepsilon",
-"vp":"varphi",
-"de":"delta",
-"del":"Delta",
-"vde":"delta",
-"ome":"omega",
-"sig":"sigma",
-"nab":"nabla",
-"the":"theta",
-"re": "Reals",
-"fa": "forall",
-"ex": "exists",
-"bec": "because",
-"thf": "therefore",
-"im": "implies",
-"bs": "backsim",
-"ap": "approx",
-"gs": "geqslant",
-"ls": "leqslant",
-"equ": "equiv",
-"sbs": "subset",
-"sps": "supset",
-"lra": "Leftrightarrow",
-"la": "Leftarrow",
-"ra": "Rightarrow",
-"xle": "xlongequal",
-"inf": "infty",
-"deg": "degree",
-"lim": "lim",
-}
-
-list2={
-"til": "tilde",
-"bar": "bar",
-"tbf": "textbf",
-"m": "mathrm",
-"mb": "mathbb",
-"mo": "mathop",
-"te": "text",
-}
 endglobal
 
-snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-priority 2
-snippet '(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rw
-\\`!p snip.rv = list2[match.group(1)]`{$1}$0
-endsnippet
-
-priority 1
-# context "match[0] in gLettters_Dict"
-# snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
-# \\`!p snip.rv = gLettters_Dict[match.group(1)]`
-# endsnippet
-
-priority 2
 snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
 \vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
 endsnippet
@@ -121,10 +59,6 @@ snippet ca "begin{cases}" b
 \end{cases}
 endsnippet
 
-snippet ub "\underbrace" w
-\underbrace{${1:${VISUAL}}}_{$2} $0
-endsnippet
-
 ## Big Operators
 snippet summ "\sum\limits" w
 \sum\limits_{$1}^{$2}$0
@@ -135,31 +69,16 @@ endsnippet
 snippet ip "inner product <*,*>" i
 \big< $1 \big>$0
 endsnippet
-snippet mod "modulo |*|" w
-\Big\mid $1 \Big\mid $0
-endsnippet
-snippet norm "norm ||*||" i
-\Big\mid\Big\mid $2 \Big\mid\Big\mid_{${1:1}}$0
-endsnippet
 
 ## Fractions and Binomials
 snippet fr "\frac" i
 \frac{$1}{$2}$0
 endsnippet
 
-snippet sq "\sqrt{}" i
-\sqrt[$1]{$2}$0
-endsnippet
 
 ## Math Operators
 snippet limm "\lim\limits_{}" i
 \lim\limits_{${1:x}\to ${2:x_0}} ${3:f(x)}$0
-endsnippet
-snippet subs "substack" i
-\substack{$1}$0
-endsnippet
-snippet subop "mathop limits" i
-\mathop{$1}\limits_{$2}$0
 endsnippet
 
 snippet tc "color text" i
@@ -206,34 +125,9 @@ endsnippet
 snippet mid "\mid \mid" i
 \mid $1 \mid $0
 endsnippet
-snippet bm "\big\mid \mid" i
-\big\mid $1\big\mid $0
-endsnippet
-snippet bbm "\mid \mid" i
-\Big\mid $1\Big\mid $0
-endsnippet
-snippet bbbm "\mid \mid" i
-\bigg\mid $1 \bigg\mid $0
-endsnippet
-snippet bbbbm "\mid \mid" i
-\Bigg\mid $1\Bigg\mid $0
-endsnippet
 
 snippet nl "\newline" b
 \newline
 $0
 endsnippet
 
-context "math()"
-snippet '([A-Za-z])(\d)' "auto subscript" wrA
-`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
-endsnippet
-
-context "math()"
-snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
-`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
-endsnippet
-
-snippet test "Description" w
- `!p snip.rv = math()`
-endsnippet

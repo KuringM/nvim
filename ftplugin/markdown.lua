@@ -27,12 +27,12 @@ G.hl({
 	{ "mkdNonListItemBlock" , { fg = colors.yellow_light } } ,
 	{ "texMathDelim"        , { fg = colors.red1 } }         ,
 	{ "texDelim"            , { fg = colors.red1 } }         ,
-	{ "texMathSymbol"       , { fg = colors.green            , italic = true } } ,
-	{ "texCmdGreek"         , { fg = colors.green            , italic = true } } ,
-	{ "texMathCmd"          , { fg = colors.green } }        ,
-	{ "texTabularChar"      , { fg = colors.green            , italic = true } } ,
-	{ "texMathStyleConcArg" , { fg = colors.green            , italic = true } } ,
-	{ "texEnvMArgName"      , { fg = colors.green            , italic = true } } ,
+	{ "texMathSymbol"       , { fg = colors.gray            , italic = true } } ,
+	{ "texCmdGreek"         , { fg = colors.gray            , italic = true } } ,
+	{ "texMathCmd"          , { fg = colors.gray } }        ,
+	{ "texTabularChar"      , { fg = colors.gray            , italic = true } } ,
+	{ "texMathStyleConcArg" , { fg = colors.gray            , italic = true } } ,
+	{ "texEnvMArgName"      , { fg = colors.gray            , italic = true } } ,
 	})
 
 	-- vimtex support
