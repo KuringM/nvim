@@ -23,7 +23,11 @@ return {
 					"yaml",
 				},
 				sync_install = true, -- Install parsers synchronously (only applied to `ensure_installed`)
-				highlight = { enable = true },
+				highlight = {
+					enable = true,
+					-- @vimtex support
+					disable = { "latex" , "markdown"},
+				},
 				indent = { enable = true },
 				incremental_selection = {
 					enable = true,
