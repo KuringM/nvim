@@ -121,15 +121,15 @@ ${2:${VISUAL}}
 $0
 endsnippet
 
-snippet fc "font color"
-<font color=${1:green}>$2</font>$0
+snippet fc "font color" w
+<font color=${1:green}>${2:${VISUAL}}</font>$0
 endsnippet
 
-snippet bc "background color"
-<span style="background-color:${1:#ffcce5}">$2</span>$0
+snippet bc "background color" w
+<span style="background-color:${1:#ffcce5}">${2:${VISUAL}}</span>$0
 endsnippet
 
-snippet br "newline" w
+snippet br "newline" wA
 <BR>
 endsnippet
 
@@ -145,20 +145,25 @@ snippet hl "Description" i
 <mark>$1</mark> $0
 endsnippet
 
-priority 1
 snippet q "quote" w
-<q>$1</q> $0
+<q>${1:${VISUAL}}</q> $0
+endsnippet
+
+snippet bq "blockquote" w
+<blockquote>
+${1:${VISUAL}}
+</blockquote>
 endsnippet
 
 ###########
 #  LaTex  #
 ###########
 snippet t "$...$" w
-$$1$ $0
+$${1:${VISUAL}}$ $0
 endsnippet
 snippet tt "$$...$$" b
 $$
-$0
+${1:${VISUAL}}
 $$
 endsnippet
 
