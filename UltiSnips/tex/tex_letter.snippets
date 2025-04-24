@@ -51,10 +51,12 @@ list2={
 }
 endglobal
 
+context "math()"
 snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
+context "math()"
 snippet '(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rw
 \\`!p snip.rv = list2[match.group(1)]`{$1}$0
 endsnippet
