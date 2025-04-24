@@ -1,0 +1,31 @@
+global !p
+
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+endglobal
+
+context "math()"
+snippet '(?<!\\)vec(\d{2})?' "vector_*" ri
+\vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
+endsnippet
+
+context "math()"
+snippet hu "arc" iA
+\overset{\LARGE{\frown}}{$1} $0
+endsnippet
+
+context "math()"
+snippet ub "\underbrace" wA
+\underbrace{${1:${VISUAL}}}_{$2} $0
+endsnippet
+
+context "math()"
+snippet subs "substack" iA
+\substack{$1}$0
+endsnippet
+
+context "math()"
+snippet smo "mathop limits" iA
+\mathop{$1}\limits_{$2}$0
+endsnippet

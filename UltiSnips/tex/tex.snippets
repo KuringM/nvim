@@ -5,10 +5,6 @@ def math():
 
 endglobal
 
-snippet '(?<!\\)vec(\d{2})?' "vector_*" ir
-\vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
-endsnippet
-
 snippet mtx "begin{*matrix}" b
 \begin{${1:matrix}${1/(p)|(b)|(v)|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 	& $2
@@ -23,7 +19,6 @@ c = "^{" + match.group(4) + "}" if match.group(4) is not None else ''
 snip.rv = "\\" + a + b + c
 `  ${1:`!p snip.rv = "f(x,y)" if match.group(1) == "2" else ( "f(x,y,z)" if match.group(1) == "3" else "f(x)")`} \mathrm{d}${2:`!p snip.rv = "\sigma" if match.group(1) == "2" else ( "v" if match.group(1) == "3" else "x")`}
 endsnippet
-
 
 snippet eqn "begin{equation}" b
 \begin{equation}
@@ -83,10 +78,6 @@ snippet cbo "color box" i
 \colorbox{#FEFDD3}{\textcolor{black}{$$1}}$0
 endsnippet
 
-snippet hu "arc" i
-\overset{\LARGE{\frown}}{$1} $0
-endsnippet
-
 ##################
 #  Tex shortcut  #
 ##################
@@ -99,7 +90,6 @@ endsnippet
 snippet sn "Sequence of number {x_0}" i
 \\{${1:x}_n\\}$0
 endsnippet
-
 snippet jx "0 < | x - x_0 | < \detla" i
 0 < \mid x - x_0 \mid < \delta $0
 endsnippet
@@ -124,4 +114,3 @@ snippet nl "\newline" b
 \newline
 $0
 endsnippet
-

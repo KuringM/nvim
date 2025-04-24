@@ -6,7 +6,7 @@ def math():
 endglobal
 
 snippet test "Description" w
- `!p snip.rv = math()`
+`!p snip.rv = math()`
 endsnippet
 
 context "math()"
@@ -21,10 +21,6 @@ endsnippet
 
 snippet __ "subscript" iA
 _{$1}$0
-endsnippet
-
-snippet ub "\underbrace" wA
-\underbrace{${1:${VISUAL}}}_{$2} $0
 endsnippet
 
 context "math()"
@@ -45,15 +41,6 @@ endsnippet
 context "math()"
 snippet rd "to the ... power" iA
 ^{($1)}$0
-endsnippet
-
-
-snippet subs "substack" i
-\substack{$1}$0
-endsnippet
-
-snippet subop "mathop limits" i
-\mathop{$1}\limits_{$2}$0
 endsnippet
 
 context "math()"

@@ -78,6 +78,7 @@
   "snippet.highlight": true,
   "snippets.shortcut": "Snip",
   "snippets.execContext": true,
+	"snippets.priority": 100,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.config/nvim/UltiSnips/tex",
