@@ -1,40 +1,14 @@
 ###########################
 # Sections and Paragraphs #
 ###########################
-priority 1
-snippet sec "Section" b
-# ${1:Section Name}
-$0
-endsnippet
 
-priority 1
-snippet ssec "Sub Section" b
-## ${1:Section Name}
-$0
-endsnippet
+snippet h([1-6]) "Heading x" brA
+`!p
+a = int(match.group(1))
+snip.rv = "#" * a + " "
+`${1:${VISUAL:Heading title}}
 
-priority 1
-snippet sssec "SubSub Section" b
-### ${1:Section Name}
-$0
-endsnippet
-
-priority 1
-snippet par "Paragraph" b
-#### ${1:Paragraph Name}
-$0
-endsnippet
-
-priority 1
-snippet spar "Paragraph" b
-##### ${1:Paragraph Name}
-$0
-endsnippet
-
-priority 1
-snippet sspar "Paragraph" b
-###### ${1:Paragraph Name}
-$0
+${2}
 endsnippet
 
 ##########################
