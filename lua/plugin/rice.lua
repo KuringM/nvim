@@ -14,7 +14,7 @@ return {
 	-- require(a .. "statuscol_nvim"),       -- Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 	-- require(a .. "nvim-ufo"),             -- Not UFO in the sky, but an ultra fold in Neovim.
 	require(a .. "wilder_nvim"),          -- A more adventurous wildmenu
-	-- require(a .. "hlchunk_nvim"),         -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
+	require(a .. "hlchunk_nvim"),         -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 	require(a .. "nvim-colorizer"),       -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 	require(a .. "colorful-winsep_nvim"), -- Make your nvim window separators colorful
 	require(a .. "which-key"),            -- 💥 Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
