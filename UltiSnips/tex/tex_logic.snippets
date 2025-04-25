@@ -1,116 +1,116 @@
 global !p
 
 def math():
-	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+	return vim.eval("vimtex#syntax#in_mathzone()") == "1"
 
 endglobal
 
 context "math()"
-snippet 'fa' "∀" wA
-\forall
+snippet "(?<!\\)fa "∀" wrA
+\forall 
 endsnippet
 
 context "math()"
-snippet 'ex' "∃" wA
-\exists
+snippet "(?<!\\)ex" "∃" wrA
+\exists 
 endsnippet
 
 context "math()"
-snippet 'in ' "∈" wA
+snippet "(?<!\\)in(\s){1}" "∈" wrA
 \in 
 endsnippet
 
 context "math()"
-snippet 'ni' "not ∈" wA
-\notin
+snippet "(?<!\\)ni" "not ∈" wrA
+\notin 
 endsnippet
 
 context "math()"
-snippet 'sbs' "⊂" wA
-\subset
+snippet "(?<!\\)sbs" "⊂" wrA
+\subset 
 endsnippet
 
 context "math()"
-snippet 'sps' "⊃" wA
-\supset
+snippet "(?<!\\)sps" "⊃" wrA
+\supset 
 endsnippet
 
 context "math()"
-snippet 'mid' "|" wA
-\mid
+snippet "(?<!\\)mid" "|" wrA
+\mid 
 endsnippet
 
 context "math()"
-snippet 'land' "∧" wA
-\land
+snippet "(?<!\\)land" "∧" wrA
+\land 
 endsnippet
 
 context "math()"
-snippet 'lor' "∨" wA
-\lor
+snippet "(?<!\\)lor" "∨" wrA
+\lor 
 endsnippet
 
 context "math()"
-snippet 'neg' "¬" wA
-\neg
+snippet "(?<!\\)neg" "¬" wrA
+\neg 
 endsnippet
 
 context "math()"
-snippet 'bec' "∵" wA
-\because
+snippet "(?<!\\)bec" "∵" wrA
+\because 
 endsnippet
 
 context "math()"
-snippet 'thf' "∴" wA
-\therefore
+snippet "(?<!\\)thf" "∴" wrA
+\therefore 
 endsnippet
 
 context "math()"
-snippet 'mp' "↦" wA
-\mapsto
+snippet "(?<!\\)mp" "↦" wrA
+\mapsto 
 endsnippet
 
 context "math()"
-snippet 'to' "→" wA
-\to
+snippet "(?<!\\)to" "→" wrA
+\to 
 endsnippet
 
 context "math()"
-snippet 'im' "⟹" wA
-\implies
+snippet "(?<!\\)im" "⟹" wrA
+\implies 
 endsnippet
 
 context "math()"
-snippet 'iff' "⟺" wA
-\iff
+snippet "(?<!\\)iff" "⟺" wrA
+\iff 
 endsnippet
 
 context "math()"
-snippet 'equ' "≡" wA
-\equiv
+snippet "(?<!\\)equ" "≡" wrA
+\equiv 
 endsnippet
 
 context "math()"
-snippet 'ap' "≈" wA
-\approx
+snippet "(?<!\\)ap" "≈" wrA
+\approx 
 endsnippet
 
 context "math()"
-snippet 'bs' "∽" wA
-\bs
+snippet "(?<!\\)bs" "∽" wrA
+\backsim 
 endsnippet
 
 context "math()"
-snippet 'gs' "⩾" wA
-\geqslant
+snippet "(?<!\\)gs" "⩾" wrA
+\geqslant 
 endsnippet
 
 context "math()"
-snippet 'ls' "⩽" wA
-\leqslant
+snippet "(?<!\\)ls" "⩽" wrA
+\leqslant 
 endsnippet
 
 context "math()"
-snippet 'xle' "⩽" wA
+snippet "(?<!\\)xle" "⩽" wrA
 \xlongequal{${1:${VISUAL}}}
 endsnippet
