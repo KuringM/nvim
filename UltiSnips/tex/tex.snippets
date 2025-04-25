@@ -11,7 +11,7 @@ snippet mtx "begin{*matrix}" b
 \end{${1:matrix}${1/(p)|(b)|(v)|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 endsnippet
 
-snippet '(?<!\\)([2-3])?int(\S+)?( )?(\S+)?' "supper int" ir
+snippet '(?<!\\)([2-3])?int(\S+)?( )?(\S+)?' "supper int" wr
 `!p
 a = ((int(match.group(1)) - 1)*"i" + "int") if match.group(1) is not None  else 'int'
 b = "_{" + match.group(2) + "}" if match.group(2) is not None else ''
