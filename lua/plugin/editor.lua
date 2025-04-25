@@ -18,4 +18,5 @@ return {
 	require(a .. "nvim-neoclip"),           -- Clipboard manager neovim plugin with telescope integration
 	require(a .. "vim-visual-multi"),       -- Multiple cursors plugin for vim/neovim
 	require(a .. "nvim-spectre"),         -- Find the enemy and replace them with dark power.
+	require(a .. "ultisnips"),
 }

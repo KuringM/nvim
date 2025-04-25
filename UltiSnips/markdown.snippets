@@ -1,8 +1,9 @@
+extends tex
 ###########################
 # Sections and Paragraphs #
 ###########################
 
-snippet h([1-6]) "Heading x" brA
+snippet "h([1-6])" "Heading x" brA
 `!p
 a = int(match.group(1))
 snip.rv = "#" * a + " "
