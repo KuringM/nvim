@@ -1,0 +1,116 @@
+global !p
+
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+endglobal
+
+context "math()"
+snippet 'fa' "∀" wA
+\forall
+endsnippet
+
+context "math()"
+snippet 'ex' "∃" wA
+\exists
+endsnippet
+
+context "math()"
+snippet 'in ' "∈" wA
+\in 
+endsnippet
+
+context "math()"
+snippet 'ni' "not ∈" wA
+\notin
+endsnippet
+
+context "math()"
+snippet 'sbs' "⊂" wA
+\subset
+endsnippet
+
+context "math()"
+snippet 'sps' "⊃" wA
+\supset
+endsnippet
+
+context "math()"
+snippet 'mid' "|" wA
+\mid
+endsnippet
+
+context "math()"
+snippet 'land' "∧" wA
+\land
+endsnippet
+
+context "math()"
+snippet 'lor' "∨" wA
+\lor
+endsnippet
+
+context "math()"
+snippet 'neg' "¬" wA
+\neg
+endsnippet
+
+context "math()"
+snippet 'bec' "∵" wA
+\because
+endsnippet
+
+context "math()"
+snippet 'thf' "∴" wA
+\therefore
+endsnippet
+
+context "math()"
+snippet 'mp' "↦" wA
+\mapsto
+endsnippet
+
+context "math()"
+snippet 'to' "→" wA
+\to
+endsnippet
+
+context "math()"
+snippet 'im' "⟹" wA
+\implies
+endsnippet
+
+context "math()"
+snippet 'iff' "⟺" wA
+\iff
+endsnippet
+
+context "math()"
+snippet 'equ' "≡" wA
+\equiv
+endsnippet
+
+context "math()"
+snippet 'ap' "≈" wA
+\approx
+endsnippet
+
+context "math()"
+snippet 'bs' "∽" wA
+\bs
+endsnippet
+
+context "math()"
+snippet 'gs' "⩾" wA
+\geqslant
+endsnippet
+
+context "math()"
+snippet 'ls' "⩽" wA
+\leqslant
+endsnippet
+
+context "math()"
+snippet 'xle' "⩽" wA
+\xlongequal{${1:${VISUAL}}}
+endsnippet

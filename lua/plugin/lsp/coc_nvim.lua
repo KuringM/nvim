@@ -78,6 +78,7 @@ return {
 			{ "i", "<c-e>",      "<Plug>(coc-snippets-expand-jump)" }, -- both expand and jump (make expand higher priority.)
 			{ "i", "<c-CR>",     "<Plug>(coc-snippets-expand)" }, -- trigger snippet expand
 			{ "v", "<c-e>",      "<Plug>(coc-snippets-select)" }, -- select text for visual placeholder of snippet
+			{ "x", "<c-x>",      "<Plug>(coc-convert-snippet)" }, -- convert visual selected code to snippet
 			{ "n", "<leader>-",  "<Plug>(coc-diagnostic-prev)", { silent = true } }, -- navigation diagnostic
 			{ "n", "<leader>=",  "<Plug>(coc-diagnostic-next)", { silent = true } },
 			{ "n", "gd",         "<Plug>(coc-definition)",      { silent = true } }, -- Goto code navigation
@@ -125,7 +126,7 @@ return {
 		})
 		G.hl({
 			{ "CocHintSign", { fg = "#15aabf" }},
-			{"CocUnusedHighlight", { fg = "#c0c0c0", italic = true }}
+			{ "CocUnusedHighlight", { fg = "#c0c0c0", italic = true }}
 		})
 	end,
 }

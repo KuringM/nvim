@@ -19,22 +19,6 @@ gLettters_Dict = {
 "nab":"nabla",
 "the":"theta",
 "re": "Reals",
-"fa": "forall",
-"ex": "exists",
-"bec": "because",
-"thf": "therefore",
-"im": "implies",
-"bs": "backsim",
-"ap": "approx",
-"gs": "geqslant",
-"ls": "leqslant",
-"equ": "equiv",
-"sbs": "subset",
-"sps": "supset",
-"lra": "Leftrightarrow",
-"la": "Leftarrow",
-"ra": "Rightarrow",
-"xle": "xlongequal",
 "inf": "infty",
 "deg": "degree",
 "lim": "lim",
@@ -52,7 +36,7 @@ list2={
 endglobal
 
 context "math()"
-snippet '(?<!\\)(to|in|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
+snippet '\b(|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
