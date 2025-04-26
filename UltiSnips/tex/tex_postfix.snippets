@@ -6,12 +6,12 @@ def math():
 endglobal
 
 context "math()"
-snippet '(?<!\\)vec(\d{2})?' "vector_*" ri
+snippet '(?<!\\)vec(\d{2})?' "vector_*" rw
 \vec{${1:v}}`!p snip.rv= '_{'+ match.group(1)+'}' if match.group(1) else ''`
 endsnippet
 
 context "math()"
-snippet hu "arc" iA
+snippet hu "arc" wA
 \overset{\LARGE{\frown}}{$1} $0
 endsnippet
 
@@ -21,11 +21,26 @@ snippet ub "\underbrace" wA
 endsnippet
 
 context "math()"
-snippet subs "substack" iA
+snippet subs "substack" wA
 \substack{$1}$0
 endsnippet
 
 context "math()"
-snippet smo "mathop limits" iA
+snippet smo "mathop limits" wA
 \mathop{$1}\limits_{$2}$0
+endsnippet
+
+context "math()"
+snippet bar "bar" wA
+\bar{$1}$0
+endsnippet
+
+context "math()"
+snippet til "tilde" wA
+\tilde{$1}$0
+endsnippet
+
+context "math()"
+snippet mr "mathring" wA
+\mathring{${1:U}} (${2:x_0}) $0
 endsnippet

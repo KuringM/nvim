@@ -24,15 +24,6 @@ dict1 = {
 "lim": "lim",
 }
 
-dict2={
-"til": "tilde",
-"bar": "bar",
-"tbf": "textbf",
-"m": "mathrm",
-"mb": "mathbb",
-"mo": "mathop",
-"te": "text",
-}
 endglobal
 
 context "math()"
@@ -40,18 +31,11 @@ snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|
 \\`!p snip.rv = match.group(1) + " "`
 endsnippet
 
-
-priority 100
-context "math()"
-snippet '\b(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rwA
-\\`!p snip.rv = dict2[match.group(1)]`{$1}$0
-endsnippet
-
-priority 1
-context "math()"
-snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
-`!p
-if match.group(1) in  dict1:
-	snip.rv = "\\" + dict1[match.group(1)]
-`
-endsnippet
+# priority 1
+# context "math()"
+# snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
+# `!p
+# if match.group(1) in  dict1:
+# 	snip.rv = "\\" + dict1[match.group(1)]
+# `
+# endsnippet

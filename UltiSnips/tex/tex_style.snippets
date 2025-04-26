@@ -1,0 +1,41 @@
+global !p
+
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+endglobal
+
+context "math()"
+snippet tc "color text" wA
+\textcolor{${2:green}}{${1:${VISUAL}}}$0
+endsnippet
+
+context "math()"
+snippet cbo "color box" wA
+\colorbox{#FEFDD3}{\textcolor{black}{$$1}}$0
+endsnippet
+
+context "math()"
+snippet te "text" wA
+\text{$1}$0
+endsnippet
+
+context "math()"
+snippet tbf "text" wA
+\textbf{$1}$0
+endsnippet
+
+context "math()"
+snippet mm "mathrm" wA
+\mathrm{$1}$0
+endsnippet
+
+context "math()"
+snippet mb "mathbb" wA
+\mathbb{$1}$0
+endsnippet
+
+context "math()"
+snippet mo "mathop" wA
+\mathop{$1}$0
+endsnippet
