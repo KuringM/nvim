@@ -11,8 +11,8 @@ return {
 	require(a .. "lualine_nvim"),         -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 	require(a .. "bufferline_nvim"),      -- A snazzy bufferline for Neovim
 	require(a .. "nvim-scrollbar"),       -- Extensible Neovim Scrollbar
-	-- require(a .. "statuscol_nvim"),       -- Status column plugin that provides a configurable 'statuscolumn' and click handlers.
-	-- require(a .. "nvim-ufo"),             -- Not UFO in the sky, but an ultra fold in Neovim.
+	require(a .. "nvim-ufo"),             -- Not UFO in the sky, but an ultra fold in Neovim.
+	require(a .. "statuscol_nvim"),       -- Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 	require(a .. "wilder_nvim"),          -- A more adventurous wildmenu
 	require(a .. "hlchunk_nvim"),         -- This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed
 	require(a .. "nvim-colorizer"),       -- A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
