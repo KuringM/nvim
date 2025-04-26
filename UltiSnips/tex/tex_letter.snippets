@@ -3,7 +3,7 @@ global !p
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 
-gLettters_Dict = { 
+dict1 = { 
 "alp": "alpha",
 "be":"beta", 
 "ga" : "gamma",
@@ -24,7 +24,7 @@ gLettters_Dict = {
 "lim": "lim",
 }
 
-list2={
+dict2={
 "til": "tilde",
 "bar": "bar",
 "tbf": "textbf",
@@ -37,15 +37,21 @@ endglobal
 
 context "math()"
 snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|xi|eta|cap|cup|circ)' "singals" rwA
-\\`!p snip.rv = match.group(1)`
+\\`!p snip.rv = match.group(1) + " "`
 endsnippet
 
+
+priority 100
 context "math()"
-snippet '(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rw
-\\`!p snip.rv = list2[match.group(1)]`{$1}$0
+snippet '\b(?<!\\)(til|bar|tbf|m|mb|mo|te)' "accents" rwA
+\\`!p snip.rv = dict2[match.group(1)]`{$1}$0
 endsnippet
 
-# context "math()"
-# snippet '\b[a-zA-z]+\b' "Greek Letters" rw
-# \\`!p snip.rv = gLettters_Dict[match[0]]`
-# endsnippet
+priority 1
+context "math()"
+snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
+`!p
+if match.group(1) in  dict1:
+	snip.rv = "\\" + dict1[match.group(1)]
+`
+endsnippet
