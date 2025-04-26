@@ -3,27 +3,6 @@ global !p
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 
-dict1 = { 
-"alp": "alpha",
-"be":"beta", 
-"ga" : "gamma",
-"lam":"lambda",
-"ep":"epsilon",
-"ve":"varepsilon",
-"vp":"varphi",
-"de":"delta",
-"del":"Delta",
-"vde":"delta",
-"ome":"omega",
-"sig":"sigma",
-"nab":"nabla",
-"the":"theta",
-"re": "Reals",
-"inf": "infty",
-"deg": "degree",
-"lim": "lim",
-}
-
 endglobal
 
 context "math()"
@@ -31,11 +10,92 @@ snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|rho|tau|
 \\`!p snip.rv = match.group(1) + " "`
 endsnippet
 
-# priority 1
-# context "math()"
-# snippet '(?<!\\)([a-zA-z]+)' "Greek Letters" rw
-# `!p
-# if match.group(1) in  dict1:
-# 	snip.rv = "\\" + dict1[match.group(1)]
-# `
-# endsnippet
+context "math()" 
+snippet alp "alpha" wA
+\alpha
+endsnippet
+
+context "math()"
+snippet be "beta" wA
+\beta
+endsnippet
+
+context "math()"
+snippet ga "gamma" wA
+\gamma
+endsnippet
+
+context "math()"
+snippet lam "lambda" wA
+\lambda
+endsnippet
+
+context "math()"
+snippet ep "epsilon" wA
+\epsilon 
+endsnippet
+
+context "math()"
+snippet ve "varepsilon" wA
+\varepsilon
+endsnippet
+
+context "math()"
+snippet vp "varphi" wA
+\varphi
+endsnippet
+
+context "math()"
+snippet de "delta" wA
+\delta
+endsnippet
+
+context "math()"
+snippet del "Delta" wA
+\Delta
+endsnippet
+
+context "math()"
+snippet vde "delta" wA
+\delta
+endsnippet
+
+context "math()"
+snippet ome "omega" wA
+\omega 
+endsnippet
+
+context "math()"
+snippet sig "sigma" wA
+\sigma
+endsnippet
+
+context "math()"
+snippet nab "nabla" wA
+\nabla
+endsnippet
+
+context "math()"
+snippet the "theta" wA
+\theta
+endsnippet
+
+context "math()"
+snippet re "Reals" wA
+\Reals
+endsnippet
+
+context "math()"
+snippet inf "infty" wA
+\infty
+endsnippet
+
+context "math()"
+snippet deg "degree" wA
+\degree
+endsnippet
+
+context "math()"
+snippet lim "lim" wA
+\lim
+endsnippet
