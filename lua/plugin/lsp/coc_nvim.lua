@@ -76,10 +76,10 @@ return {
 				{ "n", "<leader>h", "<CMD>lua _G.show_docs()<CR>", { silent = true } },
 				{ "n", "tt", "<CMD>CocCommand explorer<CR>" },
 				{ "n", "ts", "<Plug>(coc-translator-p)" },
-				-- { "i", "<c-e>", "<Plug>(coc-snippets-expand-jump)" }, -- both expand and jump (make expand higher priority.)
-				-- { "i", "<c-CR>", "<Plug>(coc-snippets-expand)" }, -- trigger snippet expand
-				-- { "v", "<c-e>", "<Plug>(coc-snippets-select)" }, -- select text for visual placeholder of snippet
-				-- { "x", "<c-x>", "<Plug>(coc-convert-snippet)" }, -- convert visual selected code to snippet
+				{ "i", "<c-e>", "<Plug>(coc-snippets-expand-jump)" }, -- both expand and jump (make expand higher priority.)
+				{ "i", "<c-CR>", "<Plug>(coc-snippets-expand)" }, -- trigger snippet expand
+				{ "v", "<c-e>", "<Plug>(coc-snippets-select)" }, -- select text for visual placeholder of snippet
+				{ "x", "<c-x>", "<Plug>(coc-convert-snippet)" }, -- convert visual selected code to snippet
 				{ "n", "<leader>-", "<Plug>(coc-diagnostic-prev)", { silent = true } }, -- navigation diagnostic
 				{ "n", "<leader>=", "<Plug>(coc-diagnostic-next)", { silent = true } },
 				{ "n", "gd", "<Plug>(coc-definition)", { silent = true } }, -- Goto code navigation
@@ -99,8 +99,8 @@ return {
 				{ "o", "ac", "<Plug>(coc-classobj-a)", opts1 },
 			})
 
-			-- vim.g.coc_snippet_next = "<c-e>" -- jump to next placeholder
-			-- vim.g.coc_snippet_prev = "<c-u>" -- jump to previous placeholder
+			vim.g.coc_snippet_next = "<c-e>" -- jump to next placeholder
+			vim.g.coc_snippet_prev = "<c-u>" -- jump to previous placeholder
 
 			-- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 			vim.api.nvim_create_augroup("CocGroup", {})
@@ -132,14 +132,14 @@ return {
 		end,
 	},
 
-	{
-		"SirVer/ultisnips",
-		config = function()
-			vim.g.UltiSnipsExpandTrigger = "<c-e>"
-			vim.g.UltiSnipsJumpForwardTrigger = "<c-e>"
-			vim.g.UltiSnipsJumpBackwardTrigger = "<c-u>"
-			vim.g.UltiSnipsJumpOrExpandTrigger = "<c-e>"
-			vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "UltiSnips/tex" }
-		end,
-	},
+	-- {
+	-- 	"SirVer/ultisnips",
+	-- 	config = function()
+	-- 		vim.g.UltiSnipsExpandTrigger = "<c-e>"
+	-- 		vim.g.UltiSnipsJumpForwardTrigger = "<c-e>"
+	-- 		vim.g.UltiSnipsJumpBackwardTrigger = "<c-u>"
+	-- 		vim.g.UltiSnipsJumpOrExpandTrigger = "<c-e>"
+	-- 		vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "UltiSnips/tex" }
+	-- 	end,
+	-- },
 }
