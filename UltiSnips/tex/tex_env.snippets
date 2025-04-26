@@ -1,0 +1,57 @@
+global !p
+
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+endglobal
+
+snippet nl "\newline" b
+\newline
+$0
+endsnippet
+
+context "math()"
+snippet mtx "begin{*matrix}" b
+\begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
+	& $2
+\end{$1${1/(p$)|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
+endsnippet
+
+context "math()"
+snippet eqn "begin{equation}" b
+\begin{equation}
+\begin{split}
+	$1
+	&= $2\\\\
+	&= $0
+\end{split}
+\end{equation}
+endsnippet
+
+context "math()"
+snippet al "Align whith a number" b
+\begin{align}
+	& ${0:${VISUAL}}
+\end{align}
+endsnippet
+
+context "math()"
+snippet aln "Align whith a number" b
+\begin{align*}
+	& ${0:${VISUAL}}
+\end{align*}
+endsnippet
+
+context "math()"
+snippet ald "Aligned" b
+\begin{aligned}
+	& ${0:${VISUAL}}
+\end{aligned}
+endsnippet
+
+context "math()"
+snippet ca "begin{cases}" b
+\begin{cases}
+	& ${0:${VISUAL}}
+\end{cases}
+endsnippet
