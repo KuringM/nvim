@@ -11,14 +11,14 @@ $0
 endsnippet
 
 context "math()"
-snippet mtx "begin{*matrix}" b
+snippet mtx "begin{*matrix}" bA
 \begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 	& $2
 \end{$1${1/(p$)|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 endsnippet
 
 context "math()"
-snippet eqn "begin{equation}" b
+snippet eqn "begin{equation}" bA
 \begin{equation}
 \begin{split}
 	$1
@@ -29,28 +29,28 @@ snippet eqn "begin{equation}" b
 endsnippet
 
 context "math()"
-snippet al "Align whith a number" b
+snippet al "Align whith a number" bA
 \begin{align}
 	& ${0:${VISUAL}}
 \end{align}
 endsnippet
 
 context "math()"
-snippet aln "Align whith a number" b
+snippet aln "Align whith a number" bA
 \begin{align*}
 	& ${0:${VISUAL}}
 \end{align*}
 endsnippet
 
 context "math()"
-snippet ald "Aligned" b
+snippet ald "Aligned" bA
 \begin{aligned}
 	& ${0:${VISUAL}}
 \end{aligned}
 endsnippet
 
 context "math()"
-snippet ca "begin{cases}" b
+snippet ca "begin{cases}" bA
 \begin{cases}
 	& ${0:${VISUAL}}
 \end{cases}
