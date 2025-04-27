@@ -42,7 +42,7 @@ G.map({
 	{ mode_nvo , "P"            , ":pu<CR>"                , { noremap = true } } , -- Paste in a new line
 	{ mode_nvo , "s"            , "<nop>"                  , { noremap = true } } , -- Disable the default s key
 	{ mode_nvo , "S"            , ":w<CR>"                 , { noremap = true } } , -- Save
-	{ mode_nvo , "h"            , "e"                      , { noremap = true } } , -- set h (same as n                                                        , cursor left) to 'end of word'
+	{ mode_nvo , "h"            , "e"                      , { noremap = true } } , -- set h (same as n, cursor left) to 'end of word'
 	{ mode_nvo , "k"            , "i"                      , { noremap = true } } , -- insert
 	{ mode_nvo , "K"            , "I"                      , { noremap = true } } ,
 	{ mode_nvo , "gl"           , "gu"                     , { noremap = true } } ,
