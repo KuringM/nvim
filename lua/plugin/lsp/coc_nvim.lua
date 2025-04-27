@@ -48,10 +48,10 @@ return {
 					vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
 				end
 			end
-
+			vim.g.node_client_debug = true
 			local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 			local opts1 = { silent = true, nowait = true }
-			G.map({
+			G.map1({
 				{ "i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts },
 				{
 					"i",
@@ -132,14 +132,14 @@ return {
 		end,
 	},
 
-	{
-		"SirVer/ultisnips",
-		config = function()
-			vim.g.UltiSnipsExpandTrigger = "<c-e>"
-			vim.g.UltiSnipsJumpForwardTrigger = "<c-e>"
-			vim.g.UltiSnipsJumpBackwardTrigger = "<c-u>"
-			vim.g.UltiSnipsJumpOrExpandTrigger = "<c-e>"
-			vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "UltiSnips/tex" }
-		end,
-	},
+	-- {
+	-- 	"SirVer/ultisnips",
+	-- 	config = function()
+	-- 		vim.g.UltiSnipsExpandTrigger = "<c-e>"
+	-- 		vim.g.UltiSnipsJumpForwardTrigger = "<c-e>"
+	-- 		vim.g.UltiSnipsJumpBackwardTrigger = "<c-u>"
+	-- 		vim.g.UltiSnipsJumpOrExpandTrigger = "<c-e>"
+	-- 		vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "UltiSnips/tex" }
+	-- 	end,
+	-- },
 }

@@ -9,18 +9,18 @@ G.api = vim.api
 G.opt = vim.opt
 G.treesitter = vim.treesitter
 
+
 -- remap keys
 function G.map(maps)
 	for _, map in pairs(maps) do
-		for i, v in pairs(map) do
-			if type(i) == "number" then
-				vim.keymap.set(map[1], map[2], map[3], map[4])
-				break
-			else
 				vim.keymap.set(map.mode, map.lhs, map.rhs, map.opt)
-				break
-			end
-		end
+	end
+end
+
+-- remap keys
+function G.map1(maps)
+	for _, map in pairs(maps) do
+				vim.keymap.set(map[1], map[2], map[3], map[4])
 	end
 end
 

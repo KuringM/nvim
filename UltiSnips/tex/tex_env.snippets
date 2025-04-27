@@ -10,8 +10,8 @@ snippet nl "\newline" b
 $0
 endsnippet
 
-context "math()"
-snippet mtx "begin{*matrix}" bA
+# context "math()"
+snippet mtx "begin{*matrix}" b
 \begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 	& $2
 \end{$1${1/(p$)|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
@@ -29,14 +29,14 @@ snippet eqn "begin{equation}" bA
 endsnippet
 
 context "math()"
-snippet al "Align whith a number" bA
+snippet al "Align whith a number" b
 \begin{align}
 	& ${0:${VISUAL}}
 \end{align}
 endsnippet
 
 context "math()"
-snippet aln "Align whith a number" bA
+snippet aln "Align whith a number" b
 \begin{align*}
 	& ${0:${VISUAL}}
 \end{align*}
