@@ -7,12 +7,12 @@ return {
 	config = function()
 		require("dashboard").setup({
 			theme = "hyper",
-			-- preview = {
-			-- 	command = "lolcrab",
-			-- 	file_path = "~/.config/nvim/dashboard.txt",
-			-- 	file_width = 69,
-			-- 	file_heigt = 10,
-			-- },
+			preview = {
+				command = "lolcrab",
+				file_path = "~/.config/nvim/dashboard.txt",
+				file_width = 69,
+				file_height = 10,
+			},
 		})
 		G.hl({
 			{ "DashboardHeader"       , { fg = colors.orange } }     ,
