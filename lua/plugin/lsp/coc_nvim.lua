@@ -48,10 +48,10 @@ return {
 					vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
 				end
 			end
-			vim.g.node_client_debug = true
+
 			local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 			local opts1 = { silent = true, nowait = true }
-			G.map1({
+			G.map({
 				{ "i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts },
 				{
 					"i",
