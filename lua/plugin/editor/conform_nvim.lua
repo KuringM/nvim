@@ -11,6 +11,12 @@ return {
 	},
 	config = function()
 		require("conform").setup({
+			format_on_save = function(bufnr)
+				local focus_filetypes = { "markdown" }
+				if vim.tbl_contains(focus_filetypes, vim.bo[bufnr].filetype) then
+					return { timeout_ms = 500, lsp_format = "fallback" }
+				end
+			end,
 			formatters_by_ft = {
 				bash = { "beautysh" },
 				zsh = { "beautysh" },
@@ -78,6 +84,20 @@ return {
 					async = false,
 					lsp_format = "nerver",
 				})
+			end,
+		})
+		-- Auto-format when focus is lost or I leave the buffer
+		vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
+			pattern = { "*.md" },
+			callback = function(args)
+				local buf = args.buf or vim.api.nvim_get_current_buf()
+				if vim.fn.mode() == "n" then
+					vim.defer_fn(function()
+						if vim.api.nvim_buf_is_valid(buf) then
+							require("conform").format({ bufnr = buf })
+						end
+					end, 100)
+				end
 			end,
 		})
 	end,
