@@ -6,8 +6,8 @@ def math():
 endglobal
 
 context "math()"
-snippet "(?<!\\)vec(\d{2})?" "vector_*" rw
-\vec{${1:${VISUAL}}}`!p snip.rv= "_{"+ match.group(1)+"}" if match.group(1) else ""`
+snippet "(?<!\\)vec" "vector" rwA
+\vec{$1}$0
 endsnippet
 
 context "math()"
