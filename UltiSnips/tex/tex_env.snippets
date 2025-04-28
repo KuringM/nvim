@@ -5,12 +5,12 @@ def math():
 
 endglobal
 
-snippet nl "\newline" b
+snippet nl "\newline" bA
 \newline
 $0
 endsnippet
 
-# context "math()"
+context "math()"
 snippet mtx "begin{*matrix}" b
 \begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
 	& $2
