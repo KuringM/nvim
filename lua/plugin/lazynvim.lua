@@ -41,6 +41,6 @@ require("lazy").setup({
 		require(a .. "editor"), -- nvim editor enhancement
 		require(a .. "lsp"), -- nvim lsp
 	},
-	intall = { colorscheme = { "deus" } },
-	checka= { enable = true }
+	install = { colorscheme = { "deus" } },
+	checker = { enable = true },
 })
