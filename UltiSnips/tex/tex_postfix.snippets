@@ -6,8 +6,8 @@ def math():
 endglobal
 
 context "math()"
-snippet "(?<!\\)vec" "vector" rwA
-\vec{$1}$0
+snippet "(?<!\\)vec([a-zA-Z0])" "vector" rwA
+\vec{`!p snip.rv= match.group(1)`}$0
 endsnippet
 
 context "math()"

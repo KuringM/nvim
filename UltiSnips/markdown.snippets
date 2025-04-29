@@ -197,11 +197,13 @@ endsnippet
 ###########
 #  LaTex  #
 ###########
+priority 1
 context "text()"
-snippet t "$...$" w
-$${1:${VISUAL}}$ $0
+snippet t "$...$" i
+$${1:${VISUAL}}$$0
 endsnippet
 
+priority 2
 context "text()"
 snippet tt "$$...$$" b
 $$

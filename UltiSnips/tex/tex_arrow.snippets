@@ -1,0 +1,21 @@
+global !p
+
+def math():
+	return vim.eval("vimtex#syntax#in_mathzone()") == "1"
+
+endglobal
+
+context "math()"
+snippet ora "overrightarrow" wA
+\overrightarrow{$1}$0
+endsnippet
+
+context "math()"
+snippet xra "xRightarrow" wA
+\xRightarrow{${1:${VISUAL}}}$0
+endsnippet
+
+context "math()"
+snippet "(?<!\\)xle" "longequal{abs}" wrA
+\xlongequal{${1:${VISUAL}}}
+endsnippet
