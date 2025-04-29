@@ -1,5 +1,6 @@
 return {
 	"godlygeek/tabular", -- vim script for text filtering and alignment
+	keys = { { "\\t", mode = { "n", "v" } } },
 	config = function()
 		vim.keymap.set(
 			"v",

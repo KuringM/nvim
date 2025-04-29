@@ -1,7 +1,7 @@
 local a = "plugin/lsp/"
 
 return {
-	{ "fladson/vim-kitty" }, -- Vim syntax highlighting for Kitty terminal config files
+	{ "fladson/vim-kitty", ft = "kitty" }, -- Vim syntax highlighting for Kitty terminal config files
 	require(a .. "markdown"),
 	require(a .. "vimtex"),
 	require(a .. "nvim-treesitter"),

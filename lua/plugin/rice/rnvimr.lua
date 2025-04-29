@@ -1,5 +1,6 @@
 return {
 	"kevinhwang91/rnvimr", -- use Ranger in a floating window
+	keys = { "R" },
 	build = {
 		"pip3 install ranger-fm pynvim",
 	},
