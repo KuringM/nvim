@@ -9,7 +9,8 @@ local mode_c = { "c" }
 --                            NVIM Keymaps                            --
 ------------------------------------------------------------------------
 
-G.g.mapleader = " " -- Set <LEADER> as <SPACE>, ; as :
+G.g.mapleader = " " -- Set <LEADER> as <SPACE>
+vim.g.maplocalleader = "\\" -- Set <LocalLeader> as \
 G.map({
 
 	------------------------------------------------------------------------
