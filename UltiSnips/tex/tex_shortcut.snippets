@@ -1,0 +1,28 @@
+global !p
+
+def math():
+	return vim.eval("vimtex#syntax#in_mathzone()") == "1"
+
+endglobal
+
+snippet fu "Function: f(x)" i
+${1:f}(${2:x})$0
+endsnippet
+snippet der "Derivative: f'(x)" i
+${1:f}'(${2:x})$0
+endsnippet
+snippet sn "Sequence of number {x_0}" i
+\\{${1:x}_n\\}$0
+endsnippet
+snippet jx "0 < | x - x_0 | < \detla" i
+0 < \mid x - x_0 \mid < \delta $0
+endsnippet
+snippet jx1 "| x_n - a | < \varepsilon" i
+\mid x_n - a \mid < \varepsilon $0
+endsnippet
+snippet jx2 "| f(x) - A | < \varepsilon" i
+\mid f(x) - ${1:A} \mid < ${2:\varepsilon} $0
+endsnippet
+snippet set "{}" w
+\\{$1 \\} $0
+endsnippet
