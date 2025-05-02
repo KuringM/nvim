@@ -75,7 +75,7 @@
     "<<": "gitStage",
     ">>": "gitUnstage"
   },
-  "snippet.highlight": true,
+  "snippet.highlight": false,
   "snippets.shortcut": "Snip",
   "snippets.execContext": true,
 	"snippets.priority": 100,
