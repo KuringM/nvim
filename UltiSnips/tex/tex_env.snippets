@@ -10,6 +10,10 @@ snippet nl "\newline" bA
 $0
 endsnippet
 
+snippet "(?<!\\)tag" "tag" rwA
+\tag{$1}$0
+endsnippet
+
 context "math()"
 snippet mtx "begin{*matrix}" b
 \begin{${1:matrix}${1/(p)$|(b)$|(v)$|(.*)/(?1:matrix)(?2:matrix)(?3:matrix)/}}
