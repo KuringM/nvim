@@ -7,6 +7,11 @@ function! CheckChineseMark()
 		execute s:line . "s/。/\. /g"
 	endif
 
+	if search('．')
+		let s:line=search('．')
+		execute s:line . "s/．/\. /g"
+	endif
+
 	if search('，')
 		let s:line=search('，')
 		execute s:line . "s/，/, /g"

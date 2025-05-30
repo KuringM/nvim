@@ -40,10 +40,9 @@ return {
 				},
 				python = { "black" },
 				markdown = {
-					"prettierd",
-					-- "latexindent",
 					"texfmt",
 					"injected",
+					"prettierd",
 				},
 				tex = { "tex-fmt", stop_after_first = true },
 			},
