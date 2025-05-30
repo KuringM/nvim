@@ -36,8 +36,14 @@ vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 local a = "plugin."
 require("lazy").setup({
 	spec = {
+		require(a .. "autopairs"),
+		require(a .. "change"),
+		require(a .. "comment"),
+		require(a .. "cursors"),
+		require(a .. "file"),
+		require(a .. "formatter"),
+		require(a .. "clipboard"),
 		require(a .. "rice"), -- nvim appearance enhancment
-		require(a .. "editor"), -- nvim editor enhancement
 		require(a .. "lsp"), -- nvim lsp
 	},
 	install = { colorscheme = { "deus" } },
