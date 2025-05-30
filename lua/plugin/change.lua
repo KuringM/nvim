@@ -1,16 +1,19 @@
 local G = require("G")
 
 return {
+	-- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 	{
-		"kylechui/nvim-surround", -- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
+		"kylechui/nvim-surround",
 		version = "*",
 		event = "VeryLazy",
 		config = function()
 			require("nvim-surround").setup({})
 		end,
 	},
+
+	-- Find the enemy and replace them with dark power.
 	{
-		"nvim-pack/nvim-spectre", -- Find the enemy and replace them with dark power.
+		"nvim-pack/nvim-spectre",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -23,7 +26,6 @@ return {
 			},
 			default = {
 				replace = {
-					--pick one of item in replace_engine
 					cmd = "sd",
 				},
 			},
@@ -58,8 +60,9 @@ return {
 		end,
 	},
 
+	-- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
 	{
-		"gbprod/substitute.nvim", -- Neovim plugin introducing a new operators motions to quickly replace and exchange text.
+		"gbprod/substitute.nvim",
 		config = function()
 			local substitute = require("substitute")
 			substitute.setup({
@@ -78,8 +81,58 @@ return {
 		end,
 	},
 
+	-- Super-simple vim plugin for cycling through antonyms/words related to word under cursor. "gs"
 	{
-		"theniceboy/antovim", -- Super-simple vim plugin for cycling through antonyms/words related to word under cursor. "gs"
+		"theniceboy/antovim",
 		keys = { "gs" },
+	},
+
+	-- Clipboard manager neovim plugin with telescope integration
+	{
+		"AckslD/nvim-neoclip.lua",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			{ "kkharji/sqlite.lua", module = "sqlite" },
+		},
+		config = function()
+			vim.keymap.set("n", "<leader>y", ":Telescope neoclip<CR>", { noremap = true })
+			require("neoclip").setup({
+				history = 1000,
+				enable_persistent_history = true,
+				keys = {
+					telescope = {
+						i = {
+							select = "<c-y>",
+							paste = "<cr>",
+							paste_behind = "<c-g>",
+							replay = "<c-q>", -- replay a macro
+							delete = "<c-d>", -- delete an entry
+							edit = "<c-k>", -- edit an entry
+							custom = {},
+						},
+					},
+				},
+			})
+		end,
+	},
+
+	-- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>c",
+				"gcc",
+				{ desc = "Toggles the current line using linewise comment" }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"<leader>c",
+				"gc",
+				{ desc = "Toggles the current line using linewise comment" }
+			)
+		end,
 	},
 }

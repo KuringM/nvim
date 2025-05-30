@@ -1,6 +1,7 @@
 return {
+	-- markdown preview plugin for (neo)vim
 	{
-		"iamcco/markdown-preview.nvim", -- markdown preview plugin for (neo)vim
+		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		build = "cd app && yarn install",
 		init = function()
@@ -29,8 +30,10 @@ return {
 			]])
 		end,
 	},
+
+	-- VIM Table Mode for instant table creation.
 	{
-		"dhruvasagar/vim-table-mode", -- VIM Table Mode for instant table creation.
+		"dhruvasagar/vim-table-mode",
 		cmd = { "TableModeToggle" },
 		ft = { "text", "markdown" },
 		config = function()
@@ -40,8 +43,10 @@ return {
 			]])
 		end,
 	},
+
+	-- A vim 7.4+ plugin to generate table of contents for Markdown files.
 	{
-		"mzlogin/vim-markdown-toc", -- A vim 7.4+ plugin to generate table of contents for Markdown files.
+		"mzlogin/vim-markdown-toc",
 		ft = { "gitignore", "markdown" },
 		config = function()
 			vim.g.vmt_cycle_list_item_markers = 1
@@ -49,11 +54,14 @@ return {
 			vim.g.vmt_fence_closing_text = "/TOC"
 		end,
 	},
+
+	-- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
 	{
-		"dkarter/bullets.vim", -- 🔫Bullets.vim is a Vim/NeoVim plugin for automated bullet lists.
+		"dkarter/bullets.vim",
 		lazy = false,
 		ft = { "markdown", "txt" },
 	},
+
 	{
 		"preservim/vim-markdown",
 		config = function()

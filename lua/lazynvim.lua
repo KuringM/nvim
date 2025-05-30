@@ -38,13 +38,19 @@ require("lazy").setup({
 	spec = {
 		require(a .. "autopairs"),
 		require(a .. "change"),
-		require(a .. "comment"),
+		require(a .. "coc"),
 		require(a .. "cursors"),
+		require(a .. "dap"),
 		require(a .. "file"),
 		require(a .. "formatter"),
-		require(a .. "clipboard"),
+		require(a .. "git"),
+		require(a .. "markdown"),
+		require(a .. "move"),
 		require(a .. "rice"), -- nvim appearance enhancment
-		require(a .. "lsp"), -- nvim lsp
+		require(a .. "telescope"),
+		require(a .. "treesitter"),
+		-- require(a .. "ultisnips"),
+		require(a .. "vimtex"),
 	},
 	install = { colorscheme = { "deus" } },
 	checker = { enable = true },

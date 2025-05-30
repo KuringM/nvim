@@ -1,6 +1,7 @@
 return {
+	-- Nvim Treesitter configurations and abstraction layer
 	{
-		"nvim-treesitter/nvim-treesitter", -- Nvim Treesitter configurations and abstraction layer
+		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		priority = 1000,
 		build = ":TSUpdate",
@@ -26,7 +27,7 @@ return {
 				highlight = {
 					enable = true,
 					-- @vimtex support
-					disable = { "latex" , "markdown"},
+					disable = { "latex", "markdown" },
 				},
 				indent = { enable = true },
 				incremental_selection = {
@@ -43,8 +44,10 @@ return {
 			vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		end,
 	},
+
+	-- Refactor module for nvim-treesitter
 	{
-		"nvim-treesitter/nvim-treesitter-refactor", -- Refactor module for nvim-treesitter
+		"nvim-treesitter/nvim-treesitter-refactor",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				refactor = {
@@ -73,13 +76,16 @@ return {
 			})
 		end,
 	},
+
+	-- Show code context
 	{
-		"nvim-treesitter/nvim-treesitter-context", -- Show code context
+		"nvim-treesitter/nvim-treesitter-context",
 		config = function()
 			vim.keymap.set("n", "gt", function()
 				require("treesitter-context").go_to_context(vim.v.count1)
 			end, { silent = true, desc = "go to context" })
 		end,
 	},
+
 	"HiPhish/rainbow-delimiters.nvim", -- Rainbow delimiters for Neovim with Tree-sitter},
 }

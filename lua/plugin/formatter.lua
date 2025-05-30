@@ -1,6 +1,7 @@
 return {
+	-- Lightweight yet powerful formatter plugin for Neovim
 	{
-		"stevearc/conform.nvim", -- Lightweight yet powerful formatter plugin for Neovim
+		"stevearc/conform.nvim",
 		event = "VeryLazy",
 		build = {
 			"brew install fsouza/prettierd/prettierd",
@@ -102,8 +103,10 @@ return {
 			})
 		end,
 	},
+
+	-- vim script for text filtering and alignment
 	{
-		"godlygeek/tabular", -- vim script for text filtering and alignment
+		"godlygeek/tabular",
 		keys = { { "\\t", mode = { "n", "v" } } },
 		config = function()
 			vim.keymap.set(
