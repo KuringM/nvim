@@ -36,17 +36,26 @@ vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 local a = "plugin."
 require("lazy").setup({
 	spec = {
+		require(a .. "bufferline"),
+		require(a .. "colorscheme"),
+		require(a .. "dashboard"),
+		require(a .. "fold"),
+		require(a .. "highlighter"),
+		require(a .. "notification"),
+		require(a .. "scrollbar"),
+		require(a .. "statuscolumn"),
+		require(a .. "statusline"),
+		require(a .. "wildmenu"),
+		require(a .. "winbar"),
 		require(a .. "autopairs"),
 		require(a .. "change"),
 		require(a .. "coc"),
 		require(a .. "cursors"),
-		require(a .. "dap"),
 		require(a .. "file"),
 		require(a .. "formatter"),
 		require(a .. "git"),
 		require(a .. "markdown"),
 		require(a .. "move"),
-		require(a .. "rice"), -- nvim appearance enhancment
 		require(a .. "telescope"),
 		require(a .. "treesitter"),
 		-- require(a .. "ultisnips"),

@@ -82,7 +82,6 @@ return {
 		})
 
 		ts.load_extension("fzf")
-		ts.load_extension("dap")
 		ts.load_extension("simulators")
 
 		local builtin = require("telescope.builtin")
