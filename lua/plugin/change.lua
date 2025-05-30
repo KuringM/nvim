@@ -1,5 +1,3 @@
-local G = require("G")
-
 return {
 	-- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
 	{
