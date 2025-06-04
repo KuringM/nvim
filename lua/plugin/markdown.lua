@@ -68,4 +68,10 @@ return {
 			vim.g.vim_markdown_math = 1
 		end,
 	},
+
+	-- A lightweight Markdown → HTML converter for Neovim, with built-in MathJax support.
+	{
+		"kuringmin/md2html.nvim",
+		cmd = "MdToHtml",
+	},
 }
