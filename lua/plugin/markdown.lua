@@ -71,7 +71,7 @@ return {
 
 	-- A lightweight Markdown → HTML converter for Neovim, with built-in MathJax support.
 	{
-		"kuringmin/md2html.nvim",
+		"KuringM/md2html-nvim",
 		cmd = "MdToHtml",
 	},
 }
