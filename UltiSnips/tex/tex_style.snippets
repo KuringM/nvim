@@ -7,7 +7,7 @@ endglobal
 
 context "math()"
 snippet tc "color text" wA
-\textcolor{${2:green}}{${1:${VISUAL}}}$0
+\textcolor{${2:red}}{${1:${VISUAL}}}$0
 endsnippet
 
 context "math()"
@@ -26,8 +26,8 @@ snippet tbf "text" wA
 endsnippet
 
 context "math()"
-snippet mm "mathrm" wA
-\mathrm{$1}$0
+snippet "(?<!\\)mm([A-Za-z])"  "mathrm" rwA
+\mathrm{`!p snip.rv= match.group(1)`}$0
 endsnippet
 
 context "math()"
@@ -46,6 +46,6 @@ snippet ds "displaystyle" wA
 endsnippet
 
 context "math()"
-snippet es "enspace: 1/2 em space" wA
+snippet ens "enspace: 1/2 em space" wA
 \enspace
 endsnippet

@@ -29,6 +29,8 @@ local compileRun = function()
 	elseif ft == "sh" then
 		split()
 		vim.cmd("term bash %")
+	elseif ft == "html" then
+		vim.cmd("!open %")
 	end
 end
 

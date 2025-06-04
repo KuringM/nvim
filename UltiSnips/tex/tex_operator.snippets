@@ -6,8 +6,8 @@ def math():
 endglobal
 
 context "math()"
-snippet "(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|cdot|cdots|times|cap|cup|circ)" "singals" rwA
-\\`!p snip.rv = match.group(1) + " "`
+snippet "(?<!\\)(sin|cos|tan|arctan|arccot|cot|sec|csc|ln|log|exp|star|perp|cdot|cdots|times|cap|cup|circ|quad|qquad)" "singals" rwA
+\\`!p snip.rv = match.group(1)`
 endsnippet
 
 context "math()"
@@ -21,7 +21,7 @@ snip.rv = "\\" + a + b + c
 endsnippet
 
 context "math()"
-snippet summ "\sum\limits" w
+snippet summ "\sum\limits" wA
 \sum\limits_{$1}^{$2}$0
 endsnippet
 
