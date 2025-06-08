@@ -24,7 +24,7 @@ return {
 					zsh = { "beautysh" },
 					cpp = { "clang-format" },
 					css = { "prettierd" },
-					html = { "prettierd" },
+					html = { "texfmt", "injected", "prettierd" },
 					json = { "prettierd" },
 					jsonc = { "prettierd" },
 					lua = { "stylua" },
