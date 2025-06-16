@@ -1,5 +1,5 @@
 {
-	"extensions.updateCheck": "daily",
+  "extensions.updateCheck": "daily",
   "coc.preferences.messageLevel": "error",
   "codeLens.enable": true,
   "diagnostic.errorSign": "\uf467",
@@ -78,7 +78,7 @@
   "snippet.highlight": false,
   "snippets.shortcut": "Snip",
   "snippets.execContext": true,
-	"snippets.priority": 100,
+  "snippets.priority": 100,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.config/nvim/UltiSnips/tex",
