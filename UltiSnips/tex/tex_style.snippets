@@ -61,6 +61,16 @@ snippet lr "\left...\right" w
 endsnippet
 
 context "math()"
-snippet lr{ "\left...\right" wA
+snippet lrp "\left(...\right)" wA
+\left( $1 \right) $0
+endsnippet
+
+context "math()"
+snippet lrb "\left[...\right]" wA
+\left[ $1 \right] $0
+endsnippet
+
+context "math()"
+snippet lrh "\left{...\right}" wA
 \left\\{ $1 \right\\} $0
 endsnippet
