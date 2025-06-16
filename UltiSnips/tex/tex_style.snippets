@@ -26,6 +26,11 @@ snippet tbf "text" wA
 endsnippet
 
 context "math()"
+snippet pb "textbf" wA
+\pmb{$1}$0
+endsnippet
+
+context "math()"
 snippet "(?<!\\)mm([A-Za-z])"  "mathrm" rwA
 \mathrm{`!p snip.rv= match.group(1)`}$0
 endsnippet
@@ -36,7 +41,7 @@ snippet mb "mathbb" wA
 endsnippet
 
 context "math()"
-snippet mo "mathop" wA
+snippet mop "mathop" wA
 \mathop{$1}$0
 endsnippet
 
@@ -48,4 +53,14 @@ endsnippet
 context "math()"
 snippet ens "enspace: 1/2 em space" wA
 \enspace
+endsnippet
+
+context "math()"
+snippet lr "\left...\right" w
+\left$1\right$0
+endsnippet
+
+context "math()"
+snippet lr{ "\left...\right" wA
+\left\\{ $1 \right\\} $0
 endsnippet
