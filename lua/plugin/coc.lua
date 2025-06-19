@@ -27,6 +27,7 @@ return {
 				"coc-vimlsp",
 				"coc-vimtex",
 				"coc-yaml",
+				"coc-ds-pinyin-lsp"
 			}
 
 			vim.opt.backup = false

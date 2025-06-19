@@ -119,6 +119,7 @@
     "variable": "\ue71b"
   },
   "Lua.diagnostics.globals": ["vim"],
+	"ds-pinyin-lsp.max_suggest": 3,
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
