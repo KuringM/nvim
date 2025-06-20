@@ -117,7 +117,8 @@ G.map({
 
 	{ mode_i , "<C-A>" , "<ESC>A"      , { noremap = true } } , -- Move to the line END
 	{ mode_i , "<C-V>" , "<C-R>*"      , { noremap = true } } , -- Paste in Insert Mode
-	{ mode_i , "<c-Z>" , "<C-O>:u<CR>" , { noremap = true } } , -- Avoid those shortcut
+	{ mode_i , "<C-Z>" , "<C-O>:u<CR>" , { noremap = true } } , -- Avoid those shortcut
+	{ mode_i , "<C-L>" , "<C-W>" ,       { noremap = true } } , -- delete words
 })
 
 -- close win below
