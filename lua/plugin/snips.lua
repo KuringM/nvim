@@ -7,7 +7,7 @@ return {
 			vim.g.UltiSnipsJumpForwardTrigger = "<c-e>"
 			vim.g.UltiSnipsJumpBackwardTrigger = "<c-u>"
 			vim.g.UltiSnipsJumpOrExpandTrigger = "<c-e>"
-			vim.g.UltiSnipsSnippetDirectories = { "snippets", "snippets/tex" }
+			vim.g.UltiSnipsSnippetDirectories = { "snips", "snips/tex" }
 		end,
 	},
 }
