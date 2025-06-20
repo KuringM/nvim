@@ -1,86 +1,78 @@
 return {
+	-- Performant, batteries-included completion plugin for Neovim
 	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets", -- 常用 Snippet
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "1.*",
+		opts = {
+
+			keymap = {
+				preset = "enter",
+				["<C-N>"] = { "select_prev", "fallback" },
+				["<C-I>"] = { "select_next", "fallback" },
+				["<C-E>"] = { "select_and_accept", "fallback" },
+				["<C-K>"] = { "show_signature", "hide_signature", "fallback" },
+				["<C-O>"] = { "show_documentation", "fallback" },
+			},
+
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+
+			completion = {
+				keyword = { range = "prefix" },
+				menu = {
+					draw = {
+						treesitter = { "lsp" },
+						columns = {
+							{ "label", "label_description", gap = 1 },
+							{ "kind_icon", "kind" },
+						},
+					},
+				},
+				trigger = { show_on_trigger_character = true },
+				documentation = {
+					auto_show = true,
+				},
+				ghost_text = { enabled = true },
+			},
+
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
+
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+
+			cmdline = { enable = false }, -- disable cmdline
+
+			signature = { enabled = true },
 		},
+		opts_extend = { "sources.default" },
+	},
+
+	-- Bring enjoyment to your auto completion.
+	{
+		"xzbdmw/colorful-menu.nvim",
 		config = function()
-			-- 基础配置
-			local cmp = require("cmp")
-			local luasnip = require("luasnip")
-
-			-- 加载 VSCode 格式的 snippets
-			require("luasnip.loaders.from_vscode").lazy_load()
-
-			-- 配置 cmp
-			cmp.setup({
-				snippet = {
-					expand = function(args)
-						luasnip.lsp_expand(args.body)
-					end,
-				},
-
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-					-- Tab / Shift-Tab 选择项 & 跳转 Snippet
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-				}),
-
-				-- 补全来源
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-				}, {
-					{ name = "buffer" },
-					{ name = "path" },
-				}),
-
-				-- UI 外观设置（可选）
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-
-				formatting = {
-					format = function(entry, vim_item)
-						-- 自定义图标（可选）
-						vim_item.menu = ({
-							nvim_lsp = "[LSP]",
-							luasnip = "[Snip]",
-							buffer = "[Buf]",
-							path = "[Path]",
-						})[entry.source.name]
-						return vim_item
-					end,
+			require("blink.cmp").setup({
+				completion = {
+					menu = {
+						draw = {
+							-- We don't need label_description now because label and label_description are already
+							-- combined together in label by colorful-menu.nvim.
+							columns = { { "kind_icon" }, { "label", gap = 1 } },
+							components = {
+								label = {
+									text = function(ctx)
+										return require("colorful-menu").blink_components_text(ctx)
+									end,
+									highlight = function(ctx)
+										return require("colorful-menu").blink_components_highlight(ctx)
+									end,
+								},
+							},
+						},
+					},
 				},
 			})
 		end,
