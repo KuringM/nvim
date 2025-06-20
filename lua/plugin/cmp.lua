@@ -19,6 +19,8 @@ return {
 				nerd_font_variant = "mono",
 			},
 
+			cmdline = { enable = false }, -- disable cmdline
+
 			completion = {
 				keyword = { range = "prefix" },
 				menu = {
@@ -42,8 +44,6 @@ return {
 			},
 
 			fuzzy = { implementation = "prefer_rust_with_warning" },
-
-			cmdline = { enable = false }, -- disable cmdline
 
 			signature = { enabled = true },
 		},
