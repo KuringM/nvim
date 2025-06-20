@@ -16,53 +16,66 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_cmd = require("lazy.view.config").commands
-local lazy_keys = {
-	{ cmd = "install", key = "i" },
-	{ cmd = "update", key = "u" },
-	{ cmd = "sync", key = "s" },
-	{ cmd = "clean", key = "cl" },
-	{ cmd = "check", key = "ch" },
-	{ cmd = "log", key = "l" },
-	{ cmd = "restore", key = "rs" },
-	{ cmd = "profile", key = "p" },
-}
-for _, v in ipairs(lazy_keys) do
-	lazy_cmd[v.cmd].key = "<SPC>" .. v.key
-	lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
+-- Map lazy.nvim commands shortcuts
+local function map_lazy_keys()
+	local lazy_cmd = require("lazy.view.config").commands
+	local mappings = {
+		{ cmd = "install", key = "i" },
+		{ cmd = "update", key = "u" },
+		{ cmd = "sync", key = "s" },
+		{ cmd = "clean", key = "cl" },
+		{ cmd = "check", key = "ch" },
+		{ cmd = "log", key = "l" },
+		{ cmd = "restore", key = "rs" },
+		{ cmd = "profile", key = "p" },
+	}
+	for _, v in ipairs(mappings) do
+		lazy_cmd[v.cmd].key = "<SPC>" .. v.key
+		lazy_cmd[v.cmd].key_plugin = "<leader>" .. v.key
+	end
+	-- Additional key to open Lazy
+	vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true, silent = true, desc = "Open Lazy" })
 end
-vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 
-local a = "plugin."
+map_lazy_keys()
+
+-- Plugins
+local plugin_prefix = "plugin."
+local plugin_modules = {
+	"autopairs",
+	"bufferline",
+	"change",
+	"cmp",
+	--"coc",
+	"colorscheme",
+	"cursors",
+	"dashboard",
+	"file",
+	"fold",
+	"formatter",
+	"git",
+	"highlighter",
+	"lsp",
+	"markdown",
+	"move",
+	"notification",
+	"scrollbar",
+	"snips",
+	"statuscolumn",
+	"statusline",
+	"telescope",
+	"treesitter",
+	"vimtex",
+	"wildmenu",
+	"winbar",
+}
+
+local specs = vim.tbl_map(function(name)
+	return require(plugin_prefix .. name)
+end, plugin_modules)
+
 require("lazy").setup({
-	spec = {
-		require(a .. "autopairs"),
-		require(a .. "bufferline"),
-		require(a .. "change"),
-		require(a .. "cmp"),
-		-- require(a .. "coc"),
-		require(a .. "colorscheme"),
-		require(a .. "cursors"),
-		require(a .. "dashboard"),
-		require(a .. "file"),
-		require(a .. "fold"),
-		require(a .. "formatter"),
-		require(a .. "git"),
-		require(a .. "highlighter"),
-		require(a .. "lsp"),
-		require(a .. "markdown"),
-		require(a .. "move"),
-		require(a .. "notification"),
-		require(a .. "scrollbar"),
-		require(a .. "snips"),
-		require(a .. "statuscolumn"),
-		require(a .. "statusline"),
-		require(a .. "telescope"),
-		require(a .. "treesitter"),
-		require(a .. "vimtex"),
-		require(a .. "wildmenu"),
-		require(a .. "winbar"),
-	},
+	spec = specs,
 	install = { colorscheme = { "deus" } },
 	checker = { enable = true },
 })
