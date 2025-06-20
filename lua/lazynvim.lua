@@ -40,13 +40,12 @@ end
 map_lazy_keys()
 
 -- Plugins
-local plugin_prefix = "plugin."
 local plugin_modules = {
 	"autopairs",
 	"bufferline",
 	"change",
-	"cmp",
-	--"coc",
+	-- "cmp",
+	"coc",
 	"colorscheme",
 	"cursors",
 	"dashboard",
@@ -70,9 +69,20 @@ local plugin_modules = {
 	"winbar",
 }
 
-local specs = vim.tbl_map(function(name)
-	return require(plugin_prefix .. name)
-end, plugin_modules)
+-- Safely require plugin modules
+local specs = {}
+for _, name in ipairs(plugin_modules) do
+	local ok, plugin = pcall(require, "plugin." .. name)
+	if ok then
+		table.insert(specs, plugin)
+	else
+		local log_path = vim.fn.stdpath("cache") .. "/lazy_load_errors.log"
+		vim.fn.writefile({ "plugin." .. name .. ": " .. plugin }, log_path, "a")
+		local notify = require("notify")
+		vim.notify = notify
+		vim.notify("Error loading plugin." .. name .. ", logged to lazy_load_errors.log", vim.log.levels.ERROR)
+	end
+end
 
 require("lazy").setup({
 	spec = specs,
