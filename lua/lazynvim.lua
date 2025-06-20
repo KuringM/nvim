@@ -40,7 +40,7 @@ require("lazy").setup({
 		require(a .. "bufferline"),
 		require(a .. "change"),
 		require(a .. "cmp"),
-		--require(a .. "coc"),
+		-- require(a .. "coc"),
 		require(a .. "colorscheme"),
 		require(a .. "cursors"),
 		require(a .. "dashboard"),
