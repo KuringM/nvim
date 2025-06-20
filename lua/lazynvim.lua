@@ -78,8 +78,6 @@ for _, name in ipairs(plugin_modules) do
 	else
 		local log_path = vim.fn.stdpath("cache") .. "/lazy_load_errors.log"
 		vim.fn.writefile({ "plugin." .. name .. ": " .. plugin }, log_path, "a")
-		local notify = require("notify")
-		vim.notify = notify
 		vim.notify("Error loading plugin." .. name .. ", logged to lazy_load_errors.log", vim.log.levels.ERROR)
 	end
 end
