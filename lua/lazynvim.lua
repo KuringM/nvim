@@ -63,8 +63,8 @@ local plugin_modules = {
 	"statuscolumn",
 	"statusline",
 	"telescope",
+	"tex",
 	"treesitter",
-	"vimtex",
 	"wildmenu",
 	"winbar",
 }
