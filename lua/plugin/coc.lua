@@ -27,7 +27,7 @@ config.coc = {
 			"coc-vimlsp",
 			"coc-vimtex",
 			"coc-yaml",
-			"coc-ds-pinyin-lsp",
+			-- "coc-ds-pinyin-lsp",
 		}
 
 		vim.opt.backup = false

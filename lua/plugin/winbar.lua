@@ -82,5 +82,5 @@ config.dropbar = {
 }
 
 return {
-	config.dropbar,
+	-- config.dropbar,
 }

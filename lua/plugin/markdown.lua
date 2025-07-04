@@ -81,7 +81,7 @@ return {
 	config.markdownPreview,
 	config.mdTableMode,
 	config.mdToc,
-	config.bullets,
+	-- config.bullets,
 	config.vimMarkdown,
 	config.md2html,
 }

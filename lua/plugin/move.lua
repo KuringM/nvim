@@ -150,5 +150,5 @@ return {
 	config.anyjump,
 	config.fzf,
 	config.flash,
-	config.rnvimr,
+	-- config.rnvimr,
 }

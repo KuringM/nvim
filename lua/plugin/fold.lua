@@ -72,5 +72,5 @@ config.nvimUfo = {
 }
 
 return {
-	config.nvimUfo,
+	-- config.nvimUfo,
 }

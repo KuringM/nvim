@@ -103,9 +103,35 @@ config.hlslens = {
 	end,
 }
 
+-- 🍿 A collection of QoL plugins for Neovim
+
+config.snacks = {
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
+  opts = {
+    bigfile = { enabled = true },
+    dashboard = { enabled = true },
+    explorer = { enabled = true },
+    indent = { enabled = true },
+    input = { enabled = true },
+    picker = { enabled = true },
+    notifier = { enabled = true },
+    quickfile = {
+			enabled = true,
+			exclude = {"markdown", "latex"},
+		},
+    scope = { enabled = true },
+    scroll = { enabled = true },
+    statuscolumn = { enabled = true },
+    words = { enabled = true },
+  },
+}
+
 return {
 	config.nvimColorizer,
 	config.colorfulWinsep,
-	config.hlchunk,
+	-- config.hlchunk,
+	-- config.snacks,
 	config.hlslens,
 }

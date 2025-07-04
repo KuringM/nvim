@@ -60,5 +60,5 @@ config.statuscol = {
 	end,
 }
 return {
-	config.statuscol,
+	-- config.statuscol,
 }
