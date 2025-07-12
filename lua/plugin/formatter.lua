@@ -21,6 +21,7 @@ config.conform = {
 				end
 			end,
 			formatters_by_ft = {
+				sh = { "beautysh" },
 				bash = { "beautysh" },
 				zsh = { "beautysh" },
 				cpp = { "clang-format" },

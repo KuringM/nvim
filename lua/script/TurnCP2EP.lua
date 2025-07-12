@@ -21,10 +21,11 @@ local mark_map = {
 	["·"] = "`",
 	["【"] = "[",
 	["】"] = "]",
+	["｜"] = "|",
 }
 
 -- 替换整篇文本中的中文标点
-function replace_punctuation()
+local function replace_punctuation()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
 

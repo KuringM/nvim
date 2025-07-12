@@ -134,16 +134,32 @@ vim.keymap.set("n", "<leader>q", function()
 	end
 end, { noremap = true, silent = true })
 
--- Move the next character to the end of the line with ctrl+u in Insert Mode.
-vim.cmd([[
-fun! s:MakePair()
-	let line = getline('.')
-	let len = strlen(line)
-	if line[len - 1] == ";" || line[len - 1] == ","
-		normal! lx$P
-	else
-		normal! lx$p
-	endif
-endfun
-inoremap <C-U> <ESC>:call <SID>MakePair()<CR>
-]])
+-- Move the character under the cursor to before the next $ sign
+local function move_char_before_dollar()
+  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local line = vim.api.nvim_get_current_line()
+
+  -- 如果光标超出行尾，退出
+  if col >= #line then return end
+
+  local char = line:sub(col + 1, col + 1)
+  local line_before = line:sub(1, col)
+  local line_after = line:sub(col + 2)
+
+  -- 查找下一个 `$` 符号的位置（相对 line_after）
+  local rel_dollar_pos = line_after:find("%$")
+  if not rel_dollar_pos then return end
+
+  -- 拼接：删除当前字符，将其插入到 $ 前
+  local dollar_index = col + rel_dollar_pos
+  local new_line = line_before .. line_after:sub(1, rel_dollar_pos - 1) .. char .. line_after:sub(rel_dollar_pos)
+
+  vim.api.nvim_set_current_line(new_line)
+  -- 保持光标在原位置（不跳到插入处）
+  vim.api.nvim_win_set_cursor(0, { row, col })
+end
+
+-- Insert 模式映射 <C-u>
+vim.keymap.set("i", "<C-u>", function()
+  move_char_before_dollar()
+end, { noremap = true, silent = true })
