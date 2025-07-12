@@ -5,7 +5,6 @@ def math():
 
 endglobal
 
-context "math()"
 snippet tc "color text" wA
 \textcolor{${2:red}}{${1:${VISUAL}}}$0
 endsnippet
@@ -20,13 +19,12 @@ snippet te "text" wA
 \text{$1}$0
 endsnippet
 
-context "math()"
 snippet tbf "text" wA
 \textbf{$1}$0
 endsnippet
 
 context "math()"
-snippet pb "textbf" wA
+snippet pb "poor man's bold" wA
 \pmb{$1}$0
 endsnippet
 
