@@ -159,7 +159,7 @@ local function move_char_before_dollar()
   vim.api.nvim_win_set_cursor(0, { row, col })
 end
 
--- Insert 模式映射 <C-u>
-vim.keymap.set("i", "<C-u>", function()
+-- Insert 模式映射 <C-y>
+vim.keymap.set("i", "<C-y>", function()
   move_char_before_dollar()
 end, { noremap = true, silent = true })
