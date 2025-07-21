@@ -41,11 +41,11 @@ map_lazy_keys()
 
 -- Plugins
 local plugin_modules = {
-	-- "autopairs",
+	"autopairs",
 	"bufferline",
 	"change",
 	-- "cmp",
-	-- "coc",
+	"coc",
 	"colorscheme",
 	"cursors",
 	"dashboard",
