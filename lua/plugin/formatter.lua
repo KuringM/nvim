@@ -44,7 +44,7 @@ config.conform = {
 				},
 				python = { "black" },
 				markdown = {
-					"texfmt",
+					-- "texfmt",
 					"injected",
 					"prettierd",
 				},
