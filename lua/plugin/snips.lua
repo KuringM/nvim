@@ -46,10 +46,10 @@ config.ultisnips = {
 	},
 	config = function()
 		vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "vim-snippets", "snips", "snips/tex" }
-		vim.keymap.del("i", "<C-U>")
 		vim.g.UltiSnipsExpandTrigger = "<c-e>"
 		vim.g.UltiSnipsJumpOrExpandTrigger = "<c-e>"
 		vim.g.UltiSnipsJumpForwardTrigger = "<c-e>"
+		vim.keymap.set("i", "<C-u>", "<Nop>", { noremap = true })
 		vim.g.UltiSnipsJumpBackwardTrigger = "<c-u>"
 	end,
 }

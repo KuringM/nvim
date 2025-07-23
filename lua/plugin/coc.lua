@@ -1,6 +1,17 @@
 local G = require("G")
 local config = {}
 
+local coc_snippet = function()
+	G.map({
+		{ "i", "<c-e>", "<Plug>(coc-snippets-expand-jump)" },
+		{ "i", "<c-CR>", "<Plug>(coc-snippets-expand)" },
+		{ "v", "<c-e>", "<Plug>(coc-snippets-select)" },
+		{ "x", "<c-x>", "<Plug>(coc-convert-snippet)" },
+	})
+	vim.g.coc_snippet_next = "<c-e>"
+	vim.g.coc_snippet_prev = "<c-u>"
+end
+
 -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 config.coc = {
 	"neoclide/coc.nvim",
@@ -22,7 +33,7 @@ config.coc = {
 			"coc-html",
 			"coc-json",
 			"coc-lua",
-			-- "coc-snippets",
+			"coc-snippets",
 			"coc-translator",
 			"coc-vimlsp",
 			"coc-vimtex",
@@ -54,6 +65,12 @@ config.coc = {
 		local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 		local opts1 = { silent = true, nowait = true }
 		G.map({
+			{
+				"i",
+				"<TAB>",
+				[[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]],
+				opts,
+			},
 			{ "i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts },
 			{
 				"i",
@@ -84,10 +101,6 @@ config.coc = {
 			{ "n", "<leader>h", "<CMD>lua _G.show_docs()<CR>", { silent = true } },
 			{ "n", "tt", "<CMD>CocCommand explorer<CR>" },
 			{ "n", "ts", "<Plug>(coc-translator-p)" },
-			-- { "i", "<c-e>", "<Plug>(coc-snippets-expand-jump)" }, -- both expand and jump (make expand higher priority.)
-			-- { "i", "<c-CR>", "<Plug>(coc-snippets-expand)" }, -- trigger snippet expand
-			-- { "v", "<c-e>", "<Plug>(coc-snippets-select)" }, -- select text for visual placeholder of snippet
-			-- { "x", "<c-x>", "<Plug>(coc-convert-snippet)" }, -- convert visual selected code to snippet
 			{ "n", "<leader>-", "<Plug>(coc-diagnostic-prev)", { silent = true } }, -- navigation diagnostic
 			{ "n", "<leader>=", "<Plug>(coc-diagnostic-next)", { silent = true } },
 			{ "n", "gd", "<Plug>(coc-definition)", { silent = true } }, -- Goto code navigation
@@ -106,9 +119,6 @@ config.coc = {
 			{ "x", "ac", "<Plug>(coc-classobj-a)", opts1 },
 			{ "o", "ac", "<Plug>(coc-classobj-a)", opts1 },
 		})
-
-		-- vim.g.coc_snippet_next = "<c-e>" -- jump to next placeholder
-		-- vim.g.coc_snippet_prev = "<c-u>" -- jump to previous placeholder
 
 		-- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 		vim.api.nvim_create_augroup("CocGroup", {})
@@ -137,6 +147,8 @@ config.coc = {
 			{ "CocHintSign", { fg = "#15aabf" } },
 			{ "CocUnusedHighlight", { fg = "#c0c0c0", italic = true } },
 		})
+
+		-- coc_snippet()
 	end,
 }
 return {
