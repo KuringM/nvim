@@ -39,12 +39,21 @@ endsnippet
 
 context "text()"
 snippet ci "Inline code" i
-\`$1\`$0
+\`${1:${VISUAL}}\`$0
 endsnippet
 
 context "text()"
 snippet cb "Codeblock" b
 \`\`\`c
+$1
+\`\`\`
+$0
+endsnippet
+
+context "text()"
+snippet mlr "mermaid LR" b
+\`\`\`memarid
+graph LR
 $1
 \`\`\`
 $0
