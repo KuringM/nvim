@@ -94,7 +94,7 @@ config.conform = {
 			pattern = { "*.md" },
 			callback = function(args)
 				local buf = args.buf or vim.api.nvim_get_current_buf()
-				if vim.fn.mode() == "n" then
+				if vim.fn.mode():match("^n") then
 					vim.defer_fn(function()
 						if vim.api.nvim_buf_is_valid(buf) then
 							require("conform").format({ bufnr = buf })
