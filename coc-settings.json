@@ -88,7 +88,9 @@
     "markdown": ["markdown", "katex", "tex"],
     "tex": ["katex"]
   },
-  "coc.source.vimtex.filetypes": ["tex", "markdown"],
+  "coc.source.vimtex.filetypes": [
+    "tex"
+  ],
   "suggest.noselect": true,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.completionItemKindLabels": {

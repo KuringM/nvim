@@ -47,11 +47,11 @@ G.map({
 	{ mode_nvo , "k"            , "i"                      , { noremap = true } } , -- insert
 	{ mode_nvo , "K"            , "I"                      , { noremap = true } } ,
 	{ mode_nvo , "gl"           , "gu"                     , { noremap = true } } ,
-	{ mode_nvo , "gL"           , "gU"                     , { noremap = true } } , -- 跨越的文本成为大写。
+	{ mode_nvo , "gL"           , "gU"                     , { noremap = true } } , -- 跨越的文本成为大写. 
 	{ mode_n   , "<"            , "<<"                     , { noremap = true } } , -- Shift [count] lines one 'shiftwidth' leftwards.
 	{ mode_n   , ">"            , ">>"                     , { noremap = true } } ,
 	{ mode_nvo , ";"            , ":"                      , { noremap = true } } ,
-	{ mode_nvo , "`"            , "~"                      , { noremap = true } } , -- 切换光标下字符的大小写，并把光标向右移
+	{ mode_nvo , "`"            , "~"                      , { noremap = true } } , -- 切换光标下字符的大小写, 并把光标向右移
 	{ mode_nvo , "<leader><CR>" , ":nohlsearch<CR>"        , { noremap = true } } , -- No highlight!
 	{ mode_nvo , "<leader>sc"   , ":set spell!<CR>"        , { noremap = true } } , -- Spelling Check with <space>sc
 	{ mode_nvo , "<leader>sw"   , ":set wrap!<CR>"         , { noremap = true } } , -- set wrap
@@ -119,6 +119,8 @@ G.map({
 	{ mode_i , "<C-V>" , "<C-R>*"      , { noremap = true } } , -- Paste in Insert Mode
 	{ mode_i , "<C-Z>" , "<C-O>:u<CR>" , { noremap = true } } , -- Avoid those shortcut
 	{ mode_i , "<C-L>" , "<C-W>" ,       { noremap = true } } , -- delete words
+	{ mode_i , "<C-M>" , "<Right>" ,     { noremap = true } } , -- Right
+	{ mode_i , "<C-K>" , "<Left>" ,      { noremap = true } } , -- Left
 })
 
 -- close win below
@@ -139,23 +141,23 @@ local function move_char_before_dollar()
   local row, col = unpack(vim.api.nvim_win_get_cursor(0))
   local line = vim.api.nvim_get_current_line()
 
-  -- 如果光标超出行尾，退出
+  -- 如果光标超出行尾, 退出
   if col >= #line then return end
 
   local char = line:sub(col + 1, col + 1)
   local line_before = line:sub(1, col)
   local line_after = line:sub(col + 2)
 
-  -- 查找下一个 `$` 符号的位置（相对 line_after）
+  -- 查找下一个 `$` 符号的位置(相对 line_after)
   local rel_dollar_pos = line_after:find("%$")
   if not rel_dollar_pos then return end
 
-  -- 拼接：删除当前字符，将其插入到 $ 前
+  -- 拼接:删除当前字符, 将其插入到 $ 前
   local dollar_index = col + rel_dollar_pos
   local new_line = line_before .. line_after:sub(1, rel_dollar_pos - 1) .. char .. line_after:sub(rel_dollar_pos)
 
   vim.api.nvim_set_current_line(new_line)
-  -- 保持光标在原位置（不跳到插入处）
+  -- 保持光标在原位置(不跳到插入处)
   vim.api.nvim_win_set_cursor(0, { row, col })
 end
 

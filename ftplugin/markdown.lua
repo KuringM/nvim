@@ -26,5 +26,5 @@ G.hl({
 	{ "texEnvMArgName"      , { fg = colors.gray             , italic = true } } ,
 	})
 
-	-- vimtex support
+-- vimtex support
 vim.fn['vimtex#init']()
