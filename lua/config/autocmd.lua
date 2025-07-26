@@ -16,3 +16,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { higroup = 'IncSearch', timeout = 100 }
   end,
 })
+
+-- autocmd shift keylayout
+-- 设置默认英文输入法 ID
+vim.g.default_input_method = "com.apple.keylayout.Colemak"
+
+-- 保存上一次输入法(全局变量)
+local last_input_method = vim.g.default_input_method
+
+-- 离开插入模式时:记录当前输入法并切回英文
+vim.api.nvim_create_autocmd("InsertLeave", {
+  callback = function()
+    local current_ime = vim.fn.system("im-select"):gsub("%s+", "")
+    last_input_method = current_ime
+    vim.fn.system({ "im-select", vim.g.default_input_method })
+  end,
+})
+
+-- 进入插入模式时:切回上次输入法
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    if last_input_method and last_input_method ~= "" then
+      vim.fn.system({ "im-select", last_input_method })
+    end
+  end,
+})

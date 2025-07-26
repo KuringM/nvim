@@ -17,14 +17,6 @@ config.vimRooter = {
 	end,
 }
 
--- A Vim plugin to make it stand well with input methods (Mac only)
-config.smartim = {
-	"ybian/smartim",
-	config = function()
-		vim.g.smartim_default = "com.apple.keylayout.Colemak"
-	end,
-}
-
 -- Merge a tab's windows with the current tab
 config.Tabmerge = {
 	"vim-scripts/Tabmerge",
@@ -64,8 +56,6 @@ return {
 	{ "fladson/vim-kitty", ft = "kitty" }, -- Vim syntax highlighting for Kitty terminal config files
 
 	config.vimRooter,
-	config.smartim,
-	-- { "lilydjwg/fcitx.vim" }, -- keep and restore fcitx state when leaving/re-entering insert mode
 	config.Tabmerge,
 	config.undotree,
 }
