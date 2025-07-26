@@ -5,7 +5,7 @@
 # ... but these:
 !/README.md
 !/.gitignore
-!/snips/
+!/UltiSnips/
 !/ftplugin/
 !/lua/
 /lua/machine_specific.lua

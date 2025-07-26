@@ -80,9 +80,9 @@
   "snippets.execContext": true,
   "snippets.priority": 100,
   "snippets.ultisnips.directories": [
-    "$HOME/.config/nvim/snips/",
-    "$HOME/.config/nvim/snips/tex",
-    "$HOME/.local/share/nvim/lazy/vim-snippets/snips"
+    "$HOME/.config/nvim/UltiSnips/",
+    "$HOME/.config/nvim/UltiSnips/tex",
+    "$HOME/.local/share/nvim/lazy/vim-snippets/UltiSnips"
   ],
   "snippets.extends": {
     "markdown": ["markdown", "katex", "tex"],

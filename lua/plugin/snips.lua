@@ -5,7 +5,7 @@ config.luaSnip = {
 	"L3MON4D3/LuaSnip",
 	event = "InsertEnter",
 	dependencies = {
-		-- 可选：加载 vsnip 格式的 snippets（如 vim-snippets）
+		-- 可选:加载 vsnip 格式的 snippets(如 vim-snippets)
 		{
 			"rafamadriz/friendly-snippets",
 			config = function()
@@ -45,13 +45,38 @@ config.ultisnips = {
 		"honza/vim-snippets",
 	},
 	config = function()
-		vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "vim-snippets", "snips", "snips/tex" }
+		vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "UltiSnips/tex", "vim-snippets" }
 		vim.g.UltiSnipsExpandTrigger = "<C-E>"
 		vim.g.UltiSnipsExpandOrJumpTrigger = "<C-E>"
 		vim.g.UltiSnipsJumpOrExpandTrigger = "<C-E>"
 		vim.g.UltiSnipsJumpForwardTrigger = "<C-E>"
 		vim.keymap.set("i", "<C-U>", "<Nop>", { noremap = true })
 		vim.g.UltiSnipsJumpBackwardTrigger = "<C-U>"
+	end,
+}
+
+-- Bundle snippets from multiple sources and convert them to your format of choice.
+config.snipconverter = {
+	"smjonas/snippet-converter.nvim",
+	config = function()
+		local template = {
+			sources = {
+				ultisnips = {
+					"./vim-snippets/UltiSnips",
+					"./latex-snippets/tex.snippets",
+					vim.fn.stdpath("config") .. "/UltiSnips",
+				},
+			},
+			output = {
+				vscode_luasnip = {
+					vim.fn.stdpath("config") .. "/luasnip_snippets",
+				},
+			},
+		}
+
+		require("snippet_converter").setup({
+			templates = { template },
+		})
 	end,
 }
 
