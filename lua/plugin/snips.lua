@@ -4,13 +4,13 @@ local config = {}
 config.luaSnip = {
 	"L3MON4D3/LuaSnip",
 	event = "InsertEnter",
+	build = "make install_jsregexp",
 	dependencies = {
-		-- 可选:加载 vsnip 格式的 snippets(如 vim-snippets)
 		{
 			"rafamadriz/friendly-snippets",
 			config = function()
 				require("luasnip.loaders.from_vscode").lazy_load()
-				require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./snips" })
+				-- require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./UltiSnips" })
 			end,
 		},
 	},
@@ -32,15 +32,17 @@ config.luaSnip = {
 		ls.config.set_config({
 			history = true,
 			updateevents = "TextChanged,TextChangedI",
-			enable_autosnippets = true,
+			enable_autosnippets = true, -- Enable autotriggered snippets
+			store_selection_keys = "<Tab>", -- Use Tab (or some other key if you prefer) to trigger visual selection
 		})
+
+		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnips/" })
 	end,
 }
 
 -- UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 config.ultisnips = {
 	"SirVer/ultisnips",
-	-- event = "InsertEnter",
 	dependencies = {
 		"honza/vim-snippets",
 	},
