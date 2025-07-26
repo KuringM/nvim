@@ -67,6 +67,7 @@ config.bullets = {
 config.vimMarkdown = {
 	"preservim/vim-markdown",
 	config = function()
+		-- support vimtex "vimtex#syntax#in_mathzone()" for ultisnips
 		vim.g.vim_markdown_math = 1
 	end,
 }

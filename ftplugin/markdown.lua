@@ -25,6 +25,3 @@ G.hl({
 	{ "texMathStyleConcArg" , { fg = colors.gray             , italic = true } } ,
 	{ "texEnvMArgName"      , { fg = colors.gray             , italic = true } } ,
 	})
-
--- vimtex support
-vim.fn['vimtex#init']()
