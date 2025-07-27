@@ -8,6 +8,12 @@ function _G.show_docs()
 	local ft = vim.bo.filetype
 	local cw = vim.fn.expand("<cword>")
 
+	-- 如果是 help/vim/lua config 文件, 用内置帮助
+	if ft == "help" or ft == "vim" or (ft == "lua" and is_nvim_config_lua()) then
+		vim.cmd("h " .. cw)
+		return
+	end
+
 	-- 优先使用 Neovim 内置 LSP hover
 	local clients = vim.lsp.get_clients({ bufnr = 0 })
 	if next(clients) ~= nil then
@@ -15,14 +21,79 @@ function _G.show_docs()
 		return
 	end
 
-	-- 如果是 help/vim/lua config 文件, 用内置帮助
-	if ft == "help" or ft == "vim" or (ft == "lua" and is_nvim_config_lua()) then
-		vim.cmd("h " .. cw)
-		return
-	end
-
 	-- fallback: keywordprg
 	vim.cmd("!" .. vim.o.keywordprg .. " " .. cw)
+end
+
+----------------------------------------------------------------------
+-- on_attach: 每个 LSP 启动时执行的设置
+----------------------------------------------------------------------
+
+local function on_attach(client, bufnr)
+	vim.notify("LSP attached to buffer: " .. bufnr .. " (client: " .. client.name .. ")", vim.log.levels.INFO)
+
+	local function map(mode, lhs, rhs, desc)
+		if desc then
+			desc = "LSP: " .. desc
+		end
+		vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc, silent = true })
+	end
+
+	-- Remove Global Default Key mapping
+	vim.keymap.del("n", "grn")
+	vim.keymap.del("n", "gra")
+	vim.keymap.del("n", "grr")
+	vim.keymap.del("n", "gri")
+	vim.keymap.del("n", "grt")
+	vim.keymap.del("n", "gO")
+	-- 常用导航
+	map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
+	map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
+	map("n", "gr", vim.lsp.buf.references, "References")
+	map("n", "gi", vim.lsp.buf.implementation, "Implementation")
+	map("n", "gt", vim.lsp.buf.type_definition, "Type Definition")
+
+	-- 代码操作
+	if client.server_capabilities.renameProvider then
+		map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
+	end
+
+	if client.server_capabilities.codeActionProvider then
+		map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+	end
+
+	-- 文档与帮助
+	vim.keymap.set("n", "<leader>h", _G.show_docs, { desc = "Show documentation" })
+	-- if client.server_capabilities.hoverProvider then
+	-- 	map("n", "<leader>h", vim.lsp.buf.hover, "Hover Documentation")
+	-- end
+
+	if client.server_capabilities.signatureHelpProvider then
+		map("i", "<C-h>", vim.lsp.buf.signature_help, "Signature Help")
+	end
+
+	-- 格式化
+	if client.server_capabilities.documentFormattingProvider then
+		map("n", "<leader>f", function()
+			vim.lsp.buf.format({ async = true })
+		end, "Format Document")
+	elseif client.server_capabilities.documentRangeFormattingProvider then
+		map("v", "<leader>f", function()
+			vim.lsp.buf.format({ async = true })
+		end, "Format Range")
+	end
+
+	-- 诊断导航
+	map("n", "[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
+	map("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
+	map("n", "<leader>e", vim.diagnostic.open_float, "Show Diagnostic")
+
+	-- 其他常用 LSP 功能(按需打开)
+	-- map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add Workspace Folder")
+	-- map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove Workspace Folder")
+	-- map("n", "<leader>wl", function()
+	--   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	-- end, "List Workspace Folders")
 end
 
 -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
@@ -45,69 +116,6 @@ config.mason = {
 		},
 	},
 	config = function()
-		----------------------------------------------------------------------
-		-- on_attach: 每个 LSP 启动时执行的设置
-		----------------------------------------------------------------------
-		local function on_attach(client, bufnr)
-			vim.notify("LSP attached to buffer: " .. bufnr .. " (client: " .. client.name .. ")", vim.log.levels.INFO)
-
-			local function map(mode, lhs, rhs, desc)
-				if desc then
-					desc = "LSP: " .. desc
-				end
-				vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc, silent = true })
-			end
-
-			-- 常用导航
-			map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
-			map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
-			map("n", "gr", vim.lsp.buf.references, "References")
-			map("n", "gi", vim.lsp.buf.implementation, "Implementation")
-			map("n", "gt", vim.lsp.buf.type_definition, "Type Definition")
-
-			-- 代码操作
-			if client.server_capabilities.renameProvider then
-				map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
-			end
-
-			if client.server_capabilities.codeActionProvider then
-				map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Action")
-			end
-
-			-- 文档与帮助
-			vim.keymap.set("n", "<leader>h", _G.show_docs, { desc = "Show documentation" })
-			-- if client.server_capabilities.hoverProvider then
-			-- 	map("n", "<leader>h", vim.lsp.buf.hover, "Hover Documentation")
-			-- end
-
-			if client.server_capabilities.signatureHelpProvider then
-				map("i", "<C-h>", vim.lsp.buf.signature_help, "Signature Help")
-			end
-
-			-- 格式化
-			if client.server_capabilities.documentFormattingProvider then
-				map("n", "<leader>f", function()
-					vim.lsp.buf.format({ async = true })
-				end, "Format Document")
-			elseif client.server_capabilities.documentRangeFormattingProvider then
-				map("v", "<leader>f", function()
-					vim.lsp.buf.format({ async = true })
-				end, "Format Range")
-			end
-
-			-- 诊断导航
-			map("n", "[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
-			map("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
-			map("n", "<leader>e", vim.diagnostic.open_float, "Show Diagnostic")
-
-			-- 其他常用 LSP 功能(按需打开)
-			-- map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add Workspace Folder")
-			-- map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove Workspace Folder")
-			-- map("n", "<leader>wl", function()
-			--   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-			-- end, "List Workspace Folders")
-		end
-
 		----------------------------------------------------------------------
 		-- 每个 language server 的通用设置
 		----------------------------------------------------------------------
