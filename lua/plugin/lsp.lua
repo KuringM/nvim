@@ -12,30 +12,44 @@ config.mason = {
 		ensure_installed = { "lua_ls", "bashls" },
 	},
 	config = function()
-		-- Remove Global Default Key mapping
-		vim.keymap.del("n", "grn")
-		vim.keymap.del("n", "gra")
-		vim.keymap.del("n", "grr")
-		vim.keymap.del("n", "gri")
-		vim.keymap.del("n", "gO")
+		-- local mason_lspconfig = require("mason-lspconfig")
+		-- local lspconfig = require("lspconfig")
+		--
+		-- -- 自动安装指定的服务器
+		-- mason_lspconfig.setup({
+		-- 	ensure_installed = opts.ensure_installed,
+		-- })
 
-		-- Create keymapping
-		-- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
-		vim.api.nvim_create_autocmd("LspAttach", {
-			callback = function(args)
-				local keymap = vim.keymap
-				local lsp = vim.lsp
-				local bufopts = { noremap = true, silent = true }
-
-				-- keymap.set("n", "gr", lsp.buf.references, bufopts)
-				-- keymap.set("n", "gd", lsp.buf.definition, bufopts)
-				-- keymap.set("n", "<space>rn", lsp.buf.rename, bufopts)
-				-- keymap.set("n", "K", lsp.buf.hover, bufopts)
-				-- keymap.set("n", "<space>f", function()
-				-- 	require("conform").format({ async = true, lsp_fallback = true })
-				-- end, bufopts)
-			end,
-		})
+		-- local on_attach = function(client, bufnr)
+		-- 	local buf_map = function(mode, lhs, rhs, desc)
+		-- 		if desc then
+		-- 			desc = "LSP: " .. desc
+		-- 		end
+		-- 		vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+		-- 	end
+		--
+		-- 	buf_map("n", "<LEADER>h", vim.lsp.buf.hover, "Hover Documentation")
+		-- 	buf_map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
+		-- 	buf_map("n", "gr", vim.lsp.buf.references, "References")
+		-- 	buf_map("n", "gi", vim.lsp.buf.implementation, "Go to Implementation")
+		-- 	buf_map("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
+		-- 	buf_map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+		-- 	-- 你可以继续添加更多快捷键
+		-- end
+		--
+		-- -- 配置每个自动安装的 LSP
+		-- for _, server in ipairs(opts.ensure_installed) do
+		-- 	lspconfig[server].setup({
+		-- 		on_attach = on_attach,
+		-- 		flags = { debounce_text_changes = 150 },
+		-- 		settings = server == "lua_ls" and {
+		-- 			Lua = {
+		-- 				-- diagnostics = { globals = { "vim" } },
+		-- 				workspace = { checkThirdParty = false },
+		-- 			},
+		-- 		} or nil,
+		-- 	})
+		-- end
 	end,
 }
 

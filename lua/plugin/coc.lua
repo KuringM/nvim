@@ -12,6 +12,28 @@ local coc_snippet = function()
 	vim.g.coc_snippet_prev = "<c-u>"
 end
 
+-- show documentation in preview window
+local coc_showDoc = function()
+	local function is_nvim_config_lua()
+		return vim.bo.filetype == "lua" and vim.api.nvim_buf_get_name(0):find(vim.fn.stdpath("config"), 1, true)
+	end
+	function _G.show_docs()
+		local cw = vim.fn.expand("<cword>")
+		if
+			vim.bo.filetype == "help"
+			or vim.bo.filetype == "vim"
+			or (vim.bo.filetype == "lua" and is_nvim_config_lua())
+		then
+			vim.api.nvim_command("h " .. cw)
+		elseif vim.fn.exists(":CocActionAsync") == 2 and vim.api.nvim_eval("coc#rpc#ready()") then
+			vim.fn.CocActionAsync("doHover")
+		else
+			vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
+		end
+	end
+	G.map({ { "n", "<leader>h", "<CMD>lua _G.show_docs()<CR>", { silent = true } } })
+end
+
 -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 config.coc = {
 	"neoclide/coc.nvim",
@@ -51,17 +73,6 @@ config.coc = {
 			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 		end
 
-		function _G.show_docs() -- show documentation in preview window
-			local cw = vim.fn.expand("<cword>")
-			if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
-				vim.api.nvim_command("h " .. cw)
-			elseif vim.api.nvim_eval("coc#rpc#ready()") then
-				vim.fn.CocActionAsync("doHover")
-			else
-				vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
-			end
-		end
-
 		local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 		local opts1 = { silent = true, nowait = true }
 		G.map({
@@ -98,7 +109,6 @@ config.coc = {
 			},
 			-- { "i", "<c-o>",      "coc#refresh()",								{ silent = true, expr = true } }, -- trigger completion
 			{ "i", "<c-o>", "<Del>", { silent = true } }, -- der char after cursor
-			{ "n", "<leader>h", "<CMD>lua _G.show_docs()<CR>", { silent = true } },
 			{ "n", "tt", "<CMD>CocCommand explorer<CR>" },
 			{ "n", "ts", "<Plug>(coc-translator-p)" },
 			{ "n", "<leader>-", "<Plug>(coc-diagnostic-prev)", { silent = true } }, -- navigation diagnostic
@@ -149,6 +159,7 @@ config.coc = {
 		})
 
 		-- coc_snippet()
+		coc_showDoc()
 	end,
 }
 return {
