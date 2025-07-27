@@ -59,7 +59,7 @@ local function on_attach(client, bufnr)
 	end
 
 	if client.server_capabilities.codeActionProvider then
-		map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+		map({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, "Code Action")
 	end
 
 	-- 文档与帮助
@@ -119,9 +119,10 @@ config.mason = {
 		----------------------------------------------------------------------
 		-- 每个 language server 的通用设置
 		----------------------------------------------------------------------
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 		-- 如果用了 cmp_nvim_lsp:
 		-- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		local capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 
 		local mason_lspconfig = require("mason-lspconfig")
 		local lspconfig = require("lspconfig")

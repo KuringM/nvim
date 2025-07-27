@@ -44,7 +44,7 @@ local plugin_modules = {
 	"autopairs",
 	"bufferline",
 	"change",
-	-- "cmp",
+	"cmp",
 	-- "coc",
 	"colorscheme",
 	"cursors",

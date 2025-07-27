@@ -78,6 +78,6 @@ config.colorfulmenu = {
 }
 
 return {
-	-- config.blinkcmp,
+	config.blinkcmp,
 	-- config.colorfulmenu,
 }
