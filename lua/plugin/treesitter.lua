@@ -58,13 +58,13 @@ config.tsRefactor = {
 				},
 				highlight_current_scope = { enable = true },
 				smart_rename = {
-					enable = true, -- Assign keymaps to false to disable them, e.g. `smart_rename = false`.
+					enable = false, -- Assign keymaps to false to disable them, e.g. `smart_rename = false`.
 					keymaps = {
 						smart_rename = "grr",
 					},
 				},
 				navigation = {
-					enable = true, -- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
+					enable = false, -- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
 					keymaps = {
 						goto_definition = "gd",
 						list_definitions = "gD",
