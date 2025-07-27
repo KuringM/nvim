@@ -17,8 +17,10 @@ config.wilder = {
 		local wilder = require("wilder")
 		wilder.setup({
 			modes = { ":", "/", "?" },
-			next_key = "<Tab>",
-			previous_key = "<S-Tab>",
+			-- next_key = "<Tab>",
+			-- previous_key = "<S-Tab>",
+			next_key = "<C-I>",
+			previous_key = "<C-N>",
 		})
 
 		-- Pipeline

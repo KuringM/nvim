@@ -104,8 +104,8 @@ G.map({
 	{ mode_c , "<C-O>" , "<End>"     , { noremap = true } } , -- move cursor to the ending
 	{ mode_c , "<C-U>" , "<Up>"      , { noremap = true } } , -- history up
 	{ mode_c , "<C-E>" , "<Down>"    , { noremap = true } } , -- history down
-	{ mode_c , "<C-N>" , "<Left>"    , { noremap = true } } , -- move cursor left
-	{ mode_c , "<C-I>" , "<Right>"   , { noremap = true } } , -- move cursor left "neovm use libtermkey"
+	-- { mode_c , "<C-N>" , "<Left>"    , { noremap = true } } , -- move cursor left
+	-- { mode_c , "<C-I>" , "<Right>"   , { noremap = true } } , -- move cursor left "neovm use libtermkey"
 	{ mode_c , "<C-B>" , "<S-Left>"  , { noremap = true } } , -- move cursor left one word
 	{ mode_c , "<C-W>" , "<S-Right>" , { noremap = true } } , -- move cursor right one word
 	{ mode_c , "<C-L>" , "<C-W>"     , { noremap = true } } , -- delete the word before the cursor
