@@ -1,12 +1,37 @@
 local config = {}
 
+local function is_nvim_config_lua()
+	return vim.bo.filetype == "lua" and vim.api.nvim_buf_get_name(0):find(vim.fn.stdpath("config"), 1, true)
+end
+
+function _G.show_docs()
+	local ft = vim.bo.filetype
+	local cw = vim.fn.expand("<cword>")
+
+	-- 优先使用 Neovim 内置 LSP hover
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	if next(clients) ~= nil then
+		vim.lsp.buf.hover()
+		return
+	end
+
+	-- 如果是 help/vim/lua config 文件, 用内置帮助
+	if ft == "help" or ft == "vim" or (ft == "lua" and is_nvim_config_lua()) then
+		vim.cmd("h " .. cw)
+		return
+	end
+
+	-- fallback: keywordprg
+	vim.cmd("!" .. vim.o.keywordprg .. " " .. cw)
+end
+
 -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
 config.mason = {
 
 	"mason-org/mason-lspconfig.nvim",
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} }, -- Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
-		"neovim/nvim-lspconfig",             -- Quickstart configs for Nvim LSP
+		"neovim/nvim-lspconfig", -- Quickstart configs for Nvim LSP
 	},
 	opts = {
 		-- mason 自动安装的语言服务器
@@ -50,9 +75,10 @@ config.mason = {
 			end
 
 			-- 文档与帮助
-			if client.server_capabilities.hoverProvider then
-				map("n", "<leader>h", vim.lsp.buf.hover, "Hover Documentation")
-			end
+			vim.keymap.set("n", "<leader>h", _G.show_docs, { desc = "Show documentation" })
+			-- if client.server_capabilities.hoverProvider then
+			-- 	map("n", "<leader>h", vim.lsp.buf.hover, "Hover Documentation")
+			-- end
 
 			if client.server_capabilities.signatureHelpProvider then
 				map("i", "<C-h>", vim.lsp.buf.signature_help, "Signature Help")
