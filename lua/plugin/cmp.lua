@@ -6,14 +6,11 @@ config.blinkcmp = {
 	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
 	opts = {
-
 		keymap = {
-			preset = "enter",
+			preset = "none",
 			["<C-N>"] = { "select_prev", "fallback" },
 			["<C-I>"] = { "select_next", "fallback" },
 			["<C-E>"] = { "select_and_accept", "fallback" },
-			["<C-K>"] = { "show_signature", "hide_signature", "fallback" },
-			["<C-O>"] = { "show_documentation", "fallback" },
 		},
 
 		appearance = {
@@ -40,26 +37,24 @@ config.blinkcmp = {
 			ghost_text = { enabled = true },
 		},
 
-		snippets = { preset = "luasnip" },
-
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
+
+		snippets = { preset = "luasnip" },
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 
 		signature = { enabled = true },
 	},
 	opts_extend = { "sources.default" },
-	config = function()
-		vim.g.blinkcmp_disable_cmdline = true
-	end,
 }
 
 -- Bring enjoyment to your auto completion.
 config.colorfulmenu = {
 	"xzbdmw/colorful-menu.nvim",
 	config = function()
+		vim.g.blinkcmp_disable_cmdline = true
 		require("blink.cmp").setup({
 			completion = {
 				menu = {
@@ -84,5 +79,5 @@ config.colorfulmenu = {
 
 return {
 	config.blinkcmp,
-	-- config.colorfulmenu,
+	config.colorfulmenu,
 }

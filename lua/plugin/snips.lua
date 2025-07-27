@@ -3,7 +3,6 @@ local config = {}
 -- Snippet Engine for Neovim written in Lua.
 config.luaSnip = {
 	"L3MON4D3/LuaSnip",
-	event = "InsertEnter",
 	build = "make install_jsregexp",
 	dependencies = {
 		{
@@ -36,7 +35,7 @@ config.luaSnip = {
 			store_selection_keys = "<Tab>", -- Use Tab (or some other key if you prefer) to trigger visual selection
 		})
 
-		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnips/" })
+		require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnips/" })
 	end,
 }
 
