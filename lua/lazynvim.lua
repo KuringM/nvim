@@ -45,7 +45,7 @@ local plugin_modules = {
 	"bufferline",
 	"change",
 	-- "cmp",
-	"coc",
+	-- "coc",
 	"colorscheme",
 	"cursors",
 	"dashboard",
