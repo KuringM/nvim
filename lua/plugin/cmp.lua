@@ -49,6 +49,9 @@ config.blinkcmp = {
 		signature = { enabled = true },
 	},
 	opts_extend = { "sources.default" },
+	config = function()
+		vim.g.blinkcmp_disable_cmdline = true
+	end,
 }
 
 -- Bring enjoyment to your auto completion.
