@@ -40,6 +40,8 @@ config.blinkcmp = {
 			ghost_text = { enabled = true },
 		},
 
+		snippets = { preset = "luasnip" },
+
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},

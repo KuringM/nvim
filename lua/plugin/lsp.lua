@@ -86,7 +86,7 @@ local function on_attach(client, bufnr)
 	-- 诊断导航
 	map("n", "[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
 	map("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
-	map("n", "<leader>e", vim.diagnostic.open_float, "Show Diagnostic")
+	map("n", [[\e]], vim.diagnostic.open_float, "Show Diagnostic")
 
 	-- 其他常用 LSP 功能(按需打开)
 	-- map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add Workspace Folder")

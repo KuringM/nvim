@@ -83,6 +83,6 @@ config.snipconverter = {
 }
 
 return {
-	-- config.luaSnip,
-	config.ultisnips,
+	config.luaSnip,
+	-- config.ultisnips,
 }
