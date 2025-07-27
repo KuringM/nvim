@@ -120,8 +120,7 @@ config.mason = {
 		-- 每个 language server 的通用设置
 		----------------------------------------------------------------------
 		-- local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- 如果用了 cmp_nvim_lsp:
-		-- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		-- local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		local mason_lspconfig = require("mason-lspconfig")
