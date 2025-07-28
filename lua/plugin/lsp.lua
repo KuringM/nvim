@@ -142,6 +142,13 @@ config.mason = {
 			lspconfig[server_name].setup(opts)
 		end
 
+		vim.api.nvim_create_user_command("DisableDiag", function()
+			vim.diagnostic.enable(false, { bufnr = 0 })
+		end, { desc = "Disable diagnostics for current buffer" })
+
+		vim.api.nvim_create_user_command("EnableDiag", function()
+			vim.diagnostic.enable(true, { bufnr = 0 })
+		end, { desc = "Enable diagnostics for current buffer" })
 		----------------------------------------------------------------------
 		-- 美化诊断图标
 		----------------------------------------------------------------------

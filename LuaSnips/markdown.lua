@@ -17,17 +17,31 @@ local m = require("luasnip.extras").m
 local l = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
+local helpers = require("luasnip-helper-funcs")
+local get_visual = helpers.get_visual
 
 return {
 	s(
-		{ trig = "^h([1-6])", regTrig = true, wordTrig = false, snippetType="autosnippet", name = "Markdown heading" },
+		{ trig = "^h([1-6])", regTrig = true, wordTrig = false, snippetType = "autosnippet", name = "Markdown heading" },
 		{
 			-- match.captures[1] → "1"~"6", 转为 "#" * n
 			f(function(_, snip)
 				local n = tonumber(snip.captures[1]) or 1
 				return string.rep("#", n) .. " "
 			end, {}),
-			i(1, "", { key = "VISUAL" }),
+			d(1, get_visual),
 		}
+	),
+	s(
+		{ trig = "link", wordTrig = true, snippetType = "autosnippet", desc = "Link to something" },
+		fmta([[[<>](<>)]], { i(1), d(2, get_visual) })
+	),
+	s(
+		{ trig = "img", wordTrig = true, snippetType = "autosnippet", desc = "Image" },
+		fmta([[![<>](<>)]], { i(1), d(2, get_visual) })
+	),
+	s(
+		{ trig = "ci", wordTrig = false, snippetType = "autosnippet", desc = "Inline code" },
+		fmta([[`<>`]], { d(1, get_visual) })
 	),
 }
