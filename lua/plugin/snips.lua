@@ -29,7 +29,6 @@ config.luaSnip = {
 		end, { silent = true })
 
 		ls.config.set_config({
-			history = true,
 			updateevents = "TextChanged,TextChangedI",
 			enable_autosnippets = true, -- Enable autotriggered snippets
 			store_selection_keys = "<Tab>", -- Use Tab (or some other key if you prefer) to trigger visual selection
