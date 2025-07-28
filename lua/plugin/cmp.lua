@@ -9,7 +9,17 @@ config.blinkcmp = {
 			preset = "none",
 			["<C-N>"] = { "select_prev", "fallback" },
 			["<C-I>"] = { "select_next", "fallback" },
-			["<C-E>"] = { "select_and_accept", "fallback" },
+			["<Tab>"] = {
+				function(cmp)
+					if cmp.snippet_active() then
+						return cmp.accept()
+					else
+						return cmp.select_and_accept()
+					end
+				end,
+				"snippet_forward",
+				"fallback",
+			},
 		},
 
 		appearance = {
@@ -36,6 +46,10 @@ config.blinkcmp = {
 			documentation = {
 				auto_show = true,
 			},
+			list = { selection = {
+				preselect = true,
+				auto_insert = true,
+			} },
 		},
 
 		sources = {
