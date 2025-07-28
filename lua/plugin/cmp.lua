@@ -35,7 +35,7 @@ config.blinkcmp = {
 			documentation = {
 				auto_show = true,
 			},
-			ghost_text = { enabled = true },
+			-- ghost_text = { enabled = true },
 		},
 
 		sources = {
