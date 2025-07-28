@@ -43,11 +43,13 @@ return {
 	),
 	s(
 		{ trig = "img", wordTrig = true, snippetType = "autosnippet", desc = "Image" },
-		fmta([[![<>](<>)]], { i(1), d(2, get_visual) })({ condition = in_text })
+		fmta([[![<>](<>)]], { i(1), d(2, get_visual) }),
+		{ condition = in_text }
 	),
 	s(
 		{ trig = "ci", wordTrig = false, snippetType = "autosnippet", desc = "Inline code" },
-		fmta([[`<>`]], { d(1, get_visual) })({ condition = in_text })
+		fmta([[`<>`]], { d(1, get_visual) }),
+		{ condition = in_text }
 	),
 	s(
 		{ trig = "cb", snippetType = "autosnippet", desc = "CodeBlock" },
