@@ -35,6 +35,7 @@ config.luaSnip = {
 		})
 
 		require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnips/" })
+		require("luasnip").filetype_extend("markdown", { "tex" })
 	end,
 }
 
@@ -83,5 +84,5 @@ config.snipconverter = {
 return {
 	config.luaSnip,
 	-- config.ultisnips,
-	config.snipconverter
+	-- config.snipconverter,
 }
