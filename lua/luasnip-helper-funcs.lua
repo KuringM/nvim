@@ -23,4 +23,17 @@ M.in_text = function()
 	return not M.in_mathzone()
 end
 
+-- ou = "only unescaped"
+function M.only_unescaped(trig, extra_condition)
+	return function(line_to_cursor, matched_trigger, _)
+		local before = line_to_cursor:sub(1, #line_to_cursor - #trig)
+		local unescaped = not before:match("\\$")
+		if extra_condition then
+			return unescaped and extra_condition()
+		else
+			return unescaped
+		end
+	end
+end
+
 return M

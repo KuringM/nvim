@@ -16,13 +16,12 @@ local rep = require("luasnip.extras").rep
 local m = require("luasnip.extras").m
 local l = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
+local conds_expand = require("luasnip.extras.conditions.expand")
+local line_begin = conds_expand.line_begin
 
 local helpers = require("luasnip-helper-funcs")
 local get_visual = helpers.get_visual
 local in_text = helpers.in_text
-
-local conds_expand = require("luasnip.extras.conditions.expand")
-local line_begin = conds_expand.line_begin
 
 return {
 	s(
