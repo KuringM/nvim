@@ -28,7 +28,7 @@ config.blinkcmp = {
 					treesitter = { "lsp" },
 					columns = {
 						{ "label", "label_description", gap = 1 },
-						{ "kind_icon", "kind" },
+						{ "kind_icon", gap = 1, "kind" },
 					},
 				},
 			},
@@ -36,7 +36,6 @@ config.blinkcmp = {
 			documentation = {
 				auto_show = true,
 			},
-			-- ghost_text = { enabled = true },
 		},
 
 		sources = {
