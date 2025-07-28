@@ -6,6 +6,7 @@
 !/README.md
 !/.gitignore
 !/UltiSnips/
+!/LuaSnips/
 !/ftplugin/
 !/lua/
 /lua/machine_specific.lua
