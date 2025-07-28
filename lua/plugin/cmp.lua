@@ -3,7 +3,6 @@ local config = {}
 -- Performant, batteries-included completion plugin for Neovim
 config.blinkcmp = {
 	"saghen/blink.cmp",
-	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
 	opts = {
 		keymap = {
@@ -17,7 +16,9 @@ config.blinkcmp = {
 			nerd_font_variant = "mono",
 		},
 
-		cmdline = { enable = false }, -- disable cmdline
+		cmdline = {
+			-- keyword = { preset = "none" }
+		}, -- disable cmdline
 
 		completion = {
 			keyword = { range = "prefix" },
