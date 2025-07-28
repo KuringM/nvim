@@ -17,7 +17,8 @@ config.blinkcmp = {
 		},
 
 		cmdline = {
-			-- keyword = { preset = "none" }
+			enabled = false,
+			keyword = { preset = "none" },
 		}, -- disable cmdline
 
 		completion = {

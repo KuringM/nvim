@@ -30,7 +30,7 @@ end
 ----------------------------------------------------------------------
 
 local function on_attach(client, bufnr)
-	vim.notify("LSP attached to buffer: " .. bufnr .. " (client: " .. client.name .. ")", vim.log.levels.INFO)
+	-- vim.notify("LSP attached to buffer: " .. bufnr .. " (client: " .. client.name .. ")", vim.log.levels.INFO)
 
 	local function map(mode, lhs, rhs, desc)
 		if desc then
