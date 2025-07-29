@@ -123,10 +123,7 @@ return {
 		{ trig = "deg", desc = "degree", wordTrig = true, snippetType = "autosnippet", condition = ou("deg", in_math) },
 		t("\\degree")
 	),
-	s(
-		{ trig = "lim", desc = "lim", wordTrig = true, snippetType = "autosnippet", condition = ou("lim", in_math) },
-		t("\\lim")
-	),
+	s({ trig = "lim", desc = "lim", wordTrig = true, condition = ou("lim", in_math) }, t("\\lim")),
 	s(
 		{ trig = "par", desc = "partial", wordTrig = true, snippetType = "autosnippet", condition = ou("par", in_math) },
 		t("\\partial")
