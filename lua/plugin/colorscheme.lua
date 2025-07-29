@@ -17,6 +17,8 @@ config.deus = {
 		vim.g.deus_termcolors = 256
 		-- vim.g.deus_background = "mid"
 		vim.cmd([[colorscheme deus]])
+		vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+		vim.api.nvim_set_hl(0, "FloatBorder", { link = "Comment" })
 	end,
 }
 
