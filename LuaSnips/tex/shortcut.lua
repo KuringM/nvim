@@ -42,19 +42,16 @@ return {
 		fmta([[ \{ <>_n \} ]], { i(1, "x") })
 	),
 
-	s(
-		{ trig = "jx", desc = "0 < |x - x₀| < δ", wordTrig = false, snippetType = "autosnippet" },
-		fmta([[ 0 < \mid x - x_0 \mid < \delta ]], {})
-	),
+	s({ trig = "jx", desc = "0 < |x - x₀| < δ", wordTrig = false }, t([[ 0 < \mid x - x_0 \mid < \delta ]])),
 
 	s(
 		{ trig = "jx1", desc = "|xₙ - a| < ε", wordTrig = false, snippetType = "autosnippet" },
-		fmta([[ \mid x_n - a \mid < \varepsilon ]], {})
+		t([[ \mid x_n - a \mid < \varepsilon ]])
 	),
 
 	s(
 		{ trig = "jx2", desc = "|f(x) - A| < ε", wordTrig = false, snippetType = "autosnippet" },
-		fmta([[ \mid f(x) - <> \mid < <> ]], { i(1, "A"), i(2, "\\varepsilon") })
+		fmt([[ \mid f(x) - {} \mid < {} ]], { i(1, "A"), i(2, "\\varepsilon") })
 	),
 
 	s({ trig = "set", desc = "set {}", wordTrig = false, snippetType = "autosnippet" }, fmta([[ \{ <> \} ]], { i(1) })),
