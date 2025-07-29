@@ -35,7 +35,7 @@ return {
 		{ trig = "ex", desc = "exists: ∃", wordTrig = true, snippetType = "autosnippet", condition = in_math },
 		t("\\exists ")
 	),
-	s({ trig = "in", desc = "in: ∈", wordTrig = true, snippetType = "autosnippet", condition = in_math }, t("\\in ")),
+	s({ trig = "in ", desc = "in: ∈", wordTrig = true, snippetType = "autosnippet", condition = in_math }, t("\\in ")),
 	s(
 		{ trig = "ni", desc = "notin: ∉", wordTrig = true, snippetType = "autosnippet", condition = in_math },
 		t("\\notin ")

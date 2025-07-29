@@ -64,59 +64,44 @@ local function_names = {
 	"div",
 }
 
+local sint = s({
+	trig = "([23]?)int(%S*)%s?(%S*)",
+	desc = "Supper int",
+	regTrig = true,
+	wordTrig = false,
+	-- snippetType = "autosnippet",
+	condition = ou("int", in_math),
+}, {
+	f(function(_, snip)
+		local lvl = snip.captures[1]
+		local sub = snip.captures[2]
+		local sup = snip.captures[3]
+		local name, lim, upp, fun, mr
+		if lvl == "2" then
+			name = "\\iint"
+			lim = sub and ("\\limits_{" .. sub .. "}") or ""
+			upp = ""
+			fun = "f(x,y)"
+			mr = "\\mathrm{d}\\sigma"
+		elseif lvl == "3" then
+			name = "\\iiint"
+			lim = sub and ("\\limits_{" .. sub .. "}") or ""
+			upp = ""
+			fun = "f(x,y,z)"
+			mr = "\\mathrm{d}v"
+		else
+			name = "\\int"
+			lim = sub and ("_{" .. sub .. "}") or ""
+			upp = sup and ("^{" .. sup .. "}") or ""
+			fun = "f(x)"
+			mr = "\\mathrm{d}x"
+		end
+		return name .. lim .. upp .. " " .. fun .. " " .. mr
+	end, {}),
+})
+
 local snippets = {
-	s(
-		{
-			trig = "([2-3])?int(%S+)? ?(%S+)?",
-			regTrig = true,
-			wordTrig = true,
-			snippetType = "autosnippet",
-			condition = in_math,
-		},
-		fmta(
-			[[
-    \<> <> f(<>) \mathrm{d}<>
-    ]],
-			{
-				f(function(_, snip)
-					local lvl = snip.captures[1]
-					local sub = snip.captures[2]
-					local sup = snip.captures[3]
-					local name, lim
-					if lvl then
-						name = string.rep("i", tonumber(lvl) - 1) .. "int"
-						lim = sub and ("\\limits_{" .. sub .. "}") or ""
-					else
-						name = "int"
-						lim = sub and ("_{" .. sub .. "}") or ""
-					end
-					local upp = sup and ("^{" .. sup .. "}") or ""
-					return name .. lim .. upp
-				end, {}),
-				t(" "),
-				f(function(_, snip)
-					local lvl = snip.captures[1]
-					if lvl == "2" then
-						return "x,y"
-					elseif lvl == "3" then
-						return "x,y,z"
-					else
-						return "x"
-					end
-				end, {}),
-				f(function(_, snip)
-					local lvl = snip.captures[1]
-					if lvl == "2" then
-						return "\\sigma"
-					elseif lvl == "3" then
-						return "v"
-					else
-						return "x"
-					end
-				end, {}),
-			}
-		)
-	),
+	sint,
 	s({
 		trig = "summ",
 		desc = "\\sum with limits",
