@@ -45,6 +45,7 @@ local plugin_modules = {
 	"bufferline",
 	"change",
 	"cmp",
+	-- "nvimcmp",
 	-- "coc",
 	"colorscheme",
 	"cursors",

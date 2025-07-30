@@ -76,7 +76,7 @@ config.nvimcmp = {
 		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
 	},
-	config = nvimcmp_cfg(),
+	config = nvimcmp_cfg,
 }
 
 return {
