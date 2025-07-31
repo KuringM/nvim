@@ -58,6 +58,7 @@ local plugin_modules = {
 	"lsp",
 	"markdown",
 	"move",
+	"nvimtree",
 	"notification",
 	"scrollbar",
 	"snips",
