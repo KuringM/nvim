@@ -6,7 +6,7 @@ local blinkcmp_opts = {
 		preset = "none",
 		["<C-N>"] = { "select_prev", "fallback" },
 		["<C-I>"] = { "select_next", "fallback" },
-		["<Tab>"] = {
+		["<C-E>"] = {
 			function(cmp)
 				if cmp.snippet_active() then
 					return cmp.accept()
@@ -44,8 +44,8 @@ local blinkcmp_opts = {
 			auto_show = true,
 		},
 		list = { selection = {
-			preselect = true,
-			auto_insert = true,
+			preselect = false,
+			auto_insert = false,
 		} },
 	},
 
