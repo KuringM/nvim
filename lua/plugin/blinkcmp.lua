@@ -1,4 +1,5 @@
-local config = {}
+-- https://github.com/saghen/blink.cmp
+-- Performant, batteries-included completion plugin for Neovim
 
 local blinkcmp_opts = {
 	keymap = {
@@ -59,44 +60,9 @@ local blinkcmp_opts = {
 	signature = { enabled = true },
 }
 
--- Performant, batteries-included completion plugin for Neovim
-config.blinkcmp = {
+return {
 	"saghen/blink.cmp",
 	version = "1.*",
 	opts = blinkcmp_opts,
 	opts_extend = { "sources.default" },
-}
-
-local function colorfulmenu_cfg()
-	vim.g.blinkcmp_disable_cmdline = true
-	require("blink.cmp").setup({
-		completion = {
-			menu = {
-				draw = {
-					columns = { { "kind_icon" }, { "label", gap = 1 } },
-					components = {
-						label = {
-							text = function(ctx)
-								return require("colorful-menu").blink_components_text(ctx)
-							end,
-							highlight = function(ctx)
-								return require("colorful-menu").blink_components_highlight(ctx)
-							end,
-						},
-					},
-				},
-			},
-		},
-	})
-end
-
--- Bring enjoyment to your auto completion.
-config.colorfulmenu = {
-	"xzbdmw/colorful-menu.nvim",
-	config = colorfulmenu_cfg,
-}
-
-return {
-	config.blinkcmp,
-	-- config.colorfulmenu,
 }

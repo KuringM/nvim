@@ -1,10 +1,8 @@
-local config = {}
-
+-- https://github.com//mg979/vim-visual-multi
 -- Multiple cursors plugin for vim/neovim
-config.vimVisualMulti = {
-	"mg979/vim-visual-multi",
-	init = function()
-		vim.cmd([[
+
+local function multiCursors_cfg()
+	vim.cmd([[
 			let g:VM_leader                     = {'default': ',', 'visual': ',', 'buffer': ','}
 			let g:VM_maps                       = {}
 			let g:VM_custom_motions             = {'n': 'h', 'i': 'l', 'u': 'k', 'e': 'j', 'N': '0', 'I': '$', 'h': 'e'}
@@ -20,9 +18,9 @@ config.vimVisualMulti = {
 			let g:VM_maps["Redo"]               = '<C-r>'
 			noremap <leader>sa <Plug>(VM-Select-All)
 		]])
-	end,
-}
+end
 
 return {
-	config.vimVisualMulti,
+	"mg979/vim-visual-multi",
+	init = multiCursors_cfg,
 }

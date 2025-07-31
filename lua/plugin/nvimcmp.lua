@@ -1,4 +1,4 @@
-local config = {}
+-- https://github.com/hrsh7th/nvim-cmp
 
 local function nvimcmp_cfg()
 	local cmp = require("cmp")
@@ -67,7 +67,7 @@ local function nvimcmp_cfg()
 	})
 end
 
-config.nvimcmp = {
+return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -77,8 +77,4 @@ config.nvimcmp = {
 		"saadparwaiz1/cmp_luasnip",
 	},
 	config = nvimcmp_cfg,
-}
-
-return {
-	config.nvimcmp,
 }

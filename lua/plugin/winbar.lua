@@ -1,7 +1,7 @@
-local config = {}
-
+-- https://github.com/Bekaboo/dropbar.nvim
 -- IDE-like breadcrumbs, out of the box
-config.dropbar = {
+
+return {
 	"Bekaboo/dropbar.nvim",
 	dependencies = {
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -79,8 +79,4 @@ config.dropbar = {
 			},
 		})
 	end,
-}
-
-return {
-	-- config.dropbar,
 }

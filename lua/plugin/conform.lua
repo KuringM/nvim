@@ -1,6 +1,7 @@
-local config = {}
+-- https://github.com/stevearc/conform.nvim
+-- Lightweight yet powerful formatter plugin for Neovim
 
-local function nvimConform_cfg()
+local function conform_cfg()
 	require("conform").setup({
 		format_on_save = function(bufnr)
 			local focus_filetypes = { "markdown" }
@@ -76,6 +77,7 @@ local function nvimConform_cfg()
 			})
 		end,
 	})
+
 	-- Auto-format when focus is lost or I leave the buffer
 	vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 		pattern = { "*.md" },
@@ -92,8 +94,7 @@ local function nvimConform_cfg()
 	})
 end
 
--- Lightweight yet powerful formatter plugin for Neovim
-config.conform = {
+return {
 	"stevearc/conform.nvim",
 	event = "VeryLazy",
 	build = {
@@ -104,53 +105,5 @@ config.conform = {
 		"brew install tex-fmt",
 		"pip install beautysh",
 	},
-	config = nvimConform_cfg,
-}
-
--- vim script for text filtering and alignment
-config.tabular = {
-	"godlygeek/tabular",
-	keys = { { "\\t", mode = { "n", "v" } } },
-	config = function()
-		vim.keymap.set(
-			"v",
-			[[\t]],
-			[[:'<,'>Tabularize //l1l1l1<left><left><left><left><left><left><left>]],
-			{ noremap = true }
-		)
-		vim.keymap.set(
-			"n",
-			[[\t]],
-			[[:Tabularize //l1l1l1<left><left><left><left><left><left><left>]],
-			{ noremap = true }
-		)
-
-		vim.cmd([[
-			" Aligning text with <Leader>a
-			if exists(":Tabularize")
-				noremap  <Leader>a= :Tabularize /=/l1l1l1<CR>
-				vnoremap <Leader>a= :Tabularize /=/l1l1l1<CR>
-				noremap  <Leader>a: :Tabularize /:\zs/l1l1l1<CR>
-				vnoremap <Leader>a: :Tabularize /:\zs/l1l1l1<CR>
-				noremap  <Leader>a, :Tabularize /,\zs/l1l1l1<CR>
-				vnoremap <Leader>a, :Tabularize /,\zs/l1l1l1<CR>
-				noremap  <Leader>a-- :Tabularize /--/l1l1l1<CR>
-				vnoremap <Leader>a-- :Tabularize /--/l1l1l1<CR>
-				noremap  <Leader>a// :Tabularize ////l1l1l1<CR>
-				vnoremap <Leader>a// :Tabularize ////l1l1l1<CR>
-			endif
-			AddTabularPattern! first_comma /^[^,]*\zs,/l1l1l1
-			AddTabularPattern! first_< /^[^<]*\zs</l1l1l1
-			AddTabularPattern! first_= /^[^=]*\zs</l1l1l1
-			AddTabularPattern! first_-- /^[^--]*\zs</l1l1l1
-			AddTabularPipeline! multiple_spaces / \{2,}/
-			\ map(a:lines, "substitute(v:val, ' \{2,}', '  ', 'g')")
-			\   | tabular#TabularizeStrings(a:lines, '  ', 'l0')
-		]])
-	end,
-}
-
-return {
-	config.conform,
-	config.tabular,
+	config = conform_cfg,
 }

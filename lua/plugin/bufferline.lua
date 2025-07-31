@@ -1,4 +1,5 @@
-local config = {}
+-- https://github.com/akinsho/bufferline.nvim
+-- A snazzy bufferline for Neovim
 
 local bufferline_opts = {
 	options = {
@@ -46,14 +47,9 @@ local function bufferline_cfg()
 	})
 end
 
--- A snazzy bufferline for Neovim
-config.bufferline = {
+return {
 	"akinsho/bufferline.nvim",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = bufferline_opts,
 	config = bufferline_cfg,
-}
-
-return {
-	config.bufferline,
 }

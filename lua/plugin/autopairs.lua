@@ -1,4 +1,5 @@
-local config = {}
+-- https://github.com//windwp/nvim-autopairs
+-- autopairs for neovim written by lua
 
 local coc_cr = function()
 	npairs.setup({ map_cr = false })
@@ -81,13 +82,8 @@ local function autopairs_cfg()
 	end
 end
 
--- autopairs for neovim written by lua
-config.autopairs = {
+return {
 	"windwp/nvim-autopairs",
 	event = "InsertEnter",
 	config = autopairs_cfg,
-}
-
-return {
-	config.autopairs,
 }

@@ -1,4 +1,5 @@
-local config = {}
+-- https://github.com/kevinhwang91/nvim-ufo
+-- Not UFO in the sky, but an ultra fold in Neovim.
 
 local function nvimUfo_cfg()
 	-- UFO folding
@@ -64,15 +65,10 @@ local function nvimUfo_cfg()
 		]])
 end
 
--- Not UFO in the sky, but an ultra fold in Neovim.
-config.nvimUfo = {
+return {
 	"kevinhwang91/nvim-ufo",
 	dependencies = { "kevinhwang91/promise-async" }, -- Promise & Async in Lua
 
 	build = { "yarn install --frozen-lockfile" },
 	config = nvimUfo_cfg,
-}
-
-return {
-	-- config.nvimUfo,
 }

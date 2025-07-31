@@ -1,7 +1,7 @@
-local config = {}
-
+-- https://github.com/nvim-lualine/lualine.nvim
 -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-config.lualine = {
+
+return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	-- You can optionally lazy-load heirline on UiEnter
@@ -53,8 +53,4 @@ config.lualine = {
 			extensions = {},
 		})
 	end,
-}
-
-return {
-	config.lualine,
 }

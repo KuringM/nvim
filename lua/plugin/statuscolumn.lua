@@ -1,7 +1,7 @@
-local config = {}
-
+-- https://github.com/luukvbaal/statuscol.nvim
 -- Status column plugin that provides a configurable 'statuscolumn' and click handlers.
-config.statuscol = {
+
+return {
 	"luukvbaal/statuscol.nvim",
 	config = function()
 		local function hexToRgb(hex_str)
@@ -58,7 +58,4 @@ config.statuscol = {
 			},
 		})
 	end,
-}
-return {
-	-- config.statuscol,
 }

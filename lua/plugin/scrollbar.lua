@@ -1,7 +1,7 @@
-local config = {}
-
+-- https://github.com/petertriho/nvim-scrollbar
 -- Extensible Neovim Scrollbar
-config.scrollbar = {
+
+return {
 	"petertriho/nvim-scrollbar",
 	dependencies = {
 		"kevinhwang91/nvim-hlslens", -- Hlsearch Lens for Neovim
@@ -43,8 +43,4 @@ config.scrollbar = {
 			},
 		})
 	end,
-}
-
-return {
-	config.scrollbar,
 }

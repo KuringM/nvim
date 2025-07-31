@@ -1,5 +1,3 @@
-local config = {}
-
 local function is_nvim_config_lua()
 	return vim.bo.filetype == "lua" and vim.api.nvim_buf_get_name(0):find(vim.fn.stdpath("config"), 1, true)
 end
@@ -96,9 +94,70 @@ local function on_attach(client, bufnr)
 	-- end, "List Workspace Folders")
 end
 
--- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
-config.mason = {
+local function lsp_diagnostic()
+	vim.api.nvim_create_user_command("DisableDiag", function()
+		vim.diagnostic.enable(false, { bufnr = 0 })
+	end, { desc = "Disable diagnostics for current buffer" })
 
+	vim.api.nvim_create_user_command("EnableDiag", function()
+		vim.diagnostic.enable(true, { bufnr = 0 })
+	end, { desc = "Enable diagnostics for current buffer" })
+	----------------------------------------------------------------------
+	-- 美化诊断图标
+	----------------------------------------------------------------------
+	vim.diagnostic.config({
+		virtual_text = true,
+		update_in_insert = false,
+		underline = true,
+		severity_sort = true,
+		float = {
+			border = "rounded",
+			source = "always",
+		},
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = "",
+				[vim.diagnostic.severity.WARN] = "",
+				[vim.diagnostic.severity.HINT] = "",
+				[vim.diagnostic.severity.INFO] = "",
+			},
+		},
+	})
+end
+
+local function lsp_cfg()
+	----------------------------------------------------------------------
+	-- 每个 language server 的通用设置
+	----------------------------------------------------------------------
+	-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+	-- local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+	local mason_lspconfig = require("mason-lspconfig")
+	local lspconfig = require("lspconfig")
+	for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+		local opts = {
+			capabilities = capabilities,
+			on_attach = on_attach,
+		}
+
+		if server_name == "lua_ls" then
+			opts.settings = {
+				Lua = {
+					diagnostics = { globals = { "vim" } },
+				},
+			}
+		end
+
+		lspconfig[server_name].setup(opts)
+
+		-- diagnostic
+		lsp_diagnostic()
+	end
+end
+
+-- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
+return {
 	"mason-org/mason-lspconfig.nvim",
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} }, -- Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
@@ -115,64 +174,5 @@ config.mason = {
 			"html",
 		},
 	},
-	config = function()
-		----------------------------------------------------------------------
-		-- 每个 language server 的通用设置
-		----------------------------------------------------------------------
-		-- local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-		local mason_lspconfig = require("mason-lspconfig")
-		local lspconfig = require("lspconfig")
-		for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
-			local opts = {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			}
-
-			if server_name == "lua_ls" then
-				opts.settings = {
-					Lua = {
-						diagnostics = { globals = { "vim" } },
-					},
-				}
-			end
-
-			lspconfig[server_name].setup(opts)
-		end
-
-		vim.api.nvim_create_user_command("DisableDiag", function()
-			vim.diagnostic.enable(false, { bufnr = 0 })
-		end, { desc = "Disable diagnostics for current buffer" })
-
-		vim.api.nvim_create_user_command("EnableDiag", function()
-			vim.diagnostic.enable(true, { bufnr = 0 })
-		end, { desc = "Enable diagnostics for current buffer" })
-		----------------------------------------------------------------------
-		-- 美化诊断图标
-		----------------------------------------------------------------------
-		vim.diagnostic.config({
-			virtual_text = true,
-			update_in_insert = false,
-			underline = true,
-			severity_sort = true,
-			float = {
-				border = "rounded",
-				source = "always",
-			},
-			signs = {
-				text = {
-					[vim.diagnostic.severity.ERROR] = "",
-					[vim.diagnostic.severity.WARN] = "",
-					[vim.diagnostic.severity.HINT] = "",
-					[vim.diagnostic.severity.INFO] = "",
-				},
-			},
-		})
-	end,
-}
-
-return {
-	config.mason,
+	config = lsp_cfg,
 }
