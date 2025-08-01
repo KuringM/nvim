@@ -4,6 +4,7 @@
 return {
 	"lervag/vimtex",
 	lazy = false,
+	ft = { "markdown", "tex", "latex" },
 	init = function() end,
 	config = function()
 		vim.g.tex_flavor = "latex"

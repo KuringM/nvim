@@ -66,6 +66,7 @@ config.bullets = {
 -- Markdown Vim Mode
 config.vimMarkdown = {
 	"preservim/vim-markdown",
+	ft = { "markdown" },
 	config = function()
 		-- support vimtex "vimtex#syntax#in_mathzone()" for ultisnips
 		vim.g.vim_markdown_math = 1
@@ -75,6 +76,7 @@ config.vimMarkdown = {
 -- A lightweight Markdown → HTML converter for Neovim, with built-in MathJax support.
 config.md2html = {
 	"KuringM/md2html-nvim",
+	ft = { "markdown" },
 	cmd = "MdToHtml",
 }
 
