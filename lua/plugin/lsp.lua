@@ -2,25 +2,28 @@ local function is_nvim_config_lua()
 	return vim.bo.filetype == "lua" and vim.api.nvim_buf_get_name(0):find(vim.fn.stdpath("config"), 1, true)
 end
 
-function _G.show_docs()
-	local ft = vim.bo.filetype
-	local cw = vim.fn.expand("<cword>")
+-- 在最顶层 (插件模块之外)
+if _G.show_docs == nil then
+	function _G.show_docs()
+		local ft = vim.bo.filetype
+		local cw = vim.fn.expand("<cword>")
 
-	-- 如果是 help/vim/lua config 文件, 用内置帮助
-	if ft == "help" or ft == "vim" or (ft == "lua" and is_nvim_config_lua()) then
-		vim.cmd("h " .. cw)
-		return
+		-- 如果是 help/vim/lua config 文件, 用内置帮助
+		if ft == "help" or ft == "vim" or (ft == "lua" and is_nvim_config_lua()) then
+			vim.cmd("h " .. cw)
+			return
+		end
+
+		-- 优先使用 Neovim 内置 LSP hover
+		local clients = vim.lsp.get_clients({ bufnr = 0 })
+		if next(clients) ~= nil then
+			vim.lsp.buf.hover()
+			return
+		end
+
+		-- fallback: keywordprg
+		vim.cmd("!" .. vim.o.keywordprg .. " " .. cw)
 	end
-
-	-- 优先使用 Neovim 内置 LSP hover
-	local clients = vim.lsp.get_clients({ bufnr = 0 })
-	if next(clients) ~= nil then
-		vim.lsp.buf.hover()
-		return
-	end
-
-	-- fallback: keywordprg
-	vim.cmd("!" .. vim.o.keywordprg .. " " .. cw)
 end
 
 ----------------------------------------------------------------------
@@ -135,6 +138,11 @@ local function lsp_cfg()
 
 	local mason_lspconfig = require("mason-lspconfig")
 	local lspconfig = require("lspconfig")
+
+	-- 全局诊断配置, 只需设置一次
+	lsp_diagnostic()
+
+	-- 安装的每个 LSP 配置
 	for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
 		local opts = {
 			capabilities = capabilities,
@@ -150,9 +158,6 @@ local function lsp_cfg()
 		end
 
 		lspconfig[server_name].setup(opts)
-
-		-- diagnostic
-		lsp_diagnostic()
 	end
 end
 
