@@ -40,13 +40,21 @@ local function on_attach(client, bufnr)
 		vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc, silent = true })
 	end
 
+	local function safe_del(mode, lhs)
+		local exists = vim.fn.maparg(lhs, mode) ~= ""
+		if exists then
+			vim.keymap.del(mode, lhs)
+		end
+	end
+
 	-- Remove Global Default Key mapping
-	vim.keymap.del("n", "grn")
-	vim.keymap.del("n", "gra")
-	vim.keymap.del("n", "grr")
-	vim.keymap.del("n", "gri")
-	vim.keymap.del("n", "grt")
-	vim.keymap.del("n", "gO")
+	safe_del("n", "grn")
+	safe_del("n", "gra")
+	safe_del("n", "grr")
+	safe_del("n", "gri")
+	safe_del("n", "grt")
+	safe_del("n", "gO")
+
 	-- 常用导航
 	map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
 	map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
