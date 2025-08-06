@@ -123,7 +123,7 @@ return {
 		t("\\neq ")
 	),
 	s(
-		{ trig = "pm", desc = "plus-minus: ±", wordTrig = true, snippetType = "autosnippet", condition = in_math },
+		{ trig = "pm ", desc = "plus-minus: ±", wordTrig = true, snippetType = "autosnippet", condition = in_math },
 		t("\\pm ")
 	),
 	s(

@@ -89,7 +89,7 @@ return {
 	),
 	s(
 		{ trig = "bc", desc = "background color" },
-		fmt([[<span style="background-color:{}">{}</span>]], { i(1, "#ffcce5}"), d(2, get_visual) }),
+		fmt([[<span style="background-color:{}">{}</span>]], { i(1, "#ffcce5"), d(2, get_visual) }),
 		{ condition = in_text }
 	),
 	s(

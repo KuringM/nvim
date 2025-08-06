@@ -1,6 +1,26 @@
 -- https://github.com/nvim-lualine/lualine.nvim
 -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 
+-- use im-select
+local function ime_status()
+  -- 运行 shell 命令获取输入法 ID
+  local handle = io.popen("im-select")
+  if handle == nil then return "" end
+  local result = handle:read("*a")
+  handle:close()
+
+  result = result:gsub("%s+", "")  -- 去掉换行符
+
+  -- 根据输入法 ID 返回图标
+  if result == "com.apple.keylayout.Colemak" then
+    return "󰌌 US"  -- 英文图标
+  elseif result == "com.apple.inputmethod.SCIM.ITABC" then
+    return "拼"      -- 拼音
+  else
+    return ""       -- 未知输入法
+  end
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -32,7 +52,7 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "mode", "g:coc_status" },
+				lualine_a = { "mode", ime_status },
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { "filename" },
 				lualine_x = {},
