@@ -118,6 +118,22 @@ return {
 	),
 	s(
 		{
+			trig = "rca",
+			desc = "begin{rcases}",
+			snippetType = "autosnippet",
+			condition = in_math,
+		},
+		fmta(
+			[[
+				\begin{rcases}
+					<>
+				\end{rcases}
+			]],
+			{ d(1, get_visual) }
+		)
+	),
+	s(
+		{
 			trig = "mtx",
 			desc = "begin{*matrix}",
 			snippetType = "autosnippet",

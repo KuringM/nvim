@@ -3,7 +3,8 @@
 
 return {
 	"shellRaining/hlchunk.nvim",
-	init = function()
+	ft= {"lua", "py", "sh", },
+	config = function()
 		require("hlchunk").setup({
 			chunk = {
 				enable = true,

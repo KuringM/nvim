@@ -23,6 +23,7 @@ config.treesitter = {
 				"vim",
 				"vimdoc",
 				"yaml",
+				"python",
 			},
 			sync_install = true, -- Install parsers synchronously (only applied to `ensure_installed`)
 			highlight = {

@@ -62,8 +62,11 @@ return {
 		),
 		{ condition = line_begin * in_text }
 	),
-	s({ trig = "it", desc = "italics" }, fmt([[<i>{}</i>]], { d(1, get_visual) }), { condition = in_text }),
-	s({ trig = "bo", desc = "bold" }, fmt([[<b>{}</b>]], { d(1, get_visual) }), { condition = in_text }),
+	s({ trig = "i", desc = "md italics" }, fmt([[*{}*]], { d(1, get_visual) }), { condition = in_text }),
+	s({ trig = "it", desc = "html italics" }, fmt([[<i>{}</i>]], { d(1, get_visual) }), { condition = in_text }),
+	s({ trig = "b", desc = "md bold" }, fmt([[**{}**]], { d(1, get_visual) }), { condition = in_text }),
+	s({ trig = "bo", desc = "html bold" }, fmt([[<b>{}</b>]], { d(1, get_visual) }), { condition = in_text }),
+	s({ trig = "d", desc = "D" }, fmt([[<span class="d">{}</span>]], { d(1, get_visual) }), { condition = in_text }),
 	s({ trig = "bi", desc = "bold italics" }, fmt([[<b><i>{}</i></b>]], { d(1, get_visual) }), { condition = in_text }),
 	s({ trig = "st", desc = "strikethrough" }, fmt([[<s>{}</s>]], { d(1, get_visual) }), { condition = in_text }),
 	s({ trig = "ul", desc = "underline" }, fmt([[<u>{}</u>]], { d(1, get_visual) }), { condition = in_text }),

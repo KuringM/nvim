@@ -130,4 +130,8 @@ return {
 		{ trig = "mp", desc = "minus-plus: ∓", wordTrig = true, snippetType = "autosnippet", condition = in_math },
 		t("\\mp ")
 	),
+	s(
+		{ trig = "oplus", desc = "oplus: ⊕", wordTrig = true, snippetType = "autosnippet", condition = in_math },
+		t("\\oplus ")
+	),
 }

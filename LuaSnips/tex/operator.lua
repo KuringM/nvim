@@ -154,7 +154,7 @@ local snippets = {
 		trig = "mod",
 		desc = "norm/module with | |",
 		wordTrig = true,
-		snippetType = "autosnippet",
+		-- snippetType = "autosnippet",
 		condition = in_math,
 	}, fmta([[\left| <> \right|]], { i(1) })),
 

@@ -28,24 +28,27 @@ local ou = helpers.only_unescaped
 
 return {
 	s(
-		{ trig = "fu", desc = "Function f(x)", wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "fu", desc = "Function f(x)", wordTrig = false, snippetType = "autosnippet", condition = in_math },
 		fmta([[ <> ( <>) ]], { i(1, "f"), i(2, "x") })
 	),
 
 	s(
-		{ trig = "der", desc = "Derivative f'(x)", wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "der", desc = "Derivative f'(x)", wordTrig = false, snippetType = "autosnippet", condition = in_math },
 		fmta([[ <>'( <>) ]], { i(1, "f"), i(2, "x") })
 	),
 
 	s(
-		{ trig = "sn", desc = "sequence {x_n}", wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "sn", desc = "sequence {x_n}", wordTrig = false, snippetType = "autosnippet", condition = in_math },
 		fmta([[ \{ <>_n \} ]], { i(1, "x") })
 	),
 
-	s({ trig = "jx", desc = "0 < |x - x₀| < δ", wordTrig = false }, t([[ 0 < \mid x - x_0 \mid < \delta ]])),
+	s(
+		{ trig = "jx", desc = "0 < |x - x₀| < δ", wordTrig = false, condition = in_math },
+		t([[ 0 < \mid x - x_0 \mid < \delta ]])
+	),
 
 	s(
-		{ trig = "jx1", desc = "|xₙ - a| < ε", wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "jx1", desc = "|xₙ - a| < ε", wordTrig = false, snippetType = "autosnippet", condition = in_math },
 		t([[ \mid x_n - a \mid < \varepsilon ]])
 	),
 
@@ -54,5 +57,8 @@ return {
 		fmt([[ \mid f(x) - {} \mid < {} ]], { i(1, "A"), i(2, "\\varepsilon") })
 	),
 
-	s({ trig = "set", desc = "set {}", wordTrig = false, snippetType = "autosnippet" }, fmta([[ \{ <> \} ]], { i(1) })),
+	s(
+		{ trig = "set", desc = "set {}", wordTrig = false, snippetType = "autosnippet", condition = in_math },
+		fmta([[ \{ <> \} ]], { i(1) })
+	),
 }
