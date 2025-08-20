@@ -56,3 +56,10 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     end
   end,
 })
+
+-- 确保每次读取文件时都强制关闭 spell
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})

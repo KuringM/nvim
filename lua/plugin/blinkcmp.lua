@@ -14,7 +14,7 @@ local blinkcmp_opts = {
 					return cmp.select_and_accept()
 				end
 			end,
-			"snippet_forward",
+			-- "snippet_forward",
 			"fallback",
 		},
 	},
@@ -51,6 +51,22 @@ local blinkcmp_opts = {
 
 	sources = {
 		default = { "lsp", "path", "snippets", "buffer" },
+
+		-- rime_ls
+		providers = {
+			lsp = {
+				transform_items = function(_, items)
+					-- the default transformer will do this
+					for _, item in ipairs(items) do
+						if item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
+							item.score_offset = item.score_offset - 3
+						end
+					end
+					-- you can define your own filter for rime item
+					return items
+				end,
+			},
+		},
 	},
 
 	snippets = { preset = "luasnip" },

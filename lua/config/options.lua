@@ -50,7 +50,8 @@ vim.opt.fileencodings = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
 -- vim.opt.termencoding  = 'utf-8'
 vim.opt.encoding      = 'utf-8'
 -- vim.opt spell check identify en_us and cjk
-vim.opt.spelllang     = 'en_us,cjk'
+vim.opt.spell         = false
+vim.opt.spelllang     = { 'en' }
 vim.o.compatible      = false
 
 -- Add a tmp directory for backup

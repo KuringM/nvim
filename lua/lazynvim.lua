@@ -44,6 +44,7 @@ local plugin_modules = {
 	"anyjump",
 	"autopairs",
 	"blinkcmp",
+	"cmp-lsp-rimels",
 	"bufferline",
 	-- "nvimcmp",
 	-- "coc",

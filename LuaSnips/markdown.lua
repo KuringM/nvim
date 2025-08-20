@@ -116,7 +116,7 @@ return {
 		),
 		{ condition = in_text }
 	),
-	s({ trig = "t", desc = "Inline math mode: $...$" }, fmt([[${}$]], { d(1, get_visual) }), { condition = in_text }),
+	s({ trig = "t", desc = "Inline math mode: $...$" }, fmt([[${}$]], { d(1, get_visual) }) ),
 	s(
 		{ trig = "tt", desc = "Display math mode: $$...$$" },
 		fmta(

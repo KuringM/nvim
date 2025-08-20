@@ -3,9 +3,11 @@ local modules = {
 	"config.keymaps",
 	"config.autocmd",
 	"lazynvim",
+	"rime_ls",
 	"script.compile_run",
 	"script.sortABC",
 	"script.TurnCP2EP",
+	"script.FixKangxi",
 }
 
 for _, mod in ipairs(modules) do
@@ -14,3 +16,5 @@ for _, mod in ipairs(modules) do
 		vim.notify("加载模块失败: " .. mod .. "\n错误: " .. tostring(m), vim.log.levels.ERROR)
 	end
 end
+
+

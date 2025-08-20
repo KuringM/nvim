@@ -72,6 +72,11 @@ return {
 	),
 
 	s(
+		{ trig = "ol", desc = "\\overline{}", wordTrig = true, snippetType = "autosnippet", condition = in_math },
+		fmta([[ \overline{<>} ]], { i(1) })
+	),
+
+	s(
 		{ trig = "til", desc = "\\tilde{}", wordTrig = true, snippetType = "autosnippet", condition = in_math },
 		fmta([[ \tilde{<>} ]], { i(1) })
 	),
