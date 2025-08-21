@@ -140,9 +140,9 @@ local function lsp_cfg()
 	----------------------------------------------------------------------
 	-- 每个 language server 的通用设置
 	----------------------------------------------------------------------
-	-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	-- local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-	local capabilities = require("blink.cmp").get_lsp_capabilities()
+	-- local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 	local mason_lspconfig = require("mason-lspconfig")
 	local lspconfig = require("lspconfig")

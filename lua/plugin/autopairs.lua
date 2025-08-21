@@ -2,7 +2,6 @@
 -- autopairs for neovim written by lua
 
 local coc_cr = function()
-	npairs.setup({ map_cr = false })
 	local remap = vim.api.nvim_set_keymap
 	local npairs = require("nvim-autopairs")
 	npairs.setup({ map_cr = false })
@@ -29,7 +28,7 @@ local function autopairs_cfg()
 
 	-- Mapping <CR>
 	npairs.setup({ map_cr = true })
-	-- coc_cr()
+	coc_cr()
 
 	-- Add space between parenthneses
 	local brackets = { { "(", ")" }, { "[", "]" }, { "{", "}" }, { '"', '"' }, { "'", "'" } }
