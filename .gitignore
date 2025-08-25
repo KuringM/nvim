@@ -5,6 +5,7 @@
 # ... but these:
 !/README.md
 !/.gitignore
+!/pythonx/
 !/UltiSnips/
 !/LuaSnips/
 !/ftplugin/

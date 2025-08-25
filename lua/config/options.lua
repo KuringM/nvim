@@ -42,7 +42,7 @@ vim.o.completeopt      = 'menuone,noinsert,noselect,preview'
 vim.opt.ttyfast        = true                      -- should make scrolling faster
 -- vim.opt.lazyredraw     = true                      -- same as above
 vim.opt.visualbell     = true
-vim.opt.colorcolumn    = '100'
+-- vim.opt.colorcolumn    = '100'
 vim.opt.updatetime     = 100                       -- Faster completion
 vim.opt.virtualedit    = 'block'
 -- vim.opt fileencoding

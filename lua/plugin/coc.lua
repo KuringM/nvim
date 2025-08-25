@@ -156,7 +156,7 @@ return {
 	"neoclide/coc.nvim",
 	branch = "release",
 	dependencies = {
-		"theniceboy/vim-snippets",
+		-- "theniceboy/vim-snippets",
 		-- "honza/vim-snippets",
 	},
 	build = {

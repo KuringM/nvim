@@ -4,7 +4,7 @@
 return {
 	"SirVer/ultisnips",
 	dependencies = {
-		"honza/vim-snippets",
+		-- "honza/vim-snippets",
 	},
 	config = function()
 		vim.g.UltiSnipsSnippetDirectories = { "UltiSnips", "UltiSnips/tex", "vim-snippets" }
