@@ -60,7 +60,7 @@ local plugin_modules = {
 	"hlchunk",
 	"hlslens",
 	"lsp",
-	"luasnip",
+	-- "luasnip",
 	"markdown",
 	"multicursors",
 	"neoclip",
