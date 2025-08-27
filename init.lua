@@ -15,5 +15,3 @@ for _, mod in ipairs(modules) do
 		vim.notify("加载模块失败: " .. mod .. "\n错误: " .. tostring(m), vim.log.levels.ERROR)
 	end
 end
-
-

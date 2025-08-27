@@ -63,6 +63,7 @@ G.map({
 	{ mode_nvo , "tx"           , ":r !figlet "            , { noremap = true } } , -- Call figlet
 	{ mode_n   , "<C-Z>"        , ":u<CR>"                 , { noremap = true } } ,
 	{ mode_nvo , "<F10>"        , ":Inspect<CR>"           , { noremap = true } } , -- show the highlight group under the cursor
+	{ mode_nvo , "<leader>m"    , "@@"                     , { noremap = true } } , -- 重复上一次宏
 
 	-------------------------------
 	--       Split Windows       --
