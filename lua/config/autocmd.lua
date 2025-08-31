@@ -48,11 +48,24 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	end,
 })
 
--- 进入插入模式时: 切回上次输入法
-vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		if vim.g.last_input_method and vim.g.last_input_method ~= "" then
-			set_ime(vim.g.last_input_method)
-		end
-	end,
+-- -- 进入插入模式时: 切回上次输入法
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	callback = function()
+-- 		if vim.g.last_input_method and vim.g.last_input_method ~= "" then
+-- 			set_ime(vim.g.last_input_method)
+-- 		end
+-- 	end,
+-- })
+
+-- Unicode NFKC 归一化
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.md",
+  callback = function()
+    -- 保存光标位置
+    local pos = vim.api.nvim_win_get_cursor(0)
+    -- 执行清理
+    vim.cmd('%!python3 -c "import sys,unicodedata;print(unicodedata.normalize(\'NFKC\', sys.stdin.read()), end=\'\')"')
+    -- 恢复光标位置
+    pcall(vim.api.nvim_win_set_cursor, 0, pos)
+  end,
 })
