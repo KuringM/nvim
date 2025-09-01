@@ -12,7 +12,7 @@ local mark_map = {
 	["”"] = '"',
 	["《"] = "<",
 	["》"] = ">",
-	["——"] = "--",
+	["——"] = " -- ",
 	["—"] = "-",
 	["）"] = ")",
 	["（"] = "(",
@@ -44,51 +44,24 @@ local function replace_punctuation()
 	end
 end
 
--- 注册快捷键 <C-s>
-vim.keymap.set(
-	"n",
-	"<C-s>",
-	replace_punctuation,
-	{ desc = "Replace Chinese punctuation", noremap = true, silent = true }
-)
-vim.keymap.set("i", "<C-s>", function()
-	vim.cmd("stopinsert")
-	vim.schedule(replace_punctuation)
-end, { desc = "Replace Chinese punctuation", noremap = true, silent = true })
-
--- vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
--- 	pattern = "*.md",
--- 	callback = function(args)
--- 		local buf = args.buf or vim.api.nvim_get_current_buf()
--- 		if vim.fn.mode():match("^n") then
--- 			vim.defer_fn(function()
--- 				if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].modifiable then
--- 					vim.api.nvim_buf_call(buf, replace_punctuation)
--- 				end
--- 			end, 100)
--- 		end
--- 	end,
--- })
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = "*", -- 所有文件
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.md",
 	callback = function(args)
 		local buf = args.buf or vim.api.nvim_get_current_buf()
 		local filename = vim.api.nvim_buf_get_name(buf)
 
-		-- 排除自己：路径中包含 TurnCP2EP.lua
-		if filename:find("TurnCP2EP.lua") then
-			return
+		-- 先执行 replace_punctuation
+		if not filename:find("TurnCP2EP.lua") and vim.fn.mode():match("^n") then
+			if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].modifiable then
+				vim.api.nvim_buf_call(buf, replace_punctuation)
+			end
 		end
 
-		-- 仅在普通模式中触发
-		if vim.fn.mode():match("^n") then
-			vim.defer_fn(function()
-				if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].modifiable then
-					-- 调用已有函数
-					vim.api.nvim_buf_call(buf, replace_punctuation)
-				end
-			end, 100)
-		end
+		-- 再执行 Unicode NFKC 归一化
+		local pos = vim.api.nvim_win_get_cursor(0)
+		vim.cmd(
+			"%!python3 -c \"import sys,unicodedata;print(unicodedata.normalize('NFKC', sys.stdin.read()), end='')\""
+		)
+		pcall(vim.api.nvim_win_set_cursor, 0, pos)
 	end,
 })

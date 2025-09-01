@@ -3,7 +3,7 @@ local modules = {
 	"config.keymaps",
 	"config.autocmd",
 	"lazynvim",
-	"rime_ls",
+	-- "rime_ls",
 	"script.compile_run",
 	"script.sortABC",
 	"script.TurnCP2EP",

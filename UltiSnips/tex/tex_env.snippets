@@ -1,15 +1,16 @@
 global !p
 
-def math():
-	return vim.eval("vimtex#syntax#in_mathzone()") == "1"
+from scopes import math
 
 endglobal
 
+context "math()"
 snippet nl "\newline" bA
 \newline
 $0
 endsnippet
 
+context "math()"
 snippet "(?<!\\)tag" "tag" rwA
 \tag{$1}$0
 endsnippet
