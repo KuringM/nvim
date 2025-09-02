@@ -16,6 +16,7 @@ local function deus_cfg()
 	vim.cmd([[colorscheme deus]])
 	vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 	vim.api.nvim_set_hl(0, "FloatBorder", { link = "Comment" })
+	vim.api.nvim_set_hl(0, "NonText", { ctermfg = "Gray", fg = "#1a1a1a" }) -- grey10 = #1a1a1a
 end
 
 config.nvimdeus = {

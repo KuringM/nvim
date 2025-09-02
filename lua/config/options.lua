@@ -55,45 +55,64 @@ vim.opt.spell         = false
 vim.opt.spelllang     = { 'en' }
 vim.o.compatible      = false
 
--- Add a tmp directory for backup
-vim.cmd([[
-silent !mkdir -p $HOME/.cache/nvim/tmp/backup
-silent !mkdir -p $HOME/.cache/nvim/tmp/undo
-" silent !mkdir -p $HOME/.config/nvim/tmp/sessions
-set backupdir=$HOME/.cache/nvim/tmp/backup,.
-set directory=$HOME/.cache/nvim/tmp/backup,.
-if has('persistent_undo')
-	set undofile
-	set undodir=$HOME/.cache/nvim/tmp/undo,.
-endif
-]])
+-- =======================================
+-- 临时目录设置（backup / undo）
+-- =======================================
+local fn = vim.fn
+local cache_tmp = fn.stdpath("cache") .. "/tmp"
 
-vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
+fn.mkdir(cache_tmp .. "/backup", "p")
+fn.mkdir(cache_tmp .. "/undo", "p")
 
-vim.cmd([[autocmd TermOpen term://* startinsert]])
-vim.cmd([[
-augroup NVIMRC
-    autocmd!
-    autocmd BufWritePost .vim.lua exec ":so %"
-augroup END
-tnoremap <C-N> <C-\><C-N>
-tnoremap <C-O> <C-\><C-N><C-O>
-]])
+vim.opt.backupdir = { cache_tmp .. "/backup", "." }
+vim.opt.directory = { cache_tmp .. "/backup", "." }
 
-vim.cmd([[hi NonText ctermfg=gray guifg=grey10]])
-
--- load machine_specific configrations
-local config_path = vim.fn.stdpath("config")
-local current_config_path = config_path .. "/lua/machine_specific.lua"
-if not vim.loop.fs_stat(current_config_path) then
-	local current_config_file = io.open(current_config_path, "wb")
-	local default_config_path = config_path .. "/lua/config/_machine_specific_default.lua"
-	local default_config_file = io.open(default_config_path, "rb")
-	if default_config_file and current_config_file then
-		local content = default_config_file:read("*all")
-		current_config_file:write(content)
-		io.close(default_config_file)
-		io.close(current_config_file)
-	end
+if fn.has("persistent_undo") == 1 then
+  vim.opt.undofile = true
+  vim.opt.undodir = { cache_tmp .. "/undo", "." }
 end
+
+-- =======================================
+-- 光标恢复
+-- =======================================
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local row = fn.line([['"]])
+    if row > 1 and row <= fn.line("$") then
+      vim.cmd([[normal! g'"]])
+    end
+  end,
+})
+
+-- =======================================
+-- 终端设置
+-- =======================================
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "term://*",
+  command = "startinsert",
+})
+
+vim.keymap.set("t", "<C-N>", [[<C-\><C-N>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-O>", [[<C-\><C-N><C-O>]], { noremap = true, silent = true })
+
+-- =======================================
+-- 加载 machine_specific.lua
+-- =======================================
+local config_path = fn.stdpath("config")
+local current_config_path = vim.fs.joinpath(config_path, "lua", "machine_specific.lua")
+local default_config_path = vim.fs.joinpath(config_path, "lua", "config", "_machine_specific_default.lua")
+
+if not vim.loop.fs_stat(current_config_path) then
+  local default_config_file = io.open(default_config_path, "rb")
+  if default_config_file then
+    local content = default_config_file:read("*all")
+    local current_config_file = io.open(current_config_path, "wb")
+    if current_config_file then
+      current_config_file:write(content)
+      current_config_file:close()
+    end
+    default_config_file:close()
+  end
+end
+
 require("machine_specific")

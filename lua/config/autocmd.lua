@@ -56,3 +56,33 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- 		end
 -- 	end,
 -- })
+
+-- 当回到 Neovim、光标停留或缓冲区进入时检查文件变化
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
+	pattern = "*",
+	callback = function()
+		vim.cmd("checktime") -- 检测文件是否被外部修改
+	end,
+})
+
+-- 文件被重新读取后刷新语法高亮
+vim.api.nvim_create_autocmd("BufReadPost", {
+	pattern = "*",
+	callback = function()
+		-- 普通语法高亮刷新
+		vim.cmd("syntax sync fromstart")
+		-- Tree-sitter 高亮刷新（如果启用 Tree-sitter）
+		local ok, ts_configs = pcall(require, "nvim-treesitter.configs")
+		if ok then
+			vim.cmd("TSBufEnable highlight")
+		end
+	end,
+})
+
+-- 可选：当文件外部修改并自动加载时显示提示
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+	pattern = "*",
+	callback = function()
+		print("⚡ 文件已被外部修改并重新加载")
+	end,
+})
