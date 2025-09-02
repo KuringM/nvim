@@ -25,3 +25,12 @@ G.hl({
 	{ "texMathStyleConcArg" , { fg = colors.gray             , italic = true } } ,
 	{ "texEnvMArgName"      , { fg = colors.gray             , italic = true } } ,
 	})
+
+-- 在 Markdown 文件里，把 xmlCommentError 改成 Comment
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    -- 强制重定义 xmlCommentError
+    vim.cmd("highlight! link xmlCommentError Comment")
+  end,
+})

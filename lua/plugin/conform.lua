@@ -26,45 +26,54 @@ local function conform_cfg()
 			javascriptreact = { "prettierd" },
 			typescriptreact = { "prettierd" },
 			yaml = { "prettierd" },
-			go = {
-				formatters = { "gofumpt", "goimports" },
-				run_all_formatters = true,
-			},
+			go = { "gofumpt", "goimports" },
 			python = { "black" },
 			markdown = {
 				-- "texfmt",
 				"injected",
 				"prettierd",
 			},
-			tex = { "tex-fmt", stop_after_first = true },
+			tex = { "texfmt", stop_after_first = true },
 		},
 		formatters = {
 			texfmt = {
 				command = "/opt/homebrew/bin/tex-fmt",
+				args = { "-s", "-n", "--usetabs", "--tabsize", "1" },
 			},
 		},
 	})
-	-- Customize the "tex-fmt" formatter
-	require("conform").formatters.texfmt = {
-		inherit = true,
-		command = "tex-fmt",
-		args = { "-s", "-n", "--usetabs", "--tabsize", "1" },
-	}
+
 	-- Customize the "injected" formatter
 	require("conform").formatters.injected = {
 		options = {
 			ignore_errors = false,
 			lang_to_ft = {
 				bash = "sh",
+				javascript = "javascript",
+				typescript = "typescript",
+				lua = "lua",
+				c = "c",
+				cpp = "clang-format",
+				python = "python",
+				latex = "tex",
 				markdown = "md",
 			},
 			lang_to_ext = {
 				latex = "tex",
 				markdown = "md",
 			},
-			lang_to_formatters = {},
+			lang_to_formatters = {
+				c = { "clang-format" },
+				latex = { "texfmt" },
+			},
 		},
 	}
+
+	require("conform").formatters.texfmt = {
+		command = "tex-fmt",
+		args = { "-s", "-n", "--usetabs", "--tabsize", "1" },
+	}
+
 	vim.api.nvim_set_keymap("n", [[\f]], "", {
 		noremap = true,
 		silent = true,
@@ -73,7 +82,7 @@ local function conform_cfg()
 			local conform = require("conform")
 			conform.format({
 				async = false,
-				lsp_format = "nerver",
+				lsp_format = "never",
 			})
 		end,
 	})
