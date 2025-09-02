@@ -1,6 +1,7 @@
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 vim.opt.clipboard:append {'unnamedplus'}           -- Copy paste between vim and everything else
 vim.opt.autochdir      = true                      -- Your working directory will always be the same as your working directory
+vim.opt.autoread       = true
 vim.o.incsearch        = true
 vim.opt.exrc           = true
 vim.opt.secure         = true

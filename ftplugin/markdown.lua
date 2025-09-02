@@ -30,7 +30,8 @@ G.hl({
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
-    -- 强制重定义 xmlCommentError
+    -- 强制重定义 xmlCommentError, cErrInBracket
     vim.cmd("highlight! link xmlCommentError Comment")
+    vim.cmd("highlight! link cErrInBracket Comment")
   end,
 })
