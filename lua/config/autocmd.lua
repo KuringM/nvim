@@ -67,12 +67,12 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
 
 -- 文件被重新读取后刷新语法高亮
 vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = "*",
+	pattern = "*.md", -- 只对 markdown 生效
 	callback = function()
-		-- 普通语法高亮刷新
-		vim.cmd("syntax sync fromstart")
-		-- Tree-sitter 高亮刷新（如果启用 Tree-sitter）
-		local ok, ts_configs = pcall(require, "nvim-treesitter.configs")
+		-- 重新加载 markdown syntax
+		vim.cmd("runtime! syntax/markdown.vim")
+		-- Tree-sitter 高亮刷新
+		local ok, _ = pcall(require, "nvim-treesitter.configs")
 		if ok then
 			vim.cmd("TSBufEnable highlight")
 		end

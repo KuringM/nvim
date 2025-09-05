@@ -1,9 +1,9 @@
+extends html
 extends tex
 
 global !p
 
-def text():
-	return vim.eval("vimtex#syntax#in_mathzone()") == "0"
+from scopes import text
 
 endglobal
 
@@ -79,27 +79,22 @@ endsnippet
 
 context "text()"
 snippet it "italics" i
-<i>${1:${VISUAL}}</i>$0
+_${1:${VISUAL}}_$0
 endsnippet
 
 context "text()"
 snippet bo "bold" i
-<b>${1:${VISUAL}}</b>$0
+**${1:${VISUAL}}**$0
 endsnippet
 
 context "text()"
 snippet bi "bold italics" i
-<b><i>${1:${VISUAL}}</i></b>$0
+***${1:${VISUAL}}***$0
 endsnippet
 
 context "text()"
-snippet st "strikethrough" w
-<s>$1</s>$0
-endsnippet
-
-context "text()"
-snippet ul "underline" i
-<u>$1</u>$0
+snippet hl "Description" i
+==${1:${VISUAL}}*== $0
 endsnippet
 
 context "text()"
@@ -147,59 +142,6 @@ snippet eem "emspemsp" w
 &emsp;&emsp;$0
 endsnippet
 
-##############
-#  HTML EXP  #
-##############
-context "text()"
-snippet cs "A collapsible section containing markdown" b
-<details>
-	<summary>${1:${VISUAL}}</summary>
-${2:${VISUAL}}
-</details>
-$0
-endsnippet
-
-context "text()"
-snippet fc "font color" iA
-<font color=${1:red}>${2:${VISUAL}}</font>$0
-endsnippet
-
-context "text()"
-snippet bc "background color" iA
-<span style="background-color:${1:#ffcce5}">${2:${VISUAL}}</span>$0
-endsnippet
-
-context "text()"
-snippet br "newline" wA
-<BR>
-endsnippet
-
-context "text()"
-snippet sub "subscript" i
-<sub>$1</sub>$0
-endsnippet
-
-context "text()"
-snippet sup "supscript" i
-<sup>$1</sup>$0
-endsnippet
-
-context "text()"
-snippet hl "Description" i
-<mark>$1</mark> $0
-endsnippet
-
-context "text()"
-snippet q "quote" i
-<q>${1:${VISUAL}}</q> $0
-endsnippet
-
-context "text()"
-snippet bq "blockquote" w
-<blockquote>
-${1:${VISUAL}}
-</blockquote>
-endsnippet
 
 ###########
 #  LaTex  #
@@ -224,7 +166,7 @@ $1`!p
 x=match.group(1)
 y=match.group(2)
 row1=""
-row2="" 
+row2=""
 for i in range(int(x)):
     row1+="| "
     row2+="|:-:"

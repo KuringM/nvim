@@ -15,3 +15,7 @@ def math():
 # Text Mode
 def text():
     return vim.eval("vimtex#syntax#in_mathzone()") == "0"
+
+# Text Mode
+def html_text():
+    return vim.eval("&filetype") == "html" and vim.eval("vimtex#syntax#in_mathzone()") == "0"

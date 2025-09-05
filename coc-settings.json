@@ -85,7 +85,7 @@
     "$HOME/.local/share/nvim/lazy/vim-snippets/UltiSnips"
   ],
   "snippets.extends": {
-    "markdown": ["markdown", "katex", "tex"],
+    "markdown": ["markdown", "katex", "tex", "html"],
     "tex": ["katex"]
   },
   "coc.source.vimtex.filetypes": [
