@@ -17,46 +17,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- autocmd shift keylayout
--- 默认英文输入法 (这里用 Colemak)
-vim.g.default_input_method = "com.apple.keylayout.Colemak"
-
--- 保存上一次输入法
-vim.g.last_input_method = vim.g.default_input_method
-
--- 获取当前输入法
-local function get_current_ime()
-	local ime = vim.fn.systemlist("im-select")[1]
-	return ime or vim.g.default_input_method
-end
-
--- 设置输入法
-local function set_ime(ime)
-	if ime and ime ~= "" then
-		vim.fn.system({ "im-select", ime })
-	end
-end
-
--- 离开插入模式时: 记录并切回英文
-vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		local current_ime = get_current_ime()
-		vim.g.last_input_method = current_ime
-		if current_ime ~= vim.g.default_input_method then
-			set_ime(vim.g.default_input_method)
-		end
-	end,
-})
-
--- -- 进入插入模式时: 切回上次输入法
--- vim.api.nvim_create_autocmd("InsertEnter", {
--- 	callback = function()
--- 		if vim.g.last_input_method and vim.g.last_input_method ~= "" then
--- 			set_ime(vim.g.last_input_method)
--- 		end
--- 	end,
--- })
-
 -- 当回到 Neovim、光标停留或缓冲区进入时检查文件变化
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
 	pattern = "*",

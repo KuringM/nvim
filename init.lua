@@ -7,6 +7,7 @@ local modules = {
 	"script.compile_run",
 	"script.sortABC",
 	"script.TurnCP2EP",
+	"script.im-select",
 }
 
 for _, mod in ipairs(modules) do

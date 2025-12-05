@@ -27,9 +27,10 @@ snippet test "Description"
 `!p snip.rv = text()`
 endsnippet
 
+#[$1](${4:https://${2:www.github.com/}$3})$0
 context "text()"
 snippet link "Link to something"
-[$1](${4:https://${2:www.github.com/}$3})$0
+[$1](${2:${VISUAL}})$0
 endsnippet
 
 context "text()"
@@ -94,7 +95,7 @@ endsnippet
 
 context "text()"
 snippet hl "Description" i
-==${1:${VISUAL}}*== $0
+==${1:${VISUAL}}== $0
 endsnippet
 
 context "text()"
