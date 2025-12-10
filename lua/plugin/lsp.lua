@@ -145,7 +145,7 @@ local function lsp_cfg()
 	-- local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 	local mason_lspconfig = require("mason-lspconfig")
-	local lspconfig = require("lspconfig")
+	local lspconfig = vim.lsp.config
 
 	-- 全局诊断配置, 只需设置一次
 	lsp_diagnostic()
@@ -174,34 +174,11 @@ local function lsp_cfg()
 		-- 	}
 		-- end
 
-		lspconfig[server_name].setup(opts)
+		lspconfig(server_name, opts)
+		-- 启动 LSP server
+	  vim.lsp.enable(server_name)
 	end
 
-	-- rime-ls 配置
-	local configs = require("lspconfig.configs")
-	-- 如果没有定义过 rime_ls, 就手动定义一个
-	if not configs.rime_ls then
-		configs.rime_ls = {
-			default_config = {
-				cmd = { vim.fn.expand("~/rime-ls/target/release/rime_ls"), "--stdio" }, -- 你编译的路径
-				filetypes = { "*" }, -- 在所有文件里都能触发
-				root_dir = function(fname)
-					return vim.fn.getcwd() -- 随便给个 root, 不重要
-				end,
-				settings = {},
-			},
-		}
-	end
-	lspconfig.rime_ls.setup({
-		cmd = { vim.fn.expand("~/rime-ls/target/release/rime_ls"), "--stdio" }, -- 你编译的路径
-		init_options = {
-			enabled = true,
-			shared_data_dir = "/usr/share/rime-data", -- 系统 Rime 数据
-			user_data_dir = vim.fn.expand("~/.local/share/rime-ls"), -- 独立的 Rime 配置
-			log_dir = vim.fn.expand("~/.local/share/rime-ls/logs"), -- 日志
-			max_candidates = 9,
-		},
-	})
 end
 
 -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
