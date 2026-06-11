@@ -91,7 +91,7 @@ config.tsContext = {
 
 return {
 	config.treesitter,
-	config.tsRefactor,
+	-- config.tsRefactor,
 	config.tsContext,
 	"HiPhish/rainbow-delimiters.nvim", -- Rainbow delimiters for Neovim with Tree-sitter},
 }

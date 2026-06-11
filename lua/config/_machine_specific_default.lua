@@ -4,7 +4,7 @@ vim.g.snips_author = "Kuring"
 
 -- Python
 -- vim.g.python_host_prog = '/usr/bin/python2'
-vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python3_host_prog = vim.fn.expand("~/.local/share/nvim/py3nvim/bin/python")
 
 -- Ruby
 vim.g.ruby_host_prog = "/usr/bin/ruby"

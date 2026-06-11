@@ -6,6 +6,7 @@
 !/README.md
 !/.gitignore
 !/pythonx/
+/pythonx/__pycache__
 !/UltiSnips/
 !/LuaSnips/
 !/ftplugin/
