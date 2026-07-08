@@ -113,6 +113,7 @@ return {
 		"brew install clang-format",
 		"brew install tex-fmt",
 		"pip install beautysh",
+		"brew install gofumpt"
 	},
 	config = conform_cfg,
 }

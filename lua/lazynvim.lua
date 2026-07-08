@@ -75,7 +75,7 @@ local plugin_modules = {
 	"telescope",
 	"tex",
 	-- "translate",
-	-- "treesitter",
+	"treesitter",
 	"ultisnips",
 	"undotree",
 	"whichkey",
